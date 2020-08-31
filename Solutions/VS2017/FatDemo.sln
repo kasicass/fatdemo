@@ -9,6 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{118060EC
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FatFramework", "Libs\FatFramework.vcxproj", "{12CCFE35-85F6-4795-9BC2-BA97B1B533DF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "00-UnitTest", "Demos\00-UnitTest.vcxproj", "{39877769-6B24-4ECC-B6F5-906E635C3B0C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12CCFE35-85F6-4795-9BC2-BA97B1B533DF} = {12CCFE35-85F6-4795-9BC2-BA97B1B533DF}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -25,12 +30,21 @@ Global
 		{12CCFE35-85F6-4795-9BC2-BA97B1B533DF}.Release|x64.Build.0 = Release|x64
 		{12CCFE35-85F6-4795-9BC2-BA97B1B533DF}.Release|x86.ActiveCfg = Release|Win32
 		{12CCFE35-85F6-4795-9BC2-BA97B1B533DF}.Release|x86.Build.0 = Release|Win32
+		{39877769-6B24-4ECC-B6F5-906E635C3B0C}.Debug|x64.ActiveCfg = Debug|x64
+		{39877769-6B24-4ECC-B6F5-906E635C3B0C}.Debug|x64.Build.0 = Debug|x64
+		{39877769-6B24-4ECC-B6F5-906E635C3B0C}.Debug|x86.ActiveCfg = Debug|Win32
+		{39877769-6B24-4ECC-B6F5-906E635C3B0C}.Debug|x86.Build.0 = Debug|Win32
+		{39877769-6B24-4ECC-B6F5-906E635C3B0C}.Release|x64.ActiveCfg = Release|x64
+		{39877769-6B24-4ECC-B6F5-906E635C3B0C}.Release|x64.Build.0 = Release|x64
+		{39877769-6B24-4ECC-B6F5-906E635C3B0C}.Release|x86.ActiveCfg = Release|Win32
+		{39877769-6B24-4ECC-B6F5-906E635C3B0C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{12CCFE35-85F6-4795-9BC2-BA97B1B533DF} = {3002CA38-4E93-426B-9178-784F491452A1}
+		{39877769-6B24-4ECC-B6F5-906E635C3B0C} = {118060EC-209A-4417-BF49-C6DB83FB8D92}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CA94138-36CE-4763-A52D-F12E18074617}

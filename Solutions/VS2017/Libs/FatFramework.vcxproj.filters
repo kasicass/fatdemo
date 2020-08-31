@@ -12,16 +12,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Kernel.h">
-      <Filter>Kernel</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformDefines.h">
       <Filter>Kernel</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Application\IApplication.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Application\Application.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\FatFramework.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Src\Framework\Kernel\Kernel.cpp">
-      <Filter>Kernel</Filter>
+    <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
+      <Filter>Application</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
