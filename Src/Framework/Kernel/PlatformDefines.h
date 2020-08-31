@@ -39,3 +39,12 @@
 #if !defined(FAT_DEBUG_BUILD) && !defined(FAT_RELEASE_BUILD)
 #  error Where is the build configuration?
 #endif
+
+// Preprocessor definition
+#if defined(FAT_DEBUG_BUILD)
+#  define FAT_USE_ASSERT
+#  define FAT_USE_UNITTEST
+#  define FAT_USE_LOG
+#else
+#  define FAT_USE_LOG
+#endif
