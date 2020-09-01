@@ -82,6 +82,7 @@
 #include "Kernel/Common/Assertion.h"
 #include "Kernel/Common/Memory.h"
 #include "Kernel/Common/NonCopyable.h"
+#include "Kernel/Common/Time.h"
 #include "Kernel/String/TCharTraits.h"
 #include "Kernel/String/TString.h"
 #include "Kernel/String/TStackString.h"

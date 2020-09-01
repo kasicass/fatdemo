@@ -26,6 +26,7 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Log.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Memory.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\NonCopyable.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Time.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformDefines.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TCharTraits.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TStackString.h" />
@@ -38,6 +39,7 @@
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Assertion.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Log.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Memory.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Time.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\UnitTest\UnitTest.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -58,6 +58,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\NonCopyable.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Time.h">
+      <Filter>Kernel\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -74,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Kernel\UnitTest\UnitTest.cpp">
       <Filter>Kernel\UnitTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Time.cpp">
+      <Filter>Kernel\Common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -5,6 +5,8 @@ namespace Fat {
 void InitMemoryCheck()
 {
 #if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
+	FatLog(L"<MemCheck>: Init");
+
 	// Perform automatic leak checking at program exit
 	_CrtSetDbgFlag(_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) | _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif

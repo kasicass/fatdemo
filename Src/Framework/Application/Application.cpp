@@ -13,12 +13,15 @@ Application::~Application()
 void Application::Init()
 {
 	// Registration::CallInitialize();
-	InitMemoryCheck();
+
 	FatLog(L"<App>: Init");
+	InitMemoryCheck();
+	thePerfCounter->Init();
 }
 
 void Application::Shutdown()
 {
+	thePerfCounter->Shutdown();
 	FatLog(L"<App>: Shutdown");
 	// Registration::CallDestroy();
 }
