@@ -42,7 +42,7 @@ namespace Assertion
 		{\
 			if (Fat::Assertion::FailureReport(__VA_ARGS__))\
 			{\
-				__debugbreak();\
+				fat_debugbreak();\
 			}\
 		}\
 	}

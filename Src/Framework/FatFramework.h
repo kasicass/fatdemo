@@ -66,6 +66,12 @@
 #define fat_aligned_malloc(size, align) _aligned_malloc(size, align)
 #define fat_aligned_free(p)             _aligned_free(p)
 
+#if defined(FAT_DEBUG_BUILD)
+#define fat_debugbreak()                __debugbreak()
+#else
+#define fat_debugbreak()
+#endif
+
 #else
 
 #define fat_sprintf    sprintf
@@ -79,6 +85,12 @@
 
 #define fat_aligned_malloc(size, align) aligned_alloc(align, size)
 #define fat_aligned_free(p)             free(p)
+
+#if defined(FAT_DEBUG_BUILD)
+#define fat_debugbreak()                raise(SIGTRAP)
+#else
+#define fat_debugbreak()
+#endif
 
 #endif
 
