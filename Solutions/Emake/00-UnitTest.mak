@@ -13,4 +13,7 @@ link: ../../BinLib/FatFramework.a
 inc: ../../Src/Framework
 
 src: ../../Src/Demo/00-UnitTest/Main.cpp
+src: ../../Src/Demo/00-UnitTest/AtomicIntTest.cpp
+src: ../../Src/Demo/00-UnitTest/TimeTest.cpp
+src: ../../Src/Demo/00-UnitTest/UnitTestSelfTest.cpp
 

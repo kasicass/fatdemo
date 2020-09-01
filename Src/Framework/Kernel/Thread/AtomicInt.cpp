@@ -33,6 +33,18 @@ Int32 CompareExchange(volatile Int32* pVal, Int32 exchange, Int32 comperand)
 
 #else
 
+Int32 Add(volatile Int32* pVal, Int32 value)
+{
+	Int32 r;
+	__asm__ __volatile__ (
+		"lock ; xaddl %0, (%1) \n\t"
+		: "=r" (r)
+		: "r" (pVal), "0" (value)
+		: "memory"
+	);
+	return r;
+}
+
 Int32 Increment(volatile Int32* pVal)
 {
 	Int32 r = Add(pVal, 1);
@@ -45,17 +57,6 @@ Int32 Decrement(volatile Int32* pVal)
 	return (r - 1); // substract, since we get the original value back
 }
 
-Int32 Add(volatile Int32* pVal, Int32 value)
-{
-	Int32 r;
-	__asm__ __volatile__ (
-		"lock ; xaddl %0, (%1) \n\t"
-		: "=r" (r)
-		: "r" (pVal), "0" (value)
-		: "memory"
-	);
-	return r;
-}
 
 Int32 Exchange(volatile Int32* pVal, Int32 exchange)
 {
