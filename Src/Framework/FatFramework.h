@@ -85,5 +85,6 @@
 #include "Kernel/String/TCharTraits.h"
 #include "Kernel/String/TString.h"
 #include "Kernel/String/TStackString.h"
+#include "Kernel/UnitTest/UnitTest.h"
 #include "Application/IApplication.h"
 #include "Application/Application.h"

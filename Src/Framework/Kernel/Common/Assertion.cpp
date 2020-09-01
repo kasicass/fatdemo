@@ -16,6 +16,7 @@ Bool FailureReport(const wchar_t* format, ...)
 		throw UnitTestAssertionException();
 	}
 #endif
+
 	StackWString msg;
 
 	va_list argList;

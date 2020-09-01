@@ -46,13 +46,7 @@ inline void FatFree(void* p)
 
 namespace Fat {
 
-class IMemoryManager
-{
-public:
-	virtual void Init() = 0;
-	virtual void Shutdown() = 0;
-};
-extern IMemoryManager* theMemMgr;
+void InitMemoryCheck();
 
 void MemoryCopy(void* pDest, const void* pSource, UInt32 count);
 void MemorySet(void* pDest, Int32 ch, UInt32 count);

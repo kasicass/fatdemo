@@ -12,12 +12,9 @@ IApplication* Fat::theApp = &unitTestApp;
 
 void UnitTestApp::Run()
 {
-	int* p = (int*)FatMalloc(sizeof(int)*10);
-	MemorySet(p, 0, sizeof(int)*10);
-	FatFree(p);
-
-	FatLog(L"UnitTestApp::Run()");
-
-	p = FatNew(int, 10);
-	FatDelete(p);
+#if defined(FAT_ENABLE_UNITTEST)
+	theUnitTestMgr->Run();
+#else
+	FatLog("FAT_ENABLE_UNITTEST is off");
+#endif
 }

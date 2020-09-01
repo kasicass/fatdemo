@@ -13,14 +13,13 @@ Application::~Application()
 void Application::Init()
 {
 	// Registration::CallInitialize();
-	theMemMgr->Init();
-	FatLog(L"Application::Init()");
+	InitMemoryCheck();
+	FatLog(L"<App>: Init");
 }
 
 void Application::Shutdown()
 {
-	FatLog(L"Application::Shutdown()");
-	theMemMgr->Shutdown();
+	FatLog(L"<App>: Shutdown");
 	// Registration::CallDestroy();
 }
 
