@@ -32,10 +32,9 @@ using namespace Fat;
 
 int main(int argc, char *argv[])
 {
-	printf("Hello\n");
-//	theApp->Init();
-//	theApp->Run();
-//	theApp->Shutdown();
+	theApp->Init();
+	theApp->Run();
+	theApp->Shutdown();
 	return 0;
 }
 

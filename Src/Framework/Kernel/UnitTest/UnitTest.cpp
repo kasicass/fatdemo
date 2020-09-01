@@ -83,7 +83,7 @@ void UnitTestManager::RegisterTestCase(const UnitTestCase& testCase)
 
 void UnitTestManager::NotifyEndedTest(const UnitTestCase& testCase, Bool succeded)
 {
-	FatLog(L" - test %u (%s) : %s",
+	FatLog(L" - test %u (%ls) : %ls",
 		suceededTestCount_ + failedTestCount_,
 		testCase.GetName(),
 		succeded ? L"OK" : L"FAILED");
