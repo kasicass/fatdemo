@@ -63,6 +63,9 @@
 #define fat_wcsicmp    _wcsicmp
 #define fat_wcsnicmp   _wcsnicmp
 
+#define fat_aligned_malloc(size, align) _aligned_malloc(size, align)
+#define fat_aligned_free(p)             _aligned_free(p)
+
 #else
 
 #define fat_sprintf    sprintf
@@ -73,6 +76,9 @@
 #define fat_strnicmp   strncasecmp
 #define fat_wcsicmp    wcscasecmp
 #define fat_wcsnicmp   wcsncasecmp
+
+#define fat_aligned_malloc(size, align) aligned_alloc(align, size)
+#define fat_aligned_free(p)             free(p)
 
 #endif
 

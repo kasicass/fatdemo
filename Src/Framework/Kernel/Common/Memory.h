@@ -6,9 +6,6 @@
 #define _FatMalloc(size, align) _aligned_malloc_dbg(size, align, __FILE__, __LINE__)
 #define FatMalloc(size) _FatMalloc(size, 16)
 
-#define _FatRealloc(p, size, align) _aligned_realloc_dbg(p, size, align, __FILE__, __LINE__)
-#define FatRealloc(p, size) _FatRealloc(p, size)
-
 #define FatFree(p) _aligned_free_dbg(p)
 
 #define FatNew(Type, ...) new(_NORMAL_BLOCK, __FILE__, __LINE__) Type(__VA_ARGS__)
@@ -20,21 +17,14 @@
 
 inline void* FatMalloc(UInt32 size, UInt32 align = 16)
 {
-	void* p = _aligned_malloc(size, align);
+	void* p = fat_aligned_malloc(size, align);
 	FatAssert(p != NULL, L"Malloc failed");
-	return p;
-}
-
-inline void* FatRealloc(void* p, UInt32 size, UInt32 align = 16)
-{
-	void* pNew = _aligned_realloc(p, size, align);
-	FatAssert(pNew != NULL, L"Realloc failed");
 	return p;
 }
 
 inline void FatFree(void* p)
 {
-	_aligned_free(p);
+	fat_aligned_free(p);
 }
 
 #define FatNew(Type, ...) new Type(__VA_ARGS__)

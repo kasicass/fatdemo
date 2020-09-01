@@ -15,6 +15,6 @@ void UnitTestApp::Run()
 #if defined(FAT_ENABLE_UNITTEST)
 	theUnitTestMgr->Run();
 #else
-	FatLog("FAT_ENABLE_UNITTEST is off");
+	FatLog(L"FAT_ENABLE_UNITTEST is off");
 #endif
 }

@@ -150,6 +150,8 @@ void FpsAutoCounter::Update()
 // Time - UnitTest
 //
 
+#if defined(FAT_ENABLE_UNITTEST)
+
 TEST(TestTime)
 {
 	const Time beginTime = Time::GetAppTime();
@@ -185,5 +187,7 @@ TEST(TimeFpsCounter)
 
 	FatTest(counter.GetFramePerSecond() == estimatedFps);
 }
+
+#endif
 
 }
