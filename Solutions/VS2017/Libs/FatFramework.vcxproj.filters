@@ -10,6 +10,15 @@
     <Filter Include="Driver">
       <UniqueIdentifier>{2ad30094-4ebf-4b70-8919-ee44ced6d485}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Kernel\UnitTest">
+      <UniqueIdentifier>{70608603-e5fb-4c89-9e7c-1711a38554a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\String">
+      <UniqueIdentifier>{c5c415d2-3890-4cd1-87bc-04cdad240048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Common">
+      <UniqueIdentifier>{62b832d3-8cbb-4df7-8b5e-12b1bc07581c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformDefines.h">
@@ -25,40 +34,40 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Types.h">
       <Filter>Kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Registration.h">
-      <Filter>Kernel</Filter>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TCharTraits.h">
+      <Filter>Kernel\String</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\INonCopyable.h">
-      <Filter>Kernel</Filter>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TStackString.h">
+      <Filter>Kernel\String</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Assertion.h">
-      <Filter>Kernel</Filter>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TString.h">
+      <Filter>Kernel\String</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Memory.h">
-      <Filter>Kernel</Filter>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Assertion.h">
+      <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\TCharTraits.h">
-      <Filter>Kernel</Filter>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\INonCopyable.h">
+      <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\TStackString.h">
-      <Filter>Kernel</Filter>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Memory.h">
+      <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\TString.h">
-      <Filter>Kernel</Filter>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Registration.h">
+      <Filter>Kernel\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
       <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Framework\Kernel\Registration.cpp">
-      <Filter>Kernel</Filter>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Assertion.cpp">
+      <Filter>Kernel\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Framework\Kernel\Assertion.cpp">
-      <Filter>Kernel</Filter>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Memory.cpp">
+      <Filter>Kernel\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Framework\Kernel\Memory.cpp">
-      <Filter>Kernel</Filter>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Registration.cpp">
+      <Filter>Kernel\Common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

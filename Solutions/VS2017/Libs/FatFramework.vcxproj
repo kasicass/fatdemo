@@ -22,21 +22,21 @@
     <ClInclude Include="..\..\..\Src\Framework\Application\Application.h" />
     <ClInclude Include="..\..\..\Src\Framework\Application\IApplication.h" />
     <ClInclude Include="..\..\..\Src\Framework\FatFramework.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Assertion.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\INonCopyable.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Memory.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Assertion.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\INonCopyable.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Memory.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Registration.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformDefines.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Registration.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\TCharTraits.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\TStackString.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\TString.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TCharTraits.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TStackString.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TString.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Types.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp" />
-    <ClCompile Include="..\..\..\Src\Framework\Kernel\Assertion.cpp" />
-    <ClCompile Include="..\..\..\Src\Framework\Kernel\Memory.cpp" />
-    <ClCompile Include="..\..\..\Src\Framework\Kernel\Registration.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Assertion.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Memory.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Registration.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
