@@ -26,6 +26,7 @@ Bool FailureReport(const wchar_t* format, ...)
 
 	FatLog(msg.c_str());
 
+#if defined(FAT_OS_WINDOWS)
 	Int32 n = MessageBox(NULL, msg.c_str(), L"FatFramework: Assertion failed", MB_ABORTRETRYIGNORE);
 	switch (n)
 	{
@@ -33,6 +34,9 @@ Bool FailureReport(const wchar_t* format, ...)
 	case IDIGNORE: return false;       // Continue execution
 	default: return true;              // Generate a breakpoint
 	}
+#else
+	return true;
+#endif
 }
 
 }}
