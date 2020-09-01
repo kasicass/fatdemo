@@ -1,6 +1,6 @@
 mode: lib
 
-out: ../../BinLib/FatCommon.a
+out: ../../BinLib/FatFramework.a
 int: ../../BinTemp/FatFramework
 
 link: stdc++

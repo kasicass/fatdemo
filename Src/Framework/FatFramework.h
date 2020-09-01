@@ -14,9 +14,9 @@
 #  define WIN32_LEAN_AND_MEAN
 #  define NOMINMAX
 #  include <Windows.h>
-
 #  define FAT_THREAD_LOCAL __declspec(thread)
 #else
+#  include <signal.h>
 #  define FAT_THREAD_LOCAL
 #endif
 

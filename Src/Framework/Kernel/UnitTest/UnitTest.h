@@ -36,6 +36,7 @@
 
 namespace Fat {
 
+class UnitTestCase;
 class IUnitTestManager
 {
 public:
@@ -60,7 +61,7 @@ public:
 
 private:
 	friend class UnitTestManager;
-	virtual void operator()();
+	void operator()();
 
 	TFuncType pFunc_;
 	const wchar_t* name_;
@@ -72,7 +73,8 @@ class UnitTestFailureException : public std::exception {};
 
 #define TEST(TestFunction)\
 	void TestFunction();\
-	static Fat::UnitTestCase _fatTestCase_##TestFunction(TestFunction, L#TestFunction);\
+	static Fat::UnitTestCase _fatTestCase_##TestFunction(TestFunction, FAT_CONCAT(L, #TestFunction));\
 	void TestFunction()
 
 #endif
+

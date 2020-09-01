@@ -11,4 +11,5 @@ else
 fi
 
 emake --ini=$BUILD_INI FatFramework.mak
-emake --ini=$BUILD_INI 01-UnitTest.mak
+emake --ini=$BUILD_INI 00-UnitTest.mak
+

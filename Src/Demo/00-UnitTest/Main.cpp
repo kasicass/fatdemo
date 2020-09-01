@@ -6,9 +6,7 @@ class UnitTestApp : public Application
 public:
 	virtual void Run() override;
 };
-
-UnitTestApp unitTestApp;
-IApplication* Fat::theApp = &unitTestApp;
+FAT_APP_DEFINE(UnitTestApp)
 
 void UnitTestApp::Run()
 {
@@ -18,3 +16,4 @@ void UnitTestApp::Run()
 	FatLog(L"FAT_ENABLE_UNITTEST is off");
 #endif
 }
+

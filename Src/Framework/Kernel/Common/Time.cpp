@@ -55,7 +55,7 @@ public:
 	virtual F32 ComputeAppTime() const override;
 
 private:
-	Int64 GetCurrentTicks();
+	static Int64 GetCurrentTicks();
 
 	F64 invFrequency_;
 	Int64 initCounter_;
@@ -236,3 +236,4 @@ TEST(TimeFpsCounter)
 #endif
 
 }
+

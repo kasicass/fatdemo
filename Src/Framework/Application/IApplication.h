@@ -13,3 +13,8 @@ struct IApplication
 extern IApplication* theApp;
 
 }
+
+#define FAT_APP_DEFINE(ClassName)\
+	static ClassName myApp;\
+	Fat::IApplication* Fat::theApp = &myApp;
+
