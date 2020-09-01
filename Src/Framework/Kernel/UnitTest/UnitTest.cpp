@@ -106,7 +106,6 @@ UnitTestCase::UnitTestCase(TFuncType pFunc, const wchar_t* name) :
 	pFunc_(pFunc),
 	name_(name)
 {
-	theUnitTestMgr->RegisterTestCase(*this);
 }
 
 UnitTestCase::~UnitTestCase()
@@ -116,6 +115,11 @@ UnitTestCase::~UnitTestCase()
 const wchar_t* UnitTestCase::GetName() const
 {
 	return name_;
+}
+
+void UnitTestCase::RegisterMe()
+{
+	theUnitTestMgr->RegisterTestCase(*this);
 }
 
 void UnitTestCase::operator()()
@@ -132,26 +136,6 @@ void UnitTestCase::operator()()
 	}
 
 	theUnitTestMgr->NotifyEndedTest(*this, succeed);
-}
-
-//
-// Self tests
-//
-
-TEST(UnitTestSelfTest)
-{
-	FatTest(true);
-
-	FatTest(0 == 0);
-	FatTest(0.f == 0.f);
-	FatTest(0 != 1);
-	FatTest(0.f != 1.f);
-
-	FatAssert(true, L"Internal unit test assertion");
-	FatTestAssert(FatAssert(false, L"Internal unit test assertion"));
-
-	FatValidate(true, L"Internal unit test validation");
-	FatTestAssert(FatValidate(false, L"Internal unit test validation"));
 }
 
 }

@@ -191,49 +191,4 @@ void FpsAutoCounter::Update()
 	lastTime_ = currentTime;
 }
 
-//
-// Time - UnitTest
-//
-
-#if defined(FAT_ENABLE_UNITTEST)
-
-TEST(TestTime)
-{
-	const Time beginTime = Time::GetAppTime();
-	Time zeroTime;
-
-	FatTest(zeroTime.GetSeconds() == 0.f);
-	FatTest(beginTime.GetSeconds() > 0.f);
-	FatTest(beginTime.GetSeconds() < Time::GetAppTime().GetSeconds());
 }
-
-TEST(TimeFpsCounter)
-{
-	const F32 meanTime = 3.f;
-	const F32 frameTime = 0.01f;
-	const UInt32 requiredLoops = UInt32(meanTime / frameTime);
-	const UInt32 estimatedFps = UInt32(1.f / frameTime);
-
-	FpsCounter counter(meanTime);
-
-	// first loop
-	for (UInt32 i = 0; i < (requiredLoops+1); ++i)
-	{
-		counter.Update(frameTime);
-	}
-
-	FatTest(counter.GetFramePerSecond() == estimatedFps);
-
-	// second loop
-	for (UInt32 i = 0; i < requiredLoops; ++i)
-	{
-		counter.Update(frameTime);
-	}
-
-	FatTest(counter.GetFramePerSecond() == estimatedFps);
-}
-
-#endif
-
-}
-

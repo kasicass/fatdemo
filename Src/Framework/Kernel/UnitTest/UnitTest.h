@@ -25,7 +25,7 @@
 			break;\
 		}\
 		/* No assertion produced so report the failure */\
-		throw UnitTestFailureException();\
+		throw Fat::UnitTestFailureException();\
 	} while(false)
 
 #else
@@ -58,6 +58,7 @@ public:
 	~UnitTestCase();
 
 	const wchar_t* GetName() const;
+	void RegisterMe();
 
 private:
 	friend class UnitTestManager;
@@ -71,10 +72,13 @@ class UnitTestFailureException : public std::exception {};
 
 }
 
-#define TEST(TestFunction)\
+#define TEST_DECLARE(TestFunction)\
 	void TestFunction();\
-	static Fat::UnitTestCase _fatTestCase_##TestFunction(TestFunction, FAT_CONCAT(L, #TestFunction));\
+	Fat::UnitTestCase _fatTestCase_##TestFunction(TestFunction, FAT_CONCAT(L, #TestFunction));\
 	void TestFunction()
 
-#endif
+#define TEST_REGISTER(TestFunction)\
+	extern Fat::UnitTestCase _fatTestCase_##TestFunction;\
+	_fatTestCase_##TestFunction.RegisterMe()
 
+#endif

@@ -2,5 +2,8 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Main.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\TimeTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\AtomicIntTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\UnitTestSelfTest.cpp" />
   </ItemGroup>
 </Project>
