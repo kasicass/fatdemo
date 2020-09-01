@@ -2,31 +2,43 @@
 
 namespace Fat {
 
-#if defined(FAT_DEBUG_BUILD)
+#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
 
 // Memory leak detection
-// TODO
+static void DetectMemoryLeak(ERegisteredOperation::EValue op)
+{
+	static _CrtMemState s_bootMemState;
+
+	if (op == ERegisteredOperation::eInitialize)
+	{
+		// Perform automatic leak checking at program exit
+		_CrtSetDbgFlag(_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) | _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
+		// Store the memory state at application boot time
+		_CrtMemCheckpoint(&s_bootMemState);
+	}
+	else if (op == ERegisteredOperation::eDestory)
+	{
+		// Store the current memory state
+		_CrtMemState currMemState;
+		_CrtMemCheckpoint(&currMemState);
+
+		// Compute memory state difference since boot
+		_CrtMemState diffMemState;
+		if (_CrtMemDifference(&diffMemState, &s_bootMemState, &currMemState))
+		{
+			// Dump all unfreed allocation since boot time
+			_CrtMemDumpAllObjectsSince(&s_bootMemState);
+
+			// Inform user of the leaks
+			FatAssert(false, L"Memory leaks detected, see debugger output");
+		}
+	}
+}
+
+FAT_REGISTER_FUNCTION(&DetectMemoryLeak, ERegisterPrimaryPriority::eReserved, ERegisterSecondaryPriority::eHighest);
 
 #endif
-
-void* FatMalloc(UInt32 size, UInt32 align)
-{
-	void* p = _aligned_malloc(size, align);
-	FatAssert(p != NULL, L"aligned_malloc failed");
-	return p;
-}
-
-void* FatRealloc(void* p, UInt32 size, UInt32 align)
-{
-	void* pNew = _aligned_realloc(p, size, align);
-	FatAssert(pNew != NULL, L"aligned_realloc failed");
-	return pNew;
-}
-
-void FatFree(void* p)
-{
-	_aligned_free(p);
-}
 
 void MemoryCopy(void* pDest, const void* pSource, UInt32 count)
 {

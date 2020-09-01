@@ -136,6 +136,7 @@ public:
 	//
 
 	MyType& Format(const_str format, ...);
+	MyType& FormatV(const_str format, va_list argList);
 
 	MyType& MakeLower();
 	MyType& MakeUpper();
@@ -959,7 +960,14 @@ inline TStackString<T,S>& TStackString<T,S>::Format(const_str format, ...)
 {
 	va_list argList;
 	va_start(argList, format);
+	FormatV(format, argList);
+	va_end(argList);
+	return *this;
+}
 
+template <typename T, size_t S>
+inline TStackString<T,S>& TStackString<T,S>::FormatV(const_str format, va_list argList)
+{
 	// _vsnprintf/vsnprintf return value is different in win32/linux
 	// win32 - not put '\0' for us, will return -1
 	// linux - put '\0' for us, not return -1
@@ -971,8 +979,6 @@ inline TStackString<T,S>& TStackString<T,S>::Format(const_str format, ...)
 		n = (int)capacity();
 	length_ = (size_t)n;
 	str_[n] = '\0';
-
-	va_end(argList);
 	return *this;
 }
 

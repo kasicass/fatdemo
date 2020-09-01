@@ -42,9 +42,14 @@
 
 // Preprocessor definition
 #if defined(FAT_DEBUG_BUILD)
-#  define FAT_USE_ASSERT
-#  define FAT_USE_UNITTEST
-#  define FAT_USE_LOG
+#  define FAT_ENABLE_ASSERT
+#  define FAT_ENABLE_UNITTEST
+#  define FAT_ENABLE_LOG
 #else
-#  define FAT_USE_LOG
+#  define FAT_ENABLE_LOG
+#endif
+
+// Memory Leak Detection
+#if defined(FAT_OS_WINDOWS) && defined(FAT_DEBUG_BUILD)
+#  define FAT_ENABLE_MEMORY_LEAK_DETECTION
 #endif

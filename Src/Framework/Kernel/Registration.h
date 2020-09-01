@@ -14,7 +14,7 @@ FAT_ENUM_BEGIN(ERegisterPrimaryPriority)
 	eVeryLow,
 	eLowest,
 
-#if defined(FAT_USE_UNITTEST)
+#if defined(FAT_ENABLE_UNITTEST)
 	eUnitTest,		// Unit tests execution
 #endif
 FAT_ENUM_END()
@@ -69,8 +69,8 @@ private:
 class Registration
 {
 public:
-	static void CallInitialize();
-	static void CallDestroy();
+	static void CallInitialize(); // Call register object initialization operation starting with the highest prioritary one
+	static void CallDestroy();    // Call register object destruction operation starting with the less prioritary one
 
 private:
 	friend class IRegisteredObject;
@@ -85,7 +85,7 @@ private:
 }
 
 #define FAT_REGISTER_OBJECT(ClassName, ...) \
-	static ClassName FAT_CONCAT(_fatRegisteredObject, __COUNTER__)(__VAR_ARGS__)
+	static ClassName FAT_CONCAT(_fatRegisteredObject, __COUNTER__)(__VA_ARGS__)
 
 #define FAT_REGISTER_FUNCTION(_func, _primaryPrio, _secondaryPrio) \
 	FAT_REGISTER_OBJECT(Fat::RegisteredFunction, _func, _primaryPrio, _secondaryPrio)

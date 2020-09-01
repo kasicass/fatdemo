@@ -136,6 +136,7 @@ public:
 	//
 
 	MyType& Format(const_str format, ...);
+	MyType& FormatV(const_str format, va_list argList);
 
 	MyType& MakeLower();
 	MyType& MakeUpper();
@@ -1207,19 +1208,25 @@ TString<T>& TString<T>::operator+=(value_type ch)
 template <typename T>
 inline TString<T>& TString<T>::Format(const_str format, ...)
 {
+	va_list argList;
+	va_start(argList, format);
+	FormatV(format, argList);
+	va_end(argList);
+	return *this;
+}
+
+template <typename T>
+inline TString<T>& TString<T>::FormatV(const_str format, va_list argList)
+{
 #define BUFSIZE 4096
 
 	value_type temp[BUFSIZE];
-	va_list argList;
-	va_start(argList, format);
 
 	// see TStackString::Format()
 	int n = CharTraits<T>::vsnprintf(temp, BUFSIZE, format, argList);
 	if (n < 0 || n > (BUFSIZE-1))
 		n = (BUFSIZE-1);
 	temp[n] = '\0';
-
-	va_end(argList);
 
 	*this = temp;
 	return *this;

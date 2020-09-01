@@ -2,24 +2,13 @@
 
 namespace Fat {
 
-#if defined(FAT_USE_ASSERT)
-
-#define FatAssert(condition, ...) \
-	{\
-		if ((condition) == false)\
-		{\
-			if (Fat::Assertion::FailureReport(__VA_ARGS__))\
-			{\
-				__debugbreak();\
-			}\
-		}\
-	}
+#if defined(FAT_ENABLE_ASSERT)
 
 namespace Assertion
 {
 	Bool FailureReport(const wchar_t* format, ...);
 
-#if defined(FAT_USE_UNITTEST)
+#if defined(FAT_ENABLE_UNITTEST)
 	// RAII object that enable UnitTest assertion report rather than the default report
 	class UnitTestAssertionEnabler
 	{
@@ -47,6 +36,17 @@ namespace Assertion
 #endif
 }
 
+#define FatAssert(condition, ...) \
+	{\
+		if ((condition) == false)\
+		{\
+			if (Fat::Assertion::FailureReport(__VA_ARGS__))\
+			{\
+				__debugbreak();\
+			}\
+		}\
+	}
+
 #define FatIfBuildAssertion(...) __VA_ARGS__
 
 #else
@@ -63,8 +63,8 @@ namespace Assertion
 		FatAssert(ok, __VA_ARGS__);\
 	}
 
-#define FatAssertNoText(condition) FatAssert(condition, "Assertion failed")
-#define FatAssertUnreachableCode() FatAssert(false, "Code should not be reached")
-#define FatValidateNoText(condition) FatValidate(condition, "VAlidation failed")
+#define FatAssertNoText(condition) FatAssert(condition, L"Assertion failed")
+#define FatAssertUnreachableCode() FatAssert(false, L"Code should not be reached")
+#define FatValidateNoText(condition) FatValidate(condition, L"Validation failed")
 
 }
