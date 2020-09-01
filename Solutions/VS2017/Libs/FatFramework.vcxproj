@@ -23,9 +23,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Application\IApplication.h" />
     <ClInclude Include="..\..\..\Src\Framework\FatFramework.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Assertion.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\INonCopyable.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Log.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Memory.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\NonCopyable.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformDefines.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TCharTraits.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TStackString.h" />

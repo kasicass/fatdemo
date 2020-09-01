@@ -1,7 +1,7 @@
 # FAT DEMO
 
  * a simple render framework for algorithm testing
- * framwork init from "Cross-Platform Rendering Thread: Design and Implementation", ShaderX 7
+ * framework init from "Cross-Platform Rendering Thread: Design and Implementation", ShaderX 7
 
 ## Directory Layout
 
