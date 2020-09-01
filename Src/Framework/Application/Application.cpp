@@ -12,14 +12,16 @@ Application::~Application()
 
 void Application::Init()
 {
-	Registration::CallInitialize();
-	printf("Application::Init()\n");
+	// Registration::CallInitialize();
+	theMemMgr->Init();
+	FatLog(L"Application::Init()");
 }
 
 void Application::Shutdown()
 {
-	printf("Application::Shutdown()\n");
-	Registration::CallDestroy();
+	FatLog(L"Application::Shutdown()");
+	theMemMgr->Shutdown();
+	// Registration::CallDestroy();
 }
 
 }

@@ -2,43 +2,51 @@
 
 namespace Fat {
 
-#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
-
-// Memory leak detection
-static void DetectMemoryLeak(ERegisteredOperation::EValue op)
+class MemoryManager : public IMemoryManager
 {
-	static _CrtMemState s_bootMemState;
+public:
+	virtual void Init() override;
+	virtual void Shutdown() override;
 
-	if (op == ERegisteredOperation::eInitialize)
-	{
-		// Perform automatic leak checking at program exit
-		_CrtSetDbgFlag(_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) | _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+private:
+#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
+	_CrtMemState bootMemState_;
+#endif
+};
 
-		// Store the memory state at application boot time
-		_CrtMemCheckpoint(&s_bootMemState);
-	}
-	else if (op == ERegisteredOperation::eDestory)
-	{
-		// Store the current memory state
-		_CrtMemState currMemState;
-		_CrtMemCheckpoint(&currMemState);
+void MemoryManager::Init()
+{
+#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
+	// Perform automatic leak checking at program exit
+	_CrtSetDbgFlag(_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) | _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
-		// Compute memory state difference since boot
-		_CrtMemState diffMemState;
-		if (_CrtMemDifference(&diffMemState, &s_bootMemState, &currMemState))
-		{
-			// Dump all unfreed allocation since boot time
-			_CrtMemDumpAllObjectsSince(&s_bootMemState);
-
-			// Inform user of the leaks
-			FatAssert(false, L"Memory leaks detected, see debugger output");
-		}
-	}
+	// Store the memory state at application boot time
+	_CrtMemCheckpoint(&bootMemState_);
+#endif
 }
 
-FAT_REGISTER_FUNCTION(&DetectMemoryLeak, ERegisterPrimaryPriority::eReserved, ERegisterSecondaryPriority::eHighest);
+void MemoryManager::Shutdown()
+{
+#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
+	// Store the current memory state
+	_CrtMemState currMemState;
+	_CrtMemCheckpoint(&currMemState);
 
+	// Compute memory state difference since boot
+	_CrtMemState diffMemState;
+	if (_CrtMemDifference(&diffMemState, &bootMemState_, &currMemState))
+	{
+		// Dump all unfreed allocation since boot time
+		_CrtMemDumpAllObjectsSince(&bootMemState_);
+
+		// Inform user of the leaks
+		FatAssert(false, L"Memory leaks detected, see debugger output");
+	}
 #endif
+}
+
+static MemoryManager myMemMgr;
+IMemoryManager* theMemMgr = &myMemMgr;
 
 void MemoryCopy(void* pDest, const void* pSource, UInt32 count)
 {

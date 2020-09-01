@@ -26,7 +26,6 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\INonCopyable.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Log.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Memory.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Registration.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformDefines.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TCharTraits.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TStackString.h" />
@@ -38,7 +37,6 @@
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Assertion.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Log.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Memory.cpp" />
-    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Registration.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

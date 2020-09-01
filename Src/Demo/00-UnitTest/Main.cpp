@@ -14,8 +14,9 @@ void UnitTestApp::Run()
 {
 	int* p = (int*)FatMalloc(sizeof(int)*10);
 	MemorySet(p, 0, sizeof(int)*10);
-	printf("UnitTestApp::Run()\n");
 	FatFree(p);
+
+	FatLog(L"UnitTestApp::Run()");
 
 	p = FatNew(int, 10);
 	FatDelete(p);
