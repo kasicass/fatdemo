@@ -46,6 +46,51 @@ F32 PerformanceCounter::ComputeAppTime() const
 
 #else
 
+class PerformanceCounter : public IPerformanceCounter
+{
+public:
+	virtual void Init() override;
+	virtual void Shutdown() override;
+
+	virtual F32 ComputeAppTime() const override;
+
+private:
+	Int64 GetCurrentTicks();
+
+	F64 invFrequency_;
+	Int64 initCounter_;
+};
+
+Int64 PerformanceCounter::GetCurrentTicks()
+{
+	timespec tv;
+	clock_gettime(CLOCK_MONOTONIC, &tv);
+	return (Int64)tv.tv_sec*1000000 + tv.tv_nsec/1000;
+}
+
+void PerformanceCounter::Init()
+{
+	FatLog(L"<PerfCounter>: Init");
+
+	invFrequency_ = 1.0 / F64(1000000);
+	initCounter_  = GetCurrentTicks();
+}
+
+void PerformanceCounter::Shutdown()
+{
+	FatLog(L"<PerfCounter>: Shutdown");
+}
+
+F32 PerformanceCounter::ComputeAppTime() const
+{
+	Int64 currentCounter = GetCurrentTicks();
+
+	const F64 deltaCounter = F64(currentCounter - initCounter_);
+	const F64 deltaTime = deltaCounter * invFrequency_;
+
+	return F32(deltaTime);
+}
+
 #endif
 
 //
