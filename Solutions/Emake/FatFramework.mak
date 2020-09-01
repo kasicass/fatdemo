@@ -17,6 +17,7 @@ src: ../../Src/Framework/Kernel/Common/Log.cpp
 src: ../../Src/Framework/Kernel/Common/Memory.cpp
 src: ../../Src/Framework/Kernel/Common/Time.cpp
 src: ../../Src/Framework/Kernel/UnitTest/UnitTest.cpp
+src: ../../Src/Framework/Kernel/Thread/AtomicInt.cpp
 
 # Application
 src: ../../Src/Framework/Application/Application.cpp

@@ -22,7 +22,7 @@ void FatFree(void* p)
 void* FatMalloc(UInt32 size, UInt32 align)
 {
 	void* p;
-	int ret = posix_memalign(&p, align, size);
+	FatIfBuildAssertion(int ret =) posix_memalign(&p, align, size);
 	FatAssert(ret == 0, L"Malloc failed");
 	return p;
 }
