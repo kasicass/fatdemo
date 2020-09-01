@@ -23,7 +23,7 @@ Bool FailureReport(const wchar_t* format, ...)
 	msg.FormatV(format, argList);
 	va_end(argList);
 
-	// FatLog(msg.c_str());
+	FatLog(msg.c_str());
 
 	Int32 n = MessageBox(NULL, msg.c_str(), L"FatFramework: Assertion failed", MB_ABORTRETRYIGNORE);
 	switch (n)

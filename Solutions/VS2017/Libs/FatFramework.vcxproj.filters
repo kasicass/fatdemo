@@ -55,6 +55,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Registration.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Log.h">
+      <Filter>Kernel\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -67,6 +70,9 @@
       <Filter>Kernel\Common</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Registration.cpp">
+      <Filter>Kernel\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Log.cpp">
       <Filter>Kernel\Common</Filter>
     </ClCompile>
   </ItemGroup>

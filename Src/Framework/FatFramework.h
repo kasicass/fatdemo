@@ -78,6 +78,7 @@
 
 // FatFramework stuff
 #include "Kernel/Types.h"
+#include "Kernel/Common/Log.h"
 #include "Kernel/Common/Assertion.h"
 #include "Kernel/Common/Memory.h"
 #include "Kernel/Common/INonCopyable.h"
