@@ -15,17 +15,8 @@
 
 #else
 
-inline void* FatMalloc(UInt32 size, UInt32 align = 16)
-{
-	void* p = fat_aligned_malloc(size, align);
-	FatAssert(p != NULL, L"Malloc failed");
-	return p;
-}
-
-inline void FatFree(void* p)
-{
-	fat_aligned_free(p);
-}
+void* FatMalloc(UInt32 size, UInt32 align = 16);
+void FatFree(void* p);
 
 #define FatNew(Type, ...) new Type(__VA_ARGS__)
 #define FatNewArray(Type, Count) new Type[Count]
