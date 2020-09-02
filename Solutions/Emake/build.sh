@@ -1,7 +1,6 @@
 
 OSNAME=`uname | tr '[:upper:]' '[:lower:]'`
 BUILD_CONF=`echo $1 | tr '[:upper:]' '[:lower:]'`
-
 if [ "$BUILD_CONF" == "debug" ] || [ "$BUILD_CONF" == "release" ] ; then
 	BUILD_INI="${OSNAME}_${BUILD_CONF}.ini"
 else

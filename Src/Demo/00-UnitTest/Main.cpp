@@ -14,7 +14,7 @@ void UnitTestApp::Run()
 	TEST_REGISTER(UnitTestSelfTest);
 	TEST_REGISTER(TestTime);
 	TEST_REGISTER(TestFpsCounter);
-	TEST_REGISTER(TestAtomicInt);
+//	TEST_REGISTER(TestAtomicInt);
 	theUnitTestMgr->Run();
 #else
 	FatLog(L"FAT_ENABLE_UNITTEST is off");
