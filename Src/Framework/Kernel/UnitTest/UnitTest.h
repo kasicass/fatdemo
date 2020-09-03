@@ -6,7 +6,7 @@
 	do{\
 		if ((x_Test) == false)\
 		{\
-			throw Fat::UnitTestFailureException();\
+			throw Fat::UnitTestFailureException(FAT_CONCAT(L,#x_Test), FAT_CONCAT(L,__FILE__), __LINE__);\
 		}\
 	} while(false)
 
@@ -25,7 +25,7 @@
 			break;\
 		}\
 		/* No assertion produced so report the failure */\
-		throw Fat::UnitTestFailureException();\
+		throw Fat::UnitTestFailureException(FAT_CONCAT(L,#x_Test), FAT_CONCAT(L,__FILE__), __LINE__);\
 	} while(false)
 
 #else
@@ -37,6 +37,8 @@
 namespace Fat {
 
 class UnitTestCase;
+class UnitTestFailureException;
+
 class IUnitTestManager
 {
 public:
@@ -45,6 +47,8 @@ public:
 private:
 	friend class UnitTestCase;
 	virtual void RegisterTestCase(const UnitTestCase& testCase) = 0;
+
+	virtual void NotifyTestFail(const UnitTestFailureException& e) = 0;
 	virtual void NotifyEndedTest(const UnitTestCase& testCase, Bool succeded) = 0;
 };
 extern IUnitTestManager* theUnitTestMgr;
@@ -68,7 +72,20 @@ private:
 	const wchar_t* name_;
 };
 
-class UnitTestFailureException : public std::exception {};
+class UnitTestFailureException
+{
+public:
+	UnitTestFailureException(const wchar_t* what, const wchar_t* file, int line);
+
+	const wchar_t* What() const;
+	const wchar_t* File() const;
+	int Line() const;
+	
+private:
+	const wchar_t* what_;
+	const wchar_t* file_;
+	int line_;
+};
 
 }
 

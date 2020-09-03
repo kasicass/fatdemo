@@ -15,6 +15,7 @@ public:
 
 private:
 	virtual void RegisterTestCase(const UnitTestCase& testCase) override;
+	virtual void NotifyTestFail(const UnitTestFailureException& e) override;
 	virtual void NotifyEndedTest(const UnitTestCase& testCase, Bool succeded) override;
 
 private:
@@ -81,6 +82,11 @@ void UnitTestManager::RegisterTestCase(const UnitTestCase& testCase)
 	testCases_->push_back(testCase);
 }
 
+void UnitTestManager::NotifyTestFail(const UnitTestFailureException& e)
+{
+	FatLog(L" - \"%ls\" fails at (%ls:%d)", e.What(), e.File(), e.Line());
+}
+
 void UnitTestManager::NotifyEndedTest(const UnitTestCase& testCase, Bool succeded)
 {
 	FatLog(L" - test %u (%ls) : %ls",
@@ -130,12 +136,39 @@ void UnitTestCase::operator()()
 	{
 		(*pFunc_)();
 	}
-	catch (UnitTestFailureException&)
+	catch (UnitTestFailureException& e)
 	{
 		succeed = false;
+		theUnitTestMgr->NotifyTestFail(e);
 	}
 
 	theUnitTestMgr->NotifyEndedTest(*this, succeed);
+}
+
+//
+// UnitTestFailureException
+//
+
+UnitTestFailureException::UnitTestFailureException(const wchar_t* what, const wchar_t* file, int line) :
+	what_(what),
+	file_(file),
+	line_(line)
+{
+}
+
+const wchar_t* UnitTestFailureException::What() const
+{
+	return what_;
+}
+
+const wchar_t* UnitTestFailureException::File() const
+{
+	return file_;
+}
+
+int UnitTestFailureException::Line() const
+{
+	return line_;
 }
 
 }
