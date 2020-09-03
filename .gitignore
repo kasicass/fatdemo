@@ -21,3 +21,8 @@ Bin32
 Bin64
 BinLib
 BinTemp
+
+.idea
+.gradle
+.cxx
+local.properties
