@@ -6,22 +6,14 @@ namespace Fat {
 
 void LogPrintf(const wchar_t* format, ...)
 {
-	StackWString tmp;
+	StackWString msg;
 
 	va_list argList;
 	va_start(argList, format);
-	tmp.FormatV(format, argList);
+	msg.FormatV(format, argList);
 	va_end(argList);
-
-	StackWString msg = L"[FAT] ";
-	msg += tmp;
-	msg += L'\n';
-
-#if defined(FAT_OS_WINDOWS)
-	OutputDebugString(msg.c_str());
-#endif
-
-	wprintf(msg.c_str());
+		
+	OS::Println(msg.c_str());
 }
 
 }

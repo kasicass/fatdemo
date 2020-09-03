@@ -28,6 +28,9 @@ void Application::Shutdown()
 
 }
 
+
+#if !defined(FAT_OS_ANDROID)
+
 using namespace Fat;
 
 int main(int argc, char *argv[])
@@ -38,3 +41,4 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
+#endif

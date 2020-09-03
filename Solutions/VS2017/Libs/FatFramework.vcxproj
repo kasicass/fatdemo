@@ -26,6 +26,7 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Log.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Memory.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\NonCopyable.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\OS.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Time.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformDefines.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TCharTraits.h" />
@@ -37,9 +38,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Application\Application_Android.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Assertion.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Log.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Memory.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\OS.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Time.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\AtomicInt.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\UnitTest\UnitTest.cpp" />

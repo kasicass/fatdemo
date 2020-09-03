@@ -18,6 +18,9 @@
 #else
 #  include <signal.h>
 #  define FAT_THREAD_LOCAL
+#  if defined(FAT_OS_ANDROID)
+#    include <android/log.h>
+#  endif
 #endif
 
 // c headers
@@ -63,9 +66,6 @@
 #define fat_wcsicmp    _wcsicmp
 #define fat_wcsnicmp   _wcsnicmp
 
-#define fat_aligned_malloc(size, align) _aligned_malloc(size, align)
-#define fat_aligned_free(p)             _aligned_free(p)
-
 #if defined(FAT_DEBUG_BUILD)
 #define fat_debugbreak()                __debugbreak()
 #else
@@ -83,9 +83,6 @@
 #define fat_wcsicmp    wcscasecmp
 #define fat_wcsnicmp   wcsncasecmp
 
-#define fat_aligned_malloc(size, align) aligned_alloc(align, size)
-#define fat_aligned_free(p)             free(p)
-
 #if defined(FAT_DEBUG_BUILD)
 #define fat_debugbreak()                raise(SIGTRAP)
 #else
@@ -96,6 +93,7 @@
 
 // FatFramework stuff
 #include "Kernel/Types.h"
+#include "Kernel/Common/OS.h"
 #include "Kernel/Common/Log.h"
 #include "Kernel/Common/Assertion.h"
 #include "Kernel/Common/Memory.h"

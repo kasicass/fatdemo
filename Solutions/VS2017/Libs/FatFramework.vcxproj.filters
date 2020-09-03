@@ -67,6 +67,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\AtomicInt.h">
       <Filter>Kernel\Thread</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\OS.h">
+      <Filter>Kernel\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -89,6 +92,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\AtomicInt.cpp">
       <Filter>Kernel\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\OS.cpp">
+      <Filter>Kernel\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Application\Application_Android.cpp">
+      <Filter>Application</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
