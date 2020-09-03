@@ -1,5 +1,27 @@
 #include "FatFramework.h"
 
+namespace Fat { namespace Atomic {
+
+// It has to do with the shared memory consistency model that the hardware implements. 
+// For those hardware architectures that implement some kind of relaxed consistency model
+// (e.g. release semantics), the strong operations you refer to above can have a high overhead,
+// and thus experts can use the weaker forms to implement algorithms that perform well also
+// on those relaxed consistency architectures.
+//
+// For more info, see e.g. http://www.hpl.hp.com/techreports/Compaq-DEC/WRL-95-7.pdf
+//
+// Chapter 12 and Appendix C in http://kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html
+
+Int32 CompareExchange(AtomicInt& atom, Int32 comperand, Int32 exchange)
+{
+	atom.compare_exchange_weak(comperand, exchange);
+	return comperand;
+}
+
+}}
+
+#if 0
+
 namespace Fat {
 
 namespace Interlocked {
@@ -132,3 +154,5 @@ AtomicInt::operator Int32() const
 }
 
 }
+
+#endif

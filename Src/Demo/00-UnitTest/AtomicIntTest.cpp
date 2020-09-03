@@ -27,9 +27,9 @@ TEST_DECLARE(TestAtomicInt)
 	FatTest(value == 21);
 
 	// CompareExchange
-	FatTest(value.CompareExchange(21, 12) == 21);
+	FatTest(Atomic::CompareExchange(value, 21, 12) == 21);
 	FatTest(value == 12);
-	FatTest(value.CompareExchange(21, 0) == 12);
+	FatTest(Atomic::CompareExchange(value, 21, 0) == 12);
 	FatTest(value == 12);
 
 	// Operators

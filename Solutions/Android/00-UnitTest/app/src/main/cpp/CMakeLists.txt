@@ -32,6 +32,7 @@ set(CMAKE_SHARED_LINKER_FLAGS
 add_library(00-UnitTest SHARED
     ../../../../../../../Src/Demo/00-UnitTest/Main.cpp
     ../../../../../../../Src/Demo/00-UnitTest/TimeTest.cpp
+    ../../../../../../../Src/Demo/00-UnitTest/AtomicIntTest.cpp
     ../../../../../../../Src/Demo/00-UnitTest/UnitTestSelfTest.cpp
     ../../../../../../../Src/Framework/Kernel/Common/Assertion.cpp
     ../../../../../../../Src/Framework/Kernel/Common/Log.cpp
@@ -39,6 +40,7 @@ add_library(00-UnitTest SHARED
     ../../../../../../../Src/Framework/Kernel/Common/Time.cpp
     ../../../../../../../Src/Framework/Kernel/Common/OS.cpp
     ../../../../../../../Src/Framework/Kernel/UnitTest/UnitTest.cpp
+    ../../../../../../../Src/Framework/Kernel/Thread/AtomicInt.cpp
     ../../../../../../../Src/Framework/Application/Application.cpp
     ../../../../../../../Src/Framework/Application/Application_Android.cpp
     )

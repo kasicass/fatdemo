@@ -38,6 +38,7 @@
 #include <vector>
 #include <list>
 #include <map>
+#include <atomic>
 
 // helper macros
 #define FAT_ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
