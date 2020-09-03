@@ -26,6 +26,20 @@ void Application::Shutdown()
 	// Registration::CallDestroy();
 }
 
+void Application::Update()
+{
+}
+
+void Application::Draw()
+{
+}
+
+#if !defined(FAT_OS_ANDROID)
+void Application::Run()
+{
+}
+#endif
+
 }
 
 

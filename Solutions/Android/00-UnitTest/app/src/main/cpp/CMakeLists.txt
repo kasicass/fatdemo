@@ -37,8 +37,10 @@ add_library(00-UnitTest SHARED
     ../../../../../../../Src/Framework/Kernel/Common/Log.cpp
     ../../../../../../../Src/Framework/Kernel/Common/Memory.cpp
     ../../../../../../../Src/Framework/Kernel/Common/Time.cpp
+    ../../../../../../../Src/Framework/Kernel/Common/OS.cpp
     ../../../../../../../Src/Framework/Kernel/UnitTest/UnitTest.cpp
     ../../../../../../../Src/Framework/Application/Application.cpp
+    ../../../../../../../Src/Framework/Application/Application_Android.cpp
     )
 
 target_include_directories(00-UnitTest PRIVATE

@@ -4,12 +4,14 @@ using namespace Fat;
 class UnitTestApp : public Application
 {
 public:
-	virtual void Run() override;
+	virtual void Init() override;
 };
 FAT_APP_DEFINE(UnitTestApp)
 
-void UnitTestApp::Run()
+void UnitTestApp::Init()
 {
+	Application::Init();
+
 #if defined(FAT_ENABLE_UNITTEST)
 	TEST_REGISTER(UnitTestSelfTest);
 	TEST_REGISTER(TestTime);
