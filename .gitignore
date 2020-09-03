@@ -25,4 +25,6 @@ BinTemp
 .idea
 .gradle
 .cxx
+build
 local.properties
+setup_build_env.cmd

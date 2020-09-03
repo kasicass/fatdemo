@@ -22,27 +22,31 @@ add_library(native_app_glue STATIC
     ${ANDROID_NDK}/sources/android/native_app_glue/android_native_app_glue.c)
 
 # now build app's shared lib
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -Wall -Werror -DFAT_DEBUG_BUILD")
 
 # Export ANativeActivity_onCreate(),
 # Refer to: https://github.com/android-ndk/ndk/issues/381.
 set(CMAKE_SHARED_LINKER_FLAGS
     "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_onCreate")
 
-add_library(Hello_Triangle SHARED
-    ../../../../../../../Common/Source/Android/esUtil_Android.c
-    ../../../../../../../Common/Source/esShader.c
-    ../../../../../../../Common/Source/esShapes.c
-    ../../../../../../../Common/Source/esTransform.c
-    ../../../../../../../Common/Source/esUtil.c
-    ../../../../../Hello_Triangle.c)
+add_library(00-UnitTest SHARED
+    ../../../../../../../Src/Demo/00-UnitTest/Main.cpp
+    ../../../../../../../Src/Demo/00-UnitTest/TimeTest.cpp
+    ../../../../../../../Src/Demo/00-UnitTest/UnitTestSelfTest.cpp
+    ../../../../../../../Src/Framework/Kernel/Common/Assertion.cpp
+    ../../../../../../../Src/Framework/Kernel/Common/Log.cpp
+    ../../../../../../../Src/Framework/Kernel/Common/Memory.cpp
+    ../../../../../../../Src/Framework/Kernel/Common/Time.cpp
+    ../../../../../../../Src/Framework/Kernel/UnitTest/UnitTest.cpp
+    ../../../../../../../Src/Framework/Application/Application.cpp
+    )
 
-target_include_directories(Hello_Triangle PRIVATE
+target_include_directories(00-UnitTest PRIVATE
     ${ANDROID_NDK}/sources/android/native_app_glue
-    ../../../../../../../Common/Include)
+    ../../../../../../../Src/Framework)
 
 # add lib dependencies
-target_link_libraries(Hello_Triangle
+target_link_libraries(00-UnitTest
     android
     native_app_glue
     EGL

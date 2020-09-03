@@ -5,7 +5,7 @@ android {
     ndkVersion '21.2.6472646'
 
     defaultConfig {
-        applicationId = 'com.example.native_activity'
+        applicationId = 'com.fatdemo.UnitTest'
         minSdkVersion 14
         targetSdkVersion 28
         externalNativeBuild {
