@@ -8,9 +8,7 @@ public:
 	ConditionVariable();
 	~ConditionVariable();
 
-	void Wait(Mutex& lock);
 	void Wait(MutexFast& lock);
-	bool TimedWait(Mutex& lock, UInt32 millis);
 	bool TimedWait(MutexFast& lock, UInt32 millis);
 	void NotifySingle();
 	void NotifyAll();

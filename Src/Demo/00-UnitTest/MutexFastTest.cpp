@@ -24,14 +24,14 @@ public:
 
 	Bool Test()
 	{
-		MutexLocker lock(mutex_);
+		MutexFastLocker lock(mutex_);
 		return (sharedValue_ == MaxValue);
 	}
 
 private:
 	static const UInt32 MaxValue = 10000;
 
-	Mutex mutex_;
+	MutexFast mutex_;
 	UInt32 sharedValue_;
 };
 
@@ -50,23 +50,15 @@ static void MutexTestThreadFunc(void* args)
 TEST_DECLARE(TestMutex)
 {
 	{
-		Mutex mutex;
-		MutexLocker lock(mutex);
+		MutexFast mutex;
+		MutexFastLocker lock(mutex);
 	}
 
 	{
-		Mutex mutex;
+		MutexFast mutex;
 		mutex.TryLock();
 		mutex.Unlock();
 	}
-
-#if 0
-	// recursive locks
-	{
-		Mutex mutex;
-		MutexLocker lock(mutex);
-	}
-#endif
 
 	// test threaded exclusion
 	{

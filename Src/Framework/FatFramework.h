@@ -107,7 +107,6 @@
 #include "Kernel/UnitTest/UnitTest.h"
 #include "Kernel/Thread/AtomicInt.h"
 #include "Kernel/Thread/TAutoLock.h"
-#include "Kernel/Thread/Mutex.h"
 #include "Kernel/Thread/MutexFast.h"
 #include "Kernel/Thread/ConditionVariable.h"
 #include "Kernel/Common/SmartPtr.h"

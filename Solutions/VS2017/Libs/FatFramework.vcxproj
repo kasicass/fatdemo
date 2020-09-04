@@ -35,7 +35,6 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TString.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\AtomicInt.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\ConditionVariable.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\Mutex.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\MutexFast.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\TAutoLock.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\Thread.h" />
@@ -52,7 +51,6 @@
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Time.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\AtomicInt.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\ConditionVariable.cpp" />
-    <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\Mutex.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\MutexFast.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\Thread.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\UnitTest\UnitTest.cpp" />
