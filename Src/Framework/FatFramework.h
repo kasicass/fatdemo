@@ -112,5 +112,8 @@
 #include "Kernel/Thread/ConditionVariable.h"
 #include "Kernel/Common/SmartPtr.h"
 #include "Kernel/Thread/Thread.h"
+#include "Driver/Client/FactorySelector.h"
+#include "Driver/Server/Interface/IServerObject.h"
+#include "Driver/Server/Interface/IServerFactory.h"
 #include "Application/IApplication.h"
 #include "Application/Application.h"

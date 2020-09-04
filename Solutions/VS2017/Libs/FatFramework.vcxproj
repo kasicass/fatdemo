@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Src\Framework\Application\Application.h" />
     <ClInclude Include="..\..\..\Src\Framework\Application\IApplication.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\FactorySelector.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerObject.h" />
     <ClInclude Include="..\..\..\Src\Framework\FatFramework.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Assertion.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Log.h" />
@@ -44,6 +47,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Application\Application_Android.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\FactorySelector.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Assertion.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Log.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Memory.cpp" />

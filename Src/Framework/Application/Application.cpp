@@ -18,10 +18,12 @@ void Application::Init()
 	InitMemoryCheck();
 	thePerfCounter->Init();
 	Thread::InitMainThread();
+	theFactorySelector->Init();
 }
 
 void Application::Shutdown()
 {
+	theFactorySelector->Shutdown();
 	Thread::ShutdownMainThread();
 	thePerfCounter->Shutdown();
 	FatLog(L"<App>: Shutdown");
