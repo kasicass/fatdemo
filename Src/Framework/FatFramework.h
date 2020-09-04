@@ -105,5 +105,6 @@
 #include "Kernel/String/TStackString.h"
 #include "Kernel/UnitTest/UnitTest.h"
 #include "Kernel/Thread/AtomicInt.h"
+#include "Kernel/Common/SmartPtr.h"
 #include "Application/IApplication.h"
 #include "Application/Application.h"

@@ -70,6 +70,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\OS.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\SmartPtr.h">
+      <Filter>Kernel\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">

@@ -10,7 +10,6 @@ TEST_DECLARE(UnitTestSelfTest)
 	FatTest(0.f == 0.f);
 	FatTest(0 != 1);
 	FatTest(0.f != 1.f);
-	FatTest(0.f == 1.f);
 
 	FatAssert(true, L"Internal unit test assertion");
 	FatTestAssert(FatAssert(false, L"Internal unit test assertion"));

@@ -5,5 +5,6 @@
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\TimeTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\AtomicIntTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\UnitTestSelfTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\SmartPtrTest.cpp" />
   </ItemGroup>
 </Project>

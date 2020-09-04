@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\AtomicIntTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Main.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\SmartPtrTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\TimeTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\UnitTestSelfTest.cpp" />
   </ItemGroup>
