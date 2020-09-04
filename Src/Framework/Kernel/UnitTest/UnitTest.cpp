@@ -12,10 +12,10 @@ class UnitTestManager : public IUnitTestManager
 {
 public:
 	virtual void Run() override;
+	virtual void NotifyTestFail(const UnitTestFailureException& e) override;
 
 private:
 	virtual void RegisterTestCase(const UnitTestCase& testCase) override;
-	virtual void NotifyTestFail(const UnitTestFailureException& e) override;
 	virtual void NotifyEndedTest(const UnitTestCase& testCase, Bool succeded) override;
 
 private:

@@ -73,6 +73,21 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\SmartPtr.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\Thread.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\Mutex.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\TAutoLock.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\ConditionVariable.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\MutexFast.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -101,6 +116,18 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application_Android.cpp">
       <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\Thread.cpp">
+      <Filter>Kernel\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\Mutex.cpp">
+      <Filter>Kernel\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\ConditionVariable.cpp">
+      <Filter>Kernel\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\MutexFast.cpp">
+      <Filter>Kernel\Thread</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

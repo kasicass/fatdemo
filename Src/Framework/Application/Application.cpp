@@ -17,10 +17,12 @@ void Application::Init()
 	FatLog(L"<App>: Init");
 	InitMemoryCheck();
 	thePerfCounter->Init();
+	Thread::InitMainThread();
 }
 
 void Application::Shutdown()
 {
+	Thread::ShutdownMainThread();
 	thePerfCounter->Shutdown();
 	FatLog(L"<App>: Shutdown");
 	// Registration::CallDestroy();

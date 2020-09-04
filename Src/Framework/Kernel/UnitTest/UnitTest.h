@@ -43,12 +43,11 @@ class IUnitTestManager
 {
 public:
 	virtual void Run() = 0;
+	virtual void NotifyTestFail(const UnitTestFailureException& e) = 0; // thread-safe
 
 private:
 	friend class UnitTestCase;
 	virtual void RegisterTestCase(const UnitTestCase& testCase) = 0;
-
-	virtual void NotifyTestFail(const UnitTestFailureException& e) = 0;
 	virtual void NotifyEndedTest(const UnitTestCase& testCase, Bool succeded) = 0;
 };
 extern IUnitTestManager* theUnitTestMgr;

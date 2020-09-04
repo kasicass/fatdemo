@@ -14,6 +14,7 @@
 #  define WIN32_LEAN_AND_MEAN
 #  define NOMINMAX
 #  include <Windows.h>
+#  include <process.h>
 #  define FAT_THREAD_LOCAL __declspec(thread)
 #else
 #  include <signal.h>
@@ -105,6 +106,11 @@
 #include "Kernel/String/TStackString.h"
 #include "Kernel/UnitTest/UnitTest.h"
 #include "Kernel/Thread/AtomicInt.h"
+#include "Kernel/Thread/TAutoLock.h"
+#include "Kernel/Thread/Mutex.h"
+#include "Kernel/Thread/MutexFast.h"
+#include "Kernel/Thread/ConditionVariable.h"
 #include "Kernel/Common/SmartPtr.h"
+#include "Kernel/Thread/Thread.h"
 #include "Application/IApplication.h"
 #include "Application/Application.h"
