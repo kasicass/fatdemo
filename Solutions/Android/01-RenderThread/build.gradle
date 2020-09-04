@@ -5,7 +5,7 @@ android {
     ndkVersion '21.2.6472646'
 
     defaultConfig {
-        applicationId = 'com.fatdemo.UnitTest'
+        applicationId = 'com.fatdemo.RenderThread'
         minSdkVersion 14
         targetSdkVersion 28
         externalNativeBuild {

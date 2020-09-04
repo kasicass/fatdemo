@@ -29,28 +29,28 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -Wall -Werror -DFAT_DEBUG_B
 set(CMAKE_SHARED_LINKER_FLAGS
     "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_onCreate")
 
-add_library(00-UnitTest SHARED
-    ../../../../../../../Src/Demo/00-UnitTest/Main.cpp
-    ../../../../../../../Src/Demo/00-UnitTest/TimeTest.cpp
-    ../../../../../../../Src/Demo/00-UnitTest/AtomicIntTest.cpp
-    ../../../../../../../Src/Demo/00-UnitTest/UnitTestSelfTest.cpp
-    ../../../../../../../Src/Framework/Kernel/Common/Assertion.cpp
-    ../../../../../../../Src/Framework/Kernel/Common/Log.cpp
-    ../../../../../../../Src/Framework/Kernel/Common/Memory.cpp
-    ../../../../../../../Src/Framework/Kernel/Common/Time.cpp
-    ../../../../../../../Src/Framework/Kernel/Common/OS.cpp
-    ../../../../../../../Src/Framework/Kernel/UnitTest/UnitTest.cpp
-    ../../../../../../../Src/Framework/Kernel/Thread/AtomicInt.cpp
-    ../../../../../../../Src/Framework/Application/Application.cpp
-    ../../../../../../../Src/Framework/Application/Application_Android.cpp
+add_library(01-RenderThread SHARED
+    ../../../../../../Src/Demo/00-UnitTest/Main.cpp
+    ../../../../../../Src/Demo/00-UnitTest/TimeTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/AtomicIntTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/UnitTestSelfTest.cpp
+    ../../../../../../Src/Framework/Kernel/Common/Assertion.cpp
+    ../../../../../../Src/Framework/Kernel/Common/Log.cpp
+    ../../../../../../Src/Framework/Kernel/Common/Memory.cpp
+    ../../../../../../Src/Framework/Kernel/Common/Time.cpp
+    ../../../../../../Src/Framework/Kernel/Common/OS.cpp
+    ../../../../../../Src/Framework/Kernel/UnitTest/UnitTest.cpp
+    ../../../../../../Src/Framework/Kernel/Thread/AtomicInt.cpp
+    ../../../../../../Src/Framework/Application/Application.cpp
+    ../../../../../../Src/Framework/Application/Application_Android.cpp
     )
 
-target_include_directories(00-UnitTest PRIVATE
+target_include_directories(01-RenderThread PRIVATE
     ${ANDROID_NDK}/sources/android/native_app_glue
-    ../../../../../../../Src/Framework)
+    ../../../../../../Src/Framework)
 
 # add lib dependencies
-target_link_libraries(00-UnitTest
+target_link_libraries(01-RenderThread
     android
     native_app_glue
     EGL

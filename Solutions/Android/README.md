@@ -2,8 +2,8 @@
 
 ## local.properties.template
 
- * 复制 local.properties.template 到 00-UnitTest\local.properties
- * 修改 00-UnitTest\local.properties，提供 AndroidSdk 路径
+ * 复制 local.properties.template 为 local.properties
+ * 修改 local.properties，提供 AndroidSdk 路径
 
 ## setup_build_env.cmd.template
 
@@ -14,6 +14,5 @@
 
 ```
 > setup_build_env.cmd
-> cd 00-UnitTest
-> gradlew assemble
+> gradlew assembleDebug
 ```
