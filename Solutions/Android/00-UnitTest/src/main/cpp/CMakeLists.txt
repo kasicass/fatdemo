@@ -48,6 +48,8 @@ add_library(00-UnitTest SHARED
     ../../../../../../Src/Framework/Kernel/Thread/MutexFast.cpp
     ../../../../../../Src/Framework/Kernel/Thread/ConditionVariable.cpp
     ../../../../../../Src/Framework/Kernel/Thread/Thread.cpp
+    ../../../../../../Src/Framework/Driver/Client/FactorySelector.cpp
+    ../../../../../../Src/Framework/Driver/Server/Interface/IServerFactory.cpp
     ../../../../../../Src/Framework/Application/Application.cpp
     ../../../../../../Src/Framework/Application/Application_Android.cpp
     )
