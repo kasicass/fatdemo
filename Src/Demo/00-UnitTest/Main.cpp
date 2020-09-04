@@ -20,10 +20,11 @@ void UnitTestApp::Init()
 	TEST_REGISTER(TestSmartPtrAssertPolicy);
 	TEST_REGISTER(TestSmartPtrIntrusivePolicy);
 	TEST_REGISTER(TestSmartPtrCOMPolicy);
-	TEST_REGISTER(TestMutex);
 	TEST_REGISTER(TestThreadOperators);
 	TEST_REGISTER(TestThreadCreation);
 	TEST_REGISTER(TestThreadMutiJoin);
+	TEST_REGISTER(TestMutex);
+	TEST_REGISTER(TestConditionVariable);
 	theUnitTestMgr->Run();
 #else
 	FatLog(L"FAT_ENABLE_UNITTEST is off");

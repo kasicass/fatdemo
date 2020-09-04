@@ -23,7 +23,7 @@ bool ConditionVariable::TimedWait(MutexFast& lock, UInt32 millis)
 	return (SleepConditionVariableSRW(&cond_, &lock.srwlock_, millis, ULONG(0)) == TRUE);
 }
 
-void ConditionVariable::NotifySingle()
+void ConditionVariable::NotifyOne()
 {
 	WakeConditionVariable(&cond_);
 }

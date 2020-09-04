@@ -8,5 +8,6 @@
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\SmartPtrTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\MutexFastTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\ThreadTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\ConditionVariableTest.cpp" />
   </ItemGroup>
 </Project>

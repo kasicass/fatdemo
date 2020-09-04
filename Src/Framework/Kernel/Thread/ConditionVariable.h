@@ -10,7 +10,7 @@ public:
 
 	void Wait(MutexFast& lock);
 	bool TimedWait(MutexFast& lock, UInt32 millis);
-	void NotifySingle();
+	void NotifyOne();
 	void NotifyAll();
 
 private:
