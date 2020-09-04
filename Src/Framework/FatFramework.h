@@ -18,7 +18,8 @@
 #  define FAT_THREAD_LOCAL __declspec(thread)
 #else
 #  include <signal.h>
-#  define FAT_THREAD_LOCAL
+#  include <pthread.h>
+#  define FAT_THREAD_LOCAL __thread
 #  if defined(FAT_OS_ANDROID)
 #    include <android/log.h>
 #  endif

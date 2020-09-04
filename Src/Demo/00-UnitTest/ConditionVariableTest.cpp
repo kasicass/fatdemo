@@ -14,9 +14,9 @@ public:
 	{
 	}
 
-	Bool exit_;
 	UInt32 sharedValue_;
 	UInt32 execute_;
+	Bool exit_;
 
 	MutexFast mutex_;
 	ConditionVariable cond_;

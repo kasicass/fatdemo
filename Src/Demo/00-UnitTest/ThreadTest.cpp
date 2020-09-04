@@ -26,7 +26,7 @@ TEST_DECLARE(TestThreadCreation)
 
 	ThreadPtr pThread2 = Thread::Create("TestThread", ThreadEmptyEntry, (void*)0x12345678);
 
-	FatTestAssert(FatAssertNoText(false));
+	FatTestAssert(FatAssert(false, L"Assert in MainThread"));
 
 	FatTest(pThread1 != pThread2);
 

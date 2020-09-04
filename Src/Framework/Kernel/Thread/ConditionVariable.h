@@ -17,7 +17,7 @@ private:
 #if defined(FAT_OS_WINDOWS)
 	CONDITION_VARIABLE cond_;
 #else
-	// TODO
+	pthread_cond_t cond_;
 #endif
 };
 

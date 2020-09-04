@@ -2,8 +2,10 @@
 
 #if defined(FAT_ENABLE_UNITTEST)
 
+#if defined(FAT_OS_WINDOWS)
 // for COMPolicy test
 #include <d3d9.h>
+#endif
 
 using namespace Fat;
 

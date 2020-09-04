@@ -88,7 +88,7 @@ void Thread::Sleep(UInt32 milliSeconds)
 
 Thread::Thread(const char* name) :
 	IntrusiveCounter(1),
-	thrHandle_(NULL),
+	thrHandle_(0),
 	thrId_(THREADID_NULL),
 	isRunning_(true),
 	pFunc_(NULL),
@@ -107,7 +107,7 @@ Thread::Thread(const char* name) :
 
 Thread::Thread(const char* name, TThreadFunc pFunc, void* args) :
 	IntrusiveCounter(1),
-	thrHandle_(NULL),
+	thrHandle_(0),
 	thrId_(THREADID_NULL),
 	isRunning_(false),
 	pFunc_(pFunc),
@@ -192,7 +192,7 @@ unsigned __stdcall Thread::RunThis(void *thisPtr)
 
 Thread::Thread(const char* name) :
 	IntrusiveCounter(1),
-	thrHandle_(NULL),
+	thrHandle_(0),
 	thrId_(THREADID_NULL),
 	isRunning_(true),
 	pFunc_(NULL),
@@ -207,7 +207,7 @@ Thread::Thread(const char* name) :
 
 Thread::Thread(const char* name, TThreadFunc pFunc, void* args) :
 	IntrusiveCounter(1),
-	thrHandle_(NULL),
+	thrHandle_(0),
 	thrId_(THREADID_NULL),
 	isRunning_(false),
 	pFunc_(pFunc),
@@ -234,6 +234,23 @@ void Thread::Sleep(UInt32 milliSeconds)
 
 Thread::~Thread()
 {
+}
+
+void Thread::Run()
+{
+#if defined(FAT_ENABLE_UNITTEST)
+	try
+	{
+		(*pFunc_)(args_);
+	}
+	catch (UnitTestFailureException& e)
+	{
+		theUnitTestMgr->NotifyTestFail(e);
+	}
+#else
+	(*pFunc_)(args_);
+#endif
+
 }
 
 void Thread::Join()

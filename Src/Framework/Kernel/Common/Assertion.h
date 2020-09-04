@@ -63,8 +63,8 @@ namespace Assertion
 		FatAssert(ok, __VA_ARGS__);\
 	}
 
-#define FatAssertNoText(condition) FatAssert(condition, L"Assertion failed")
-#define FatAssertUnreachableCode() FatAssert(false, L"Code should not be reached")
-#define FatValidateNoText(condition) FatValidate(condition, L"Validation failed")
+#define FatAssertNoText(condition) FatAssert(condition, L"Assertion failed(%ls:%d)", FAT_CONCAT(L,__FILE__), __LINE__)
+#define FatAssertUnreachableCode() FatAssert(false, L"Code should not be reached(%ls:%d)", FAT_CONCAT(L,__FILE__), __LINE__)
+#define FatValidateNoText(condition) FatValidate(condition, L"Validation failed(%ls:%d)", FAT_CONCAT(L,__FILE__), __LINE__)
 
 }
