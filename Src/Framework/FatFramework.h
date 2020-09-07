@@ -120,6 +120,7 @@
 #include "Driver/Server/Interface/IServerState.h"
 #include "Driver/Client/IObject.h"
 #include "Driver/Client/CommandLocker.h"
+#include "Driver/Client/CommandBuffer.h"
 #include "Driver/Client/ICommand.h"
 #include "Driver/Client/EStateType.h"
 #include "Driver/Client/IState.h"

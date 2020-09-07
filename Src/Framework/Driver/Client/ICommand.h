@@ -72,8 +72,8 @@ template <typename t_CommandData, EFactoryObject::EValue t_eValue>
 class TCommandWrapper : public ICommand
 {
 public:
-	typedef TReadOnlyCommandLocker<t_CommandData>  ReadOnlyLocker;
-	typedef TReadWriteCommandLocker<t_CommandData> ReadWriteLocker;
+	typedef TReadOnlyLocker<t_CommandData>  ReadOnlyLocker;
+	typedef TReadWriteLocker<t_CommandData> ReadWriteLocker;
 
 	TCommandWrapper() :
 		ICommand(AllocateData(), t_eValue)

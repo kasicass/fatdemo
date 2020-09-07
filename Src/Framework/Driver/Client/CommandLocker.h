@@ -36,27 +36,27 @@ protected:
 // ensure at compilation time that no "write" function is called. It is based on the RAII pattern
 // in order to ensure locking-unlocking symmetry
 template <typename T>
-class TReadOnlyCommandLocker : protected CommandLockerBase
+class TReadOnlyLocker : protected CommandLockerBase
 {
 public:
-	TReadOnlyCommandLocker(const ICommand* pCommand) :
+	TReadOnlyLocker(const ICommand* pCommand) :
 		pCommandData_(GetReadOnlyData(pCommand))
 	{
 		AcquireReadOnlyAccess(pCommandData_.Get());
 	}
 
-	TReadOnlyCommandLocker(const IState* pState) :
+	TReadOnlyLocker(const IState* pState) :
 		pCommandData_(GetReadOnlyData(pState))
 	{
 		AcquireReadOnlyAccess(pCommandData_.Get());
 	}
 
-	~TReadOnlyCommandLocker()
+	~TReadOnlyLocker()
 	{
 		ReleaseReadOnlyAccess(pCommandData_.Get());
 	}
 
-	void operator=(const TReadOnlyCommandLocker& rhs)
+	void operator=(const TReadOnlyLocker& rhs)
 	{
 		if (this == &rhs)
 			return;
@@ -72,18 +72,18 @@ public:
 	}
 
 protected:
-	TReadOnlyCommandLocker()
+	TReadOnlyLocker()
 	{
 		FatAssertUnreachableCode();
 	}
 
-	TReadOnlyCommandLocker(const ICommandData* pData) :
+	TReadOnlyLocker(const ICommandData* pData) :
 		pCommandData_(pData)
 	{
 		AcquireReadOnlyAccess(pCommandData_.Get());
 	}
 
-	TReadOnlyCommandLocker(const TReadOnlyCommandLocker& rhs) :
+	TReadOnlyLocker(const TReadOnlyLocker& rhs) :
 		pCommandData_(rhs.pCommandData_)
 	{
 		AcquireReadOnlyAccess(pCommandData_.Get());
@@ -97,22 +97,22 @@ private:
 // read and write calls can be done. It is based on the RAII pattern in order to ensure locking-unlocking
 // symmetry
 template <typename T>
-class TReadWriteCommandLocker : public CommandLockerBase
+class TReadWriteLocker : public CommandLockerBase
 {
 public:
-	TReadWriteCommandLocker(ICommand* pCommand, Bool discard = true) :
+	TReadWriteLocker(ICommand* pCommand, Bool discard = true) :
 		pCommandData_(GrabReadWriteData(pCommand, discard))
 	{
 		AcquireReadWriteAccess(pCommandData_.Get());
 	}
 
-	TReadWriteCommandLocker(IState* pState, Bool discard = true) :
+	TReadWriteLocker(IState* pState, Bool discard = true) :
 		pCommandData_(GrabReadWriteData(pState, discard))
 	{
 		AcquireReadWriteAccess(pCommandData_.Get());
 	}
 
-	~TReadWriteCommandLocker()
+	~TReadWriteLocker()
 	{
 		ReleaseReadWriteAccess(pCommandData_.Get());
 	}
@@ -123,13 +123,13 @@ public:
 	}
 
 protected:
-	TReadWriteCommandLocker(ICommandData* pData) :
+	TReadWriteLocker(ICommandData* pData) :
 		pCommandData_(pData)
 	{
 		AcquireReadWriteAccess(pCommandData_.Get());
 	}
 
-	TReadWriteCommandLocker(const TReadWriteCommandLocker& rhs) :
+	TReadWriteLocker(const TReadWriteLocker& rhs) :
 		pCommandData_(rhs.pCommandData_)
 	{
 		AcquireReadWriteAccess(pCommandData_.Get());
@@ -142,45 +142,45 @@ private:
 // Implement a read-only locker object and holds the related server command. This class is used in the driver
 // everywhere a reference to a command data and a server command is needed, ie: the state cache, the command
 // buffer...
-class TReadOnlyCommandLockerHolder : public TReadOnlyCommandLocker<ICommandData>
+class TReadOnlyLockerHolder : public TReadOnlyLocker<ICommandData>
 {
 protected:
-	typedef TReadOnlyCommandLocker<ICommandData> _MyBase;
+	typedef TReadOnlyLocker<ICommandData> _MyBase;
 
-	TReadOnlyCommandLockerHolder(const ICommand* pCommand) :
+	TReadOnlyLockerHolder(const ICommand* pCommand) :
 		_MyBase(pCommand),
 		pServerCommand_(_MyBase::GetServerCommand(pCommand))
 	{
 	}
 
-	TReadOnlyCommandLockerHolder(const IState* pState) :
+	TReadOnlyLockerHolder(const IState* pState) :
 		_MyBase(pState),
 		pServerCommand_(_MyBase::GetServerCommand(pState))
 	{
 	}
 
-	TReadOnlyCommandLockerHolder(IServerCommand* pServerCommand, const ICommandData* pCommandData) :
+	TReadOnlyLockerHolder(IServerCommand* pServerCommand, const ICommandData* pCommandData) :
 		_MyBase(pCommandData),
 		pServerCommand_(pServerCommand)
 	{
 	}
 
-	TReadOnlyCommandLockerHolder(const TReadOnlyCommandLockerHolder& rhs) :
+	TReadOnlyLockerHolder(const TReadOnlyLockerHolder& rhs) :
 		_MyBase(rhs),
 		pServerCommand_(rhs.pServerCommand_)
 	{
 	}
 
-	TReadOnlyCommandLockerHolder()
+	TReadOnlyLockerHolder()
 	{
 		FatAssertUnreachableCode();
 	}
 
-	~TReadOnlyCommandLockerHolder()
+	~TReadOnlyLockerHolder()
 	{
 	}
 
-	void operator=(const TReadOnlyCommandLockerHolder& rhs)
+	void operator=(const TReadOnlyLockerHolder& rhs)
 	{
 		if (this == &rhs)
 			return;

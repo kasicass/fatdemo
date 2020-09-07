@@ -145,6 +145,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Device.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\CommandBuffer.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -211,6 +214,9 @@
       <Filter>Driver\Client\Command</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Device.cpp">
+      <Filter>Driver\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\CommandBuffer.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
   </ItemGroup>

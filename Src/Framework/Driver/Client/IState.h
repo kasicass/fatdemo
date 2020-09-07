@@ -34,8 +34,8 @@ template <typename t_StateData, EStateType::EValue t_eStateType, EFactoryObject:
 class TStateWrapper : public IState
 {
 public:
-	typedef TReadOnlyCommandLocker<t_StateData>  ReadOnlyLocker;
-	typedef TReadWriteCommandLocker<t_StateData> ReadWriteLocker;
+	typedef TReadOnlyLocker<t_StateData>  ReadOnlyLocker;
+	typedef TReadWriteLocker<t_StateData> ReadWriteLocker;
 
 	TStateWrapper() :
 		IState(t_eStateType, &command_),
