@@ -112,6 +112,15 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerState.h">
       <Filter>Driver\Server\Interface</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\CommandLocker.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\ICommand.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IObject.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -158,6 +167,15 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.cpp">
       <Filter>Driver\Server\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\CommandLocker.cpp">
+      <Filter>Driver\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\ICommand.cpp">
+      <Filter>Driver\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IObject.cpp">
+      <Filter>Driver\Client</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

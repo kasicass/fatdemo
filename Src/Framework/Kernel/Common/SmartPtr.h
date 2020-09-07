@@ -160,14 +160,14 @@ protected:
 	template <typename T>
 	friend class TSmartPtrIntrusivePolicy;
 
-	Int32 AddRef()
+	Int32 AddRef() const
 	{
 		Int32 ret = ++refCount_;
 		FatAssert(ret > 0, L"Count should never be negative");
 		return ret;
 	}
 
-	Int32 DecRef()
+	Int32 DecRef() const
 	{
 		Int32 ret = --refCount_;
 		FatAssert(ret >= 0, L"Count should never be negative");
@@ -180,7 +180,7 @@ protected:
 	}
 
 private:
-	AtomicInt refCount_;
+	mutable AtomicInt refCount_;
 };
 
 // Smart pointer intrusive reference counted policy

@@ -21,7 +21,10 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Src\Framework\Application\Application.h" />
     <ClInclude Include="..\..\..\Src\Framework\Application\IApplication.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\CommandLocker.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\FactorySelector.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\ICommand.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IObject.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerCommand.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.h" />
@@ -55,7 +58,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\CommandLocker.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\FactorySelector.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\ICommand.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IObject.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Assertion.cpp" />

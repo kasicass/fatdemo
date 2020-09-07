@@ -118,5 +118,8 @@
 #include "Driver/Server/Interface/IServerDevice.h"
 #include "Driver/Server/Interface/IServerCommand.h"
 #include "Driver/Server/Interface/IServerState.h"
+#include "Driver/Client/IObject.h"
+#include "Driver/Client/CommandLocker.h"
+#include "Driver/Client/ICommand.h"
 #include "Application/IApplication.h"
 #include "Application/Application.h"
