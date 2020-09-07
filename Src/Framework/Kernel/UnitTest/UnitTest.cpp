@@ -25,6 +25,7 @@ private:
 
 	UInt32 suceededTestCount_;
 	UInt32 failedTestCount_;
+	Time startTime_;
 
 	typedef std::vector<UnitTestCase> TestCaseArray;
 	TestCaseArray* testCases_;
@@ -41,20 +42,23 @@ void UnitTestManager::Start()
 {
 	suceededTestCount_ = 0;
 	failedTestCount_   = 0;
+	startTime_ = Time::GetAppTime();
 	FatLog(L"<UnitTest>: Starting");
 }
 
 void UnitTestManager::Finish()
 {
+	Time endTime = Time::GetAppTime();
+	F32 elapsedMS = endTime.GetMilliSeconds() - startTime_.GetMilliSeconds();
 	if (failedTestCount_ == 0)
 	{
-		FatLog(L"<UnitTest>: Ends with success, %u test were executed",
-			suceededTestCount_);
+		FatLog(L"<UnitTest>: Ends with success, %u test were executed (%.0f ms)",
+			suceededTestCount_, elapsedMS);
 	}
 	else
 	{
-		FatLog(L"<UnitTest>: Ends with %u failure(s), %u test were executed",
-			failedTestCount_, suceededTestCount_ + failedTestCount_);
+		FatLog(L"<UnitTest>: Ends with %u failure(s), %u test were executed (%.0f ms)",
+			failedTestCount_, suceededTestCount_ + failedTestCount_, elapsedMS);
 	}
 
 	if (testCases_ != NULL)
