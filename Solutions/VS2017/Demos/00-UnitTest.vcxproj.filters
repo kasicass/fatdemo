@@ -9,5 +9,33 @@
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\MutexFastTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\ThreadTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\ConditionVariableTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\DeviceTest.cpp">
+      <Filter>Driver\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.cpp">
+      <Filter>Driver\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.cpp">
+      <Filter>Driver\Server</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Driver">
+      <UniqueIdentifier>{b9759f88-8486-4c9e-afec-853fd092ff70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Driver\Client">
+      <UniqueIdentifier>{ed135d35-f659-4611-99cb-2be4e6d219ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Driver\Server">
+      <UniqueIdentifier>{ef5bc8bd-9ce4-4a8d-9bbf-5dce44997d5b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.h">
+      <Filter>Driver\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.h">
+      <Filter>Driver\Server</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

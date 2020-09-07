@@ -6,10 +6,10 @@ namespace Fat {
 class IServerFactory
 {
 public:
-	IServerFactory(EGraphicAPI::EValue api);
-	virtual ~IServerFactory();
-
 	virtual IServerObject* Instantiate(EFactoryObject::EValue value) = 0;
+
+protected:
+	void RegisterMe(EGraphicAPI::EValue api);
 };
 
 }

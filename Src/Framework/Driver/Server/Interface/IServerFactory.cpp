@@ -2,13 +2,9 @@
 
 namespace Fat {
 
-IServerFactory::IServerFactory(EGraphicAPI::EValue api)
+void IServerFactory::RegisterMe(EGraphicAPI::EValue api)
 {
 	theFactorySelector->RegisterFactory(api, this);
-}
-
-IServerFactory::~IServerFactory()
-{
 }
 
 }

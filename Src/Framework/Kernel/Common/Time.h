@@ -11,6 +11,8 @@ struct IPerformanceCounter
 };
 extern IPerformanceCounter* thePerfCounter;
 
+
+
 class Time
 {
 public:

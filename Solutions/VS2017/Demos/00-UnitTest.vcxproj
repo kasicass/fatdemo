@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\AtomicIntTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\ConditionVariableTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\DeviceTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Main.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\MutexFastTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\SmartPtrTest.cpp" />
@@ -32,6 +35,10 @@
     <ProjectReference Include="..\Libs\FatFramework.vcxproj">
       <Project>{12ccfe35-85f6-4795-9bc2-ba97b1b533df}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.h" />
+    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
