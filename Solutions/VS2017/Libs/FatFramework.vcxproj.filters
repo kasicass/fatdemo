@@ -34,6 +34,12 @@
     <Filter Include="Driver\Client\Command">
       <UniqueIdentifier>{fe38779c-7f07-406a-b231-db5a47bf374c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Driver\Server\D3D9">
+      <UniqueIdentifier>{db0fbecc-dacf-4f8d-88f3-44a6d471e4df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Driver\Server\D3D9\Command">
+      <UniqueIdentifier>{d2fcc89e-0710-4e00-abe9-f5c4f0a1dc76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformDefines.h">
@@ -136,6 +142,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Command\SwapCommand.h">
       <Filter>Driver\Client\Command</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Device.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -200,6 +209,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Command\SwapCommand.cpp">
       <Filter>Driver\Client\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Device.cpp">
+      <Filter>Driver\Client</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

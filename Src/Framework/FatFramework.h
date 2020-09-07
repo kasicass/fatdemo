@@ -123,6 +123,7 @@
 #include "Driver/Client/ICommand.h"
 #include "Driver/Client/EStateType.h"
 #include "Driver/Client/IState.h"
+#include "Driver/Client/Device.h"
 #include "Driver/Client/Command/DrawCommand.h"
 #include "Driver/Client/Command/SwapCommand.h"
 #include "Application/IApplication.h"

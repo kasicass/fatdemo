@@ -24,6 +24,7 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\CommandLocker.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Command\DrawCommand.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Command\SwapCommand.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Device.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\EStateType.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\FactorySelector.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\ICommand.h" />
@@ -65,6 +66,7 @@
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\CommandLocker.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Command\DrawCommand.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Command\SwapCommand.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Device.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\FactorySelector.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\ICommand.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IObject.cpp" />
