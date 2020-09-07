@@ -22,9 +22,11 @@
     <ClInclude Include="..\..\..\Src\Framework\Application\Application.h" />
     <ClInclude Include="..\..\..\Src\Framework\Application\IApplication.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\CommandLocker.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\EStateType.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\FactorySelector.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\ICommand.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IObject.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IState.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerCommand.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.h" />
@@ -62,6 +64,7 @@
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\FactorySelector.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\ICommand.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IObject.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IState.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Assertion.cpp" />

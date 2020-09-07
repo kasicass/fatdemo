@@ -121,5 +121,7 @@
 #include "Driver/Client/IObject.h"
 #include "Driver/Client/CommandLocker.h"
 #include "Driver/Client/ICommand.h"
+#include "Driver/Client/EStateType.h"
+#include "Driver/Client/IState.h"
 #include "Application/IApplication.h"
 #include "Application/Application.h"

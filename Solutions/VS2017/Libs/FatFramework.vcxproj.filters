@@ -121,6 +121,12 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IObject.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IState.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\EStateType.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -175,6 +181,9 @@
       <Filter>Driver\Client</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IObject.cpp">
+      <Filter>Driver\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IState.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
   </ItemGroup>

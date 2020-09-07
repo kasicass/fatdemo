@@ -2,25 +2,54 @@
 
 namespace Fat {
 
-#if 0
-const ICommandData& CommandLocker::GetReadOnlyData(const ICommand& command) const
+const ICommandData* CommandLockerBase::GetReadOnlyData(const ICommand* pCommand) const
 {
-	return command.
+	return pCommand->GetReadOnlyData();
 }
 
-ICommandData& GrabReadWriteData(ICommand& command, Bool discard) const;
+ICommandData* CommandLockerBase::GrabReadWriteData(ICommand* pCommand, Bool discard) const
+{
+	return pCommand->GrabReadWriteData(discard);
+}
 
-const ICommandData& GetReadOnlyData(const IState& state) const;
-ICommandData& GrabReadWriteData(IState& state, Bool discard) const;
+const ICommandData* CommandLockerBase::GetReadOnlyData(const IState* pState) const
+{
+	return pState->GetCommand()->GetReadOnlyData();
+}
 
-void AcquireReadOnlyAccess(const ICommandData& data) const;
-void ReleaseReadOnlyAccess(const ICommandData& data) const;
+ICommandData* CommandLockerBase::GrabReadWriteData(IState* pState, Bool discard) const
+{
+	return pState->GetCommand()->GrabReadWriteData(discard);
+}
 
-void AcquireReadWriteAccess(const ICommandData& data) const;
-void ReleaseReadWriteAccess(const ICommandData& data) const;
+void CommandLockerBase::AcquireReadOnlyAccess(const ICommandData* pData) const
+{
+	pData->AcquireReadOnlyAccess();
+}
 
-IServerCommand& GetServerCommand(const ICommand& command) const;
-IServerCommand& GetServerCommand(const IState& state) const;
-#endif
+void CommandLockerBase::ReleaseReadOnlyAccess(const ICommandData* pData) const
+{
+	pData->ReleaseReadOnlyAccess();
+}
+	
+void CommandLockerBase::AcquireReadWriteAccess(ICommandData* pData) const
+{
+	pData->AcquireReadWriteAccess();
+}
+
+void CommandLockerBase::ReleaseReadWriteAccess(ICommandData* pData) const
+{
+	pData->ReleaseReadWriteAccess();
+}
+
+IServerCommand* CommandLockerBase::GetServerCommand(const ICommand* pCommand) const
+{
+	return pCommand->GetServerCommand();
+}
+
+IServerCommand* CommandLockerBase::GetServerCommand(const IState* pState) const
+{
+	return pState->GetCommand()->GetServerCommand();
+}
 
 }

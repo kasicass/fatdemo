@@ -4,31 +4,32 @@ namespace Fat {
 
 class IState;
 class ICommand;
-class ICommandData;
 class IServerCommand;
+class ICommandData;
+
+typedef TSmartPtr<IServerCommand, TSmartPtrIntrusivePolicy> IServerCommandPtr;
+typedef TSmartPtr<const ICommandData, TSmartPtrIntrusivePolicy> ICommandDataConstPtr;
+typedef TSmartPtr<ICommandData, TSmartPtrIntrusivePolicy> ICommandDataPtr;
 
 // Implement commands, states, and command data access functions. This is the only friend class that can
 // access to commands, states, and command data, so every locker object should inherit this class
 class CommandLockerBase : private NonCopyable
 {
 protected:
-	CommandLockerBase() {}
-	~CommandLockerBase() {}
+	const ICommandData* GetReadOnlyData(const ICommand* pCommand) const;
+	ICommandData* GrabReadWriteData(ICommand* pCommand, Bool discard) const;
 
-	const ICommandData& GetReadOnlyData(const ICommand& command) const;
-	ICommandData& GrabReadWriteData(ICommand& command, Bool discard) const;
+	const ICommandData* GetReadOnlyData(const IState* pState) const;
+	ICommandData* GrabReadWriteData(IState* pState, Bool discard) const;
 
-	const ICommandData& GetReadOnlyData(const IState& state) const;
-	ICommandData& GrabReadWriteData(IState& state, Bool discard) const;
-
-	void AcquireReadOnlyAccess(const ICommandData& data) const;
-	void ReleaseReadOnlyAccess(const ICommandData& data) const;
+	void AcquireReadOnlyAccess(const ICommandData* pData) const;
+	void ReleaseReadOnlyAccess(const ICommandData* pData) const;
 	
-	void AcquireReadWriteAccess(const ICommandData& data) const;
-	void ReleaseReadWriteAccess(const ICommandData& data) const;
+	void AcquireReadWriteAccess(ICommandData* pData) const;
+	void ReleaseReadWriteAccess(ICommandData* pData) const;
 
-	IServerCommand& GetServerCommand(const ICommand& command) const;
-	IServerCommand& GetServerCommand(const IState& state) const;
+	IServerCommand* GetServerCommand(const ICommand* pCommand) const;
+	IServerCommand* GetServerCommand(const IState* pState) const;
 };
 
 // Implement a read only locker object. It provides a const access on the locked data in order to
@@ -38,21 +39,21 @@ template <typename T>
 class TReadOnlyCommandLocker : protected CommandLockerBase
 {
 public:
-	TReadOnlyCommandLocker(const ICommand& command) :
-		pCommandData_(&GetReadOnlyData(command))
+	TReadOnlyCommandLocker(const ICommand* pCommand) :
+		pCommandData_(GetReadOnlyData(pCommand))
 	{
-		AcquireReadOnlyAccess(*pCommandData_);
+		AcquireReadOnlyAccess(pCommandData_.Get());
 	}
 
-	TReadOnlyCommandLocker(const IState& state) :
-		pCommandData_(&GetReadOnlyData(state))
+	TReadOnlyCommandLocker(const IState* pState) :
+		pCommandData_(GetReadOnlyData(pState))
 	{
-		AcquireReadOnlyAccess(*pCommandData_);
+		AcquireReadOnlyAccess(pCommandData_.Get());
 	}
 
 	~TReadOnlyCommandLocker()
 	{
-		ReleaseReadOnlyAccess(*pCommandData_);
+		ReleaseReadOnlyAccess(pCommandData_.Get());
 	}
 
 	void operator=(const TReadOnlyCommandLocker& rhs)
@@ -60,14 +61,14 @@ public:
 		if (this == &rhs)
 			return;
 
-		ReleaseReadOnlyAccess(*pCommandData_);
+		ReleaseReadOnlyAccess(pCommandData_.Get());
 		pCommandData_ = rhs.pCommandData_;
-		AcquireReadOnlyAccess(*pCommandData_);
+		AcquireReadOnlyAccess(pCommandData_.Get());
 	}
 
-	const T& GetData() const
+	const T* GetData() const
 	{
-		return (T&)(*pCommandData_);
+		return (T*)(pCommandData_.Get());
 	}
 
 protected:
@@ -76,20 +77,20 @@ protected:
 		FatAssertUnreachableCode();
 	}
 
-	TReadOnlyCommandLocker(const ICommandData& commandData) :
-		pCommandData_(&commandData)
+	TReadOnlyCommandLocker(const ICommandData* pData) :
+		pCommandData_(pData)
 	{
-		AcquireReadOnlyAccess(*pCommandData_);
+		AcquireReadOnlyAccess(pCommandData_.Get());
 	}
 
 	TReadOnlyCommandLocker(const TReadOnlyCommandLocker& rhs) :
 		pCommandData_(rhs.pCommandData_)
 	{
-		AcquireReadOnlyAccess(*pCommandData_);
+		AcquireReadOnlyAccess(pCommandData_.Get());
 	}
 
 private:
-	TSmartPtr<const ICommandData, TSmartPtrIntrusivePolicy> pCommandData_;
+	ICommandDataConstPtr pCommandData_;
 };
 
 // Implement a read-write locker object. It provides a non-const access on the locked data such that
@@ -99,43 +100,43 @@ template <typename T>
 class TReadWriteCommandLocker : public CommandLockerBase
 {
 public:
-	TReadWriteCommandLocker(ICommand& command, Bool discard = true) :
-		pCommandData_(&GrabReadWriteData(command, discard))
+	TReadWriteCommandLocker(ICommand* pCommand, Bool discard = true) :
+		pCommandData_(GrabReadWriteData(pCommand, discard))
 	{
-		AcquireReadWriteAccess(pCommandData_);
+		AcquireReadWriteAccess(pCommandData_.Get());
 	}
 
-	TReadWriteCommandLocker(IState& state, Bool discard = true) :
-		pCommandData_(&GrabReadWriteData(state, discard))
+	TReadWriteCommandLocker(IState* pState, Bool discard = true) :
+		pCommandData_(GrabReadWriteData(pState, discard))
 	{
-		AcquireReadWriteAccess(*pCommandData_);
+		AcquireReadWriteAccess(pCommandData_.Get());
 	}
 
 	~TReadWriteCommandLocker()
 	{
-		ReleaseReadWriteAccess(*pCommandData_);
+		ReleaseReadWriteAccess(pCommandData_.Get());
 	}
 
-	T& GetData() const
+	T* GetData() const
 	{
-		return (T&)(*pCommandData_);
+		return (T*)(pCommandData_.Get());
 	}
 
 protected:
-	TReadWriteCommandLocker(ICommandData& commandData) :
-		pCommandData_(&commandData)
+	TReadWriteCommandLocker(ICommandData* pData) :
+		pCommandData_(pData)
 	{
-		AcquireReadWriteAccess(*pCommandData_);
+		AcquireReadWriteAccess(pCommandData_.Get());
 	}
 
 	TReadWriteCommandLocker(const TReadWriteCommandLocker& rhs) :
-		pCommandData_(&rhs.pCommandData_)
+		pCommandData_(rhs.pCommandData_)
 	{
-		AcquireReadWriteAccess(*pCommandData_);
+		AcquireReadWriteAccess(pCommandData_.Get());
 	}
 
 private:
-	TSmartPtr<ICommandData, TSmartPtrIntrusivePolicy> pCommandData_;
+	ICommandDataPtr pCommandData_;
 };
 
 // Implement a read-only locker object and holds the related server command. This class is used in the driver
@@ -146,21 +147,21 @@ class TReadOnlyCommandLockerHolder : public TReadOnlyCommandLocker<ICommandData>
 protected:
 	typedef TReadOnlyCommandLocker<ICommandData> _MyBase;
 
-	TReadOnlyCommandLockerHolder(const ICommand& command) :
-		_MyBase(command),
-		pServerCommand_(&_MyBase::GetServerCommand(command))
+	TReadOnlyCommandLockerHolder(const ICommand* pCommand) :
+		_MyBase(pCommand),
+		pServerCommand_(_MyBase::GetServerCommand(pCommand))
 	{
 	}
 
-	TReadOnlyCommandLockerHolder(const IState& state) :
-		_MyBase(state),
-		pServerCommand_(&_MyBase::GetServerCommand(state))
+	TReadOnlyCommandLockerHolder(const IState* pState) :
+		_MyBase(pState),
+		pServerCommand_(_MyBase::GetServerCommand(pState))
 	{
 	}
 
-	TReadOnlyCommandLockerHolder(IServerCommand& serverCommand, const ICommandData& commandData) :
-		_MyBase(commandData),
-		pServerCommand_(&serverCommand)
+	TReadOnlyCommandLockerHolder(IServerCommand* pServerCommand, const ICommandData* pCommandData) :
+		_MyBase(pCommandData),
+		pServerCommand_(pServerCommand)
 	{
 	}
 
@@ -188,13 +189,13 @@ protected:
 		pServerCommand_ = rhs.pServerCommand_;
 	}
 
-	IServerCommand& GetServerCommand() const
+	IServerCommand* GetServerCommand() const
 	{
-		return *pServerCommand_;
+		return pServerCommand_.Get();
 	}
 
 private:
-	TSmartPtr<IServerCommand, TSmartPtrIntrusivePolicy> pServerCommand_;
+	IServerCommandPtr pServerCommand_;
 };
 
 }
