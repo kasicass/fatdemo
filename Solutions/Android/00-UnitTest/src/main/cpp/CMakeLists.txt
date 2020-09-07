@@ -68,7 +68,8 @@ add_library(00-UnitTest SHARED
 
 target_include_directories(00-UnitTest PRIVATE
     ${ANDROID_NDK}/sources/android/native_app_glue
-    ../../../../../../Src/Framework)
+    ../../../../../../Src/Framework
+    ../../../../../../Src/Demo/00-UnitTest)
 
 # add lib dependencies
 target_link_libraries(00-UnitTest
