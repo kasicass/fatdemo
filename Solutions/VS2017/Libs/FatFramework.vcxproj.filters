@@ -103,6 +103,15 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.h">
       <Filter>Driver\Server\Interface</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerCommand.h">
+      <Filter>Driver\Server\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.h">
+      <Filter>Driver\Server\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerState.h">
+      <Filter>Driver\Server\Interface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -145,6 +154,9 @@
       <Filter>Driver\Client</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.cpp">
+      <Filter>Driver\Server\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.cpp">
       <Filter>Driver\Server\Interface</Filter>
     </ClCompile>
   </ItemGroup>

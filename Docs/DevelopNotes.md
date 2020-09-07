@@ -2,7 +2,17 @@
 
 ## 2020-09-07
 
+Driver 层的设计
 
+Client
+
+ * IFactorySelector，决定用哪个 IServerFactory
+
+Server
+
+ * Platform-specific Graphics API
+ * IServerFactory, 负责创建各种 IServerObject
+ * IServerObject, 各种 ServerObject 的基类
 
 
 ## 2020-09-04

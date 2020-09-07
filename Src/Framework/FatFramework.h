@@ -115,5 +115,8 @@
 #include "Driver/Client/FactorySelector.h"
 #include "Driver/Server/Interface/IServerObject.h"
 #include "Driver/Server/Interface/IServerFactory.h"
+#include "Driver/Server/Interface/IServerDevice.h"
+#include "Driver/Server/Interface/IServerCommand.h"
+#include "Driver/Server/Interface/IServerState.h"
 #include "Application/IApplication.h"
 #include "Application/Application.h"
