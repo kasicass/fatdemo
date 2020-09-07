@@ -31,6 +31,9 @@
     <Filter Include="Driver\Server\Interface">
       <UniqueIdentifier>{dee602dd-e720-4b03-ad64-ea4cefb0c0a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Driver\Client\Command">
+      <UniqueIdentifier>{fe38779c-7f07-406a-b231-db5a47bf374c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformDefines.h">
@@ -127,6 +130,12 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\EStateType.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Command\DrawCommand.h">
+      <Filter>Driver\Client\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Command\SwapCommand.h">
+      <Filter>Driver\Client\Command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -185,6 +194,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IState.cpp">
       <Filter>Driver\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Command\DrawCommand.cpp">
+      <Filter>Driver\Client\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Command\SwapCommand.cpp">
+      <Filter>Driver\Client\Command</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
