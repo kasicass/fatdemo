@@ -15,10 +15,10 @@ private:
 	friend class Packet;
 
 	// Build according to a new data
-	virtual void Build(const ICommandData& data, const IServerDevice& device) = 0;
+	virtual void Build(const ICommandData* pData, const IServerDevice* pServerDevice) = 0;
 
 	// Dispatch to specific API
-	virtual void Dispatch(const ICommandData& data, IServerDevice& device) = 0;
+	virtual void Dispatch(const ICommandData* pData, IServerDevice* pServerDevice) = 0;
 };
 
 }

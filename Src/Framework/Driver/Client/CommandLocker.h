@@ -142,45 +142,45 @@ private:
 // Implement a read-only locker object and holds the related server command. This class is used in the driver
 // everywhere a reference to a command data and a server command is needed, ie: the state cache, the command
 // buffer...
-class TReadOnlyLockerHolder : public TReadOnlyLocker<ICommandData>
+class ReadOnlyLockerHolder : public TReadOnlyLocker<ICommandData>
 {
 protected:
 	typedef TReadOnlyLocker<ICommandData> _MyBase;
 
-	TReadOnlyLockerHolder(const ICommand* pCommand) :
+	ReadOnlyLockerHolder(const ICommand* pCommand) :
 		_MyBase(pCommand),
 		pServerCommand_(_MyBase::GetServerCommand(pCommand))
 	{
 	}
 
-	TReadOnlyLockerHolder(const IState* pState) :
+	ReadOnlyLockerHolder(const IState* pState) :
 		_MyBase(pState),
 		pServerCommand_(_MyBase::GetServerCommand(pState))
 	{
 	}
 
-	TReadOnlyLockerHolder(IServerCommand* pServerCommand, const ICommandData* pCommandData) :
+	ReadOnlyLockerHolder(IServerCommand* pServerCommand, const ICommandData* pCommandData) :
 		_MyBase(pCommandData),
 		pServerCommand_(pServerCommand)
 	{
 	}
 
-	TReadOnlyLockerHolder(const TReadOnlyLockerHolder& rhs) :
+	ReadOnlyLockerHolder(const ReadOnlyLockerHolder& rhs) :
 		_MyBase(rhs),
 		pServerCommand_(rhs.pServerCommand_)
 	{
 	}
 
-	TReadOnlyLockerHolder()
+	ReadOnlyLockerHolder()
 	{
 		FatAssertUnreachableCode();
 	}
 
-	~TReadOnlyLockerHolder()
+	~ReadOnlyLockerHolder()
 	{
 	}
 
-	void operator=(const TReadOnlyLockerHolder& rhs)
+	void operator=(const ReadOnlyLockerHolder& rhs)
 	{
 		if (this == &rhs)
 			return;
