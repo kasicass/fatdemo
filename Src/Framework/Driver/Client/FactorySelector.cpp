@@ -59,11 +59,25 @@ IServerObject* FactorySelector::Instantiate(EFactoryObject::EValue value)
 
 void FactorySelector::RegisterFactory(EGraphicAPI::EValue api, IServerFactory* factory)
 {
-	FatAssert(factories_[api] != NULL, L"A factory is already registered for API %d", api);
+	FatAssert(factories_[api] == NULL, L"A factory is already registered for API %d", api);
 	factories_[api] = factory;
 }
 
 static FactorySelector myFactorySelector;
 IFactorySelector* theFactorySelector = &myFactorySelector;
+
+//
+// FactoryRAIISelector
+//
+
+FactoryRAIISelector::FactoryRAIISelector(EGraphicAPI::EValue api)
+{
+	theFactorySelector->SelectorFactory(api);
+}
+
+FactoryRAIISelector::~FactoryRAIISelector()
+{
+	theFactorySelector->UnselectFactory();
+}
 
 }

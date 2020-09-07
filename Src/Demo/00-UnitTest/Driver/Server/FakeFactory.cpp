@@ -30,7 +30,8 @@ IServerObject* FakeFactory::Instantiate(EFactoryObject::EValue value)
 	switch (value)
 	{
 	case EFactoryObject::eDevice:
-		return FatNew(FakeDevice);
+		theFakeDevice = FatNew(FakeDevice);
+		return theFakeDevice;
 
 	default:
 		FatAssertUnreachableCode();

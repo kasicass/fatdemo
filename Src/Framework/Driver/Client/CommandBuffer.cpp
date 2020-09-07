@@ -334,7 +334,6 @@ void CommandBuffer::InitializeMode(EBufferingMode::EValue mode)
 
 Buffer* CommandBuffer::PickBufferToFlush(MutexFast& mutex)
 {
-	FatAssert(mutex.IsLocked(), L"Mutex should be locked");
 	FatAssertNoText(clientBuffers_.size() + serverBuffers_.size() == bufferCount_);
 
 	Buffer* pBuffer = NULL;
@@ -372,8 +371,6 @@ Buffer* CommandBuffer::GetBufferToFill()
 
 void CommandBuffer::DiscardAllServerBuffers(MutexFast& mutex)
 {
-	FatAssert(mutex.IsLocked(), L"Mutex should be locked");
-
 	while (!serverBuffers_.empty())
 	{
 		Buffer* pBuffer = serverBuffers_.back();

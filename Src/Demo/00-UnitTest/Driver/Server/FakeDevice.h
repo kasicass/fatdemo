@@ -8,3 +8,4 @@ public:
 
 	void ForceResetNeeded();
 };
+extern FakeDevice* theFakeDevice;

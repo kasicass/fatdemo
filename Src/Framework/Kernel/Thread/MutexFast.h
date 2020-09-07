@@ -14,9 +14,6 @@ public:
 	void Lock();
 	void Unlock();
 	bool TryLock();
-#if defined(FAT_ENABLE_ASSERT)
-	bool IsLocked() const;
-#endif
 
 private:
 	MutexFast(const MutexFast& rhs);
@@ -28,8 +25,6 @@ private:
 #else
 	pthread_mutex_t mutex_;
 #endif
-
-	FatIfBuildAssertion(Bool isLocked_);
 };
 
 }

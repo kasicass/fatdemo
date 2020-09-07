@@ -61,4 +61,11 @@ private:
 };
 extern IFactorySelector* theFactorySelector;
 
+class FactoryRAIISelector
+{
+public:
+	FactoryRAIISelector(EGraphicAPI::EValue api);
+	~FactoryRAIISelector();
+};
+
 }

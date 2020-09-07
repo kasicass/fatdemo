@@ -1,6 +1,8 @@
 #include "FatFramework.h"
 #include "FakeDevice.h"
 
+FakeDevice* theFakeDevice = NULL;
+
 FakeDevice::FakeDevice()
 {
 }

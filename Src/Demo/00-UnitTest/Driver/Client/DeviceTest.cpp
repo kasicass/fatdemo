@@ -1,4 +1,5 @@
 #include "FatFramework.h"
+#include "Driver/Server/FakeDevice.h"
 
 #if defined(FAT_ENABLE_UNITTEST)
 
@@ -6,39 +7,17 @@ using namespace Fat;
 
 TEST_DECLARE(TestDeviceReset)
 {
-	AtomicInt value(12);
+	FactoryRAIISelector raiiSelector(EGraphicAPI::eUnitTest);
 
-	// Comparison operators
-	FatTest(value == 12);
-	FatTest(value != 21);
+	Device device;
+	FatTest(device.IsResetNeeded() == false);
+	FatTestAssert(device.Reset());
 
-	// Increment
-	FatTest(++value == 13);
-	FatTest(value++ == 13);
-	FatTest(value == 14);
+	theFakeDevice->ForceResetNeeded();
 
-	// Decrement
-	FatTest(--value == 13);
-	FatTest(value-- == 13);
-	FatTest(value == 12);
-
-	// Exchange
-	value = 21;
-	FatTest(value == 21);
-
-	// CompareExchange
-	FatTest(Atomic::CompareExchange(value, 21, 12) == 21);
-	FatTest(value == 12);
-	FatTest(Atomic::CompareExchange(value, 21, 0) == 12);
-	FatTest(value == 12);
-
-	// Operators
-	FatTest(value >= 12);
-	FatTest(value > 11);
-	FatTest(value == 12);
-	FatTest(value <= 12);
-	FatTest(value < 13);
-	FatTest(value != 135113);
+	FatTest(device.IsResetNeeded() == true);
+	FatTest(device.Reset());
+	FatTest(device.IsResetNeeded() == false);
 }
 
 #endif

@@ -38,6 +38,9 @@ add_library(00-UnitTest SHARED
     ../../../../../../Src/Demo/00-UnitTest/ConditionVariableTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/ThreadTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/SmartPtrTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/DeviceTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Server/FakeDevice.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Server/FakeFactory.cpp
     ../../../../../../Src/Framework/Kernel/Common/Assertion.cpp
     ../../../../../../Src/Framework/Kernel/Common/Log.cpp
     ../../../../../../Src/Framework/Kernel/Common/Memory.cpp
@@ -48,7 +51,16 @@ add_library(00-UnitTest SHARED
     ../../../../../../Src/Framework/Kernel/Thread/MutexFast.cpp
     ../../../../../../Src/Framework/Kernel/Thread/ConditionVariable.cpp
     ../../../../../../Src/Framework/Kernel/Thread/Thread.cpp
+    ../../../../../../Src/Framework/Driver/Client/CommandBuffer.cpp
+    ../../../../../../Src/Framework/Driver/Client/CommandLocker.cpp
+    ../../../../../../Src/Framework/Driver/Client/Device.cpp
     ../../../../../../Src/Framework/Driver/Client/FactorySelector.cpp
+    ../../../../../../Src/Framework/Driver/Client/ICommand.cpp
+    ../../../../../../Src/Framework/Driver/Client/IObject.cpp
+    ../../../../../../Src/Framework/Driver/Client/IState.cpp
+    ../../../../../../Src/Framework/Driver/Client/Command/DrawCommand.cpp
+    ../../../../../../Src/Framework/Driver/Client/Command/SwapCommand.cpp
+    ../../../../../../Src/Framework/Driver/Server/Interface/IServerDevice.cpp
     ../../../../../../Src/Framework/Driver/Server/Interface/IServerFactory.cpp
     ../../../../../../Src/Framework/Application/Application.cpp
     ../../../../../../Src/Framework/Application/Application_Android.cpp
