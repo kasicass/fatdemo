@@ -14,9 +14,9 @@ FAT_APP_DEFINE(UnitTestApp)
 void UnitTestApp::Init()
 {
 	Application::Init();
-	theFakeFactory->Init();
-
+	
 #if defined(FAT_ENABLE_UNITTEST)
+	theFakeFactory->Init();
 	TEST_REGISTER(UnitTestSelfTest);
 	TEST_REGISTER(TestTime);
 	TEST_REGISTER(TestFpsCounter);
@@ -38,6 +38,9 @@ void UnitTestApp::Init()
 
 void UnitTestApp::Shutdown()
 {
+#if defined(FAT_ENABLE_UNITTEST)
 	theFakeFactory->Shutdown();
+#endif
+
 	Application::Shutdown();
 }

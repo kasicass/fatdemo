@@ -2,6 +2,8 @@
 #include "FakeFactory.h"
 #include "FakeDevice.h"
 
+#if defined(FAT_ENABLE_UNITTEST)
+
 using namespace Fat;
 
 class FakeFactory : public IFakeFactory
@@ -38,3 +40,5 @@ IServerObject* FakeFactory::Instantiate(EFactoryObject::EValue value)
 		return NULL;
 	}
 }
+
+#endif

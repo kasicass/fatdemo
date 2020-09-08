@@ -1,5 +1,7 @@
 #pragma once
 
+#if defined(FAT_ENABLE_UNITTEST)
+
 class IFakeFactory : public Fat::IServerFactory
 {
 public:
@@ -7,3 +9,5 @@ public:
 	virtual void Shutdown() = 0;
 };
 extern IFakeFactory* theFakeFactory;
+
+#endif

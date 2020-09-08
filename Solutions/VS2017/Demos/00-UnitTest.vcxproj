@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\DeviceTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.cpp" />
@@ -37,6 +38,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.h" />
     <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.h" />
     <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.h" />
   </ItemGroup>

@@ -1,5 +1,7 @@
 #pragma once
 
+#if defined(FAT_ENABLE_UNITTEST)
+
 class FakeDevice : public Fat::IServerDevice
 {
 public:
@@ -9,3 +11,5 @@ public:
 	void ForceResetNeeded();
 };
 extern FakeDevice* theFakeDevice;
+
+#endif
