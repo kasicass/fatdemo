@@ -31,16 +31,19 @@ set(CMAKE_SHARED_LINKER_FLAGS
 
 add_library(00-UnitTest SHARED
     ../../../../../../Src/Demo/00-UnitTest/Main.cpp
-    ../../../../../../Src/Demo/00-UnitTest/TimeTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/AtomicIntTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/UnitTestSelfTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/MutexFastTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/ConditionVariableTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/ThreadTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/SmartPtrTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Kernel/TimeTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Kernel/AtomicIntTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Kernel/UnitTestSelfTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Kernel/MutexFastTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Kernel/ConditionVariableTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Kernel/ThreadTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Kernel/SmartPtrTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Client/DeviceTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/Command/FakeCommand.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Server/FakeDevice.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Server/FakeFactory.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Server/Command/FakeServerCommand.cpp
     ../../../../../../Src/Framework/Kernel/Common/Assertion.cpp
     ../../../../../../Src/Framework/Kernel/Common/Log.cpp
     ../../../../../../Src/Framework/Kernel/Common/Memory.cpp
@@ -63,8 +66,7 @@ add_library(00-UnitTest SHARED
     ../../../../../../Src/Framework/Driver/Server/Interface/IServerDevice.cpp
     ../../../../../../Src/Framework/Driver/Server/Interface/IServerFactory.cpp
     ../../../../../../Src/Framework/Application/Application.cpp
-    ../../../../../../Src/Framework/Application/Application_Android.cpp
-    )
+    ../../../../../../Src/Framework/Application/Application_Android.cpp)
 
 target_include_directories(00-UnitTest PRIVATE
     ${ANDROID_NDK}/sources/android/native_app_glue

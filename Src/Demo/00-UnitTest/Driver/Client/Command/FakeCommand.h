@@ -12,7 +12,7 @@ public:
 	UInt32 GetValue() const;
 
 	virtual void Clear() override;
-	virtual void Copy(const ICommandData* rhs);
+	virtual void Copy(const ICommandData* rhs) override;
 
 private:
 	UInt32 value_;
@@ -31,7 +31,7 @@ public:
 	UInt32 GetValue() const;
 
 	virtual void Clear() override;
-	virtual void Copy(const ICommandData* rhs);
+	virtual void Copy(const ICommandData* rhs) override;
 
 private:
 	UInt32 value_;
