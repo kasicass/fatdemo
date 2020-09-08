@@ -99,7 +99,7 @@ const ICommandData* ICommand::GetReadOnlyData() const
 
 	// the front of the list data is always the most recent
 	const ICommandData* pData = commandDataList_.front().Get();
-	FatAssert(pData->IsReadWriteAcquired() == false, L"This data is already locked for writ on the client side");
+	FatAssert(pData->IsReadWriteAcquired() == false, L"This data is already locked for write on the client side");
 
 	return pData;
 }

@@ -31,6 +31,9 @@ private:
 	void Rebuilt() const;
 
 private:
+	//  0 - no lock
+	// >0 - read-lock
+	// -1 - write-lock
 	mutable AtomicInt acquiredCounter_;
 	mutable Bool rebuildNeeded_;
 };

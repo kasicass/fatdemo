@@ -7,7 +7,9 @@ FAT_ENUM_BEGIN(EGraphicAPI)
 	eD3D9,
 	eD3D11,
 	eOpenGL,
+#if defined(FAT_ENABLE_UNITTEST)
 	eUnitTest,
+#endif
 FAT_ENUM_END()
 
 // Driver factory object enum

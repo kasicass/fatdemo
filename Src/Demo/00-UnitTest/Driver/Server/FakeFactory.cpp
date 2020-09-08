@@ -1,6 +1,7 @@
 #include "FatFramework.h"
-#include "FakeFactory.h"
-#include "FakeDevice.h"
+#include "Driver/Server/FakeFactory.h"
+#include "Driver/Server/FakeDevice.h"
+#include "Driver/Server/Command/FakeServerCommand.h"
 
 #if defined(FAT_ENABLE_UNITTEST)
 
@@ -34,6 +35,12 @@ IServerObject* FakeFactory::Instantiate(EFactoryObject::EValue value)
 	case EFactoryObject::eDevice:
 		theFakeDevice = FatNew(FakeDevice);
 		return theFakeDevice;
+
+	case EFactoryObject::eUnitTestCommand:
+		return FatNew(FakeServerCommand);
+
+	case EFactoryObject::eUnitTestCheckCommand:
+		return FatNew(FakeCheckServerCommand);
 
 	default:
 		FatAssertUnreachableCode();

@@ -30,6 +30,8 @@ void UnitTestApp::Init()
 	TEST_REGISTER(TestMutex);
 	TEST_REGISTER(TestConditionVariable);
 	TEST_REGISTER(TestDeviceReset);
+	TEST_REGISTER(TestCommandLocking);
+	TEST_REGISTER(TestCommandDataIntegrity);
 	theUnitTestMgr->Run();
 #else
 	FatLog(L"FAT_ENABLE_UNITTEST is off");

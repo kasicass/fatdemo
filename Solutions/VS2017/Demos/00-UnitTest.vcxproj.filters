@@ -35,6 +35,12 @@
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.cpp">
       <Filter>Driver\Client\Command</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.cpp">
+      <Filter>Driver\Server\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandTest.cpp">
+      <Filter>Driver\Client</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Driver">
@@ -52,6 +58,9 @@
     <Filter Include="Driver\Client\Command">
       <UniqueIdentifier>{c03eed9e-7e86-4a62-92e5-0e5247fb5fb9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Driver\Server\Command">
+      <UniqueIdentifier>{d5575850-a526-4bd1-b8cc-28afda41e6e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.h">
@@ -62,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.h">
       <Filter>Driver\Client\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.h">
+      <Filter>Driver\Server\Command</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

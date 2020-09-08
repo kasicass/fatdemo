@@ -19,8 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\DeviceTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\AtomicIntTest.cpp" />
@@ -39,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.h" />
+    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.h" />
     <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.h" />
     <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.h" />
   </ItemGroup>

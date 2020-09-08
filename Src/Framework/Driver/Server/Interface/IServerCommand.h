@@ -11,7 +11,7 @@ public:
 	IServerCommand() {}
 	virtual ~IServerCommand() {}
 
-private:
+protected:
 	friend class Packet;
 
 	// Build according to a new data
