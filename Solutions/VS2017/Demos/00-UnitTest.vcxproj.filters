@@ -2,13 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Main.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\TimeTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\AtomicIntTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\UnitTestSelfTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\SmartPtrTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\MutexFastTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\ThreadTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\ConditionVariableTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\DeviceTest.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
@@ -17,6 +10,27 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.cpp">
       <Filter>Driver\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\AtomicIntTest.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\ConditionVariableTest.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\MutexFastTest.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\SmartPtrTest.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\ThreadTest.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\TimeTest.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\UnitTestSelfTest.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -28,6 +42,9 @@
     </Filter>
     <Filter Include="Driver\Server">
       <UniqueIdentifier>{ef5bc8bd-9ce4-4a8d-9bbf-5dce44997d5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel">
+      <UniqueIdentifier>{52b72e6b-dbd0-4492-873e-347fb892c4b7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

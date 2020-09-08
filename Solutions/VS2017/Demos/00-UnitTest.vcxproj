@@ -19,17 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\AtomicIntTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\ConditionVariableTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\DeviceTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\AtomicIntTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\ConditionVariableTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\MutexFastTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\SmartPtrTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\ThreadTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\TimeTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\UnitTestSelfTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Main.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\MutexFastTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\SmartPtrTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\ThreadTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\TimeTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\UnitTestSelfTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Libs\FatFramework.vcxproj">
