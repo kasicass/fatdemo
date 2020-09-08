@@ -30,6 +30,7 @@ void UnitTestApp::Init()
 	TEST_REGISTER(TestMutex);
 	TEST_REGISTER(TestConditionVariable);
 	TEST_REGISTER(TestDeviceReset);
+	TEST_REGISTER(TestCommandLocker);
 	TEST_REGISTER(TestCommandLocking);
 	TEST_REGISTER(TestCommandDataIntegrity);
 	theUnitTestMgr->Run();

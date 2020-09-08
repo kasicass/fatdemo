@@ -12,7 +12,7 @@ TODO
  * d - SSAO
  * b - SSAO
  * g - bitmap font rendering
- * g - FishGUI
+ * g - https://github.com/Immediate-Mode-UI/Nuklear
  * d - HelloTriangle
  * r - OpenGL 3.3 Driver
  * r - OpenGL ES 3.0 Driver

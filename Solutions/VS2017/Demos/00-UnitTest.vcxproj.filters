@@ -41,6 +41,9 @@
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandTest.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandLockerTest.cpp">
+      <Filter>Driver\Client</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Driver">
