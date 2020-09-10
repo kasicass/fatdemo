@@ -184,6 +184,7 @@ void CommandBuffer::End()
 
 		// Remove buffer from the client list. Last filled buffer was at the front of the list
 		Buffer* pBuffer = clientBuffers_.front();
+		clientBuffers_.pop_front();
 
 		// Give it to the server. Push it in the front as it is the newest one (the oldest is at the back)
 		serverBuffers_.push_back(pBuffer);
@@ -193,7 +194,7 @@ void CommandBuffer::End()
 	}
 }
 
-void CommandBuffer::SetBufferMode(EBufferingMode::EValue mode)
+void CommandBuffer::SetBufferingMode(EBufferingMode::EValue mode)
 {
 	FatAssert(insideBeginEnd_ == false, L"Cannot be called inside a begin/end pair");
 

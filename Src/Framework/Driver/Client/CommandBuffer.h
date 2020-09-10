@@ -67,7 +67,7 @@ public:
 
 	// Modify command buffer execution mode. Must be called outside of the begin end frame as it will wait
 	// for all frames to be flushed.
-	void SetBufferMode(EBufferingMode::EValue mode);
+	void SetBufferingMode(EBufferingMode::EValue mode);
 
 	EBufferingMode::EValue GetBufferingMode() const;
 
