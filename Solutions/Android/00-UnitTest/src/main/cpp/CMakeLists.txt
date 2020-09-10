@@ -38,8 +38,10 @@ add_library(00-UnitTest SHARED
     ../../../../../../Src/Demo/00-UnitTest/Kernel/ConditionVariableTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Kernel/ThreadTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Kernel/SmartPtrTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Client/DeviceTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandLockerTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandBufferTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Client/Command/FakeCommand.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Server/FakeDevice.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Server/FakeFactory.cpp
