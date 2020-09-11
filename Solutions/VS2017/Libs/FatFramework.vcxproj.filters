@@ -148,6 +148,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformConfig.h">
       <Filter>Kernel</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Queue.h">
+      <Filter>Kernel\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">

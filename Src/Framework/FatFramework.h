@@ -3,13 +3,6 @@
 // Platform-specific
 #include "Kernel/PlatformConfig.h"
 
-// https://www.flipcode.com/archives/Detecting_Memory_Leaks.shtml
-#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
-#  define _CRTDBG_MAP_ALLOC
-#  include <stdlib.h>
-#  include <crtdbg.h>
-#endif
-
 #if defined(FAT_OS_WINDOWS)
 #  define WIN32_LEAN_AND_MEAN
 #  define NOMINMAX

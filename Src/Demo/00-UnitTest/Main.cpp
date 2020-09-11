@@ -39,7 +39,8 @@ void UnitTestApp::Init()
 	FatLog(L"FAT_ENABLE_UNITTEST is off");
 #endif
 
-	void *p = FatMalloc(10);
+	void* p = FatMalloc(10);
+	void* p1 = FatRealloc(p, 15);
 }
 
 void UnitTestApp::Shutdown()

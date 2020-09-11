@@ -50,6 +50,7 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Memory.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\NonCopyable.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\OS.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Queue.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\SmartPtr.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Time.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformConfig.h" />
