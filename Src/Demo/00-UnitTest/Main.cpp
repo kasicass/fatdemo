@@ -52,10 +52,13 @@ void UnitTestApp::Init()
 	public:
 		MyClass(int v) { value_ = v; }
 
+		void Foo() {}
+
 	private:
 		int value_;
 	};
 	MyClass* my = FatNew(MyClass, 2);
+	my->Foo();
 }
 
 void UnitTestApp::Shutdown()

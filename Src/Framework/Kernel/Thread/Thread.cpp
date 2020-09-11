@@ -21,12 +21,14 @@ ThreadPtr Thread::Attach(const char* name)
 
 void Thread::InitMainThread()
 {
+	FatLog(L"<Thread>: Init");
 	s_pMainThread = Thread::Attach("MainThread");
 }
 
 void Thread::ShutdownMainThread()
 {
 	s_pMainThread = NULL;
+	FatLog(L"<Thread>: Shutdown");
 }
 
 ThreadPtr Thread::GetCurrent()
