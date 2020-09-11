@@ -57,18 +57,22 @@ void Init()
 void Shutdown()
 {
 	CheckMemLeakInitialized();
+	FatLog(L"<MemCheck>: Shutdown");
 
 	MutexFastLocker locker(s_mallocLock);
 
-	if (LIST_EMPTY(&s_allocatedList))
-		return;
+	FatAssertNoText(s_mallocRecordInit == true);
+	s_mallocRecordInit = false;
 
-	FatLog(L"<MemCheck>: Detect Memory Leak");
-	
-	MallocRecord* pRecord;
-	LIST_FOREACH(pRecord, &s_allocatedList, list)
+	if (!LIST_EMPTY(&s_allocatedList))
 	{
-		FatLog(L"<MemCheck>: %ls(%u) at 0x%p, %u bytes", pRecord->file, pRecord->line, pRecord->ptr, pRecord->bytes);
+		FatLog(L"<MemCheck>: Detect Memory Leak");
+
+		MallocRecord* pRecord;
+		LIST_FOREACH(pRecord, &s_allocatedList, list)
+		{
+			FatLog(L"<MemCheck>: %ls(%u) at 0x%p, %u bytes", pRecord->file, pRecord->line, pRecord->ptr, pRecord->bytes);
+		}
 	}
 }
 
@@ -114,7 +118,7 @@ void* ReallocDbg(void* p, UInt32 size, const wchar_t* file, int line)
 			if (pRecord->ptr == p)
 				break;
 		}
-		FatAssert(pRecord, L"Not in allocatedList?");
+		FatAssert(pRecord != NULL, L"Not in allocatedList?");
 		LIST_REMOVE(pRecord, list);
 	}
 
@@ -149,7 +153,7 @@ void FreeDbg(void* p)
 			if (pRecord->ptr == p)
 				break;
 		}
-		FatAssert(pRecord, L"Not in allocatedList?");
+		FatAssert(pRecord != NULL, L"Not in allocatedList?");
 		LIST_REMOVE(pRecord, list);
 
 		// insert into s_freeList
@@ -201,7 +205,7 @@ void FreeInternal(void* p)
 void* MallocInternal(UInt32 size)
 {
 	void* p;
-	FatIfBuildAssertion(int ret =) posix_memalign(&p, align, size);
+	FatIfBuildAssertion(int ret =) posix_memalign(&p, 16, size);
 	FatAssert(ret == 0, L"Malloc failed");
 	return p;
 }
@@ -209,6 +213,7 @@ void* MallocInternal(UInt32 size)
 void* ReallocInertnal(void* p, UInt32 size)
 {
 	// TODO
+	return NULL;
 }
 
 void FreeInternal(void* p)

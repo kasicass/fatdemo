@@ -40,7 +40,13 @@ void UnitTestApp::Init()
 #endif
 
 	void* p = FatMalloc(10);
+	*(char*)p = 1;
+	FatLog(L"Log it %d", *(char*)p);
+
+#if defined(FAT_OS_WINDOWS)
 	void* p1 = FatRealloc(p, 15);
+	*(char*)p1 = 2;
+#endif
 }
 
 void UnitTestApp::Shutdown()
