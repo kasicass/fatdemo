@@ -27,6 +27,7 @@ void Thread::InitMainThread()
 
 void Thread::ShutdownMainThread()
 {
+	s_pCurrentThread = NULL;
 	s_pMainThread = NULL;
 	FatLog(L"<Thread>: Shutdown");
 }
