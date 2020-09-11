@@ -62,6 +62,10 @@ struct MallocRecord {
 LIST_HEAD(MallocRecordList, MallocRecord);
 
 static volatile bool s_mallocRecordInit = false;
+static UInt32 s_peakAllocCount = 0;
+static UInt32 s_peakAllocBytes = 0;
+static UInt32 s_currAllocCount = 0;
+static UInt32 s_currAllocBytes = 0;
 static MallocRecord s_mallocRecords[MAX_MALLOC_RECORDS];
 static MallocRecordList s_freeList = { NULL }; // LIST_HEAD_INITIALIZER;
 static MallocRecordList s_allocatedList = { NULL }; // LIST_HEAD_INITIALIZER;
@@ -71,7 +75,8 @@ void Init()
 {
 	MutexFastLocker locker(s_mallocLock);
 
-	FatLog(L"<MemCheck>: Init");
+	FatLog(L"<MemCheck>: Init (costs %.3f MB)", (sizeof(s_mallocRecordInit) + sizeof(s_peakAllocCount) +
+		sizeof(s_mallocRecords) + sizeof(s_freeList) + sizeof(s_allocatedList) + sizeof(s_mallocLock)) / (1024.f*1024.f));
 	FatAssertNoText(s_mallocRecordInit == false);
 
 	LIST_INIT(&s_freeList);
@@ -89,11 +94,16 @@ void Init()
 	// MSVC crt will call delete on-exit (I don't know why)
 	// Just don't catch memory alloc before Memory::Init()
 	s_mallocRecordInit = true;
+
+	s_peakAllocCount = 0;
+	s_peakAllocBytes = 0;
+	s_currAllocCount = 0;
+	s_currAllocBytes = 0;
 }
 
 void Shutdown()
 {
-	FatLog(L"<MemCheck>: Shutdown");
+	FatLog(L"<MemCheck>: Shutdown - PeekCount:%u, PeekBytes:%u", s_peakAllocCount, s_peakAllocBytes);
 
 	MutexFastLocker locker(s_mallocLock);
 
@@ -136,6 +146,12 @@ void* MallocDbg(size_t size, const wchar_t* file, int line)
 		pRecord->line  = line;
 		pRecord->bytes = (UInt32)size;
 		LIST_INSERT_HEAD(&s_allocatedList, pRecord, list);
+
+		s_currAllocCount++;
+		s_currAllocBytes += (UInt32)size;
+
+		if (s_currAllocCount > s_peakAllocCount) s_peakAllocCount = s_currAllocCount;
+		if (s_currAllocBytes > s_peakAllocBytes) s_peakAllocBytes = s_currAllocBytes;
 	}
 
 	return p;
@@ -157,6 +173,8 @@ void* ReallocDbg(void* p, size_t size, const wchar_t* file, int line)
 		}
 		FatAssert(pRecord != NULL, L"Not in allocatedList?");
 		LIST_REMOVE(pRecord, list);
+
+		s_currAllocBytes -= pRecord->bytes;
 	}
 
 	// realloc
@@ -172,6 +190,9 @@ void* ReallocDbg(void* p, size_t size, const wchar_t* file, int line)
 		pRecord->line  = line;
 		pRecord->bytes = (UInt32)size;
 		LIST_INSERT_HEAD(&s_allocatedList, pRecord, list);
+
+		s_currAllocBytes += (UInt32)size;
+		if (s_currAllocBytes > s_peakAllocBytes) s_peakAllocBytes = s_currAllocBytes;
 	}
 
 	return p2;
@@ -197,6 +218,9 @@ void FreeDbg(void* p)
 		// insert into s_freeList
 		pRecord->ptr = INVALID_POINTER;
 		LIST_INSERT_HEAD(&s_freeList, pRecord, list);
+
+		s_currAllocCount--;
+		s_currAllocBytes -= pRecord->bytes;
 	}
 
 	FreeInternal(p);
