@@ -36,16 +36,16 @@
 #endif
 
 // Build Configuration
-#if !defined(FAT_DEBUG_BUILD) && !defined(FAT_RELEASE_BUILD)
+#if !defined(FAT_DEBUG_BUILD) && !defined(FAT_PROFILE_BUILD) && !defined(FAT_RELEASE_BUILD)
 #  error Where is the build configuration?
 #endif
 
 // Preprocessor definition
-#if defined(FAT_DEBUG_BUILD)
-#  define FAT_ENABLE_ASSERT
-#  define FAT_ENABLE_UNITTEST
+#if defined(FAT_RELEASE_BUILD)
 #  define FAT_ENABLE_LOG
 #else
+#  define FAT_ENABLE_ASSERT
+#  define FAT_ENABLE_UNITTEST
 #  define FAT_ENABLE_LOG
 #endif
 

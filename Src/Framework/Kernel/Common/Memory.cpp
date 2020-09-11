@@ -1,7 +1,5 @@
 #include "FatFramework.h"
 
-namespace Fat {
-
 #if !defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
 #if defined(FAT_OS_WINDOWS)
 
@@ -34,6 +32,8 @@ void FatFree(void* p)
 
 #endif
 #endif
+
+namespace Fat {
 
 namespace Memory {
 
