@@ -20,6 +20,7 @@ TODO
  * r - D3D9 Driver
  * r - Client/Server RenderThread Framework
  * a - Platform-indepent Windows
+ * d - Malloc Benchmark
  
 DONE
  * k - Mutex/CondVariable/Thread

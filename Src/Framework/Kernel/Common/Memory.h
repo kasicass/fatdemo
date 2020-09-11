@@ -27,7 +27,10 @@ void FatFree(void* p);
 
 namespace Fat {
 
-void InitMemoryCheck();
+namespace Memory {
+	void Init();
+	void Shutdown();
+}
 
 void MemoryCopy(void* pDest, const void* pSource, UInt32 count);
 void MemorySet(void* pDest, Int32 ch, UInt32 count);

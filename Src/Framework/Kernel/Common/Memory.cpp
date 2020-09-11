@@ -35,7 +35,9 @@ void FatFree(void* p)
 #endif
 #endif
 
-void InitMemoryCheck()
+namespace Memory {
+
+void Init()
 {
 #if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
 	FatLog(L"<MemCheck>: Init");
@@ -43,6 +45,12 @@ void InitMemoryCheck()
 	// Perform automatic leak checking at program exit
 	_CrtSetDbgFlag(_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) | _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
+}
+
+void Shutdown()
+{
+}
+
 }
 
 void MemoryCopy(void* pDest, const void* pSource, UInt32 count)

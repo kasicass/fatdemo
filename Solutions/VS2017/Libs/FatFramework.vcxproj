@@ -44,7 +44,7 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\OS.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\SmartPtr.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Time.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformDefines.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformConfig.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TCharTraits.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TStackString.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TString.h" />

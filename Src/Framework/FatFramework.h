@@ -1,7 +1,7 @@
 #pragma once
 
 // Platform-specific
-#include "Kernel/PlatformDefines.h"
+#include "Kernel/PlatformConfig.h"
 
 // https://www.flipcode.com/archives/Detecting_Memory_Leaks.shtml
 #if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)

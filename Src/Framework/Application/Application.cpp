@@ -15,7 +15,7 @@ void Application::Init()
 	// Registration::CallInitialize();
 
 	FatLog(L"<App>: Init");
-	InitMemoryCheck();
+	Memory::Init();
 	thePerfCounter->Init();
 	Thread::InitMainThread();
 	theFactorySelector->Init();
@@ -26,6 +26,7 @@ void Application::Shutdown()
 	theFactorySelector->Shutdown();
 	Thread::ShutdownMainThread();
 	thePerfCounter->Shutdown();
+	Memory::Shutdown();
 	FatLog(L"<App>: Shutdown");
 	// Registration::CallDestroy();
 }
