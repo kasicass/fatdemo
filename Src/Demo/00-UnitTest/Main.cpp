@@ -41,12 +41,21 @@ void UnitTestApp::Init()
 
 	void* p = FatMalloc(10);
 	*(char*)p = 1;
-	FatLog(L"Log it %d", *(char*)p);
 
 #if defined(FAT_OS_WINDOWS)
 	void* p1 = FatRealloc(p, 15);
 	*(char*)p1 = 2;
 #endif
+
+	class MyClass
+	{
+	public:
+		MyClass(int v) { value_ = v; }
+
+	private:
+		int value_;
+	};
+	MyClass* my = FatNew(MyClass, 2);
 }
 
 void UnitTestApp::Shutdown()

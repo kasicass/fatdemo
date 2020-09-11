@@ -1,6 +1,43 @@
 #include "FatFramework.h"
 #include "Kernel/Common/Queue.h"
 
+//
+// new/delete override
+//
+
+#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
+
+// https://stackoverflow.com/questions/58694487/no-matching-operator-delete-found-memory-will-not-be-freed-if-initialization-th
+
+// debug delete - called when class constructor throw exception
+void operator delete(void* p, const wchar_t* file, int line) noexcept         { return Fat::Memory::FreeDbg(p); }
+void operator delete[](void* p, const wchar_t* file, int line) noexcept       { return Fat::Memory::FreeDbg(p); }
+
+// debug new
+void* operator new(size_t n, const wchar_t* file, int line) noexcept(false)   { return Fat::Memory::MallocDbg(n, file, line); }
+void* operator new[](size_t n, const wchar_t* file, int line) noexcept(false) { return Fat::Memory::MallocDbg(n, file, line); }
+
+// normal delete
+void operator delete(void* p) noexcept                                        { Fat::Memory::FreeDbg(p); }
+void operator delete[](void* p) noexcept                                      { Fat::Memory::FreeDbg(p); }
+
+// normal new
+void* operator new(size_t n) noexcept(false)                                  { return Fat::Memory::MallocDbg(n, L"null", -1); }
+void* operator new[](size_t n) noexcept(false)                                { return Fat::Memory::MallocDbg(n, L"null", -1); }
+
+#else
+
+// normal delete
+void operator delete(void* p) noexcept                                        { Fat::Memory::FreeInternal(p); }
+void operator delete[](void* p) noexcept                                      { Fat::Memory::FreeInternal(p); }
+
+// normal new
+void* operator new(size_t n) noexcept(false)                                  { return Fat::Memory::MallocInternal(n); }
+void* operator new[](size_t n) noexcept(false)                                { return Fat::Memory::MallocInternal(n); }
+
+#endif
+
+
 namespace Fat {
 
 namespace Memory {
@@ -30,8 +67,6 @@ static MallocRecordList s_freeList = { NULL }; // LIST_HEAD_INITIALIZER;
 static MallocRecordList s_allocatedList = { NULL }; // LIST_HEAD_INITIALIZER;
 static MutexFast s_mallocLock;
 
-#define CheckMemLeakInitialized() FatAssertNoText(s_mallocRecordInit)
-
 void Init()
 {
 	MutexFastLocker locker(s_mallocLock);
@@ -51,12 +86,13 @@ void Init()
 		s_mallocRecords[i].bytes = 0;
 	}
 
+	// MSVC crt will call delete on-exit (I don't know why)
+	// Just don't catch memory alloc before Memory::Init()
 	s_mallocRecordInit = true;
 }
 
 void Shutdown()
 {
-	CheckMemLeakInitialized();
 	FatLog(L"<MemCheck>: Shutdown");
 
 	MutexFastLocker locker(s_mallocLock);
@@ -71,17 +107,19 @@ void Shutdown()
 		MallocRecord* pRecord;
 		LIST_FOREACH(pRecord, &s_allocatedList, list)
 		{
-			FatLog(L"<MemCheck>: %ls(%u) at 0x%p, %u bytes", pRecord->file, pRecord->line, pRecord->ptr, pRecord->bytes);
+			if (pRecord->line != -1)
+			{
+				FatLog(L"<MemCheck>: %ls(%u) at 0x%p, %u bytes", pRecord->file, pRecord->line, pRecord->ptr, pRecord->bytes);
+			}
 		}
 	}
 }
 
-void* MallocDbg(UInt32 size, const wchar_t* file, int line)
+void* MallocDbg(size_t size, const wchar_t* file, int line)
 {
-	CheckMemLeakInitialized();
-
 	void* p = MallocInternal(size);
 
+	if (s_mallocRecordInit)
 	{
 		MutexFastLocker locker(s_mallocLock);
 
@@ -93,23 +131,22 @@ void* MallocDbg(UInt32 size, const wchar_t* file, int line)
 		FatAssertNoText(pRecord->ptr == INVALID_POINTER);
 
 		// insert to s_allocatedList
-		pRecord->ptr = p;
-		pRecord->file = file;
-		pRecord->line = line;
-		pRecord->bytes = size;
+		pRecord->ptr   = p;
+		pRecord->file  = file;
+		pRecord->line  = line;
+		pRecord->bytes = (UInt32)size;
 		LIST_INSERT_HEAD(&s_allocatedList, pRecord, list);
 	}
 
 	return p;
 }
 
-void* ReallocDbg(void* p, UInt32 size, const wchar_t* file, int line)
+void* ReallocDbg(void* p, size_t size, const wchar_t* file, int line)
 {
-	CheckMemLeakInitialized();
-
-	MallocRecord* pRecord;
+	MallocRecord* pRecord = NULL;
 
 	// find from s_allocatedList
+	if (s_mallocRecordInit)
 	{
 		MutexFastLocker locker(s_mallocLock);
 
@@ -126,13 +163,14 @@ void* ReallocDbg(void* p, UInt32 size, const wchar_t* file, int line)
 	void* p2 = ReallocInertnal(p, size);
 
 	// reset ptr
+	if (s_mallocRecordInit)
 	{
 		MutexFastLocker locker(s_mallocLock);
 
 		pRecord->ptr   = p2;
 		pRecord->file  = file;
 		pRecord->line  = line;
-		pRecord->bytes = size;
+		pRecord->bytes = (UInt32)size;
 		LIST_INSERT_HEAD(&s_allocatedList, pRecord, list);
 	}
 
@@ -141,8 +179,7 @@ void* ReallocDbg(void* p, UInt32 size, const wchar_t* file, int line)
 
 void FreeDbg(void* p)
 {
-	CheckMemLeakInitialized();
-
+	if (s_mallocRecordInit)
 	{
 		MutexFastLocker locker(s_mallocLock);
 
@@ -153,10 +190,12 @@ void FreeDbg(void* p)
 			if (pRecord->ptr == p)
 				break;
 		}
+
 		FatAssert(pRecord != NULL, L"Not in allocatedList?");
 		LIST_REMOVE(pRecord, list);
 
 		// insert into s_freeList
+		pRecord->ptr = INVALID_POINTER;
 		LIST_INSERT_HEAD(&s_freeList, pRecord, list);
 	}
 
@@ -181,14 +220,14 @@ void Shutdown()
 
 #if defined(FAT_OS_WINDOWS)
 
-void* MallocInternal(UInt32 size)
+void* MallocInternal(size_t size)
 {
 	void* p = _aligned_malloc(size, 16);
 	FatAssert(p != NULL, L"Malloc failed");
 	return p;
 }
 
-void* ReallocInertnal(void* p, UInt32 size)
+void* ReallocInertnal(void* p, size_t size)
 {
 	p = _aligned_realloc(p, size, 16);
 	FatAssert(p != NULL, L"Realloc failed");
@@ -197,12 +236,12 @@ void* ReallocInertnal(void* p, UInt32 size)
 
 void FreeInternal(void* p)
 {
-	free(p);
+	_aligned_free(p);
 }
 
 #else
 
-void* MallocInternal(UInt32 size)
+void* MallocInternal(size_t size)
 {
 	void* p;
 	FatIfBuildAssertion(int ret =) posix_memalign(&p, 16, size);
@@ -210,7 +249,7 @@ void* MallocInternal(UInt32 size)
 	return p;
 }
 
-void* ReallocInertnal(void* p, UInt32 size)
+void* ReallocInertnal(void* p, size_t size)
 {
 	// TODO
 	return NULL;

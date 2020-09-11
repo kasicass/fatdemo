@@ -2,22 +2,33 @@
 
 #if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
 
-#define FatMalloc(size)     Fat::Memory::MallocDbg(size, FAT_CONCAT(L,__FILE__), __LINE__)
-#define FatRealloc(p, size) Fat::Memory::ReallocDbg(p, size, FAT_CONCAT(L,__FILE__), __LINE__)
-#define FatFree(p)          Fat::Memory::FreeDbg(p)
+#define FatMalloc(size)          Fat::Memory::MallocDbg(size, FAT_CONCAT(L,__FILE__), __LINE__)
+#define FatRealloc(p, size)      Fat::Memory::ReallocDbg(p, size, FAT_CONCAT(L,__FILE__), __LINE__)
+#define FatFree(p)               Fat::Memory::FreeDbg(p)
+
+#define FatNew(Type, ...)        new(FAT_CONCAT(L,__FILE__), __LINE__) Type(__VA_ARGS__)
+#define FatNewArray(Type, Count) new(FAT_CONCAT(L,__FILE__), __LINE__) Type[Count]
+#define FatDelete(Pointer)       delete Pointer
+#define FatDeleteArray(Pointer)  delete [] Pointer
+
+void operator delete(void* p, const wchar_t* file, int line) noexcept;
+void operator delete[](void* p, const wchar_t* file, int line) noexcept;
+
+void* operator new(size_t n, const wchar_t* file, int line) noexcept(false);
+void* operator new[](size_t n, const wchar_t* file, int line) noexcept(false);
 
 #else
 
-#define FatMalloc(size)     Fat::Memory::MallocInternal(size)
-#define FatRealloc(p, size) Fat::Memory::ReallocInternal(p, size)
-#define FatFree(p)          Fat::Memory::FreeInternal(p)
+#define FatMalloc(size)          Fat::Memory::MallocInternal(size)
+#define FatRealloc(p, size)      Fat::Memory::ReallocInternal(p, size)
+#define FatFree(p)               Fat::Memory::FreeInternal(p)
+
+#define FatNew(Type, ...)        new Type(__VA_ARGS__)
+#define FatNewArray(Type, Count) new Type[Count]
+#define FatDelete(Pointer)       delete Pointer
+#define FatDeleteArray(Pointer)  delete [] Pointer
 
 #endif
-
-#define FatNew(Type, ...) new Type(__VA_ARGS__)
-#define FatNewArray(Type, Count) new Type[Count]
-#define FatDelete(Pointer) delete Pointer
-#define FatDeleteArray(Pointer) delete [] Pointer
 
 namespace Fat {
 
@@ -25,13 +36,13 @@ namespace Memory {
 	void Init();
 	void Shutdown();
 
-	void* MallocInternal(UInt32 size);
-	void* ReallocInertnal(void* p, UInt32 size);
+	void* MallocInternal(size_t size);
+	void* ReallocInertnal(void* p, size_t size);
 	void FreeInternal(void* p);
 
 #if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
-	void* MallocDbg(UInt32 size, const wchar_t* file, int line);
-	void* ReallocDbg(void* p, UInt32 size, const wchar_t* file, int line);
+	void* MallocDbg(size_t size, const wchar_t* file, int line);
+	void* ReallocDbg(void* p, size_t size, const wchar_t* file, int line);
 	void FreeDbg(void* p);
 #endif
 }
