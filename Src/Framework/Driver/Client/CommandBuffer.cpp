@@ -40,9 +40,11 @@ void Packet::Dispatch(Device& device)
 	{
 		pServerCommand->Build(pCommandData, pServerDevice);
 		pCommandData->Rebuilt();
+		theDriverStats->IncBuiltCommandsPerFrame();
 	}
 
 	pServerCommand->Dispatch(pCommandData, pServerDevice);
+	theDriverStats->IncDispatchedCommandsPerFrame();
 }
 
 //
@@ -70,6 +72,7 @@ void Buffer::Dispatch(Device& device)
 		it->Dispatch(device);
 	}
 
+	theDriverStats->SetCommandBufferSize(Int32(packets_.size() * sizeof(Packet)));
 	Clear();
 }
 
@@ -174,6 +177,7 @@ void CommandBuffer::End()
 
 	insideBeginEnd_ = false;
 	clientFpsCounter_.Update();
+	theDriverStats->SetClientFps(clientFpsCounter_.GetFramePerSecond());
 
 	if (mode_ == EBufferingMode::eNoBuffering)
 		return;
@@ -280,13 +284,19 @@ void CommandBuffer::ServerFlushFunction()
 		pBuffer->Dispatch(device_);
 		queuingMutex_.Lock();
 
+		// Pushes pBuffer at the back of the list, as the front is used for the filled buffer
+		// then notify a buffer was release to the client
 		clientBuffers_.push_back(pBuffer);
 		queuingCondition_.NotifyOne();
 
+		// Compute fps between two Dispatch() calls
 		serverFpsCounter_.Update();
+		theDriverStats->SetServerFps(serverFpsCounter_.GetFramePerSecond());
+
 		queuingMutex_.Unlock();
 	}
 
+	// Clear all server buffers before exiting
 	MutexFastLocker locker(queuingMutex_);
 	DiscardAllServerBuffers(queuingMutex_);
 }
@@ -331,6 +341,9 @@ void CommandBuffer::InitializeMode(EBufferingMode::EValue mode)
 	{
 		clientBuffers_.push_back(&buffers_[i]);
 	}
+
+	// Reset driver stats
+	theDriverStats->Reset();
 }
 
 Buffer* CommandBuffer::PickBufferToFlush(MutexFast& mutex)

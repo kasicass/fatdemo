@@ -7,6 +7,9 @@ TAG
  * r = rendering
 
 TODO
+ * d - Malloc Benchmark
+ * k - jemalloc
+ * k - mimalloc
  * d - RenderThread
  * b - RenderThread
  * d - SSAO
@@ -20,7 +23,6 @@ TODO
  * r - D3D9 Driver
  * r - Client/Server RenderThread Framework
  * a - Platform-indepent Windows
- * d - Malloc Benchmark
  
 DONE
  * k - Mutex/CondVariable/Thread

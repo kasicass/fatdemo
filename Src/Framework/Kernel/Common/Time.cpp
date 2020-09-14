@@ -191,4 +191,9 @@ void FpsAutoCounter::Update()
 	lastTime_ = currentTime;
 }
 
+UInt32 FpsAutoCounter::GetFramePerSecond() const
+{
+	return FpsCounter::GetFramePerSecond();
+}
+
 }

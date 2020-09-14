@@ -34,6 +34,7 @@
 #include <list>
 #include <map>
 #include <atomic>
+#include <sstream>
 
 // helper macros
 #define FAT_ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
@@ -118,6 +119,7 @@
 #include "Driver/Client/EStateType.h"
 #include "Driver/Client/IState.h"
 #include "Driver/Client/Device.h"
+#include "Driver/Client/DriverStatistics.h"
 #include "Driver/Client/Command/DrawCommand.h"
 #include "Driver/Client/Command/SwapCommand.h"
 #include "Application/IApplication.h"
