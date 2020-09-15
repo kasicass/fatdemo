@@ -9,12 +9,12 @@ TEST_DECLARE(TestCommandBufferModes)
 	FactoryRAIISelector raiiSelector(EGraphicAPI::eUnitTest);
 	Device device;
 
-	for (EBufferingMode::EValue mode = EBufferingMode::eNoBuffering; mode < EBufferingMode::eValuesCount; mode = EBufferingMode::EValue(mode+1))
+	FAT_ENUM_FOREACH(mode, EBufferingMode)
 	{
 		CommandBuffer commandBuffer(device, mode);
 
 		// Change mode dynamically
-		for (EBufferingMode::EValue newMode = EBufferingMode::eNoBuffering; newMode < EBufferingMode::eValuesCount; newMode = EBufferingMode::EValue(newMode+1))
+		FAT_ENUM_FOREACH(newMode, EBufferingMode)
 		{
 			// Simulate many frames
 			for (int i = 0; i < 10; ++i)

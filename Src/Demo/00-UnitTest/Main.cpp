@@ -36,6 +36,7 @@ void UnitTestApp::Init()
 	TEST_REGISTER(TestCommandLocking);
 	TEST_REGISTER(TestCommandDataIntegrity);
 	TEST_REGISTER(TestCommandBufferModes);
+	TEST_REGISTER(TestStateCacheBind);
 	theUnitTestMgr->Run();
 #else
 	FatLog(L"FAT_ENABLE_UNITTEST is off");

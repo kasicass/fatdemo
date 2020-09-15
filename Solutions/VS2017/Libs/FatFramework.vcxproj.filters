@@ -175,6 +175,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Math.h">
       <Filter>Kernel\Math</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Context.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -260,6 +263,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Math\Float4.cpp">
       <Filter>Kernel\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Context.cpp">
+      <Filter>Driver\Client</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

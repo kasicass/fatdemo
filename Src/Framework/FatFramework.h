@@ -128,6 +128,7 @@
 #include "Driver/Client/DriverStatistics.h"
 #include "Driver/Client/StateCache.h"
 #include "Driver/Client/CommandBuffer.h"
+#include "Driver/Client/Context.h"
 #include "Driver/Client/Command/DrawCommand.h"
 #include "Driver/Client/Command/SwapCommand.h"
 #include "Driver/Client/State/RenderTargetState.h"
