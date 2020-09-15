@@ -18,6 +18,8 @@ void UnitTestApp::Init()
 #if defined(FAT_ENABLE_UNITTEST)
 	theFakeFactory->Init();
 	TEST_REGISTER(UnitTestSelfTest);
+	TEST_REGISTER(TestFloat3);
+	TEST_REGISTER(TestFloat4);
 	TEST_REGISTER(TestTime);
 	TEST_REGISTER(TestFpsCounter);
 	TEST_REGISTER(TestAtomicInt);

@@ -34,12 +34,12 @@ Float3& Float3::operator=(const Float3& rhs)
 
 Bool Float3::operator==(const Float3& rhs)
 {
-	return (x == rhs.x) && (y == rhs.y) && (z == rhs.z);
+	return FatAlmostEqual(x, rhs.x) && FatAlmostEqual(y, rhs.y) && FatAlmostEqual(z, rhs.z);
 }
 
 Bool Float3::operator!=(const Float3& rhs)
 {
-	return (x != rhs.x) || (y != rhs.y) || (z != rhs.z);
+	return !FatAlmostEqual(x, rhs.x) || !FatAlmostEqual(y, rhs.y) || !FatAlmostEqual(z, rhs.z);
 }
 
 }
