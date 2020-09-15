@@ -41,6 +41,7 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IObject.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IState.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\StateCache.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\State\RenderTargetState.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerCommand.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.h" />
@@ -55,6 +56,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Queue.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\SmartPtr.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Time.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Float3.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Float4.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Math.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformConfig.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TCharTraits.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TStackString.h" />
@@ -88,6 +92,7 @@
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IObject.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IState.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\StateCache.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\State\RenderTargetState.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Assertion.cpp" />
@@ -95,6 +100,8 @@
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Memory.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\OS.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Time.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Math\Float3.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Math\Float4.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\AtomicInt.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\ConditionVariable.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Thread\MutexFast.cpp" />

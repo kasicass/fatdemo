@@ -40,6 +40,12 @@
     <Filter Include="Driver\Server\D3D9\Command">
       <UniqueIdentifier>{d2fcc89e-0710-4e00-abe9-f5c4f0a1dc76}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Driver\Client\State">
+      <UniqueIdentifier>{209f69e8-8af9-44cf-8909-38e98e5e9051}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Math">
+      <UniqueIdentifier>{fe167c49-1a97-4908-baff-f430569a7d14}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Src\Framework\Application\IApplication.h">
@@ -157,6 +163,18 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\StateCache.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\State\RenderTargetState.h">
+      <Filter>Driver\Client\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Float3.h">
+      <Filter>Kernel\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Float4.h">
+      <Filter>Kernel\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Math.h">
+      <Filter>Kernel\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -233,6 +251,15 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\StateCache.cpp">
       <Filter>Driver\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\State\RenderTargetState.cpp">
+      <Filter>Driver\Client\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Math\Float3.cpp">
+      <Filter>Kernel\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Kernel\Math\Float4.cpp">
+      <Filter>Kernel\Math</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
