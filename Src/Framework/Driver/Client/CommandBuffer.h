@@ -75,6 +75,8 @@ public:
 
 protected:
 	void Queue(const ICommand* pCommand);
+
+	friend class CacheEntry;
 	void Queue(const ReadOnlyLockerHolder& lockerHolder);
 
 private:

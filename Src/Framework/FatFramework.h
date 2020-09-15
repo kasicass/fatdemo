@@ -42,6 +42,7 @@
 #define _FAT_CONCAT(x, y) x##y
 #define FAT_CONCAT(x, y) _FAT_CONCAT(x, y)
 
+// helper for enum
 #define FAT_ENUM_BEGIN(x_enumType) \
 	struct x_enumType { \
 		enum EValue {
@@ -50,6 +51,11 @@
 			eValuesCount, \
 		}; \
 	};
+
+#define FAT_ENUM_FOREACH(x_itValue, x_enumType) \
+	for (x_enumType::EValue x_itValue = x_enumType::EValue(0); \
+		 x_itValue < x_enumType::eValuesCount; \
+		 x_itValue = x_enumType::EValue(x_itValue+ 1))
 
 // c-string functions
 #if defined(FAT_OS_WINDOWS)
@@ -112,14 +118,15 @@
 #include "Driver/Server/Interface/IServerDevice.h"
 #include "Driver/Server/Interface/IServerCommand.h"
 #include "Driver/Server/Interface/IServerState.h"
-#include "Driver/Client/IObject.h"
 #include "Driver/Client/CommandLocker.h"
-#include "Driver/Client/CommandBuffer.h"
+#include "Driver/Client/IObject.h"
 #include "Driver/Client/ICommand.h"
 #include "Driver/Client/EStateType.h"
 #include "Driver/Client/IState.h"
 #include "Driver/Client/Device.h"
 #include "Driver/Client/DriverStatistics.h"
+#include "Driver/Client/StateCache.h"
+#include "Driver/Client/CommandBuffer.h"
 #include "Driver/Client/Command/DrawCommand.h"
 #include "Driver/Client/Command/SwapCommand.h"
 #include "Application/IApplication.h"

@@ -154,6 +154,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\DriverStatistics.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\StateCache.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -226,6 +229,9 @@
       <Filter>Driver\Client</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\DriverStatistics.cpp">
+      <Filter>Driver\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\StateCache.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
   </ItemGroup>
