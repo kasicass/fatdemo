@@ -3,6 +3,18 @@
 namespace Fat {
 
 //
+// IStateData
+//
+
+IStateData::IStateData()
+{
+}
+
+IStateData::~IStateData()
+{
+}
+
+//
 // IState
 //
 

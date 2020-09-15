@@ -32,6 +32,7 @@
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\DeviceTest.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\StateCacheTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.cpp" />

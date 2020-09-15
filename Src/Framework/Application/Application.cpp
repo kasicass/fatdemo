@@ -22,6 +22,7 @@ void Application::Init()
 	Thread::InitMainThread();
 
 	// Driver
+	StateCache::RegisterStateConstructors();
 	theDriverStats->Init();
 	theFactorySelector->Init();
 }

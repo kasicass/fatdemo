@@ -47,7 +47,7 @@ protected:
 
 private:
 	// State constructor registration function
-	typedef IState* (*TStateDefaultConstructorFn)();
+	typedef IState* (*TStateDefaultConstructorFn)(void);
 	static void RegisterDefaultConstructor(EStateType::EValue stateType, TStateDefaultConstructorFn fn);
 
 	// Modify an entry in the cache. Maintains internal structures coherency.

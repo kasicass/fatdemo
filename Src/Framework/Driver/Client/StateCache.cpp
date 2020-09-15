@@ -15,9 +15,23 @@ void StateCache::RegisterDefaultConstructor(EStateType::EValue stateType, TState
 	s_defaultStateConstructor[stateType] = fn;
 }
 
+template <typename t_State>
+static IState* _DefaultStateConstructor() { return FatNew(t_State); }
+
+#define REGISTER_STATE_CONSTRUCTOR(x_eStateType, x_State) \
+	StateCache::RegisterDefaultConstructor(x_eStateType, _DefaultStateConstructor<x_State>)
+
 void StateCache::RegisterStateConstructors()
 {
+	REGISTER_STATE_CONSTRUCTOR(EStateType::eRenderTarget, RenderTargetState);
+
 	// TODO
+	REGISTER_STATE_CONSTRUCTOR(EStateType::eVertexBuffer, RenderTargetState);
+	REGISTER_STATE_CONSTRUCTOR(EStateType::eTopology, RenderTargetState);
+	REGISTER_STATE_CONSTRUCTOR(EStateType::eMaterial, RenderTargetState);
+	REGISTER_STATE_CONSTRUCTOR(EStateType::eLight, RenderTargetState);
+	REGISTER_STATE_CONSTRUCTOR(EStateType::eCamera, RenderTargetState);
+	REGISTER_STATE_CONSTRUCTOR(EStateType::eTransform, RenderTargetState);
 }
 
 StateCache::StateCache()
