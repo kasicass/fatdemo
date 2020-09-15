@@ -11,6 +11,8 @@ TEST_DECLARE(TestTime)
 
 	FatTest(zeroTime.GetSeconds() == 0.f);
 	FatTest(beginTime.GetSeconds() > 0.f);
+
+	Thread::Sleep(1);
 	FatTest(beginTime.GetSeconds() < Time::GetAppTime().GetSeconds());
 }
 
