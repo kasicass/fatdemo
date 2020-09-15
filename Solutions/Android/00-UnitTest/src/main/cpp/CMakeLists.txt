@@ -38,14 +38,17 @@ add_library(00-UnitTest SHARED
     ../../../../../../Src/Demo/00-UnitTest/Kernel/ConditionVariableTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Kernel/ThreadTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Kernel/SmartPtrTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Kernel/MathTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Client/DeviceTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandLockerTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandBufferTest.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/StateCacheTest.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Client/Command/FakeCommand.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Server/FakeDevice.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Server/FakeFactory.cpp
     ../../../../../../Src/Demo/00-UnitTest/Driver/Server/Command/FakeServerCommand.cpp
+    ../../../../../../Src/Demo/00-UnitTest/Driver/Server/State/FakeServerState.cpp
     ../../../../../../Src/Framework/Kernel/Common/Assertion.cpp
     ../../../../../../Src/Framework/Kernel/Common/Log.cpp
     ../../../../../../Src/Framework/Kernel/Common/Memory.cpp
@@ -56,15 +59,21 @@ add_library(00-UnitTest SHARED
     ../../../../../../Src/Framework/Kernel/Thread/MutexFast.cpp
     ../../../../../../Src/Framework/Kernel/Thread/ConditionVariable.cpp
     ../../../../../../Src/Framework/Kernel/Thread/Thread.cpp
+    ../../../../../../Src/Framework/Kernel/Math/Float3.cpp
+    ../../../../../../Src/Framework/Kernel/Math/Float4.cpp
     ../../../../../../Src/Framework/Driver/Client/CommandBuffer.cpp
     ../../../../../../Src/Framework/Driver/Client/CommandLocker.cpp
+    ../../../../../../Src/Framework/Driver/Client/Context.cpp
     ../../../../../../Src/Framework/Driver/Client/Device.cpp
+    ../../../../../../Src/Framework/Driver/Client/DriverStatistics.cpp
     ../../../../../../Src/Framework/Driver/Client/FactorySelector.cpp
     ../../../../../../Src/Framework/Driver/Client/ICommand.cpp
     ../../../../../../Src/Framework/Driver/Client/IObject.cpp
     ../../../../../../Src/Framework/Driver/Client/IState.cpp
+    ../../../../../../Src/Framework/Driver/Client/StateCache.cpp
     ../../../../../../Src/Framework/Driver/Client/Command/DrawCommand.cpp
     ../../../../../../Src/Framework/Driver/Client/Command/SwapCommand.cpp
+    ../../../../../../Src/Framework/Driver/Client/State/RenderTargetState.cpp
     ../../../../../../Src/Framework/Driver/Server/Interface/IServerDevice.cpp
     ../../../../../../Src/Framework/Driver/Server/Interface/IServerFactory.cpp
     ../../../../../../Src/Framework/Application/Application.cpp

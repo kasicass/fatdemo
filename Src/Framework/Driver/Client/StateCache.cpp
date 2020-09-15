@@ -8,21 +8,28 @@ namespace Fat {
 
 StateCache::TStateDefaultConstructorFn StateCache::s_defaultStateConstructor[EStateType::eValuesCount];
 
-void StateCache::RegisterDefaultConstructor(EStateType::EValue stateType, TStateDefaultConstructorFn fn)
+void StateCache::RegisterStateConstructor(EStateType::EValue stateType, TStateDefaultConstructorFn fn)
 {
 	FatAssertNoText(fn != NULL);
 	FatAssert(s_defaultStateConstructor[stateType] == NULL, L"State %d is already registered", stateType);
 	s_defaultStateConstructor[stateType] = fn;
 }
 
+void StateCache::UnregisterStateConstructor(EStateType::EValue stateType)
+{
+	FatAssert(s_defaultStateConstructor[stateType] != NULL, L"State %d is not registered", stateType);
+	s_defaultStateConstructor[stateType] = NULL;
+}
+
 template <typename t_State>
 static IState* _DefaultStateConstructor() { return FatNew(t_State); }
 
 #define REGISTER_STATE_CONSTRUCTOR(x_eStateType, x_State) \
-	StateCache::RegisterDefaultConstructor(x_eStateType, _DefaultStateConstructor<x_State>)
+	StateCache::RegisterStateConstructor(x_eStateType, _DefaultStateConstructor<x_State>)
 
-void StateCache::RegisterStateConstructors()
+void StateCache::Init()
 {
+	FatLog(L"<StateCache>: Init - register state constructors");
 	REGISTER_STATE_CONSTRUCTOR(EStateType::eRenderTarget, RenderTargetState);
 
 	// TODO
@@ -32,6 +39,15 @@ void StateCache::RegisterStateConstructors()
 	REGISTER_STATE_CONSTRUCTOR(EStateType::eLight, RenderTargetState);
 	REGISTER_STATE_CONSTRUCTOR(EStateType::eCamera, RenderTargetState);
 	REGISTER_STATE_CONSTRUCTOR(EStateType::eTransform, RenderTargetState);
+}
+
+void StateCache::Shutdown()
+{
+	FatLog(L"<StateCache>: Shutdown");
+	FAT_ENUM_FOREACH(stateType, EStateType)
+	{
+		UnregisterStateConstructor(stateType);
+	}
 }
 
 StateCache::StateCache()

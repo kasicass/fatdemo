@@ -22,7 +22,7 @@ void Application::Init()
 	Thread::InitMainThread();
 
 	// Driver
-	StateCache::RegisterStateConstructors();
+	StateCache::Init();
 	theDriverStats->Init();
 	theFactorySelector->Init();
 }
@@ -32,6 +32,7 @@ void Application::Shutdown()
 	// Driver
 	theDriverStats->Shutdown();
 	theFactorySelector->Shutdown();
+	StateCache::Shutdown();
 
 	// Kernel
 	Thread::ShutdownMainThread();

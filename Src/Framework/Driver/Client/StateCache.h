@@ -26,7 +26,8 @@ class StateCache : private NonCopyable
 {
 public:
 	// Register call state constructors, must be called before new StateCache()
-	static void RegisterStateConstructors();
+	static void Init();
+	static void Shutdown();
 
 public:
 	StateCache();
@@ -48,7 +49,8 @@ protected:
 private:
 	// State constructor registration function
 	typedef IState* (*TStateDefaultConstructorFn)(void);
-	static void RegisterDefaultConstructor(EStateType::EValue stateType, TStateDefaultConstructorFn fn);
+	static void RegisterStateConstructor(EStateType::EValue stateType, TStateDefaultConstructorFn fn);
+	static void UnregisterStateConstructor(EStateType::EValue stateType);
 
 	// Modify an entry in the cache. Maintains internal structures coherency.
 	Bool SetEntry(EStateType::EValue stateType, IState& state);
