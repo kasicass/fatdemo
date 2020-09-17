@@ -2,12 +2,14 @@
 
 #if defined(FAT_ENABLE_UNITTEST)
 
-class IFakeFactory : public Fat::IServerFactory
+class FakeFactory : public Fat::IServerFactory
 {
 public:
-	virtual void Init() = 0;
-	virtual void Shutdown() = 0;
+	void Init() override;
+	void Shutdown() override;
+
+	virtual Fat::IServerObject* Instantiate(Fat::EFactoryObject::EValue value) override;
 };
-extern IFakeFactory* theFakeFactory;
+extern Fat::IServerFactory* theFakeFactory;
 
 #endif

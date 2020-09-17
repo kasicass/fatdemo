@@ -8,25 +8,18 @@
 
 using namespace Fat;
 
-class FakeFactory : public IFakeFactory
-{
-public:
-	void Init() override;
-	void Shutdown() override;
-
-	virtual IServerObject* Instantiate(EFactoryObject::EValue value) override;
-};
-
 static FakeFactory myFakeFactory;
-IFakeFactory* theFakeFactory = &myFakeFactory;
+IServerFactory* theFakeFactory = &myFakeFactory;
 
 void FakeFactory::Init()
 {
+	FatLog(L"<FakeFactory>: Init");
 	RegisterMe(EGraphicAPI::eUnitTest);
 }
 
 void FakeFactory::Shutdown()
 {
+	FatLog(L"<FakeFactory>: Shutdown");
 }
 
 IServerObject* FakeFactory::Instantiate(EFactoryObject::EValue value)

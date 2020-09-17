@@ -178,6 +178,12 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Context.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Common.h">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\dxerr.h">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -266,6 +272,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Context.cpp">
       <Filter>Driver\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Common.cpp">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\dxerr.cpp">
+      <Filter>Driver\Server\D3D9</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

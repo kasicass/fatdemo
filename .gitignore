@@ -28,3 +28,4 @@ BinTemp
 build
 local.properties
 setup_build_env.cmd
+*.dat

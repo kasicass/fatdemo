@@ -21,10 +21,10 @@ TODO
  * r - OpenGL ES 3.0 Driver
  * r - D3D11 Driver
  * r - D3D9 Driver
- * r - Client/Server RenderThread Framework
  * a - Platform-indepent Windows
  
 DONE
+ * r - Client/Server RenderThread Framework
  * k - Mutex/CondVariable/Thread
  * k - SmartPtr
  * a - simple app framework

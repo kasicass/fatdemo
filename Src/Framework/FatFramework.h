@@ -94,7 +94,7 @@
 
 #endif
 
-// FatFramework stuff
+// FatFramework - Kernel
 #include "Kernel/Types.h"
 #include "Kernel/Common/OS.h"
 #include "Kernel/Common/Log.h"
@@ -113,6 +113,8 @@
 #include "Kernel/Common/SmartPtr.h"
 #include "Kernel/Thread/Thread.h"
 #include "Kernel/Math/Math.h"
+
+// FatFramework - Driver
 #include "Driver/Client/FactorySelector.h"
 #include "Driver/Server/Interface/IServerObject.h"
 #include "Driver/Server/Interface/IServerFactory.h"
@@ -132,5 +134,12 @@
 #include "Driver/Client/Command/DrawCommand.h"
 #include "Driver/Client/Command/SwapCommand.h"
 #include "Driver/Client/State/RenderTargetState.h"
+
+// FatFramework - Driver - DX9
+#if defined(FAT_OS_WINDOWS)
+#include "Driver/Server/D3D9/D3D9Common.h"
+#endif
+
+// FatFramework - Application
 #include "Application/IApplication.h"
 #include "Application/Application.h"
