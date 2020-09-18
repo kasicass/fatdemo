@@ -138,6 +138,7 @@
 // FatFramework - Driver - DX9
 #if defined(FAT_OS_WINDOWS)
 #include "Driver/Server/D3D9/D3D9Common.h"
+#include "Driver/Server/D3D9/D3D9Reset.h"
 #endif
 
 // FatFramework - Application

@@ -44,6 +44,7 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\StateCache.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\State\RenderTargetState.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Common.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Reset.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\dxerr.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerCommand.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.h" />
@@ -98,6 +99,7 @@
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\StateCache.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\State\RenderTargetState.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Common.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Reset.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\dxerr.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.cpp" />
