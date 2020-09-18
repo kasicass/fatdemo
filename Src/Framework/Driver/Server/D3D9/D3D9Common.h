@@ -100,6 +100,46 @@ private:
 	D3DPRESENT_PARAMETERS d3d9PresentParameter_;
 };
 
+// Implement a helper macro to initialize smart pointers when filled in a D3D9 get function
+template <typename t_SmartPtr>
+class D3D9SmartPtrProxy
+{
+public:
+	typedef typename t_SmartPtr::Pointer Pointer;
+
+	D3D9SmartPtrProxy(t_SmartPtr& p) :
+		rSmartPtr_(p),
+		ptr_(NULL)
+	{
+	}
+
+	~D3D9SmartPtrProxy()
+	{
+		// Set the smart pointer to new value
+		rSmartPtr_ = ptr_;
+
+		// D3D9 automatically adds a reference to the pointer, so we need to release it
+		if (ptr_ != NULL)
+		{
+			ptr_->Release();
+		}
+	}
+
+	Pointer* GetProxyPointer() { return &ptr_; }
+
+private:
+	t_SmartPtr& rSmartPtr_;
+	Pointer ptr_;
+};
+
+template <typename t_SmartPtr>
+inline D3D9SmartPtrProxy<t_SmartPtr> CreateD3D9SmartPtrProxy(t_SmartPtr& rSmartPtr)
+{
+	return D3D9SmartPtrProxy<t_SmartPtr>(rSmartPtr);
 }
+
+}
+
+#define GetD3D9SmartModifier(aSmartPtr) CreateD3D9SmartPtrProxy(aSmartPtr).GetProxyPointer()
 
 #endif

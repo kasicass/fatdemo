@@ -8,6 +8,7 @@ template <typename T, template<typename> class Policy>
 class TSmartPtr : private Policy<T>
 {
 public:
+	typedef T* Pointer;
 	typedef Policy<T> _MyPolicy;
 
 	TSmartPtr(T* pObject = NULL) : 
