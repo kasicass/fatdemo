@@ -139,6 +139,9 @@
 #if defined(FAT_OS_WINDOWS)
 #include "Driver/Server/D3D9/D3D9Common.h"
 #include "Driver/Server/D3D9/D3D9Reset.h"
+#include "Driver/Server/D3D9/D3D9StateShadow.h"
+#include "Driver/Server/D3D9/D3D9GPUTimer.h"
+#include "Driver/Server/D3D9/D3D9Device.h"
 #endif
 
 // FatFramework - Application

@@ -4,14 +4,21 @@
 
 namespace Fat {
 
+ID3D9ResetWarner* theD3D9ResetWarner = NULL;
+
 ID3D9ResetWarner::ID3D9ResetWarner()
 {
+	FatAssertNoText(theD3D9ResetWarner == NULL);
+	theD3D9ResetWarner = this;
 }
 
 ID3D9ResetWarner::~ID3D9ResetWarner()
 {
 	FatAssert(videoMemoryResources_.empty(),
 		L"%d video memory resources have not been destroyed", videoMemoryResources_.size());
+
+	FatAssertNoText(theD3D9ResetWarner != NULL);
+	theD3D9ResetWarner = NULL;
 }
 
 void ID3D9ResetWarner::SendPreReset()

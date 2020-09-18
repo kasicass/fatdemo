@@ -187,6 +187,15 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Reset.h">
       <Filter>Driver\Server\D3D9</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Device.h">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9StateShadow.h">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9GPUTimer.h">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -283,6 +292,15 @@
       <Filter>Driver\Server\D3D9</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Reset.cpp">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Device.cpp">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9StateShadow.cpp">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9GPUTimer.cpp">
       <Filter>Driver\Server\D3D9</Filter>
     </ClCompile>
   </ItemGroup>
