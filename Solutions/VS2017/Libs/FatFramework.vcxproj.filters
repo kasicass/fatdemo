@@ -196,6 +196,12 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9GPUTimer.h">
       <Filter>Driver\Server\D3D9</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Application\IWidget.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Application\Widget_Win32.h">
+      <Filter>Application</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -302,6 +308,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9GPUTimer.cpp">
       <Filter>Driver\Server\D3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Application\Widget_Win32.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Application\IWidget.cpp">
+      <Filter>Application</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

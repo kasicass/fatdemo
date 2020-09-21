@@ -51,6 +51,11 @@ public:
 		Assign(pObject);
 	}
 
+	bool IsValid() const
+	{
+		return pObject_ != NULL;
+	}
+
 	T* Get() const
 	{
 		FatAssert(pObject_ != NULL, L"Dereferencing NULL pointer");

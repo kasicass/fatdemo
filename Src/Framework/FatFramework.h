@@ -145,5 +145,7 @@
 #endif
 
 // FatFramework - Application
+#include "Application/IWidget.h"
+#include "Application/Widget_Win32.h"
 #include "Application/IApplication.h"
 #include "Application/Application.h"

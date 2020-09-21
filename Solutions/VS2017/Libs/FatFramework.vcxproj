@@ -29,6 +29,8 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Src\Framework\Application\Application.h" />
     <ClInclude Include="..\..\..\Src\Framework\Application\IApplication.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Application\IWidget.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Application\Widget_Win32.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\CommandBuffer.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\CommandLocker.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Command\DrawCommand.h" />
@@ -88,6 +90,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Application\IWidget.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Application\Widget_Win32.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\CommandBuffer.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\CommandLocker.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\Command\DrawCommand.cpp" />

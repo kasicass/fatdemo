@@ -4,10 +4,23 @@ namespace Fat {
 
 Application::Application()
 {
+	pMainWnd_ = NULL;
 }
 
 Application::~Application()
 {
+}
+
+void Application::InitWidget()
+{
+	FatLog(L"<App>: InitWidget");
+	pMainWnd_ = CreateWidget(GetTitle(), 1024, 768);
+}
+
+void Application::ShutdownWidget()
+{
+	FatLog(L"<App>: ShutdownWidget");
+	pMainWnd_ = NULL;
 }
 
 void Application::Init()
@@ -21,6 +34,9 @@ void Application::Init()
 	thePerfCounter->Init();
 	Thread::InitMainThread();
 
+	// Widget
+	InitWidget();
+
 	// Driver
 	StateCache::Init();
 	theDriverStats->Init();
@@ -33,6 +49,9 @@ void Application::Shutdown()
 	theDriverStats->Shutdown();
 	theFactorySelector->Shutdown();
 	StateCache::Shutdown();
+
+	// Shutdown
+	ShutdownWidget();
 
 	// Kernel
 	Thread::ShutdownMainThread();
@@ -48,6 +67,16 @@ void Application::Update()
 
 void Application::Draw()
 {
+}
+
+const wchar_t* Application::GetTitle() const
+{
+	return L"FatDemo";
+}
+
+IWidgetPtr Application::GetWidget() const
+{
+	return pMainWnd_;
 }
 
 #if !defined(FAT_OS_ANDROID)

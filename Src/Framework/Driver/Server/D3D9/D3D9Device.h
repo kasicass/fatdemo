@@ -13,6 +13,24 @@ public:
 	IDirect3D9* GetD3DObject() const;
 	IDirect3DDevice9* GetD3DDevice() const;
 
+	D3D9StateShadow& GetStateShadow();
+
+	UInt32 GetDeviceWidth() const;
+	UInt32 GetDeviceHeight() const;
+
+	void SetDeviceWidth(UInt32 width);
+	void SetDeviceHeight(UInt32 height);
+
+	void BeginScene();
+	void EndScene();
+
+	void ActivateLights(UInt32 lightCount);
+	UInt32 GetActiveLightCount() const;
+
+	UInt32 GetMaxActiveLights() const;
+	UInt32 GetMaxPrimitiveCount() const;
+	UInt32 GetMaxVertexIndex() const;
+
 protected:
 	// IServerDevice interface override
 	virtual Bool Reset() override;
