@@ -46,6 +46,9 @@
     <Filter Include="Kernel\Math">
       <UniqueIdentifier>{fe167c49-1a97-4908-baff-f430569a7d14}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Driver\Server\D3D9\State">
+      <UniqueIdentifier>{247098aa-dc41-4802-870a-9c9ca35a50ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Src\Framework\Application\IApplication.h">
@@ -202,6 +205,15 @@
     <ClInclude Include="..\..\..\Src\Framework\Application\Widget_Win32.h">
       <Filter>Application</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Factory.h">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\State\D3D9RenderTargetState.h">
+      <Filter>Driver\Server\D3D9\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\Command\D3D9SwapCommand.h">
+      <Filter>Driver\Server\D3D9\Command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">
@@ -314,6 +326,15 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Application\IWidget.cpp">
       <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Factory.cpp">
+      <Filter>Driver\Server\D3D9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\State\D3D9RenderTargetState.cpp">
+      <Filter>Driver\Server\D3D9\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\Command\D3D9SwapCommand.cpp">
+      <Filter>Driver\Server\D3D9\Command</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

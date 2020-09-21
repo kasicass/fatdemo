@@ -142,6 +142,9 @@
 #include "Driver/Server/D3D9/D3D9StateShadow.h"
 #include "Driver/Server/D3D9/D3D9GPUTimer.h"
 #include "Driver/Server/D3D9/D3D9Device.h"
+#include "Driver/Server/D3D9/D3D9Factory.h"
+#include "Driver/Server/D3D9/Command/D3D9SwapCommand.h"
+#include "Driver/Server/D3D9/State/D3D9RenderTargetState.h"
 #endif
 
 // FatFramework - Application
