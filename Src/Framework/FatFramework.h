@@ -39,6 +39,8 @@
 // helper macros
 #define FAT_ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
 
+#define FAT_SAFE_DELETE(p) if (p) { delete p; p = NULL; }
+
 #define _FAT_CONCAT(x, y) x##y
 #define FAT_CONCAT(x, y) _FAT_CONCAT(x, y)
 

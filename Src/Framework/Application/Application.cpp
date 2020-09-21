@@ -20,7 +20,7 @@ void Application::InitWidget()
 void Application::ShutdownWidget()
 {
 	FatLog(L"<App>: ShutdownWidget");
-	pMainWnd_ = NULL;
+	FAT_SAFE_DELETE(pMainWnd_);
 }
 
 void Application::Init()
@@ -76,7 +76,7 @@ const wchar_t* Application::GetTitle() const
 	return L"FatDemo";
 }
 
-IWidgetPtr Application::GetWidget() const
+IWidget* Application::GetWidget() const
 {
 	return pMainWnd_;
 }

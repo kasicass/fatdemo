@@ -13,7 +13,7 @@ struct IApplication
 	virtual void Draw() = 0;
 
 	virtual const wchar_t* GetTitle() const = 0;
-	virtual IWidgetPtr GetWidget() const = 0;
+	virtual IWidget* GetWidget() const = 0;
 
 #if !defined(FAT_OS_ANDROID)
 	virtual void Run() = 0;

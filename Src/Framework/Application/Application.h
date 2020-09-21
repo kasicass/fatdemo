@@ -15,7 +15,7 @@ public:
 	virtual void Draw() override;
 
 	virtual const wchar_t* GetTitle() const override;
-	virtual IWidgetPtr GetWidget() const override;
+	virtual IWidget* GetWidget() const override;
 
 #if !defined(FAT_OS_ANDROID)
 	virtual void Run() override;
@@ -26,7 +26,8 @@ protected:
 	void ShutdownWidget();
 
 private:
-	IWidgetPtr pMainWnd_;
+	IWidget* pMainWnd_;
+
 };
 
 }
