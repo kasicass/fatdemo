@@ -37,6 +37,9 @@ IServerObject* D3D9Factory::Instantiate(EFactoryObject::EValue value)
 		// TODO
 		return NULL;
 
+	case EFactoryObject::eSwapCommand:
+		return FatNew(D3D9SwapCommand);
+
 	default:
 		FatAssertUnreachableCode();
 		return NULL;

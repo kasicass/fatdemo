@@ -13,6 +13,8 @@ public:
 
 	virtual void Update() override;
 
+	virtual const wchar_t* GetTitle() const override;
+
 #if !defined(FAT_OS_ANDROID)
 	virtual void Run() override;
 #endif
@@ -38,7 +40,11 @@ HelloWndApp::HelloWndApp()
 
 HelloWndApp::~HelloWndApp()
 {
+}
 
+const wchar_t* HelloWndApp::GetTitle() const
+{
+	return L"FatDemo - HelloWnd";
 }
 
 void HelloWndApp::Init()
@@ -116,7 +122,7 @@ void HelloWndApp::SetupRenderTarget()
 	RenderTargetStateData* pData = locker.GetData();
 
 	// Sets color information
-	pData->SetColor(Float4(0, 127, 127, 0));
+	pData->SetColor(Float4(1.0f, 0, 1.0f, 0));
 }
 
 #if !defined(FAT_OS_ANDROID)

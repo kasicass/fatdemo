@@ -251,7 +251,7 @@ void* MallocInternal(size_t size)
 	return p;
 }
 
-void* ReallocInertnal(void* p, size_t size)
+void* ReallocInternal(void* p, size_t size)
 {
 	p = _aligned_realloc(p, size, 16);
 	FatAssert(p != NULL, L"Realloc failed");

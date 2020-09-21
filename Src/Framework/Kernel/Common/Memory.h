@@ -37,7 +37,7 @@ namespace Memory {
 	void Shutdown();
 
 	void* MallocInternal(size_t size);
-	void* ReallocInertnal(void* p, size_t size);
+	void* ReallocInternal(void* p, size_t size);
 	void FreeInternal(void* p);
 
 #if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)

@@ -83,7 +83,7 @@ typedef TSmartPtr<ID3DXFont,                   TSmartPtrCOMPolicy> ID3DXFontPtr;
 	{ \
 		theDriverStats->IncD3D9CallsPerFrame(); \
 		HRESULT hr = x_device->GetD3DDevice()->x_function; \
-		if (hr == D3DERR_DEVICELOST) { x_device.ResetNeeded(); } \
+		if (hr == D3DERR_DEVICELOST) { x_device->ResetNeeded(); } \
 	}
 
 #endif

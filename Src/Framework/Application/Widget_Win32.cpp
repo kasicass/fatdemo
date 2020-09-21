@@ -37,6 +37,7 @@ Bool WidgetWin32::IsActive() const
 
 void WidgetWin32::OnActive(Bool value)
 {
+	// FatLog(L"<App>: OnActive = %d", value);
 	active_ = value;
 }
 
