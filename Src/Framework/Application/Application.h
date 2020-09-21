@@ -12,10 +12,10 @@ public:
 	virtual void Shutdown() override;
 
 	virtual void Update() override;
-	virtual void Draw() override;
+	virtual void Render() override;
 
 	virtual const wchar_t* GetTitle() const override;
-	virtual IWidget* GetWidget() const override;
+	virtual IWidget* GetMainWnd() const override;
 
 #if !defined(FAT_OS_ANDROID)
 	virtual void Run() override;

@@ -30,6 +30,16 @@ void* WidgetWin32::GetHandle() const
 	return (void*)hWnd_;
 }
 
+Bool WidgetWin32::IsActive() const
+{
+	return active_;
+}
+
+void WidgetWin32::OnActive(Bool value)
+{
+	active_ = value;
+}
+
 bool WidgetWin32::InitWindowClass()
 {
 	WNDCLASS wc;
@@ -87,7 +97,7 @@ bool WidgetWin32::InitWindow()
 	width_  = w;
 	height_ = h;
 
-	hWnd_ = ::CreateWindowEx(exstyle, GAME_WINDOW_CLASSNAME, title_, style, x, y, w, h, NULL, NULL, GetModuleHandle(0), NULL);
+	hWnd_ = ::CreateWindowEx(exstyle, GAME_WINDOW_CLASSNAME, title_, style, x, y, w, h, NULL, NULL, GetModuleHandle(0), this);
 
 	if (!hWnd_)
 		return false;
@@ -101,8 +111,14 @@ bool WidgetWin32::InitWindow()
 
 LRESULT CALLBACK WidgetWin32::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
+	static WidgetWin32* This = NULL;
+
 	switch (msg)
 	{
+	case WM_CREATE:
+		This = (WidgetWin32*)(((CREATESTRUCT*)lParam)->lpCreateParams);
+		break;
+
 	case WM_CLOSE:
 		::PostQuitMessage(0);
 		return 0;
@@ -112,6 +128,12 @@ LRESULT CALLBACK WidgetWin32::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM
 
 	case WM_KILLFOCUS:
 		break;
+
+	case WM_ACTIVATEAPP:
+	{
+		This->OnActive(LOWORD(wParam) != WA_INACTIVE);
+		return 0L;
+	}
 	}
 
 	return ::DefWindowProc(hWnd, msg, wParam, lParam);

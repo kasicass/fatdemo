@@ -67,7 +67,7 @@ void Application::Update()
 {
 }
 
-void Application::Draw()
+void Application::Render()
 {
 }
 
@@ -76,7 +76,7 @@ const wchar_t* Application::GetTitle() const
 	return L"FatDemo";
 }
 
-IWidget* Application::GetWidget() const
+IWidget* Application::GetMainWnd() const
 {
 	return pMainWnd_;
 }

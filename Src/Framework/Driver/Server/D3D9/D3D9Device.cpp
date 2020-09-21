@@ -34,7 +34,7 @@ D3D9Device::D3D9Device()
 	pD3D_->Release();
 
 	// Create D3D9 device
-	hDeviceWnd_ = (HWND)theApp->GetWidget()->GetHandle();
+	hDeviceWnd_ = (HWND)theApp->GetMainWnd()->GetHandle();
 	FatAssert(hDeviceWnd_, L"Platform-specific window handle must not be NULL");
 
 	RECT clientRect;

@@ -10,10 +10,10 @@ struct IApplication
 	virtual void Shutdown() = 0;
 
 	virtual void Update() = 0;
-	virtual void Draw() = 0;
+	virtual void Render() = 0;
 
 	virtual const wchar_t* GetTitle() const = 0;
-	virtual IWidget* GetWidget() const = 0;
+	virtual IWidget* GetMainWnd() const = 0;
 
 #if !defined(FAT_OS_ANDROID)
 	virtual void Run() = 0;
