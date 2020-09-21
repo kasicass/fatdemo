@@ -28,14 +28,14 @@ private:
 
 void FactorySelector::Init()
 {
-	FatLog(L"<FactorySelector>: Init");
+	FatLog(L"<Driver>: FactorySelector Init");
 	pSelectedFactory_ = NULL;
 	factories_.resize(EGraphicAPI::eValuesCount);
 }
 
 void FactorySelector::Shutdown()
 {
-	FatLog(L"<FactorySelector>: Shutdown");
+	FatLog(L"<Driver>: FactorySelector Shutdown");
 	factories_.clear();
 	pSelectedFactory_ = NULL;
 }

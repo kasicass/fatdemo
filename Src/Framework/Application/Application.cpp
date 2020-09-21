@@ -41,13 +41,15 @@ void Application::Init()
 	StateCache::Init();
 	theDriverStats->Init();
 	theFactorySelector->Init();
+	theD3D9Factory->Init();
 }
 
 void Application::Shutdown()
 {
 	// Driver
-	theDriverStats->Shutdown();
+	theD3D9Factory->Shutdown();
 	theFactorySelector->Shutdown();
+	theDriverStats->Shutdown();
 	StateCache::Shutdown();
 
 	// Shutdown
