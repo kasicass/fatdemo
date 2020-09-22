@@ -336,5 +336,6 @@
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\Command\D3D9SwapCommand.cpp">
       <Filter>Driver\Server\D3D9\Command</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Src\Framework\FatFramework_uber.cpp" />
   </ItemGroup>
 </Project>

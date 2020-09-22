@@ -46,6 +46,14 @@
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\TimeTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\UnitTestSelfTest.cpp" />
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Main.cpp" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\UnitTest_uber.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Libs\FatFramework.vcxproj">

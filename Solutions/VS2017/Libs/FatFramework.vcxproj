@@ -119,6 +119,14 @@
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\State\D3D9RenderTargetState.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerDevice.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\Interface\IServerFactory.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\FatFramework_uber.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Assertion.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Log.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Kernel\Common\Memory.cpp" />
