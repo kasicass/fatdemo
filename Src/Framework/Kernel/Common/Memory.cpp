@@ -178,7 +178,7 @@ void* ReallocDbg(void* p, size_t size, const wchar_t* file, int line)
 	}
 
 	// realloc
-	void* p2 = ReallocInertnal(p, size);
+	void* p2 = ReallocInternal(p, size);
 
 	// reset ptr
 	if (s_mallocRecordInit)
