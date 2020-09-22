@@ -41,13 +41,13 @@ IDriverStatistics *theDriverStats = &myDriverStats;
 
 void DriverStatistics::Init()
 {
-	FatLog(L"<DriverStats>: Init");
+	FatLog(L"<Driver>: DriverStats Init");
 	Reset();
 }
 
 void DriverStatistics::Shutdown()
 {
-	FatLog(L"<DriverStats>: Shutdown");
+	FatLog(L"<Driver>: DriverStats Shutdown");
 }
 
 void DriverStatistics::Reset()

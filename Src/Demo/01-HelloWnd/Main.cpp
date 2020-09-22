@@ -12,6 +12,7 @@ public:
 	virtual void Shutdown() override;
 
 	virtual void Update() override;
+	virtual void Resize(UInt32 width, UInt32 height) override;
 
 	virtual const wchar_t* GetTitle() const override;
 
@@ -111,6 +112,17 @@ void HelloWndApp::Update()
 	}
 #endif
 
+}
+
+void HelloWndApp::Resize(UInt32 width, UInt32 height)
+{
+	if (pRenderTargetState_)
+	{
+		RenderTargetState::ReadWriteLocker locker(pRenderTargetState_, false);
+		RenderTargetStateData* pData = locker.GetData();
+		pData->SetWidth(width);
+		pData->SetHeight(height);
+	}
 }
 
 void HelloWndApp::SetupRenderTarget()

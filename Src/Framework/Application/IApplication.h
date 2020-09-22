@@ -11,6 +11,7 @@ struct IApplication
 
 	virtual void Update() = 0;
 	virtual void Render() = 0;
+	virtual void Resize(UInt32 width, UInt32 height) = 0;
 
 	virtual const wchar_t* GetTitle() const = 0;
 	virtual IWidget* GetMainWnd() const = 0;

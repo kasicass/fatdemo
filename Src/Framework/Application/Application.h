@@ -13,6 +13,7 @@ public:
 
 	virtual void Update() override;
 	virtual void Render() override;
+	virtual void Resize(UInt32 width, UInt32 height) override;
 
 	virtual const wchar_t* GetTitle() const override;
 	virtual IWidget* GetMainWnd() const override;

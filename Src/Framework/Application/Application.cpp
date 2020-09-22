@@ -71,6 +71,10 @@ void Application::Render()
 {
 }
 
+void Application::Resize(UInt32 width, UInt32 height)
+{
+}
+
 const wchar_t* Application::GetTitle() const
 {
 	return L"FatDemo";
@@ -96,6 +100,19 @@ using namespace Fat;
 
 int main(int argc, char *argv[])
 {
+#if defined(FAT_OS_WINDOWS)
+	// Setting default awareness with the application manifest
+	// https://docs.microsoft.com/en-us/windows/win32/hidpi/setting-the-default-dpi-awareness-for-a-process
+	HINSTANCE hUser32 = LoadLibrary(L"user32.dll");
+	if (hUser32)
+	{
+		typedef BOOL(WINAPI* SetProcessDPIAwareFn)(void);
+		SetProcessDPIAwareFn fn = (SetProcessDPIAwareFn)GetProcAddress(hUser32, "SetProcessDPIAware");
+		if (fn) fn();
+		FreeLibrary(hUser32);
+	}
+#endif
+
 	theApp->Init();
 	theApp->Run();
 	theApp->Shutdown();

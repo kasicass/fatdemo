@@ -20,6 +20,7 @@ protected:
 
 	bool InitWindow();
 	void OnActive(Bool value);
+	void OnResize(UInt32 width, UInt32 height);
 
 private:
 	HWND hWnd_;

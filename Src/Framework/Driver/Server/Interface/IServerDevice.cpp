@@ -36,7 +36,7 @@ void IServerDevice::Reseted()
 
 	resetNeeded_ = 0;
 
-	FatLog(L"<ServerDevice>: Driver reseted");
+	FatLog(L"<Driver>: ServerDevice reseted");
 }
 
 }

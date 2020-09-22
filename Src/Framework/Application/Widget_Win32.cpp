@@ -41,6 +41,11 @@ void WidgetWin32::OnActive(Bool value)
 	active_ = value;
 }
 
+void WidgetWin32::OnResize(UInt32 width, UInt32 height)
+{
+	theApp->Resize(width, height);
+}
+
 bool WidgetWin32::InitWindowClass()
 {
 	WNDCLASS wc;
@@ -85,8 +90,8 @@ bool WidgetWin32::InitWindow()
 	DWORD windowStyle = WS_OVERLAPPEDWINDOW | WS_VISIBLE;
 
 	// TODO: Do not allow the user to resize the window
-	windowStyle &= ~WS_MAXIMIZEBOX;
-	windowStyle &= ~WS_THICKFRAME;
+	//windowStyle &= ~WS_MAXIMIZEBOX;
+	//windowStyle &= ~WS_THICKFRAME;
 
 	exstyle = WS_EX_APPWINDOW;
 	style = windowStyle;
@@ -131,10 +136,12 @@ LRESULT CALLBACK WidgetWin32::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM
 		break;
 
 	case WM_ACTIVATEAPP:
-	{
 		This->OnActive(LOWORD(wParam) != WA_INACTIVE);
 		return 0L;
-	}
+
+	case WM_SIZE:
+		This->OnResize(LOWORD(lParam), HIWORD(lParam));
+		return 0L;
 	}
 
 	return ::DefWindowProc(hWnd, msg, wParam, lParam);

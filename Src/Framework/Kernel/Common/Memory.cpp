@@ -110,6 +110,21 @@ void Shutdown()
 	FatAssertNoText(s_mallocRecordInit == true);
 	s_mallocRecordInit = false;
 
+	// remove records of lineno == -1
+	if (!LIST_EMPTY(&s_allocatedList))
+	{
+		MallocRecord* pRecord;
+		MallocRecord* pTmp;
+		LIST_FOREACH_SAFE(pRecord, &s_allocatedList, list, pTmp)
+		{
+			if (pRecord->line == -1)
+			{
+				LIST_REMOVE(pRecord, list);
+			}
+		}
+	}
+
+	// print leak information
 	if (!LIST_EMPTY(&s_allocatedList))
 	{
 		FatLog(L"<MemCheck>: Detect Memory Leak");

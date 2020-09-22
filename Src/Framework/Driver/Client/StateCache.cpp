@@ -29,7 +29,7 @@ static IState* _DefaultStateConstructor() { return FatNew(t_State); }
 
 void StateCache::Init()
 {
-	FatLog(L"<StateCache>: Init - register state constructors");
+	FatLog(L"<Driver>: StateCache Init - register state constructors");
 	REGISTER_STATE_CONSTRUCTOR(EStateType::eRenderTarget, RenderTargetState);
 
 	// TODO
@@ -43,7 +43,7 @@ void StateCache::Init()
 
 void StateCache::Shutdown()
 {
-	FatLog(L"<StateCache>: Shutdown");
+	FatLog(L"<Driver>: StateCache Shutdown");
 	FAT_ENUM_FOREACH(stateType, EStateType)
 	{
 		UnregisterStateConstructor(stateType);
