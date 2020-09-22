@@ -30,54 +30,8 @@ set(CMAKE_SHARED_LINKER_FLAGS
     "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_onCreate")
 
 add_library(00-UnitTest SHARED
-    ../../../../../../Src/Demo/00-UnitTest/Main.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Kernel/TimeTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Kernel/AtomicIntTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Kernel/UnitTestSelfTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Kernel/MutexFastTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Kernel/ConditionVariableTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Kernel/ThreadTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Kernel/SmartPtrTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Kernel/MathTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/DeviceTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandLockerTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/CommandBufferTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/StateCacheTest.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Client/Command/FakeCommand.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Server/FakeDevice.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Server/FakeFactory.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Server/Command/FakeServerCommand.cpp
-    ../../../../../../Src/Demo/00-UnitTest/Driver/Server/State/FakeServerState.cpp
-    ../../../../../../Src/Framework/Kernel/Common/Assertion.cpp
-    ../../../../../../Src/Framework/Kernel/Common/Log.cpp
-    ../../../../../../Src/Framework/Kernel/Common/Memory.cpp
-    ../../../../../../Src/Framework/Kernel/Common/Time.cpp
-    ../../../../../../Src/Framework/Kernel/Common/OS.cpp
-    ../../../../../../Src/Framework/Kernel/UnitTest/UnitTest.cpp
-    ../../../../../../Src/Framework/Kernel/Thread/AtomicInt.cpp
-    ../../../../../../Src/Framework/Kernel/Thread/MutexFast.cpp
-    ../../../../../../Src/Framework/Kernel/Thread/ConditionVariable.cpp
-    ../../../../../../Src/Framework/Kernel/Thread/Thread.cpp
-    ../../../../../../Src/Framework/Kernel/Math/Float3.cpp
-    ../../../../../../Src/Framework/Kernel/Math/Float4.cpp
-    ../../../../../../Src/Framework/Driver/Client/CommandBuffer.cpp
-    ../../../../../../Src/Framework/Driver/Client/CommandLocker.cpp
-    ../../../../../../Src/Framework/Driver/Client/Context.cpp
-    ../../../../../../Src/Framework/Driver/Client/Device.cpp
-    ../../../../../../Src/Framework/Driver/Client/DriverStatistics.cpp
-    ../../../../../../Src/Framework/Driver/Client/FactorySelector.cpp
-    ../../../../../../Src/Framework/Driver/Client/ICommand.cpp
-    ../../../../../../Src/Framework/Driver/Client/IObject.cpp
-    ../../../../../../Src/Framework/Driver/Client/IState.cpp
-    ../../../../../../Src/Framework/Driver/Client/StateCache.cpp
-    ../../../../../../Src/Framework/Driver/Client/Command/DrawCommand.cpp
-    ../../../../../../Src/Framework/Driver/Client/Command/SwapCommand.cpp
-    ../../../../../../Src/Framework/Driver/Client/State/RenderTargetState.cpp
-    ../../../../../../Src/Framework/Driver/Server/Interface/IServerDevice.cpp
-    ../../../../../../Src/Framework/Driver/Server/Interface/IServerFactory.cpp
-    ../../../../../../Src/Framework/Application/Application.cpp
-    ../../../../../../Src/Framework/Application/Application_Android.cpp)
+    ../../../../../../Src/Demo/00-UnitTest/UnitTest_uber.cpp
+    ../../../../../../Src/Framework/FatFramework_uber.cpp)
 
 target_include_directories(00-UnitTest PRIVATE
     ${ANDROID_NDK}/sources/android/native_app_glue

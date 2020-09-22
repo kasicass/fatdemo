@@ -24,6 +24,7 @@ TODO
  * a - Platform-indepent Windows
  
 DONE
+ * uber build for Android
  * r - Client/Server RenderThread Framework
  * k - Mutex/CondVariable/Thread
  * k - SmartPtr

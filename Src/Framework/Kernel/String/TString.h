@@ -250,7 +250,7 @@ inline void TString<T>::_AllocData(size_type length)
 	}
 
 	size_type allocLen = _CalcAllocSize(length);
-	SStrHeader* pData = (SStrHeader*)::operator new(allocLen);
+	SStrHeader* pData = (SStrHeader*)FatMalloc(allocLen);
 	pData->refcount  = 1;
 	pData->length    = (int)length;
 

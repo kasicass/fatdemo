@@ -41,13 +41,17 @@ void Application::Init()
 	StateCache::Init();
 	theDriverStats->Init();
 	theFactorySelector->Init();
+#if defined(FAT_OS_WINDOWS)
 	theD3D9Factory->Init();
+#endif
 }
 
 void Application::Shutdown()
 {
 	// Driver
+#if defined(FAT_OS_WINDOWS)
 	theD3D9Factory->Shutdown();
+#endif
 	theFactorySelector->Shutdown();
 	theDriverStats->Shutdown();
 	StateCache::Shutdown();
