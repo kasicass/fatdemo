@@ -111,7 +111,7 @@ ICommandData* ICommand::GrabReadWriteData(Bool discard)
 	// Stores the latest used data as it might be required to copy it to a newly allocated one
 	ICommandData* pLastestData = commandDataList_.front().Get();
 
-	// Iterate through all data in order to get one taht isn't acquired for read purpose.
+	// Iterate through all data in order to get one that isn't acquired for read purpose.
 	// The first one would be great as it could avoid calling the copy
 	CommandDataList::iterator it = commandDataList_.begin();
 	for (; it != commandDataList_.end(); ++it)

@@ -9,8 +9,6 @@ public:
 	virtual ~HelloWndApp();
 
 	virtual void Init() override;
-	virtual void PostInit() override;
-	virtual void PreShutdown() override;
 	virtual void Shutdown() override;
 
 	virtual void Update() override;
@@ -54,28 +52,25 @@ void HelloWndApp::Init()
 {
 	Application::Init();
 
+	const UInt32 width = 1024;
+	const UInt32 height = 768;
+
 	theFactorySelector->SelectorFactory(EGraphicAPI::eD3D9);
 	pRenderTargetState_ = FatNew(RenderTargetState);
 	pSwapCommand_ = FatNew(SwapCommand);
-}
 
-void HelloWndApp::PostInit()
-{
-	Application::PostInit();
+	InitWidget(width, height);
 
 	pDevice_ = FatNew(Device);
 	pContext_ = FatNew(Context, *pDevice_);
 }
 
-void HelloWndApp::PreShutdown()
+void HelloWndApp::Shutdown()
 {
 	FAT_SAFE_DELETE(pContext_);
 	FAT_SAFE_DELETE(pDevice_);
-	Application::PreShutdown();
-}
+	ShutdownWidget();
 
-void HelloWndApp::Shutdown()
-{
 	FAT_SAFE_DELETE(pSwapCommand_);
 	FAT_SAFE_DELETE(pRenderTargetState_);
 	Application::Shutdown();
@@ -133,6 +128,8 @@ void HelloWndApp::Resize(UInt32 width, UInt32 height)
 	RenderTargetStateData* pData = locker.GetData();
 	pData->SetWidth(width);
 	pData->SetHeight(height);
+
+	FatLog(L"<HelloWndApp>: Resize %u, %d", width, height);
 }
 
 void HelloWndApp::SetupRenderTarget()
@@ -142,6 +139,8 @@ void HelloWndApp::SetupRenderTarget()
 
 	// Fetch the render target state data 
 	RenderTargetStateData* pData = locker.GetData();
+
+	FatLog(L"<HelloWndApp>: SetupRenderTarget %u, %u", pData->GetWidth(), pData->GetHeight());
 
 	// Sets color information
 	pData->SetColor(Float4(1.0f, 0, 1.0f, 0));

@@ -8,10 +8,10 @@ namespace Fat {
 
 WidgetWin32::WidgetWin32(const wchar_t* title, UInt32 width, UInt32 height)
 {
-	hWnd_   = NULL;
-	width_  = width;
-	height_ = height;
-	title_  = title;
+	hWnd_         = NULL;
+	width_        = width;
+	height_       = height;
+	title_        = title;
 	
 	FatIfBuildAssertion(bool ok =) InitWindowClass();
 	FatAssertNoText(ok);
@@ -43,6 +43,9 @@ void WidgetWin32::OnActive(Bool value)
 
 void WidgetWin32::OnResize(UInt32 width, UInt32 height)
 {
+	FatLog(L"<App>: OnResize (%u,%u)", width, height);
+	width_  = width;
+	height_ = height;
 	theApp->Resize(width, height);
 }
 
@@ -82,28 +85,24 @@ bool WidgetWin32::InitWindow()
 	UInt32 height = height_;
 
 	DWORD style, exstyle;
-	int x, y, w, h;
+	int x, y;
 
 	if (width < 640) width = 640;
 	if (height < 480) height = 480;
 
-	DWORD windowStyle = WS_OVERLAPPEDWINDOW | WS_VISIBLE;
-
-	// TODO: Do not allow the user to resize the window
-	//windowStyle &= ~WS_MAXIMIZEBOX;
-	//windowStyle &= ~WS_THICKFRAME;
-
+	style   = WS_OVERLAPPEDWINDOW | WS_VISIBLE;
 	exstyle = WS_EX_APPWINDOW;
-	style = windowStyle;
+	
+	RECT rc = { 0, 0, (LONG)width, (LONG)height };
+	AdjustWindowRectEx(&rc, style, FALSE, exstyle);
+	width  = (rc.right - rc.left);
+	height = (rc.bottom - rc.top);
+
 	x = (::GetSystemMetrics(SM_CXFULLSCREEN) - width) / 2;
 	y = (::GetSystemMetrics(SM_CYFULLSCREEN) - height) / 2;
-	w = ::GetSystemMetrics(SM_CXFIXEDFRAME) * 2 + width;
-	h = ::GetSystemMetrics(SM_CYCAPTION) + GetSystemMetrics(SM_CYFIXEDFRAME) * 2 + height;
 
-	width_  = w;
-	height_ = h;
-
-	hWnd_ = ::CreateWindowEx(exstyle, GAME_WINDOW_CLASSNAME, title_, style, x, y, w, h, NULL, NULL, GetModuleHandle(0), this);
+	hWnd_ = ::CreateWindowEx(exstyle, GAME_WINDOW_CLASSNAME, title_,
+		style, x, y, width, height, NULL, NULL, GetModuleHandle(0), this);
 
 	if (!hWnd_)
 		return false;

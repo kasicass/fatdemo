@@ -11,10 +11,10 @@ Application::~Application()
 {
 }
 
-void Application::InitWidget()
+void Application::InitWidget(UInt32 width, UInt32 height)
 {
 	FatLog(L"<App>: InitWidget");
-	pMainWnd_ = CreateWidget(GetTitle(), 1024, 768);
+	pMainWnd_ = CreateWidget(GetTitle(), width, height);
 }
 
 void Application::ShutdownWidget()
@@ -41,18 +41,6 @@ void Application::Init()
 #if defined(FAT_OS_WINDOWS)
 	theD3D9Factory->Init();
 #endif
-}
-
-void Application::PostInit()
-{
-	// Widget
-	InitWidget();
-}
-
-void Application::PreShutdown()
-{
-	// Widget
-	ShutdownWidget();
 }
 
 void Application::Shutdown()
@@ -125,9 +113,7 @@ int main(int argc, char *argv[])
 #endif
 
 	theApp->Init();
-	theApp->PostInit();
 	theApp->Run();
-	theApp->PreShutdown();
 	theApp->Shutdown();
 	return 0;
 }

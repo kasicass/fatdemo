@@ -9,8 +9,6 @@ public:
 	virtual ~Application();
 
 	virtual void Init() override;
-	virtual void PostInit() override;
-	virtual void PreShutdown() override;
 	virtual void Shutdown() override;
 
 	virtual void Update() override;
@@ -25,7 +23,7 @@ public:
 #endif
 
 protected:
-	void InitWidget();
+	void InitWidget(UInt32 width, UInt32 height);
 	void ShutdownWidget();
 
 private:

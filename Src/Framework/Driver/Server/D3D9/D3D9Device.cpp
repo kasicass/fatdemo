@@ -215,6 +215,7 @@ Bool D3D9Device::Reset()
 	}
 	
 	// 2. Prepare present parameters
+	FatLog(L"<Driver>: reset %u, %u", deviceWidth_, deviceHeight_);
 	D3D9PresentParameter presentParam(pD3D_.Get(), deviceWidth_, deviceHeight_, hDeviceWnd_);
 
 	// 3. PrePeset : Release all video memory resources

@@ -2,11 +2,9 @@
 
 namespace Fat {
 
-RenderTargetStateData::RenderTargetStateData() :
-	width_(0),
-	height_(0),
-	color_(0,0,0,0)
+RenderTargetStateData::RenderTargetStateData()
 {
+	Clear();
 }
 
 RenderTargetStateData::~RenderTargetStateData()
