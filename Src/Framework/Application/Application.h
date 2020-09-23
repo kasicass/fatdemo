@@ -9,6 +9,8 @@ public:
 	virtual ~Application();
 
 	virtual void Init() override;
+	virtual void PostInit() override;
+	virtual void PreShutdown() override;
 	virtual void Shutdown() override;
 
 	virtual void Update() override;

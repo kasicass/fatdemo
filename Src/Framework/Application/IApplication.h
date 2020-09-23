@@ -7,6 +7,8 @@ struct IApplication
 	virtual ~IApplication() {}
 
 	virtual void Init() = 0;
+	virtual void PostInit() = 0;
+	virtual void PreShutdown() = 0;
 	virtual void Shutdown() = 0;
 
 	virtual void Update() = 0;

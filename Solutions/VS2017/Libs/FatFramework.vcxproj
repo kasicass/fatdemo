@@ -44,6 +44,7 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IObject.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IState.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\StateCache.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\State\CameraState.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\State\RenderTargetState.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\Command\D3D9SwapCommand.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Common.h" />
@@ -107,6 +108,7 @@
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IObject.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\IState.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\StateCache.cpp" />
+    <ClCompile Include="..\..\..\Src\Framework\Driver\Client\State\CameraState.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Client\State\RenderTargetState.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\Command\D3D9SwapCommand.cpp" />
     <ClCompile Include="..\..\..\Src\Framework\Driver\Server\D3D9\D3D9Common.cpp" />

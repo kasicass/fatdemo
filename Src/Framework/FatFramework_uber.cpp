@@ -32,6 +32,7 @@
 #include "Driver/Client/Command/DrawCommand.cpp"
 #include "Driver/Client/Command/SwapCommand.cpp"
 
+#include "Driver/Client/State/CameraState.cpp"
 #include "Driver/Client/State/RenderTargetState.cpp"
 
 // Driver - Server

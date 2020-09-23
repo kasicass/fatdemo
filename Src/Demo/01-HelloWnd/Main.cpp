@@ -9,6 +9,8 @@ public:
 	virtual ~HelloWndApp();
 
 	virtual void Init() override;
+	virtual void PostInit() override;
+	virtual void PreShutdown() override;
 	virtual void Shutdown() override;
 
 	virtual void Update() override;
@@ -53,18 +55,29 @@ void HelloWndApp::Init()
 	Application::Init();
 
 	theFactorySelector->SelectorFactory(EGraphicAPI::eD3D9);
-	pDevice_ = FatNew(Device);
-	pContext_ = FatNew(Context, *pDevice_);
 	pRenderTargetState_ = FatNew(RenderTargetState);
 	pSwapCommand_ = FatNew(SwapCommand);
+}
+
+void HelloWndApp::PostInit()
+{
+	Application::PostInit();
+
+	pDevice_ = FatNew(Device);
+	pContext_ = FatNew(Context, *pDevice_);
+}
+
+void HelloWndApp::PreShutdown()
+{
+	FAT_SAFE_DELETE(pContext_);
+	FAT_SAFE_DELETE(pDevice_);
+	Application::PreShutdown();
 }
 
 void HelloWndApp::Shutdown()
 {
 	FAT_SAFE_DELETE(pSwapCommand_);
 	FAT_SAFE_DELETE(pRenderTargetState_);
-	FAT_SAFE_DELETE(pContext_);
-	FAT_SAFE_DELETE(pDevice_);
 	Application::Shutdown();
 }
 
@@ -116,13 +129,10 @@ void HelloWndApp::Update()
 
 void HelloWndApp::Resize(UInt32 width, UInt32 height)
 {
-	if (pRenderTargetState_)
-	{
-		RenderTargetState::ReadWriteLocker locker(pRenderTargetState_, false);
-		RenderTargetStateData* pData = locker.GetData();
-		pData->SetWidth(width);
-		pData->SetHeight(height);
-	}
+	RenderTargetState::ReadWriteLocker locker(pRenderTargetState_, false);
+	RenderTargetStateData* pData = locker.GetData();
+	pData->SetWidth(width);
+	pData->SetHeight(height);
 }
 
 void HelloWndApp::SetupRenderTarget()

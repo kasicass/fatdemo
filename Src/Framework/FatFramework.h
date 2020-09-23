@@ -135,6 +135,7 @@
 #include "Driver/Client/Context.h"
 #include "Driver/Client/Command/DrawCommand.h"
 #include "Driver/Client/Command/SwapCommand.h"
+#include "Driver/Client/State/CameraState.h"
 #include "Driver/Client/State/RenderTargetState.h"
 
 // FatFramework - Driver - DX9
