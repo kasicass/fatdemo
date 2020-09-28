@@ -154,7 +154,6 @@ Bool CommandBuffer::Begin()
 		if (clientBuffers_.empty())
 		{
 			// Discards the oldest buffer sent to the server
-
 			Buffer* pBuffer = serverBuffers_.back();
 			serverBuffers_.pop_back();
 			pBuffer->Clear();

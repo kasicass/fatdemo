@@ -101,6 +101,7 @@ void D3D9Device::SetDeviceWidth(UInt32 width)
 {
 	if (deviceWidth_ != width)
 	{
+		FatLog(L"<Driver>: SetDeviceWidth, old:%u, new:%u", deviceWidth_, width);
 		deviceWidth_ = width;
 		ResetNeeded();
 	}
@@ -110,6 +111,7 @@ void D3D9Device::SetDeviceHeight(UInt32 height)
 {
 	if (deviceHeight_ != height)
 	{
+		FatLog(L"<Driver>: SetDeviceHeight, old:%u, new:%u", deviceHeight_, height);
 		deviceHeight_ = height;
 		ResetNeeded();
 	}
@@ -218,7 +220,7 @@ Bool D3D9Device::Reset()
 	FatLog(L"<Driver>: reset %u, %u", deviceWidth_, deviceHeight_);
 	D3D9PresentParameter presentParam(pD3D_.Get(), deviceWidth_, deviceHeight_, hDeviceWnd_);
 
-	// 3. PrePeset : Release all video memory resources
+	// 3. PreReset : Release all video memory resources
 	SendPreReset();
 
 	// 4. Do the actual reset

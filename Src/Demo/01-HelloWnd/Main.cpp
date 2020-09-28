@@ -69,6 +69,7 @@ void HelloWndApp::Shutdown()
 {
 	FAT_SAFE_DELETE(pContext_);
 	FAT_SAFE_DELETE(pDevice_);
+
 	ShutdownWidget();
 
 	FAT_SAFE_DELETE(pSwapCommand_);
@@ -80,7 +81,7 @@ void HelloWndApp::Update()
 {
 	if (pContext_->Begin())
 	{
-		pContext_->Bind(*pRenderTargetState_);
+		//pContext_->Bind(*pRenderTargetState_);
 
 		pContext_->Queue(pSwapCommand_);
 
