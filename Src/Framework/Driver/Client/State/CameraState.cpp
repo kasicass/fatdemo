@@ -1,5 +1,7 @@
 #include "FatFramework.h"
 
+#if 0
+
 namespace Fat {
 
 CameraStateData::CameraStateData()
@@ -110,3 +112,5 @@ F32 CameraStateData::GetFar() const
 }
 
 }
+
+#endif

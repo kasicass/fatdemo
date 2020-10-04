@@ -7,6 +7,7 @@ TAG
  * r = rendering
 
 TODO
+ * k - header files refactor as compiling is slow
  * d - Malloc Benchmark
  * k - jemalloc
  * k - mimalloc

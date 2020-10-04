@@ -1,5 +1,8 @@
 #pragma once
 
+// TODO
+#if 0
+
 namespace Fat {
 
 class CameraStateData : public IStateData
@@ -48,3 +51,5 @@ typedef TStateWrapper<CameraStateData,
 	EFactoryObject::eCameraState> CameraState;
 
 }
+
+#endif

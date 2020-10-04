@@ -33,12 +33,12 @@ void StateCache::Init()
 	REGISTER_STATE_CONSTRUCTOR(EStateType::eRenderTarget, RenderTargetState);
 
 	// TODO
-	REGISTER_STATE_CONSTRUCTOR(EStateType::eVertexBuffer, RenderTargetState);
-	REGISTER_STATE_CONSTRUCTOR(EStateType::eTopology, RenderTargetState);
-	REGISTER_STATE_CONSTRUCTOR(EStateType::eMaterial, RenderTargetState);
-	REGISTER_STATE_CONSTRUCTOR(EStateType::eLight, RenderTargetState);
-	REGISTER_STATE_CONSTRUCTOR(EStateType::eCamera, RenderTargetState);
-	REGISTER_STATE_CONSTRUCTOR(EStateType::eTransform, RenderTargetState);
+//	REGISTER_STATE_CONSTRUCTOR(EStateType::eVertexBuffer, RenderTargetState);
+//	REGISTER_STATE_CONSTRUCTOR(EStateType::eTopology, RenderTargetState);
+//	REGISTER_STATE_CONSTRUCTOR(EStateType::eMaterial, RenderTargetState);
+//	REGISTER_STATE_CONSTRUCTOR(EStateType::eLight, RenderTargetState);
+//	REGISTER_STATE_CONSTRUCTOR(EStateType::eCamera, CameraState);
+//	REGISTER_STATE_CONSTRUCTOR(EStateType::eTransform, RenderTargetState);
 }
 
 void StateCache::Shutdown()
@@ -55,13 +55,18 @@ StateCache::StateCache()
 	// Allocate and initialize default state vector
 	FAT_ENUM_FOREACH(stateType, EStateType)
 	{
+		// Get back function pointer
 		TStateDefaultConstructorFn pDefaultConstructor = s_defaultStateConstructor[stateType];
 		FatAssert(pDefaultConstructor != NULL, L"No registered state for state type %d", stateType);
 
+		// Calls state allocation
 		IState* pState = (*pDefaultConstructor)();
+
+		// Stores it in the default state collection
 		defaultStates_.push_back(pState);
 		FatAssertNoText(defaultStates_[stateType] == pState);
 
+		// Also set the corresponding entry with the default value
 		entries_.emplace_back(pState);
 		flushableEntries_.push_back(stateType);
 		outdatedEntries_.push_back(true);

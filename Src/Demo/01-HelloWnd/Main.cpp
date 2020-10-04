@@ -81,7 +81,7 @@ void HelloWndApp::Update()
 {
 	if (pContext_->Begin())
 	{
-		//pContext_->Bind(*pRenderTargetState_);
+		pContext_->Bind(*pRenderTargetState_);
 
 		pContext_->Queue(pSwapCommand_);
 
@@ -140,8 +140,6 @@ void HelloWndApp::SetupRenderTarget()
 
 	// Fetch the render target state data 
 	RenderTargetStateData* pData = locker.GetData();
-
-	FatLog(L"<HelloWndApp>: SetupRenderTarget %u, %u", pData->GetWidth(), pData->GetHeight());
 
 	// Sets color information
 	pData->SetColor(Float4(1.0f, 0, 1.0f, 0));

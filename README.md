@@ -36,8 +36,9 @@
     [Driver]                    dx9/dx11/opengl/opengles driver
     [Kernel]                    common stuff, e.g. threading, log, unittest
 [Solutions]                   build files
-  [Emake]
-  [VS2017]
+  [Android]                     Android gradle files
+  [Emake]                       Linux/OpenBSD
+  [VS2017]                      Windows
 ```
 
 
