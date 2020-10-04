@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Kernel/Common/Types.h"
+#include "Kernel/Common/NonCopyable.h"
+
 namespace Fat {
 
 struct IPerformanceCounter

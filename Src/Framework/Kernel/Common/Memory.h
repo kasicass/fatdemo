@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Kernel/PlatformConfig.h"
+#include "Kernel/Common/Types.h"
+
 #if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
 
 #define FatMalloc(size)          Fat::Memory::MallocDbg(size, FAT_CONCAT(L,__FILE__), __LINE__)

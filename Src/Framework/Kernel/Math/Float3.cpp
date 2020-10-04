@@ -1,4 +1,5 @@
-#include "FatFramework.h"
+#include "Kernel/Math/Float3.h"
+#include "Kernel/Math/Utils.h"
 
 namespace Fat {
 

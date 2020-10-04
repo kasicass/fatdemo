@@ -1,5 +1,11 @@
 #pragma once
 
+#include "Kernel/PlatformConfig.h"
+#include "Kernel/PlatformHeaders.h"
+#include "Kernel/Common/Types.h"
+#include "Kernel/Common/NonCopyable.h"
+#include "Kernel/Thread/MutexFast.h"
+
 namespace Fat {
 
 class ConditionVariable : private NonCopyable

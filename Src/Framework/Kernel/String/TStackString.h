@@ -2,6 +2,10 @@
 
 #pragma once
 
+#include "Kernel/Common/Assertion.h"
+#include "Kernel/String/TCharTraits.h"
+#include <stdarg.h>
+
 namespace Fat {
 
 //
@@ -184,7 +188,7 @@ inline void TStackString<T, S>::_Initialize()
 template <typename T, size_t S>
 inline void TStackString<T, S>::_AllocData(size_type length)
 {
-	assert(length <= capacity());
+	FatAssertNoText(length <= capacity());
 	length_ = length;
 	str_[length_] = '\0';
 }
@@ -201,7 +205,7 @@ inline void TStackString<T, S>::_Concat(const_str s, size_type slen)
 {
 	if (slen != 0)
 	{
-		assert(length() + slen <= capacity());
+		FatAssertNoText(length() + slen <= capacity());
 		CharTraits<T>::copy(str_ + length(), s, slen);
 		length_ += slen;
 		str_[length_] = '\0';
@@ -288,7 +292,7 @@ inline void TStackString<T, S>::clear()
 template <typename T, size_t S>
 inline void TStackString<T, S>::reserve(size_type count)
 {
-	assert(count <= capacity());
+	FatAssertNoText(count <= capacity());
 }
 
 template <typename T, size_t S>
@@ -333,7 +337,7 @@ inline TStackString<T, S>& TStackString<T, S>::append(const MyType& rhs)
 template <typename T, size_t S>
 inline TStackString<T, S>& TStackString<T, S>::append(size_type count, value_type ch)
 {
-	assert(length() + count <= capacity());
+	FatAssertNoText(length() + count <= capacity());
 	CharTraits<T>::set(str_ + length_, ch, count);
 	length_ += count;
 	str_[length_] = '\0';
@@ -384,7 +388,7 @@ inline TStackString<T, S>& TStackString<T, S>::assign(const MyType& rhs)
 template <typename T, size_t S>
 inline TStackString<T, S>& TStackString<T, S>::assign(size_type count, value_type ch)
 {
-	assert(count <= capacity());
+	FatAssertNoText(count <= capacity());
 	CharTraits<T>::set(str_, ch, count);
 	length_ = count;
 	str_[length_] = '\0';
@@ -401,7 +405,7 @@ inline TStackString<T, S>& TStackString<T, S>::assign(const_iterator first, cons
 template <typename T, size_t S>
 inline typename TStackString<T, S>::value_type TStackString<T, S>::at(size_type i) const
 {
-	assert(i >= 0 && i < length());
+	FatAssertNoText(i >= 0 && i < length());
 	return str_[i];
 }
 
@@ -448,7 +452,7 @@ inline void TStackString<T, S>::push_back(value_type ch)
 template <typename T, size_t S>
 inline typename TStackString<T, S>::size_type TStackString<T, S>::copy(value_type* dest, size_type count, size_type offset) const
 {
-	assert(offset < length());
+	FatAssertNoText(offset < length());
 
 	if (offset + count > length())
 		count = length() - offset;
@@ -460,7 +464,7 @@ inline typename TStackString<T, S>::size_type TStackString<T, S>::copy(value_typ
 template <typename T, size_t S>
 inline void TStackString<T, S>::resize(size_type count, value_type ch)
 {
-	assert(count <= capacity());
+	FatAssertNoText(count <= capacity());
 	if (count > length())
 	{
 		append(count - length(), ch);
@@ -531,7 +535,7 @@ TStackString<T, S>& TStackString<T, S>::replace(const_str strOld, const_str strN
 	{
 		size_type oldLength = length();
 		size_type newLength = oldLength + (replacementLen - sourceLen) * count;
-		assert(newLength <= capacity());
+		FatAssertNoText(newLength <= capacity());
 
 		start  = begin();
 		theEnd = end();
@@ -597,7 +601,7 @@ inline TStackString<T, S>& TStackString<T, S>::insert(size_type index, size_type
 		index = newLength;
 	newLength += count;
 
-	assert(newLength <= capacity());
+	FatAssertNoText(newLength <= capacity());
 
 	CharTraits<T>::move(str_ + index + count, str_ + index, (length() - index));
 	CharTraits<T>::set(str_ + index, ch, count);
@@ -623,7 +627,7 @@ inline TStackString<T, S>& TStackString<T, S>::insert(size_type index, const_str
 		index = newLength;
 	newLength += count;
 
-	assert(newLength <= capacity());
+	FatAssertNoText(newLength <= capacity());
 
 	CharTraits<T>::move(str_ + index + count, str_ + index, (length() - index));
 	CharTraits<T>::copy(str_ + index, s, count);
@@ -742,14 +746,14 @@ inline void TStackString<T, S>::swap(MyType& rhs)
 template <typename T, size_t S>
 inline typename TStackString<T, S>::value_type& TStackString<T, S>::operator[](size_type i)
 {
-	assert(i < length());
+	FatAssertNoText(i < length());
 	return str_[i];
 }
 
 template <typename T, size_t S>
 inline const typename TStackString<T, S>::value_type& TStackString<T, S>::operator[](size_type i) const
 {
-	assert(i < length());
+	FatAssertNoText(i < length());
 	return str_[i];
 }
 
@@ -924,7 +928,7 @@ TStackString<T, S>& TStackString<T, S>::operator=(const MyType& rhs)
 template <typename T, size_t S>
 TStackString<T, S>& TStackString<T, S>::operator=(const_str s)
 {
-	assert(s != NULL);
+	FatAssertNoText(s != NULL);
 	_Assign(s, CharTraits<T>::strlen(s));
 	return *this;
 }
@@ -939,7 +943,7 @@ TStackString<T, S>& TStackString<T, S>::operator+=(const MyType& rhs)
 template <typename T, size_t S>
 TStackString<T, S>& TStackString<T, S>::operator+=(const_str s)
 {
-	assert(s != NULL);
+	FatAssertNoText(s != NULL);
 	_Concat(s, CharTraits<T>::strlen(s));
 	return *this;
 }
@@ -1050,7 +1054,7 @@ inline TStackString<T, S>& TStackString<T, S>::TrimLeft(value_type ch)
 template <typename T, size_t S>
 inline TStackString<T, S>& TStackString<T, S>::TrimLeft(const value_type* charSet)
 {
-	assert(charSet && *charSet);
+	FatAssertNoText(charSet && *charSet);
 
 	const_str s = str_;
 	while ((*s) && CharTraits<T>::strchr(charSet, *s))
@@ -1099,7 +1103,7 @@ inline TStackString<T, S>& TStackString<T, S>::TrimRight(value_type ch)
 template <typename T, size_t S>
 inline TStackString<T, S>& TStackString<T, S>::TrimRight(const value_type* charSet)
 {
-	assert(charSet && *charSet);
+	FatAssertNoText(charSet && *charSet);
 
 	if (length() < 1)
 		return *this;
@@ -1134,7 +1138,7 @@ inline TStackString<T, S> TStackString<T, S>::SpanExcluding(const_str charSet) c
 template <typename T, size_t S>
 inline TStackString<T, S> TStackString<T, S>::Tokenize(const_str charSet, int& start) const
 {
-	assert(charSet && *charSet);
+	FatAssertNoText(charSet && *charSet);
 
 	if (start < 0)
 		return TStackString<T, S>();

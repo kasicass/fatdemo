@@ -1,5 +1,9 @@
 #pragma once
 
+#include "Kernel/Common/Assertion.h"
+#include "Kernel/Common/Memory.h"
+#include "Kernel/Thread/AtomicInt.h"
+
 namespace Fat {
 
 // Smart pointer implementation. This very simple policy based design allows to use this template

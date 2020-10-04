@@ -1,4 +1,4 @@
-#include "FatFramework.h"
+#include "Kernel/Thread/AtomicInt.h"
 
 namespace Fat { namespace Atomic {
 

@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Kernel/PlatformConfig.h"
+#include "Kernel/Common/Types.h"
+
 #if defined(FAT_ENABLE_UNITTEST)
 
 #define FatTest(x_Test)\

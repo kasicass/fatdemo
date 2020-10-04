@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Kernel/Common/Types.h"
+
 namespace Fat {
 
 class Float3

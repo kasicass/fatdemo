@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Kernel/Common/Types.h"
+#include <atomic>
+
 namespace Fat {
 
 typedef std::atomic<Int32> AtomicInt;

@@ -73,8 +73,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Types.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Float3.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Float4.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Math.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Utils.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformConfig.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\PlatformHeaders.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TCharTraits.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TStackString.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TString.h" />

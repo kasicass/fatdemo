@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Kernel/PlatformConfig.h"
+
 #include <ctype.h>   // isspace, toupper
 #include <string.h>  // sprintf
 #include <wchar.h>   // wcsrchr, wmemset

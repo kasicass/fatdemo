@@ -1,4 +1,6 @@
-#include "FatFramework.h"
+#include "Kernel/Common/Assertion.h"
+#include "Kernel/String/TStackString.h"
+#include "Kernel/Common/Log.h"
 
 #if defined(FAT_ENABLE_ASSERT)
 

@@ -3,6 +3,10 @@
 
 #pragma once
 
+#include "Kernel/Common/Assertion.h"
+#include "Kernel/String/TCharTraits.h"
+#include <stdarg.h>
+
 namespace Fat {
 
 //
@@ -193,7 +197,7 @@ private:
 	{
 		if (pData->refcount >= 0) // not empty string.
 		{
-			assert(pData->refcount != 0);
+			FatAssertNoText(pData->refcount != 0);
 			if (pData->Release() <= 0)
 			{
 				::operator delete((void*)pData);
@@ -225,7 +229,7 @@ private:
 template <typename T>
 inline typename TString<T>::SStrHeader* TString<T>::_Header() const
 {
-	assert(str_ != NULL);
+	FatAssertNoText(str_ != NULL);
 	return ((SStrHeader*)str_) - 1;
 }
 
@@ -241,7 +245,7 @@ inline void TString<T>::_AllocData(size_type length)
 	// always allocate one extra character for '\0'
 	// length() always equal capacity()
 
-	assert(length <= 500*1024*1024); // 500M
+	FatAssertNoText(length <= 500*1024*1024); // 500M
 
 	if (length == 0)
 	{
@@ -351,7 +355,7 @@ TString<T>::TString()
 template <typename T>
 TString<T>::TString(const MyType& rhs)
 {
-	assert(rhs._Header()->GetRefcount() != 0);
+	FatAssertNoText(rhs._Header()->GetRefcount() != 0);
 	if (rhs._Header()->GetRefcount() >= 0)
 	{
 		str_ = rhs.str_;
@@ -448,8 +452,8 @@ inline void TString<T>::clear()
 
 	_Free();
 
-	assert(length() == 0);
-	assert(_Header()->GetRefcount() < 0 || capacity() == 0);
+	FatAssertNoText(length() == 0);
+	FatAssertNoText(_Header()->GetRefcount() < 0 || capacity() == 0);
 }
 
 template <typename T>
@@ -608,7 +612,7 @@ inline TString<T>& TString<T>::assign(const_iterator first, const_iterator last)
 template <typename T>
 inline typename TString<T>::value_type TString<T>::at(size_type i) const
 {
-	assert(i >= 0 && i < length());
+	FatAssertNoText(i >= 0 && i < length());
 	return str_[i];
 }
 
@@ -652,7 +656,7 @@ inline void TString<T>::push_back(value_type ch)
 template <typename T>
 inline typename TString<T>::size_type TString<T>::copy(value_type* dest, size_type count, size_type offset) const
 {
-	assert(offset < length());
+	FatAssertNoText(offset < length());
 
 	if (offset + count > length())
 		count = length() - offset;
@@ -968,7 +972,7 @@ inline void TString<T>::swap(MyType& rhs)
 template <typename T>
 inline typename TString<T>::value_type TString<T>::operator[](size_type i) const
 {
-	assert(i < length());
+	FatAssertNoText(i < length());
 	return str_[i];
 }
 
@@ -1174,7 +1178,7 @@ TString<T>& TString<T>::operator=(const MyType& rhs)
 template <typename T>
 TString<T>& TString<T>::operator=(const_str s)
 {
-	assert(s != NULL);
+	FatAssertNoText(s != NULL);
 	_Assign(s, CharTraits<T>::strlen(s));
 	return *this;
 }
@@ -1189,7 +1193,7 @@ TString<T>& TString<T>::operator+=(const MyType& rhs)
 template <typename T>
 TString<T>& TString<T>::operator+=(const_str s)
 {
-	assert(s != NULL);
+	FatAssertNoText(s != NULL);
 	_Concat(s, CharTraits<T>::strlen(s));
 	return *this;
 }
@@ -1307,7 +1311,7 @@ inline TString<T>& TString<T>::TrimLeft(value_type ch)
 template <typename T>
 inline TString<T>& TString<T>::TrimLeft(const value_type* charSet)
 {
-	assert(charSet && *charSet);
+	FatAssertNoText(charSet && *charSet);
 
 	const_str s = str_;
 	while ((*s) && CharTraits<T>::strchr(charSet, *s))
@@ -1358,7 +1362,7 @@ inline TString<T>& TString<T>::TrimRight(value_type ch)
 template <typename T>
 inline TString<T>& TString<T>::TrimRight(const value_type* charSet)
 {
-	assert(charSet && *charSet);
+	FatAssertNoText(charSet && *charSet);
 
 	if (length() < 1)
 		return *this;
@@ -1394,7 +1398,7 @@ inline TString<T> TString<T>::SpanExcluding(const_str charSet) const
 template <typename T>
 inline TString<T> TString<T>::Tokenize(const_str charSet, int& start) const
 {
-	assert(charSet && *charSet);
+	FatAssertNoText(charSet && *charSet);
 
 	if (start < 0)
 		return TString<T>();

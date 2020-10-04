@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Kernel/PlatformConfig.h"
+
 #if defined(FAT_ENABLE_LOG)
 
 namespace Fat {

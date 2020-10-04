@@ -2,18 +2,7 @@
 
 // Platform-specific
 #include "Kernel/PlatformConfig.h"
-
-#if defined(FAT_OS_WINDOWS)
-#  define WIN32_LEAN_AND_MEAN
-#  define NOMINMAX
-#  include <Windows.h>
-#  include <process.h>
-#  define FAT_THREAD_LOCAL __declspec(thread)
-#else
-#  include <signal.h>
-#  include <pthread.h>
-#  define FAT_THREAD_LOCAL __thread
-#endif
+#include "Kernel/PlatformHeaders.h"
 
 // c headers
 #include <stdlib.h>
@@ -52,7 +41,9 @@
 #include "Kernel/Thread/ConditionVariable.h"
 #include "Kernel/Common/SmartPtr.h"
 #include "Kernel/Thread/Thread.h"
-#include "Kernel/Math/Math.h"
+#include "Kernel/Math/Utils.h"
+#include "Kernel/Math/Float3.h"
+#include "Kernel/Math/Float4.h"
 
 // FatFramework - Driver
 #include "Driver/Client/FactorySelector.h"

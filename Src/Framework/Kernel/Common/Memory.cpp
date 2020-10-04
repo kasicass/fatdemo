@@ -1,5 +1,8 @@
-#include "FatFramework.h"
+#include "Kernel/Common/Memory.h"
 #include "Kernel/Common/Queue.h"
+#include "Kernel/Common/Assertion.h"
+#include "Kernel/Common/Log.h"
+#include "Kernel/Thread/MutexFast.h"
 
 //
 // new/delete override

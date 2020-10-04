@@ -22,22 +22,3 @@
 	for (x_enumType::EValue x_itValue = x_enumType::EValue(0); \
 		 x_itValue < x_enumType::eValuesCount; \
 		 x_itValue = x_enumType::EValue(x_itValue+ 1))
-
-// c-string functions
-#if defined(FAT_OS_WINDOWS)
-
-#if defined(FAT_DEBUG_BUILD)
-#define fat_debugbreak()                __debugbreak()
-#else
-#define fat_debugbreak()
-#endif
-
-#else
-
-#if defined(FAT_DEBUG_BUILD)
-#define fat_debugbreak()                raise(SIGTRAP)
-#else
-#define fat_debugbreak()
-#endif
-
-#endif
