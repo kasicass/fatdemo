@@ -4,6 +4,8 @@
 
  * 所有 .cpp 都引用 FatFramework.h，在没有 PCH 的基础上，compile 很慢
  * 对于 FatFramework.lib 中的 .cpp，不再依赖 FatFramework.h，根据需要单独 include 对应的 .h
+ * 上面方案可以保证 FatFramework.lib 编译加快
+ * 支持 uber-build，将所有 .cpp 合并成一个文件，编译飞速
 
 
 ## 2020-09-07

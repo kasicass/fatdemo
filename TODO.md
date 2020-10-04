@@ -7,7 +7,6 @@ TAG
  * r = rendering
 
 TODO
- * k - header files refactor as compiling is slow
  * d - Malloc Benchmark
  * k - jemalloc
  * k - mimalloc
@@ -23,9 +22,11 @@ TODO
  * r - D3D11 Driver
  * r - D3D9 Driver
  * a - Platform-indepent Windows
- 
+ * a - FatFramework.h refactor (Application)
+ * r - FatFramework.h refactor (Driver)
+
 DONE
- * uber build for Android
+ * k - FatFramework.h refactor (Kernel)
  * r - Client/Server RenderThread Framework
  * k - Mutex/CondVariable/Thread
  * k - SmartPtr
@@ -33,3 +34,4 @@ DONE
  * k - AtomicInt
  * k - mini UnitTest framework
  * build files for Windows/Linux/OpenBSD/Android
+ * uber build for all platform
