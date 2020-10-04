@@ -58,9 +58,6 @@
       <Filter>Application</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Src\Framework\FatFramework.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Types.h">
-      <Filter>Kernel</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Src\Framework\Kernel\String\TCharTraits.h">
       <Filter>Kernel\String</Filter>
     </ClInclude>
@@ -216,6 +213,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\State\CameraState.h">
       <Filter>Driver\Client\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Types.h">
+      <Filter>Kernel\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Macros.h">
+      <Filter>Kernel\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

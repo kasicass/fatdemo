@@ -13,9 +13,6 @@
 #  include <signal.h>
 #  include <pthread.h>
 #  define FAT_THREAD_LOCAL __thread
-#  if defined(FAT_OS_ANDROID)
-#    include <android/log.h>
-#  endif
 #endif
 
 // c headers
@@ -36,68 +33,9 @@
 #include <atomic>
 #include <sstream>
 
-// helper macros
-#define FAT_ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0]))
-
-#define FAT_SAFE_DELETE(p) if (p) { delete p; p = NULL; }
-
-#define _FAT_CONCAT(x, y) x##y
-#define FAT_CONCAT(x, y) _FAT_CONCAT(x, y)
-
-// helper for enum
-#define FAT_ENUM_BEGIN(x_enumType) \
-	struct x_enumType { \
-		enum EValue {
-
-#define FAT_ENUM_END() \
-			eValuesCount, \
-		}; \
-	};
-
-#define FAT_ENUM_FOREACH(x_itValue, x_enumType) \
-	for (x_enumType::EValue x_itValue = x_enumType::EValue(0); \
-		 x_itValue < x_enumType::eValuesCount; \
-		 x_itValue = x_enumType::EValue(x_itValue+ 1))
-
-// c-string functions
-#if defined(FAT_OS_WINDOWS)
-
-#define fat_sprintf    sprintf_s
-#define fat_snprintf   _snprintf_s
-#define fat_vsnprintf  _vsnprintf
-#define fat_vsnwprintf _vsnwprintf
-#define fat_stricmp    _stricmp
-#define fat_strnicmp   _strnicmp
-#define fat_wcsicmp    _wcsicmp
-#define fat_wcsnicmp   _wcsnicmp
-
-#if defined(FAT_DEBUG_BUILD)
-#define fat_debugbreak()                __debugbreak()
-#else
-#define fat_debugbreak()
-#endif
-
-#else
-
-#define fat_sprintf    sprintf
-#define fat_snprintf   snprintf
-#define fat_vsnprintf  vsnprintf
-#define fat_vsnwprintf vswprintf
-#define fat_stricmp    strcasecmp
-#define fat_strnicmp   strncasecmp
-#define fat_wcsicmp    wcscasecmp
-#define fat_wcsnicmp   wcsncasecmp
-
-#if defined(FAT_DEBUG_BUILD)
-#define fat_debugbreak()                raise(SIGTRAP)
-#else
-#define fat_debugbreak()
-#endif
-
-#endif
-
 // FatFramework - Kernel
-#include "Kernel/Types.h"
+#include "Kernel/Common/Types.h"
+#include "Kernel/Common/Macros.h"
 #include "Kernel/Common/OS.h"
 #include "Kernel/Common/Log.h"
 #include "Kernel/Common/Assertion.h"

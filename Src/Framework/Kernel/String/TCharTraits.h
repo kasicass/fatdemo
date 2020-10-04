@@ -1,5 +1,35 @@
 #pragma once
 
+#include <ctype.h>   // isspace, toupper
+#include <string.h>  // sprintf
+#include <wchar.h>   // wcsrchr, wmemset
+#include <stdio.h>   // _vsnprintf
+
+// c-string functions
+#if defined(FAT_OS_WINDOWS)
+
+#define fat_sprintf    sprintf_s
+#define fat_snprintf   _snprintf_s
+#define fat_vsnprintf  _vsnprintf
+#define fat_vsnwprintf _vsnwprintf
+#define fat_stricmp    _stricmp
+#define fat_strnicmp   _strnicmp
+#define fat_wcsicmp    _wcsicmp
+#define fat_wcsnicmp   _wcsnicmp
+
+#else
+
+#define fat_sprintf    sprintf
+#define fat_snprintf   snprintf
+#define fat_vsnprintf  vsnprintf
+#define fat_vsnwprintf vswprintf
+#define fat_stricmp    strcasecmp
+#define fat_strnicmp   strncasecmp
+#define fat_wcsicmp    wcscasecmp
+#define fat_wcsnicmp   wcsncasecmp
+
+#endif
+
 namespace Fat {
 
 //

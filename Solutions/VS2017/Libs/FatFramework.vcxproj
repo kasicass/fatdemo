@@ -63,12 +63,14 @@
     <ClInclude Include="..\..\..\Src\Framework\FatFramework.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Assertion.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Log.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Macros.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Memory.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\NonCopyable.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\OS.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Queue.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\SmartPtr.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Time.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Kernel\Common\Types.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Float3.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Float4.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Math.h" />
@@ -81,7 +83,6 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\MutexFast.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\TAutoLock.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Thread\Thread.h" />
-    <ClInclude Include="..\..\..\Src\Framework\Kernel\Types.h" />
     <ClInclude Include="..\..\..\Src\Framework\Kernel\UnitTest\UnitTest.h" />
   </ItemGroup>
   <ItemGroup>

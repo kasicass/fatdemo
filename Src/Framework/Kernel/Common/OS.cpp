@@ -1,4 +1,10 @@
-#include "FatFramework.h"
+#include "Kernel/PlatformConfig.h"
+#include "Kernel/Common/Types.h"
+#include "Kernel/String/TCharTraits.h"
+
+#if defined(FAT_OS_ANDROID)
+#  include <android/log.h>
+#endif
 
 namespace Fat { namespace OS {
 
