@@ -1,7 +1,8 @@
 #pragma once
 
 #if defined(FAT_OS_WINDOWS)
-#  define WIN32_LEAN_AND_MEAN
+// can't define it, or <dsound.h> compiles error in uber-build
+// #  define WIN32_LEAN_AND_MEAN
 #  define NOMINMAX
 #  include <Windows.h>
 #  include <process.h>

@@ -56,7 +56,6 @@
     <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\State\FakeServerState.cpp">
       <Filter>Driver\Server\State</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\UnitTest_uber.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Driver">

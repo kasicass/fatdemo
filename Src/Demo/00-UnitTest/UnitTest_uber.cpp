@@ -1,5 +1,4 @@
-// uber build for Linux/OpenBSD/Android
-
+// uber build
 #include "Main.cpp"
 
 // UnitTest for Kernel

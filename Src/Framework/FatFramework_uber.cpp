@@ -1,4 +1,4 @@
-// uber build for Linux/OpenBSD/Android
+// uber build
 
 // Kernel
 #include "Kernel/Common/Assertion.cpp"
@@ -39,7 +39,24 @@
 #include "Driver/Server/Interface/IServerDevice.cpp"
 #include "Driver/Server/Interface/IServerFactory.cpp"
 
+#if defined(FAT_OS_WINDOWS)
+#include "Driver/Server/D3D9/D3D9Common.cpp"
+#include "Driver/Server/D3D9/D3D9Device.cpp"
+#include "Driver/Server/D3D9/D3D9Factory.cpp"
+#include "Driver/Server/D3D9/D3D9GPUTimer.cpp"
+#include "Driver/Server/D3D9/D3D9Reset.cpp"
+#include "Driver/Server/D3D9/D3D9StateShadow.cpp"
+#include "Driver/Server/D3D9/dxerr.cpp"
+#include "Driver/Server/D3D9/Command/D3D9SwapCommand.cpp"
+#include "Driver/Server/D3D9/State/D3D9RenderTargetState.cpp"
+#endif
+
 // Application
 #include "Application/Application.cpp"
+#if defined(FAT_OS_ANDROID)
 #include "Application/Application_Android.cpp"
+#endif
 #include "Application/IWidget.cpp"
+#if defined(FAT_OS_WINDOWS)
+#include "Application/Widget_Win32.cpp"
+#endif

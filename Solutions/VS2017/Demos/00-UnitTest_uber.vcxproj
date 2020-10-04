@@ -27,32 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandBufferTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandLockerTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\DeviceTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\StateCacheTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\State\FakeServerState.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\AtomicIntTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\ConditionVariableTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\MathTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\MutexFastTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\SmartPtrTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\ThreadTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\TimeTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\UnitTestSelfTest.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.h" />
-    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.h" />
-    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.h" />
-    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.h" />
-    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\State\FakeServerState.h" />
+    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\UnitTest_uber.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Libs\FatFramework_uber.vcxproj">
@@ -61,9 +36,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{39877769-6B24-4ECC-B6F5-906E635C3B0C}</ProjectGuid>
+    <ProjectGuid>{8E86B837-D1A4-4A52-8847-67E684874A8F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My00UnitTest</RootNamespace>
+    <RootNamespace>My00UnitTestuber</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -143,17 +118,17 @@
     <Import Project="..\Props\FatDemo.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
     <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -161,36 +136,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <PrecompiledHeader>
@@ -226,6 +171,36 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
