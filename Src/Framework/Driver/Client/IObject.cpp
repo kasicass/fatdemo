@@ -1,4 +1,5 @@
-#include "FatFramework.h"
+#include "Driver/Client/IObject.h"
+#include "Driver/Client/FactorySelector.h"
 
 namespace Fat {
 

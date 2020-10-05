@@ -1,4 +1,6 @@
-#include "FatFramework.h"
+#include "Driver/Client/CommandLocker.h"
+#include "Driver/Client/ICommand.h"
+#include "Driver/Client/IState.h"
 
 namespace Fat {
 

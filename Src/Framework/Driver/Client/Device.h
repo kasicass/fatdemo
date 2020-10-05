@@ -1,7 +1,10 @@
 #pragma once
 
+#include "Driver/Client/IObject.h"
+
 namespace Fat {
 
+class IServerDevice;
 class Device : protected IObject
 {
 public:

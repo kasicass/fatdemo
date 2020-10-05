@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Kernel/Common/NonCopyable.h"
+#include "Kernel/Common/SmartPtr.h"
+
 namespace Fat {
 
 class IState;

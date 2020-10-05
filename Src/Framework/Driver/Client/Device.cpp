@@ -1,4 +1,5 @@
-#include "FatFramework.h"
+#include "Driver/Client/Device.h"
+#include "Driver/Server/Interface/IServerDevice.h"
 
 namespace Fat {
 

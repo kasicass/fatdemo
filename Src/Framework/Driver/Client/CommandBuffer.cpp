@@ -1,4 +1,7 @@
-#include "FatFramework.h"
+#include "Driver/Client/CommandBuffer.h"
+#include "Driver/Client/ICommand.h"
+#include "Driver/Client/Device.h"
+#include "Driver/Client/DriverStatistics.h"
 
 namespace Fat {
 

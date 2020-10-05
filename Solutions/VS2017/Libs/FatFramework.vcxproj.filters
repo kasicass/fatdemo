@@ -136,9 +136,6 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IState.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\EStateType.h">
-      <Filter>Driver\Client</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\Command\DrawCommand.h">
       <Filter>Driver\Client\Command</Filter>
     </ClInclude>
@@ -224,6 +221,9 @@
       <Filter>Kernel\Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\FactoryType.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\StateType.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
   </ItemGroup>

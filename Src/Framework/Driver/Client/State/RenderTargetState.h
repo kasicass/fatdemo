@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Kernel/Math/Float4.h"
+#include "Driver/Client/IState.h"
+
 namespace Fat {
 
 // Render target state command data. Embeds render target sizes and clear color. This clear color information

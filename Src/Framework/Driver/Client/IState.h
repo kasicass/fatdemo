@@ -1,5 +1,9 @@
 #pragma once
 
+#include "Kernel/Common/NonCopyable.h"
+#include "Driver/Client/StateType.h"
+#include "Driver/Client/ICommand.h"
+
 namespace Fat {
 
 class IStateData : public ICommandData

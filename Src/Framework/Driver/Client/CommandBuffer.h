@@ -1,5 +1,13 @@
 #pragma once
 
+#include "Kernel/Common/NonCopyable.h"
+#include "Kernel/Common/Time.h"
+#include "Kernel/Thread/MutexFast.h"
+#include "Kernel/Thread/Thread.h"
+#include "Driver/Client/CommandLocker.h"
+#include <vector>
+#include <list>
+
 namespace Fat {
 
 class Device;

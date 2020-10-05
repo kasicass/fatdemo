@@ -1,5 +1,12 @@
 #pragma once
 
+#include "Kernel/Common/SmartPtr.h"
+#include "Kernel/Common/NonCopyable.h"
+#include "Driver/Client/IObject.h"
+#include "Driver/Client/CommandLocker.h"
+#include "Driver/Server/Interface/IServerCommand.h"
+#include <list>
+
 namespace Fat {
 
 //
@@ -43,8 +50,6 @@ typedef TSmartPtr<ICommandData, TSmartPtrIntrusivePolicy> ICommandDataPtr;
 //
 // ICommand - client command object interface
 //
-
-class IServerCommand;
 
 class ICommand : protected IObject
 {

@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Kernel/Common/Types.h"
+#include <sstream>
+
 namespace Fat {
 
 class IDriverStatistics

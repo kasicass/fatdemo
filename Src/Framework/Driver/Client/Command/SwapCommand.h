@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Driver/Client/ICommand.h"
+
 namespace Fat {
 
 class SwapCommandData : public ICommandData
