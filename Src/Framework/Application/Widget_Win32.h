@@ -1,5 +1,9 @@
 #pragma once
 
+#include "Kernel/PlatformConfig.h"
+#include "Kernel/PlatformHeaders.h"
+#include "Application/IWidget.h"
+
 #if defined(FAT_OS_WINDOWS)
 
 namespace Fat {

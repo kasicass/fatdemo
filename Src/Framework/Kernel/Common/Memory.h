@@ -5,6 +5,8 @@
 
 #if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
 
+#include "Kernel/Common/Macros.h"
+
 #define FatMalloc(size)          Fat::Memory::MallocDbg(size, FAT_CONCAT(L,__FILE__), __LINE__)
 #define FatRealloc(p, size)      Fat::Memory::ReallocDbg(p, size, FAT_CONCAT(L,__FILE__), __LINE__)
 #define FatFree(p)               Fat::Memory::FreeDbg(p)

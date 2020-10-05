@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Application/IApplication.h"
+
 namespace Fat {
 
 class Application : public IApplication

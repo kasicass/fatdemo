@@ -1,4 +1,7 @@
-#include "FatFramework.h"
+#include "Kernel/Common/Assertion.h"
+#include "Kernel/Common/Log.h"
+#include "Application/Widget_Win32.h"
+#include "Application/IApplication.h"
 
 #if defined(FAT_OS_WINDOWS)
 

@@ -22,10 +22,10 @@ TODO
  * r - D3D11 Driver
  * r - D3D9 Driver
  * a - Platform-indepent Windows
- * a - FatFramework.h refactor (Application)
  * r - FatFramework.h refactor (Driver)
 
 DONE
+ * a - FatFramework.h refactor (Application)
  * k - FatFramework.h refactor (Kernel)
  * r - Client/Server RenderThread Framework
  * k - Mutex/CondVariable/Thread

@@ -1,7 +1,11 @@
 #pragma once
 
+#include "Kernel/PlatformConfig.h"
+#include "Kernel/Common/Types.h"
+
 namespace Fat {
 
+struct IWidget;
 struct IApplication
 {
 	virtual ~IApplication() {}
