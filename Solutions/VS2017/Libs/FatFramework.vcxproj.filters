@@ -223,6 +223,9 @@
     <ClInclude Include="..\..\..\Src\Framework\Kernel\Math\Utils.h">
       <Filter>Kernel\Math</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\FactoryType.h">
+      <Filter>Driver\Client</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Src\Framework\Application\Application.cpp">

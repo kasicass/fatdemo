@@ -1,4 +1,8 @@
-#include "FatFramework.h"
+#include "Driver/Client/FactorySelector.h"
+#include "Kernel/Common/Log.h"
+#include "Kernel/Common/Assertion.h"
+#include "Driver/Server/Interface/IServerFactory.h"
+#include <vector>
 
 namespace Fat {
 

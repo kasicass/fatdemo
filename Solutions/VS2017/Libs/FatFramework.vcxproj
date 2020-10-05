@@ -40,6 +40,7 @@
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\DriverStatistics.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\EStateType.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\FactorySelector.h" />
+    <ClInclude Include="..\..\..\Src\Framework\Driver\Client\FactoryType.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\ICommand.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IObject.h" />
     <ClInclude Include="..\..\..\Src\Framework\Driver\Client\IState.h" />

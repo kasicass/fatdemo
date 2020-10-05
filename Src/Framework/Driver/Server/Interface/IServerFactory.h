@@ -1,6 +1,10 @@
 #pragma once
 
+#include "Driver/Client/FactoryType.h"
+
 namespace Fat {
+
+class IServerObject;
 
 // Server object factory. A minimal factory used to create platform server objects matching a client one
 class IServerFactory

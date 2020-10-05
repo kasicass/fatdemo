@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Driver/Server/Interface/IServerObject.h"
+
 namespace Fat {
 
 class ICommandData;
