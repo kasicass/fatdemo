@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Driver/Client/CommandBuffer.h"
+#include "Driver/Client/StateCache.h"
+
 namespace Fat {
 
 class ICommand;
