@@ -8,7 +8,6 @@
 
  * Win7 and later
  * Linux
- * OpenBSD
  * Android
 
 
@@ -16,9 +15,8 @@
 
  * [D3D9][1]
  * [D3D11][2]
- * [OpenGL][3]
+ * [Vulkan][3]
  * [OpenGLES][4]
-
 
 ## Directory Layout
 
@@ -37,12 +35,12 @@
     [Kernel]                    common stuff, e.g. threading, log, unittest
 [Solutions]                   build files
   [Android]                     Android gradle files
-  [Emake]                       Linux/OpenBSD
+  [Emake]                       Linux
   [VS2017]                      Windows
 ```
 
 
 [1]:https://docs.microsoft.com/en-us/windows/win32/direct3d9/dx9-graphics
 [2]:https://docs.microsoft.com/en-us/windows/win32/direct3d11/atoc-dx-graphics-direct3d-11
-[3]:https://www.opengl.org/
+[3]:https://www.khronos.org/vulkan/
 [4]:https://www.khronos.org/opengles/
