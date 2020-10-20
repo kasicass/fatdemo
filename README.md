@@ -28,8 +28,10 @@
 ## Directory Layout
 
 ```
-[Bin32]
-[Bin64]
+[Bin32]                       x86 output
+[Bin64]                       x64 output
+[BinLib]                      .lib output directory
+[BinTemp]                     intermediate build files
 [Assets]                      asset resource
 [Code]
   [Demo]                      all kind of demos
@@ -43,7 +45,7 @@
     [d3dx9sdk]
   [Solutions]                 build files
     [Android]                   Android gradle files
-    [Emake]                     Linux/OpenBSD
+    [Emake]                     Linux
     [VS2017]                    Windows
 ```
 
