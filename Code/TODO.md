@@ -1,37 +1,36 @@
 TAG
- * a = appliation
- * b = blog
- * d = demo
- * g = gui
- * k = kernel
- * r = rendering
+ * Blog
+ * Demo
+ * F/App
+ * F/GUI
+ * F/Kernel
+ * F/Driver
 
 TODO
- * d - Malloc Benchmark
- * k - jemalloc
- * k - mimalloc
- * d - RenderThread
- * b - RenderThread
- * d - SSAO
- * b - SSAO
- * g - bitmap font rendering
- * g - https://github.com/Immediate-Mode-UI/Nuklear
- * d - HelloTriangle
- * r - OpenGL 3.3 Driver
- * r - OpenGL ES 3.0 Driver
- * r - D3D11 Driver
- * r - D3D9 Driver
- * a - Platform-indepent Windows
- * r - FatFramework.h refactor (Driver)
+ * Demo - Malloc Benchmark
+ * F/Kernel - jemalloc
+ * F/Kernel - mimalloc
+ * Demo - RenderThread
+ * Blog - RenderThread
+ * Demo - SSAO
+ * Blog - SSAO
+ * F/GUI - bitmap font rendering
+ * F/GUI - https://github.com/Immediate-Mode-UI/Nuklear
+ * Demo - HelloTriangle
+ * F/Driver - Vulkan Driver
+ * F/Driver - D3D11 Driver
+ * F/Driver - D3D9 Driver
+ * F/App - Platform-indepent Windows
+ * F/Driver - FatFramework.h refactor (Driver)
 
 DONE
- * a - FatFramework.h refactor (Application)
- * k - FatFramework.h refactor (Kernel)
- * r - Client/Server RenderThread Framework
- * k - Mutex/CondVariable/Thread
- * k - SmartPtr
- * a - simple app framework
- * k - AtomicInt
- * k - mini UnitTest framework
+ * F/App - FatFramework.h refactor (Application)
+ * F/Kernel - FatFramework.h refactor (Kernel)
+ * F/Driver - Client/Server RenderThread Framework
+ * F/Kernel - Mutex/CondVariable/Thread
+ * F/Kernel - SmartPtr
+ * F/App - simple app framework
+ * F/Kernel - AtomicInt
+ * F/Kernel - mini UnitTest framework
  * build files for Windows/Linux/OpenBSD/Android
  * uber build for all platform
