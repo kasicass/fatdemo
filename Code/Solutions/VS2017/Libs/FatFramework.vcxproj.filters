@@ -51,304 +51,304 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Framework\Application\IApplication.h">
+    <ClInclude Include="..\..\..\FatFramework\Application\IApplication.h">
       <Filter>Application</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Application\Application.h">
+    <ClInclude Include="..\..\..\FatFramework\Application\Application.h">
       <Filter>Application</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\FatFramework.h" />
-    <ClInclude Include="..\..\..\Framework\Kernel\String\TCharTraits.h">
+    <ClInclude Include="..\..\..\FatFramework\FatFramework.h" />
+    <ClInclude Include="..\..\..\FatFramework\Kernel\String\TCharTraits.h">
       <Filter>Kernel\String</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\String\TStackString.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\String\TStackString.h">
       <Filter>Kernel\String</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\String\TString.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\String\TString.h">
       <Filter>Kernel\String</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Common\Assertion.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Common\Assertion.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Common\Memory.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Common\Memory.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Common\Log.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Common\Log.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\UnitTest\UnitTest.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\UnitTest\UnitTest.h">
       <Filter>Kernel\UnitTest</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Common\NonCopyable.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Common\NonCopyable.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Common\Time.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Common\Time.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Thread\AtomicInt.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\AtomicInt.h">
       <Filter>Kernel\Thread</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Common\OS.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Common\OS.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Common\SmartPtr.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Common\SmartPtr.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Thread\Thread.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Thread.h">
       <Filter>Kernel\Thread</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Thread\TAutoLock.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\TAutoLock.h">
       <Filter>Kernel\Thread</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Thread\ConditionVariable.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\ConditionVariable.h">
       <Filter>Kernel\Thread</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Thread\MutexFast.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\MutexFast.h">
       <Filter>Kernel\Thread</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\FactorySelector.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\FactorySelector.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\Interface\IServerObject.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\Interface\IServerObject.h">
       <Filter>Driver\Server\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\Interface\IServerFactory.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\Interface\IServerFactory.h">
       <Filter>Driver\Server\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\Interface\IServerCommand.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\Interface\IServerCommand.h">
       <Filter>Driver\Server\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\Interface\IServerDevice.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\Interface\IServerDevice.h">
       <Filter>Driver\Server\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\Interface\IServerState.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\Interface\IServerState.h">
       <Filter>Driver\Server\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\CommandLocker.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\CommandLocker.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\ICommand.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\ICommand.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\IObject.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\IObject.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\IState.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\IState.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\Command\DrawCommand.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\Command\DrawCommand.h">
       <Filter>Driver\Client\Command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\Command\SwapCommand.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\Command\SwapCommand.h">
       <Filter>Driver\Client\Command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\Device.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\Device.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\CommandBuffer.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\CommandBuffer.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\PlatformConfig.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\PlatformConfig.h">
       <Filter>Kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Common\Queue.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Common\Queue.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\DriverStatistics.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\DriverStatistics.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\StateCache.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\StateCache.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\State\RenderTargetState.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\State\RenderTargetState.h">
       <Filter>Driver\Client\State</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Math\Float3.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Math\Float3.h">
       <Filter>Kernel\Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Math\Float4.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Math\Float4.h">
       <Filter>Kernel\Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\Context.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\Context.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\D3D9\D3D9Common.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9Common.h">
       <Filter>Driver\Server\D3D9</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\D3D9\dxerr.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\D3D9\dxerr.h">
       <Filter>Driver\Server\D3D9</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\D3D9\D3D9Reset.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9Reset.h">
       <Filter>Driver\Server\D3D9</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\D3D9\D3D9Device.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9Device.h">
       <Filter>Driver\Server\D3D9</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\D3D9\D3D9StateShadow.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9StateShadow.h">
       <Filter>Driver\Server\D3D9</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\D3D9\D3D9GPUTimer.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9GPUTimer.h">
       <Filter>Driver\Server\D3D9</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Application\IWidget.h">
+    <ClInclude Include="..\..\..\FatFramework\Application\IWidget.h">
       <Filter>Application</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Application\Widget_Win32.h">
+    <ClInclude Include="..\..\..\FatFramework\Application\Widget_Win32.h">
       <Filter>Application</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\D3D9\D3D9Factory.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9Factory.h">
       <Filter>Driver\Server\D3D9</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\D3D9\State\D3D9RenderTargetState.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\D3D9\State\D3D9RenderTargetState.h">
       <Filter>Driver\Server\D3D9\State</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Server\D3D9\Command\D3D9SwapCommand.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Server\D3D9\Command\D3D9SwapCommand.h">
       <Filter>Driver\Server\D3D9\Command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\State\CameraState.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\State\CameraState.h">
       <Filter>Driver\Client\State</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Common\Types.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Common\Types.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Common\Macros.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Common\Macros.h">
       <Filter>Kernel\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\PlatformHeaders.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\PlatformHeaders.h">
       <Filter>Kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Kernel\Math\Utils.h">
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Math\Utils.h">
       <Filter>Kernel\Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\FactoryType.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\FactoryType.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Framework\Driver\Client\StateType.h">
+    <ClInclude Include="..\..\..\FatFramework\Driver\Client\StateType.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Framework\Application\Application.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Application\Application.cpp">
       <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Common\Assertion.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Common\Assertion.cpp">
       <Filter>Kernel\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Common\Memory.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Common\Memory.cpp">
       <Filter>Kernel\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Common\Log.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Common\Log.cpp">
       <Filter>Kernel\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\UnitTest\UnitTest.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\UnitTest\UnitTest.cpp">
       <Filter>Kernel\UnitTest</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Common\Time.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Common\Time.cpp">
       <Filter>Kernel\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Thread\AtomicInt.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\AtomicInt.cpp">
       <Filter>Kernel\Thread</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Common\OS.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Common\OS.cpp">
       <Filter>Kernel\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Application\Application_Android.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Application\Application_Android.cpp">
       <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Thread\Thread.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\Thread.cpp">
       <Filter>Kernel\Thread</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Thread\ConditionVariable.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\ConditionVariable.cpp">
       <Filter>Kernel\Thread</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Thread\MutexFast.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\MutexFast.cpp">
       <Filter>Kernel\Thread</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\FactorySelector.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\FactorySelector.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\Interface\IServerFactory.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\Interface\IServerFactory.cpp">
       <Filter>Driver\Server\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\Interface\IServerDevice.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\Interface\IServerDevice.cpp">
       <Filter>Driver\Server\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\CommandLocker.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\CommandLocker.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\ICommand.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\ICommand.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\IObject.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\IObject.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\IState.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\IState.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\Command\DrawCommand.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\Command\DrawCommand.cpp">
       <Filter>Driver\Client\Command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\Command\SwapCommand.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\Command\SwapCommand.cpp">
       <Filter>Driver\Client\Command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\Device.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\Device.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\CommandBuffer.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\CommandBuffer.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\DriverStatistics.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\DriverStatistics.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\StateCache.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\StateCache.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\State\RenderTargetState.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\State\RenderTargetState.cpp">
       <Filter>Driver\Client\State</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Math\Float3.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Math\Float3.cpp">
       <Filter>Kernel\Math</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Kernel\Math\Float4.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Math\Float4.cpp">
       <Filter>Kernel\Math</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\Context.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\Context.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\D3D9\D3D9Common.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9Common.cpp">
       <Filter>Driver\Server\D3D9</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\D3D9\dxerr.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\D3D9\dxerr.cpp">
       <Filter>Driver\Server\D3D9</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\D3D9\D3D9Reset.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9Reset.cpp">
       <Filter>Driver\Server\D3D9</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\D3D9\D3D9Device.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9Device.cpp">
       <Filter>Driver\Server\D3D9</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\D3D9\D3D9StateShadow.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9StateShadow.cpp">
       <Filter>Driver\Server\D3D9</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\D3D9\D3D9GPUTimer.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9GPUTimer.cpp">
       <Filter>Driver\Server\D3D9</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Application\Widget_Win32.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Application\Widget_Win32.cpp">
       <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Application\IWidget.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Application\IWidget.cpp">
       <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\D3D9\D3D9Factory.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\D3D9\D3D9Factory.cpp">
       <Filter>Driver\Server\D3D9</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\D3D9\State\D3D9RenderTargetState.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\D3D9\State\D3D9RenderTargetState.cpp">
       <Filter>Driver\Server\D3D9\State</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Server\D3D9\Command\D3D9SwapCommand.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Server\D3D9\Command\D3D9SwapCommand.cpp">
       <Filter>Driver\Server\D3D9\Command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Framework\Driver\Client\State\CameraState.cpp">
+    <ClCompile Include="..\..\..\FatFramework\Driver\Client\State\CameraState.cpp">
       <Filter>Driver\Client\State</Filter>
     </ClCompile>
   </ItemGroup>
