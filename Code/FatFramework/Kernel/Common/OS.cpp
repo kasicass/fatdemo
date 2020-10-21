@@ -1,6 +1,6 @@
-#include "Kernel/PlatformConfig.h"
-#include "Kernel/Common/Types.h"
-#include "Kernel/String/TCharTraits.h"
+#include "FatFramework/Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/Common/Types.h"
+#include "FatFramework/Kernel/String/TCharTraits.h"
 
 #if defined(FAT_OS_ANDROID)
 #  include <android/log.h>

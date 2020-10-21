@@ -1,8 +1,8 @@
-#include "Kernel/UnitTest/UnitTest.h"
-#include "Kernel/Common/Time.h"
-#include "Kernel/Common/Macros.h"
-#include "Kernel/Common/Log.h"
-#include "Kernel/Common/Memory.h"
+#include "FatFramework/Kernel/UnitTest/UnitTest.h"
+#include "FatFramework/Kernel/Common/Time.h"
+#include "FatFramework/Kernel/Common/Macros.h"
+#include "FatFramework/Kernel/Common/Log.h"
+#include "FatFramework/Kernel/Common/Memory.h"
 #include <vector>
 
 #if defined(FAT_ENABLE_UNITTEST)

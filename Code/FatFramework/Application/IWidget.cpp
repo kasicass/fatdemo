@@ -1,7 +1,7 @@
-#include "Kernel/PlatformConfig.h"
-#include "Kernel/Common/Memory.h"
-#include "Application/IWidget.h"
-#include "Application/Widget_Win32.h"
+#include "FatFramework/Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/Common/Memory.h"
+#include "FatFramework/Application/IWidget.h"
+#include "FatFramework/Application/Widget_Win32.h"
 
 namespace Fat {
 

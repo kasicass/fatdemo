@@ -1,5 +1,5 @@
-#include "Driver/Client/Device.h"
-#include "Driver/Server/Interface/IServerDevice.h"
+#include "FatFramework/Driver/Client/Device.h"
+#include "FatFramework/Driver/Server/Interface/IServerDevice.h"
 
 namespace Fat {
 

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Kernel/PlatformConfig.h"
-#include "Kernel/Common/Types.h"
+#include "FatFramework/Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/Common/Types.h"
 
 #if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
 
-#include "Kernel/Common/Macros.h"
+#include "FatFramework/Kernel/Common/Macros.h"
 
 #define FatMalloc(size)          Fat::Memory::MallocDbg(size, FAT_CONCAT(L,__FILE__), __LINE__)
 #define FatRealloc(p, size)      Fat::Memory::ReallocDbg(p, size, FAT_CONCAT(L,__FILE__), __LINE__)

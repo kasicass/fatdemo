@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/PlatformConfig.h"
 
 #if defined(FAT_ENABLE_LOG)
 

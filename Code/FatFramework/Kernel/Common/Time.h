@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Kernel/Common/Types.h"
-#include "Kernel/Common/NonCopyable.h"
+#include "FatFramework/Kernel/Common/Types.h"
+#include "FatFramework/Kernel/Common/NonCopyable.h"
 
 namespace Fat {
 

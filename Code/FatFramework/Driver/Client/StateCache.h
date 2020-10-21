@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Kernel/Common/NonCopyable.h"
-#include "Driver/Client/StateType.h"
-#include "Driver/Client/CommandLocker.h"
+#include "FatFramework/Kernel/Common/NonCopyable.h"
+#include "FatFramework/Driver/Client/StateType.h"
+#include "FatFramework/Driver/Client/CommandLocker.h"
 #include <vector>
 
 namespace Fat {

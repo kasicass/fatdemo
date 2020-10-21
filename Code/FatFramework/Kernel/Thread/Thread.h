@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Kernel/PlatformConfig.h"
-#include "Kernel/PlatformHeaders.h"
-#include "Kernel/Common/Types.h"
-#include "Kernel/Common/NonCopyable.h"
-#include "Kernel/Common/SmartPtr.h"
-#include "Kernel/String/TStackString.h"
-#include "Kernel/Thread/MutexFast.h"
-#include "Kernel/Thread/ConditionVariable.h"
+#include "FatFramework/Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/PlatformHeaders.h"
+#include "FatFramework/Kernel/Common/Types.h"
+#include "FatFramework/Kernel/Common/NonCopyable.h"
+#include "FatFramework/Kernel/Common/SmartPtr.h"
+#include "FatFramework/Kernel/String/TStackString.h"
+#include "FatFramework/Kernel/Thread/MutexFast.h"
+#include "FatFramework/Kernel/Thread/ConditionVariable.h"
 
 namespace Fat {
 

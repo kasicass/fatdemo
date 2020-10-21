@@ -1,13 +1,13 @@
-#include "FatFramework.h" // TODO
+#include "FatFramework/FatFramework.h" // TODO
 
 #if 0
-#include "Kernel/PlatformConfig.h"
-#include "Kernel/PlatformHeaders.h"
-#include "Kernel/Common/Macros.h"
-#include "Kernel/Common/Log.h"
-#include "Kernel/Common/Memory.h"
-#include "Application/Application.h"
-#include "Application/IWidget.h"
+#include "FatFramework/Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/PlatformHeaders.h"
+#include "FatFramework/Kernel/Common/Macros.h"
+#include "FatFramework/Kernel/Common/Log.h"
+#include "FatFramework/Kernel/Common/Memory.h"
+#include "FatFramework/Application/Application.h"
+#include "FatFramework/Application/IWidget.h"
 #endif
 
 namespace Fat {

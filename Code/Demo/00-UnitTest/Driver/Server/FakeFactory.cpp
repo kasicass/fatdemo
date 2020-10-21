@@ -1,8 +1,8 @@
-#include "FatFramework.h"
-#include "Driver/Server/FakeFactory.h"
-#include "Driver/Server/FakeDevice.h"
-#include "Driver/Server/Command/FakeServerCommand.h"
-#include "Driver/Server/State/FakeServerState.h"
+#include "FatFramework/FatFramework.h"
+#include "Demo/00-UnitTest/Driver/Server/FakeFactory.h"
+#include "Demo/00-UnitTest/Driver/Server/FakeDevice.h"
+#include "Demo/00-UnitTest/Driver/Server/Command/FakeServerCommand.h"
+#include "Demo/00-UnitTest/Driver/Server/State/FakeServerState.h"
 
 #if defined(FAT_ENABLE_UNITTEST)
 

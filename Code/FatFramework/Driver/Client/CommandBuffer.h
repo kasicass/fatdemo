@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Kernel/Common/NonCopyable.h"
-#include "Kernel/Common/Time.h"
-#include "Kernel/Thread/MutexFast.h"
-#include "Kernel/Thread/Thread.h"
-#include "Driver/Client/CommandLocker.h"
+#include "FatFramework/Kernel/Common/NonCopyable.h"
+#include "FatFramework/Kernel/Common/Time.h"
+#include "FatFramework/Kernel/Thread/MutexFast.h"
+#include "FatFramework/Kernel/Thread/Thread.h"
+#include "FatFramework/Driver/Client/CommandLocker.h"
 #include <vector>
 #include <list>
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Kernel/Common/Types.h"
+#include "FatFramework/Kernel/Common/Types.h"
 #include <atomic>
 
 namespace Fat {

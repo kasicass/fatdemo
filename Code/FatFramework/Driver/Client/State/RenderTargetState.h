@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Kernel/Math/Float4.h"
-#include "Driver/Client/IState.h"
+#include "FatFramework/Kernel/Math/Float4.h"
+#include "FatFramework/Driver/Client/IState.h"
 
 namespace Fat {
 

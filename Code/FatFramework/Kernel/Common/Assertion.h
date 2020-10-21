@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Kernel/PlatformConfig.h"
-#include "Kernel/PlatformHeaders.h"
-#include "Kernel/Common/Types.h"
-#include "Kernel/Common/Macros.h"
+#include "FatFramework/Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/PlatformHeaders.h"
+#include "FatFramework/Kernel/Common/Types.h"
+#include "FatFramework/Kernel/Common/Macros.h"
 #include <exception>
 
 namespace Fat {

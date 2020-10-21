@@ -1,5 +1,5 @@
-#include "Kernel/Math/Float4.h"
-#include "Kernel/Math/Utils.h"
+#include "FatFramework/Kernel/Math/Float4.h"
+#include "FatFramework/Kernel/Math/Utils.h"
 
 namespace Fat {
 

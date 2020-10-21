@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Kernel/Common/SmartPtr.h"
-#include "Kernel/Common/NonCopyable.h"
-#include "Driver/Client/IObject.h"
-#include "Driver/Client/CommandLocker.h"
-#include "Driver/Server/Interface/IServerCommand.h"
+#include "FatFramework/Kernel/Common/SmartPtr.h"
+#include "FatFramework/Kernel/Common/NonCopyable.h"
+#include "FatFramework/Driver/Client/IObject.h"
+#include "FatFramework/Driver/Client/CommandLocker.h"
+#include "FatFramework/Driver/Server/Interface/IServerCommand.h"
 #include <list>
 
 namespace Fat {

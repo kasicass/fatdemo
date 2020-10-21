@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Kernel/Common/Assertion.h"
-#include "Kernel/Common/Memory.h"
-#include "Kernel/Thread/AtomicInt.h"
+#include "FatFramework/Kernel/Common/Assertion.h"
+#include "FatFramework/Kernel/Common/Memory.h"
+#include "FatFramework/Kernel/Thread/AtomicInt.h"
 
 namespace Fat {
 

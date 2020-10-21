@@ -1,7 +1,7 @@
-#include "Kernel/Thread/Thread.h"
-#include "Kernel/Common/Log.h"
-#include "Kernel/Common/Memory.h"
-#include "Kernel/UnitTest/UnitTest.h"
+#include "FatFramework/Kernel/Thread/Thread.h"
+#include "FatFramework/Kernel/Common/Log.h"
+#include "FatFramework/Kernel/Common/Memory.h"
+#include "FatFramework/Kernel/UnitTest/UnitTest.h"
 
 namespace Fat {
 

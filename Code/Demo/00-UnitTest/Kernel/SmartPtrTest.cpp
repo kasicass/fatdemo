@@ -1,4 +1,4 @@
-#include "FatFramework.h"
+#include "FatFramework/FatFramework.h"
 
 #if defined(FAT_ENABLE_UNITTEST)
 

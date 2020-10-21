@@ -1,8 +1,8 @@
-#include "Kernel/PlatformConfig.h"
-#include "Kernel/PlatformHeaders.h"
-#include "Kernel/Common/Time.h"
-#include "Kernel/Common/Log.h"
-#include "Kernel/Common/Assertion.h"
+#include "FatFramework/Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/PlatformHeaders.h"
+#include "FatFramework/Kernel/Common/Time.h"
+#include "FatFramework/Kernel/Common/Log.h"
+#include "FatFramework/Kernel/Common/Assertion.h"
 
 namespace Fat {
 

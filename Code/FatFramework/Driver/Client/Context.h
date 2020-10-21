@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Driver/Client/CommandBuffer.h"
-#include "Driver/Client/StateCache.h"
+#include "FatFramework/Driver/Client/CommandBuffer.h"
+#include "FatFramework/Driver/Client/StateCache.h"
 
 namespace Fat {
 

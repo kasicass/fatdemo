@@ -2,8 +2,8 @@
 
 #pragma once
 
-#include "Kernel/Common/Assertion.h"
-#include "Kernel/String/TCharTraits.h"
+#include "FatFramework/Kernel/Common/Assertion.h"
+#include "FatFramework/Kernel/String/TCharTraits.h"
 #include <stdarg.h>
 
 namespace Fat {

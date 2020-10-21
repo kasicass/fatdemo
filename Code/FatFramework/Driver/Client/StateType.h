@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Kernel/PlatformConfig.h"
-#include "Kernel/Common/Macros.h"
+#include "FatFramework/Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/Common/Macros.h"
 
 FAT_ENUM_BEGIN(EStateType)
 	eRenderTarget,

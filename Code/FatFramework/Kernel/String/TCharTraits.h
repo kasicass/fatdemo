@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/PlatformConfig.h"
 
 #include <ctype.h>   // isspace, toupper
 #include <string.h>  // sprintf

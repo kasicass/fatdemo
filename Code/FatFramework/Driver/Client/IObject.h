@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Kernel/Common/NonCopyable.h"
-#include "Driver/Client/FactoryType.h"
-#include "Driver/Server/Interface/IServerObject.h"
+#include "FatFramework/Kernel/Common/NonCopyable.h"
+#include "FatFramework/Driver/Client/FactoryType.h"
+#include "FatFramework/Driver/Server/Interface/IServerObject.h"
 
 namespace Fat {
 

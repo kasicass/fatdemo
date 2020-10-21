@@ -1,6 +1,6 @@
-#include "Kernel/Common/Log.h"
-#include "Kernel/Common/OS.h"
-#include "Kernel/String/TStackString.h"
+#include "FatFramework/Kernel/Common/Log.h"
+#include "FatFramework/Kernel/Common/OS.h"
+#include "FatFramework/Kernel/String/TStackString.h"
 
 #if defined(FAT_ENABLE_LOG)
 
