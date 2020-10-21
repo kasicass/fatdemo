@@ -6,8 +6,26 @@
 
 ## Build
 
- * open Code/Solutions/VS2017/FatDemo.sln
- * build & play~
+**Windows**
+
+```
+open Code/Solutions/VS2017/FatDemo.sln
+```
+
+**Linux**
+
+```
+$ Code/Solutions/Emake
+$ ./build.sh debug
+```
+
+**Android**
+
+```
+> cd Code/Solution/Android
+> setup_build_env.cmd
+> gradlew.bat assembleDebug
+```
 
 
 ## Support Platforms

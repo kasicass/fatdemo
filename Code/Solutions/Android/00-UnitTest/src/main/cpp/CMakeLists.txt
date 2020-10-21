@@ -30,13 +30,12 @@ set(CMAKE_SHARED_LINKER_FLAGS
     "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_onCreate")
 
 add_library(00-UnitTest SHARED
-    ../../../../../../Src/Demo/00-UnitTest/UnitTest_uber.cpp
-    ../../../../../../Src/Framework/FatFramework_uber.cpp)
+    ../../../../../../Demo/00-UnitTest/UnitTest_uber.cpp
+    ../../../../../../FatFramework/FatFramework_uber.cpp)
 
 target_include_directories(00-UnitTest PRIVATE
     ${ANDROID_NDK}/sources/android/native_app_glue
-    ../../../../../../Src/Framework
-    ../../../../../../Src/Demo/00-UnitTest)
+    ../../../../../../)
 
 # add lib dependencies
 target_link_libraries(00-UnitTest
