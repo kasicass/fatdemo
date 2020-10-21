@@ -1,59 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Main.cpp" />
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\DeviceTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Main.cpp" />
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Client\DeviceTest.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Server\FakeDevice.cpp">
       <Filter>Driver\Server</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Server\FakeFactory.cpp">
       <Filter>Driver\Server</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\AtomicIntTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\AtomicIntTest.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\ConditionVariableTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\ConditionVariableTest.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\MutexFastTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\MutexFastTest.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\SmartPtrTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\SmartPtrTest.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\ThreadTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\ThreadTest.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\TimeTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\TimeTest.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\UnitTestSelfTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\UnitTestSelfTest.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.cpp">
       <Filter>Driver\Client\Command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.cpp">
       <Filter>Driver\Server\Command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Client\CommandTest.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandLockerTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Client\CommandLockerTest.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\CommandBufferTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Client\CommandBufferTest.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Kernel\MathTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\MathTest.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\StateCacheTest.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Client\StateCacheTest.cpp">
       <Filter>Driver\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\State\FakeServerState.cpp">
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Server\State\FakeServerState.cpp">
       <Filter>Driver\Server\State</Filter>
     </ClCompile>
   </ItemGroup>
@@ -81,19 +81,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeDevice.h">
+    <ClInclude Include="..\..\..\Demo\00-UnitTest\Driver\Server\FakeDevice.h">
       <Filter>Driver\Server</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\FakeFactory.h">
+    <ClInclude Include="..\..\..\Demo\00-UnitTest\Driver\Server\FakeFactory.h">
       <Filter>Driver\Server</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.h">
+    <ClInclude Include="..\..\..\Demo\00-UnitTest\Driver\Client\Command\FakeCommand.h">
       <Filter>Driver\Client\Command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.h">
+    <ClInclude Include="..\..\..\Demo\00-UnitTest\Driver\Server\Command\FakeServerCommand.h">
       <Filter>Driver\Server\Command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Src\Demo\00-UnitTest\Driver\Server\State\FakeServerState.h">
+    <ClInclude Include="..\..\..\Demo\00-UnitTest\Driver\Server\State\FakeServerState.h">
       <Filter>Driver\Server\State</Filter>
     </ClInclude>
   </ItemGroup>

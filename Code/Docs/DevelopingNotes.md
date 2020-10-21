@@ -1,5 +1,11 @@
 # 开发日志
 
+## 2020-10-20
+
+ * 对代码结构做一下重构, PrecompiledHeaders 统一为一个 root directory
+ * 符合个人最新的代码习惯
+
+
 ## 2020-10-04
 
  * 所有 .cpp 都引用 FatFramework.h，在没有 PCH 的基础上，compile 很慢

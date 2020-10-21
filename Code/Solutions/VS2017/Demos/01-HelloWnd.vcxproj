@@ -27,7 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Src\Demo\01-HelloWnd\Main.cpp" />
+    <ClCompile Include="..\..\..\Demo\01-HelloWnd\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Libs\FatFramework_uber.vcxproj">
