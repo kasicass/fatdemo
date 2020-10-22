@@ -1,6 +1,10 @@
 #pragma once
 
+#include "FatFramework/Kernel/PlatformConfig.h"
+
 #if defined(FAT_OS_WINDOWS)
+
+#include "FatFramework/Driver/Server/Interface/IServerCommand.h"
 
 namespace Fat {
 

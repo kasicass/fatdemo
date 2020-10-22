@@ -1,6 +1,11 @@
 #pragma once
 
+#include "FatFramework/Kernel/PlatformConfig.h"
+
 #if defined(FAT_OS_WINDOWS)
+
+#include "FatFramework/Kernel/Thread/MutexFast.h"
+#include <list>
 
 namespace Fat {
 

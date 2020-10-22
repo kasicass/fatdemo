@@ -1,4 +1,8 @@
-#include "FatFramework/FatFramework.h"
+#include "FatFramework/Driver/Server/D3D9/D3D9Device.h"
+#include "FatFramework/Kernel/Common/Log.h"
+#include "FatFramework/Application/IApplication.h"
+#include "FatFramework/Application/IWidget.h"
+#include "FatFramework/Driver/Client/DriverStatistics.h"
 
 #if defined(FAT_OS_WINDOWS)
 

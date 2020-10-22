@@ -21,9 +21,9 @@ TODO
  * F/Driver - D3D11 Driver
  * F/Driver - D3D9 Driver
  * F/App - Platform-indepent Windows
- * F/Driver - FatFramework.h refactor (Driver)
 
 DONE
+ * F/Driver - FatFramework.h refactor (Driver)
  * F/App - FatFramework.h refactor (Application)
  * F/Kernel - FatFramework.h refactor (Kernel)
  * F/Driver - Client/Server RenderThread Framework

@@ -1,5 +1,8 @@
 #pragma once
 
+#include "FatFramework/Kernel/PlatformConfig.h"
+#include "FatFramework/Kernel/Common/SmartPtr.h"
+
 #if defined(FAT_OS_WINDOWS)
 
 // https://github.com/kasicass/blog/blob/master/3dapi-d3d9/2020_08_29_d3d_debug_info.md

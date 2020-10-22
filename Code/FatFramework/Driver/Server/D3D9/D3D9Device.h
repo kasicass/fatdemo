@@ -1,6 +1,15 @@
 #pragma once
 
+#include "FatFramework/Kernel/PlatformConfig.h"
+
 #if defined(FAT_OS_WINDOWS)
+
+#include "FatFramework/Kernel/Common/Time.h"
+#include "FatFramework/Driver/Server/Interface/IServerDevice.h"
+#include "FatFramework/Driver/Server/D3D9/D3D9Common.h"
+#include "FatFramework/Driver/Server/D3D9/D3D9Reset.h"
+#include "FatFramework/Driver/Server/D3D9/D3D9StateShadow.h"
+#include "FatFramework/Driver/Server/D3D9/D3D9GPUTimer.h"
 
 namespace Fat {
 

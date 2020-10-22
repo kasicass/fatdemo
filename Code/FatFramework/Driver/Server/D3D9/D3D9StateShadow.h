@@ -1,8 +1,15 @@
 #pragma once
 
+#include "FatFramework/Kernel/PlatformConfig.h"
+
 #if defined(FAT_OS_WINDOWS)
 
+#include "FatFramework/Driver/Client/StateType.h"
+
 namespace Fat {
+
+class IServerObject;
+class ICommandData;
 
 // D3D9 Server state shadow. Stores the server states that are bound when a command occurs. This is not the
 // real right solution as it should rather be implemented in the server interface side.

@@ -1,4 +1,7 @@
-#include "FatFramework/FatFramework.h"
+#include "FatFramework/Driver/Server/D3D9/State/D3D9RenderTargetState.h"
+#include "FatFramework/Driver/Server/D3D9/D3D9Device.h"
+#include "FatFramework/Driver/Client/State/RenderTargetState.h"
+#include "FatFramework/Driver/Client/DriverStatistics.h"
 
 #if defined(FAT_OS_WINDOWS)
 

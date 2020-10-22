@@ -1,4 +1,5 @@
-#include "FatFramework/FatFramework.h"
+#include "FatFramework/Driver/Server/D3D9/D3D9StateShadow.h"
+#include "FatFramework/Kernel/Common/Memory.h"
 
 #if defined(FAT_OS_WINDOWS)
 
@@ -34,8 +35,8 @@ void D3D9StateShadow::Release()
 {
 	FAT_ENUM_FOREACH(stateType, EStateType)
 	{
-		serverStates_[stateType] = NULL;
-		serverStateData_[stateType] = NULL;
+		serverStates_[stateType]    = nullptr;
+		serverStateData_[stateType] = nullptr;
 	}
 }
 

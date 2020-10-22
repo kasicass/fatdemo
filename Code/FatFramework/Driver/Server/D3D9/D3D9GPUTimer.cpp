@@ -1,4 +1,5 @@
-#include "FatFramework/FatFramework.h"
+#include "FatFramework/Driver/Server/D3D9/D3D9GPUTimer.h"
+#include "FatFramework/Driver/Server/D3D9/D3D9Device.h"
 
 #if defined(FAT_OS_WINDOWS)
 
