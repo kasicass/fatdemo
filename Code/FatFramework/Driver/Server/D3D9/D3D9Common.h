@@ -53,14 +53,14 @@ typedef TSmartPtr<ID3DXFont,                   TSmartPtrCOMPolicy> ID3DXFontPtr;
 
 #define D3D9Call(x_function) \
 	{ \
-		theDriverStats->IncD3D9CallsPerFrame(); \
+		GDriverStats->IncD3D9CallsPerFrame(); \
 		HRESULT hr = x_function; \
 		FatAssert(SUCCEEDED(hr), L"%s\n%ls", #x_function, D3D9GetErrorString(hr)); \
 	}
 
 #define D3D9CallHandleLost(x_device, x_function) \
 	{ \
-		theDriverStats->IncD3D9CallsPerFrame(); \
+		GDriverStats->IncD3D9CallsPerFrame(); \
 		HRESULT hr = x_device->GetD3DDevice()->x_function; \
 		if (hr == D3DERR_DEVICELOST) \
 		{ \
@@ -78,13 +78,13 @@ typedef TSmartPtr<ID3DXFont,                   TSmartPtrCOMPolicy> ID3DXFontPtr;
 
 #define D3D9Call(x_function) \
 	{ \
-		theDriverStats->IncD3D9CallsPerFrame(); \
+		GDriverStats->IncD3D9CallsPerFrame(); \
 		x_function; \
 	}
 
 #define D3D9CallHandleLost(x_device, x_function) \
 	{ \
-		theDriverStats->IncD3D9CallsPerFrame(); \
+		GDriverStats->IncD3D9CallsPerFrame(); \
 		HRESULT hr = x_device->GetD3DDevice()->x_function; \
 		if (hr == D3DERR_DEVICELOST) { x_device->ResetNeeded(); } \
 	}

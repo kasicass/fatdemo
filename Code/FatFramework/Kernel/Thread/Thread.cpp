@@ -138,7 +138,7 @@ void Thread::Run()
 	}
 	catch (UnitTestFailureException& e)
 	{
-		theUnitTestMgr->NotifyTestFail(e);
+		GUnitTestMgr->NotifyTestFail(e);
 	}
 #else
 	(*pFunc_)(args_);
@@ -251,7 +251,7 @@ void Thread::Run()
 	}
 	catch (UnitTestFailureException& e)
 	{
-		theUnitTestMgr->NotifyTestFail(e);
+		GUnitTestMgr->NotifyTestFail(e);
 	}
 #else
 	(*pFunc_)(args_);

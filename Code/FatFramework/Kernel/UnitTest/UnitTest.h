@@ -53,7 +53,7 @@ private:
 	virtual void RegisterTestCase(const UnitTestCase& testCase) = 0;
 	virtual void NotifyEndedTest(const UnitTestCase& testCase, Bool succeded) = 0;
 };
-extern IUnitTestManager* theUnitTestMgr;
+extern IUnitTestManager* GUnitTestMgr;
 
 class UnitTestCase
 {

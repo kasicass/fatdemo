@@ -55,7 +55,7 @@ void HelloWndApp::Init()
 	const UInt32 width = 1024;
 	const UInt32 height = 768;
 
-	theFactorySelector->SelectorFactory(EGraphicAPI::eD3D9);
+	GDriverFactorySelector->SelectorFactory(EGraphicAPI::eD3D9);
 	pRenderTargetState_ = FatNew(RenderTargetState);
 	pSwapCommand_ = FatNew(SwapCommand);
 

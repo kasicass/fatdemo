@@ -28,7 +28,7 @@ private:
 	friend class IServerFactory;
 	virtual void RegisterFactory(EGraphicAPI::EValue api, IServerFactory* factory) = 0;
 };
-extern IFactorySelector* theFactorySelector;
+extern IFactorySelector* GDriverFactorySelector;
 
 class FactoryRAIISelector
 {

@@ -26,6 +26,6 @@ public:
 	virtual void IncDispatchedCommandsPerFrame() = 0;
 	virtual void IncD3D9CallsPerFrame() = 0;
 };
-extern IDriverStatistics *theDriverStats;
+extern IDriverStatistics *GDriverStats;
 
 }

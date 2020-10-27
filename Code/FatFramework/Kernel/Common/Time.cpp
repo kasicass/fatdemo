@@ -102,7 +102,7 @@ F32 PerformanceCounter::ComputeAppTime() const
 //
 
 static PerformanceCounter myPerfCounter;
-IPerformanceCounter* thePerfCounter = &myPerfCounter;
+IPerformanceCounter* GPerfCounter = &myPerfCounter;
 
 //
 // Time
@@ -110,7 +110,7 @@ IPerformanceCounter* thePerfCounter = &myPerfCounter;
 
 Time Time::GetAppTime()
 {
-	F32 timeInSeconds = thePerfCounter->ComputeAppTime();
+	F32 timeInSeconds = GPerfCounter->ComputeAppTime();
 	return Time(timeInSeconds);
 }
 

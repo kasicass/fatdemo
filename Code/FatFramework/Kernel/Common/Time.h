@@ -12,7 +12,7 @@ struct IPerformanceCounter
 
 	virtual F32 ComputeAppTime() const = 0;
 };
-extern IPerformanceCounter* thePerfCounter;
+extern IPerformanceCounter* GPerfCounter;
 
 
 

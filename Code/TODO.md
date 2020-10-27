@@ -5,6 +5,7 @@ TAG
  * F/GUI
  * F/Kernel
  * F/Driver
+ * F/JobSystem
 
 TODO
  * Demo - Malloc Benchmark
@@ -21,6 +22,10 @@ TODO
  * F/Driver - D3D11 Driver
  * F/Driver - D3D9 Driver
  * F/App - Platform-indepent Windows
+
+DOING
+ * Demo - JobSystem Test
+ * F/JobSystem - JobSystem Framework
 
 DONE
  * F/Driver - FatFramework.h refactor (Driver)

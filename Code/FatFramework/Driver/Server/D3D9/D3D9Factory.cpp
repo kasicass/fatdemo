@@ -10,7 +10,7 @@
 namespace Fat {
 
 static D3D9Factory myD3D9Factory;
-IServerFactory* theD3D9Factory = &myD3D9Factory;
+IServerFactory* GDriverD3D9Factory = &myD3D9Factory;
 
 void D3D9Factory::Init()
 {

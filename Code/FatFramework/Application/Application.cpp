@@ -41,15 +41,15 @@ void Application::Init()
 
 	// Kernel
 	Memory::Init();
-	thePerfCounter->Init();
+	GPerfCounter->Init();
 	Thread::InitMainThread();
 
 	// Driver
 	StateCache::Init();
-	theDriverStats->Init();
-	theFactorySelector->Init();
+	GDriverStats->Init();
+	GDriverFactorySelector->Init();
 #if defined(FAT_OS_WINDOWS)
-	theD3D9Factory->Init();
+	GDriverD3D9Factory->Init();
 #endif
 }
 
@@ -57,15 +57,15 @@ void Application::Shutdown()
 {
 	// Driver
 #if defined(FAT_OS_WINDOWS)
-	theD3D9Factory->Shutdown();
+	GDriverD3D9Factory->Shutdown();
 #endif
-	theFactorySelector->Shutdown();
-	theDriverStats->Shutdown();
+	GDriverFactorySelector->Shutdown();
+	GDriverStats->Shutdown();
 	StateCache::Shutdown();
 
 	// Kernel
 	Thread::ShutdownMainThread();
-	thePerfCounter->Shutdown();
+	GPerfCounter->Shutdown();
 	Memory::Shutdown();
 	FatLog(L"<App>: Shutdown");
 	// Registration::CallDestroy();

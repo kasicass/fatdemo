@@ -16,7 +16,7 @@ public:
 
 	virtual IServerObject* Instantiate(EFactoryObject::EValue value) override;
 };
-extern IServerFactory* theD3D9Factory;
+extern IServerFactory* GDriverD3D9Factory;
 
 }
 

@@ -5,7 +5,7 @@ namespace Fat {
 
 void IServerFactory::RegisterMe(EGraphicAPI::EValue api)
 {
-	theFactorySelector->RegisterFactory(api, this);
+	GDriverFactorySelector->RegisterFactory(api, this);
 }
 
 }

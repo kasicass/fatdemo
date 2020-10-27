@@ -37,7 +37,7 @@ private:
 };
 
 static DriverStatistics myDriverStats;
-IDriverStatistics *theDriverStats = &myDriverStats;
+IDriverStatistics *GDriverStats = &myDriverStats;
 
 
 void DriverStatistics::Init()

@@ -68,7 +68,7 @@ void FactorySelector::RegisterFactory(EGraphicAPI::EValue api, IServerFactory* f
 }
 
 static FactorySelector myFactorySelector;
-IFactorySelector* theFactorySelector = &myFactorySelector;
+IFactorySelector* GDriverFactorySelector = &myFactorySelector;
 
 //
 // FactoryRAIISelector
@@ -76,12 +76,12 @@ IFactorySelector* theFactorySelector = &myFactorySelector;
 
 FactoryRAIISelector::FactoryRAIISelector(EGraphicAPI::EValue api)
 {
-	theFactorySelector->SelectorFactory(api);
+	GDriverFactorySelector->SelectorFactory(api);
 }
 
 FactoryRAIISelector::~FactoryRAIISelector()
 {
-	theFactorySelector->UnselectFactory();
+	GDriverFactorySelector->UnselectFactory();
 }
 
 }

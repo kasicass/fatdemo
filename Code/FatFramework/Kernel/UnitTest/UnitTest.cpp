@@ -111,7 +111,7 @@ void UnitTestManager::NotifyEndedTest(const UnitTestCase& testCase, Bool succede
 //
 
 static UnitTestManager myUnitTestMgr;
-IUnitTestManager* theUnitTestMgr = &myUnitTestMgr;
+IUnitTestManager* GUnitTestMgr = &myUnitTestMgr;
 
 //
 // UnitTestCase
@@ -134,7 +134,7 @@ const wchar_t* UnitTestCase::GetName() const
 
 void UnitTestCase::RegisterMe()
 {
-	theUnitTestMgr->RegisterTestCase(*this);
+	GUnitTestMgr->RegisterTestCase(*this);
 }
 
 void UnitTestCase::operator()()
@@ -148,10 +148,10 @@ void UnitTestCase::operator()()
 	catch (UnitTestFailureException& e)
 	{
 		succeed = false;
-		theUnitTestMgr->NotifyTestFail(e);
+		GUnitTestMgr->NotifyTestFail(e);
 	}
 
-	theUnitTestMgr->NotifyEndedTest(*this, succeed);
+	GUnitTestMgr->NotifyEndedTest(*this, succeed);
 }
 
 //

@@ -4,7 +4,7 @@
 namespace Fat {
 
 IObject::IObject(EFactoryObject::EValue value) :
-	pServerObject_(theFactorySelector->Instantiate(value))
+	pServerObject_(GDriverFactorySelector->Instantiate(value))
 {
 }
 

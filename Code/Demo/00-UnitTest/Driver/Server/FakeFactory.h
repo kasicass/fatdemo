@@ -10,6 +10,6 @@ public:
 
 	virtual Fat::IServerObject* Instantiate(Fat::EFactoryObject::EValue value) override;
 };
-extern Fat::IServerFactory* theFakeFactory;
+extern Fat::IServerFactory* GDriverFakeFactory;
 
 #endif

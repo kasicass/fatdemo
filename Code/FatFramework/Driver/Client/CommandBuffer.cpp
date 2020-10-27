@@ -43,11 +43,11 @@ void Packet::Dispatch(Device& device)
 	{
 		pServerCommand->Build(pCommandData, pServerDevice);
 		pCommandData->Rebuilt();
-		theDriverStats->IncBuiltCommandsPerFrame();
+		GDriverStats->IncBuiltCommandsPerFrame();
 	}
 
 	pServerCommand->Dispatch(pCommandData, pServerDevice);
-	theDriverStats->IncDispatchedCommandsPerFrame();
+	GDriverStats->IncDispatchedCommandsPerFrame();
 }
 
 //
@@ -75,7 +75,7 @@ void Buffer::Dispatch(Device& device)
 		it->Dispatch(device);
 	}
 
-	theDriverStats->SetCommandBufferSize(Int32(packets_.size() * sizeof(Packet)));
+	GDriverStats->SetCommandBufferSize(Int32(packets_.size() * sizeof(Packet)));
 	Clear();
 }
 
@@ -179,7 +179,7 @@ void CommandBuffer::End()
 
 	insideBeginEnd_ = false;
 	clientFpsCounter_.Update();
-	theDriverStats->SetClientFps(clientFpsCounter_.GetFramePerSecond());
+	GDriverStats->SetClientFps(clientFpsCounter_.GetFramePerSecond());
 
 	if (mode_ == EBufferingMode::eNoBuffering)
 		return;
@@ -293,7 +293,7 @@ void CommandBuffer::ServerFlushFunction()
 
 		// Compute fps between two Dispatch() calls
 		serverFpsCounter_.Update();
-		theDriverStats->SetServerFps(serverFpsCounter_.GetFramePerSecond());
+		GDriverStats->SetServerFps(serverFpsCounter_.GetFramePerSecond());
 
 		queuingMutex_.Unlock();
 	}
@@ -345,7 +345,7 @@ void CommandBuffer::InitializeMode(EBufferingMode::EValue mode)
 	}
 
 	// Reset driver stats
-	theDriverStats->Reset();
+	GDriverStats->Reset();
 }
 
 Buffer* CommandBuffer::PickBufferToFlush(MutexFast& mutex)

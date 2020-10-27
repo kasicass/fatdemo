@@ -1,5 +1,27 @@
 # 开发日志
 
+## 2020-10-27
+
+ * 统一全局 singleton var 的命名
+
+Framework
+
+```
+GPerfCounter                 时间控制器
+GJobSystem                   JobSystem 总控
+GDriverStats                 gfx stats
+GDriverFactorySelector       gfx factory selector
+GDriverD3D9Factory           gfx d3d9 factory
+```
+
+UnitTest
+
+```
+GFakeFactory                 gfx unit-test factory
+GUnitTestMgr                 unit test manager
+```
+
+
 ## 2020-10-20
 
  * 对代码结构做一下重构, PrecompiledHeaders 统一为一个 root directory
