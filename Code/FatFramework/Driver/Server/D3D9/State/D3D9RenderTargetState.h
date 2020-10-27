@@ -2,7 +2,7 @@
 
 #include "FatFramework/Kernel/PlatformConfig.h"
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 #include "FatFramework/Driver/Server/Interface/IServerState.h"
 #include "FatFramework/Driver/Server/D3D9/D3D9Common.h"

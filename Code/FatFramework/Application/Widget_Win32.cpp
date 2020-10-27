@@ -3,7 +3,7 @@
 #include "FatFramework/Application/Widget_Win32.h"
 #include "FatFramework/Application/IApplication.h"
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 #define GAME_WINDOW_CLASSNAME L"FATDEMO-WNDCLASS"
 

@@ -51,9 +51,9 @@ ThreadPtr Thread::Create(const char* name, TThreadFunc pFunc, void* args)
 	return pThread;
 }
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
-#if !defined(FAT_RELEASE_BUILD)
+#if !FAT_RELEASE_BUILD
 static void SetThreadName_SEH(DWORD threadId, const char* threadName)
 {
 	const DWORD MS_VC_EXCEPTION = 0x406D1388;
@@ -106,7 +106,7 @@ Thread::Thread(const char* name) :
 	FatAssertNoText(Thread::s_pCurrentThread == NULL);
 	s_pCurrentThread = this;
 
-#if !defined(FAT_RELEASE_BUILD)
+#if !FAT_RELEASE_BUILD
 	SetThreadName_SEH(thrId_, name);
 #endif
 }
@@ -131,7 +131,7 @@ Thread::~Thread()
 
 void Thread::Run()
 {
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 	try
 	{
 		(*pFunc_)(args_);
@@ -173,7 +173,7 @@ unsigned __stdcall Thread::RunThis(void *thisPtr)
 	FatAssertNoText(Thread::s_pCurrentThread == NULL);
 	Thread::s_pCurrentThread = self;
 
-#if !defined(FAT_RELEASE_BUILD)
+#if !FAT_RELEASE_BUILD
 	SetThreadName_SEH(self->thrId_, self->name_.c_str());
 #endif
 
@@ -244,7 +244,7 @@ Thread::~Thread()
 
 void Thread::Run()
 {
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 	try
 	{
 		(*pFunc_)(args_);

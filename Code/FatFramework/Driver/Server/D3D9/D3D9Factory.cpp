@@ -5,7 +5,7 @@
 #include "FatFramework/Driver/Server/D3D9/Command/D3D9SwapCommand.h"
 #include "FatFramework/Driver/Server/D3D9/State/D3D9RenderTargetState.h"
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 namespace Fat {
 

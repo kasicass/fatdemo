@@ -24,7 +24,7 @@ private:
 	MutexFast& operator=(const MutexFast& rhs);
 
 private:
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 	SRWLOCK srwlock_;
 #else
 	pthread_mutex_t mutex_;

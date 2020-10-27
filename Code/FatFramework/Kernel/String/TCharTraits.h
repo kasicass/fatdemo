@@ -8,7 +8,7 @@
 #include <stdio.h>   // _vsnprintf
 
 // c-string functions
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 #define fat_sprintf    sprintf_s
 #define fat_snprintf   _snprintf_s

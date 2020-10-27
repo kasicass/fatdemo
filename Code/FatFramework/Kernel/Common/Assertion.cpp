@@ -2,17 +2,17 @@
 #include "FatFramework/Kernel/String/TStackString.h"
 #include "FatFramework/Kernel/Common/Log.h"
 
-#if defined(FAT_ENABLE_ASSERT)
+#if FAT_ENABLE_ASSERT
 
 namespace Fat { namespace Assertion {
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 FAT_THREAD_LOCAL Bool UnitTestAssertionEnabler::s_isEnabled = false;
 #endif
 
 Bool FailureReport(const wchar_t* format, ...)
 {
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 	if (UnitTestAssertionEnabler::IsEnabled())
 	{
 		throw UnitTestAssertionException();
@@ -28,7 +28,7 @@ Bool FailureReport(const wchar_t* format, ...)
 
 	FatLog(msg.c_str());
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 	Int32 n = MessageBox(NULL, msg.c_str(), L"FatFramework: Assertion failed", MB_ABORTRETRYIGNORE);
 	switch (n)
 	{

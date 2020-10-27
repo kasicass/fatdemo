@@ -15,8 +15,8 @@ void UnitTestApp::Init()
 {
 	Application::Init();
 	
-#if defined(FAT_ENABLE_UNITTEST)
-	theFakeFactory->Init();
+#if FAT_ENABLE_UNITTEST
+	GDriverFakeFactory->Init();
 	TEST_REGISTER(UnitTestSelfTest);
 	TEST_REGISTER(TestFloat3);
 	TEST_REGISTER(TestFloat4);
@@ -37,7 +37,7 @@ void UnitTestApp::Init()
 	TEST_REGISTER(TestCommandDataIntegrity);
 	TEST_REGISTER(TestCommandBufferModes);
 	TEST_REGISTER(TestStateCacheBind);
-	theUnitTestMgr->Run();
+	GUnitTestMgr->Run();
 #else
 	FatLog(L"FAT_ENABLE_UNITTEST is off");
 #endif
@@ -45,7 +45,7 @@ void UnitTestApp::Init()
 	void* p = FatMalloc(10);
 	*(char*)p = 1;
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 	void* p1 = FatRealloc(p, 15);
 	*(char*)p1 = 2;
 #endif
@@ -66,8 +66,8 @@ void UnitTestApp::Init()
 
 void UnitTestApp::Shutdown()
 {
-#if defined(FAT_ENABLE_UNITTEST)
-	theFakeFactory->Shutdown();
+#if FAT_ENABLE_UNITTEST
+	GDriverFakeFactory->Shutdown();
 #endif
 
 	Application::Shutdown();

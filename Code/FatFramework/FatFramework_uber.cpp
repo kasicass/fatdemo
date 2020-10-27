@@ -39,7 +39,7 @@
 #include "FatFramework/Driver/Server/Interface/IServerDevice.cpp"
 #include "FatFramework/Driver/Server/Interface/IServerFactory.cpp"
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 #include "FatFramework/Driver/Server/D3D9/D3D9Common.cpp"
 #include "FatFramework/Driver/Server/D3D9/D3D9Device.cpp"
 #include "FatFramework/Driver/Server/D3D9/D3D9Factory.cpp"
@@ -53,10 +53,10 @@
 
 // Application
 #include "FatFramework/Application/Application.cpp"
-#if defined(FAT_OS_ANDROID)
+#if FAT_OS_ANDROID
 #include "FatFramework/Application/Application_Android.cpp"
 #endif
 #include "FatFramework/Application/IWidget.cpp"
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 #include "FatFramework/Application/Widget_Win32.cpp"
 #endif

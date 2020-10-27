@@ -10,7 +10,7 @@ FAT_ENUM_BEGIN(EGraphicAPI)
 	eD3D9,
 	eD3D11,
 	eOpenGL,
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 	eUnitTest,
 #endif
 FAT_ENUM_END()
@@ -32,7 +32,7 @@ FAT_ENUM_BEGIN(EFactoryObject)
 	eSwapCommand,
 	eDrawCommand,
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 	eUnitTestCommand,
 	eUnitTestCheckCommand,
 	eUnitTestState,

@@ -2,7 +2,7 @@
 #include "Demo/00-UnitTest/Driver/Server/Command/FakeServerCommand.h"
 #include "Demo/00-UnitTest/Driver/Client/Command/FakeCommand.h"
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 
 //
 // FakeServerCommand

@@ -2,7 +2,7 @@
 #include "FatFramework/Kernel/Common/OS.h"
 #include "FatFramework/Kernel/String/TStackString.h"
 
-#if defined(FAT_ENABLE_LOG)
+#if FAT_ENABLE_LOG
 
 namespace Fat {
 

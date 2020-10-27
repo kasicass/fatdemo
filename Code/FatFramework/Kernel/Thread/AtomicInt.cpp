@@ -26,7 +26,7 @@ namespace Fat {
 
 namespace Interlocked {
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 Int32 Increment(volatile Int32* pVal)
 {

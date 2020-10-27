@@ -5,7 +5,7 @@
 #include "FatFramework/Kernel/Common/Memory.h"
 #include <vector>
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 
 namespace Fat {
 

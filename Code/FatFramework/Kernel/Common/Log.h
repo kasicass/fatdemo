@@ -2,7 +2,7 @@
 
 #include "FatFramework/Kernel/PlatformConfig.h"
 
-#if defined(FAT_ENABLE_LOG)
+#if FAT_ENABLE_LOG
 
 namespace Fat {
 

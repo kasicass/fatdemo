@@ -1,6 +1,6 @@
 #include "FatFramework/FatFramework.h"
 
-#if defined(FAT_OS_ANDROID)
+#if FAT_OS_ANDROID
 
 #include <android_native_app_glue.h>
 

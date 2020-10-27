@@ -2,7 +2,7 @@
 #include "FatFramework/Kernel/Common/Types.h"
 #include "FatFramework/Kernel/String/TCharTraits.h"
 
-#if defined(FAT_OS_ANDROID)
+#if FAT_OS_ANDROID
 #  include <android/log.h>
 #endif
 
@@ -10,7 +10,7 @@ namespace Fat { namespace OS {
 
 void Println(const wchar_t* msg)
 {
-#if defined(FAT_OS_ANDROID)
+#if FAT_OS_ANDROID
 
 	// __android_log_print() add '\n' for us
 	__android_log_print(ANDROID_LOG_INFO, "FAT", "%ls", msg);

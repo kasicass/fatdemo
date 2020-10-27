@@ -3,7 +3,7 @@
 #include "FatFramework/Driver/Client/State/RenderTargetState.h"
 #include "FatFramework/Driver/Client/DriverStatistics.h"
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 namespace Fat {
 

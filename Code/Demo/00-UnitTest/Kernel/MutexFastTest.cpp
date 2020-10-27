@@ -1,6 +1,6 @@
 #include "FatFramework/FatFramework.h"
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 
 using namespace Fat;
 

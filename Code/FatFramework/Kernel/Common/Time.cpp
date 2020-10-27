@@ -6,7 +6,7 @@
 
 namespace Fat {
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 class PerformanceCounter : public IPerformanceCounter
 {

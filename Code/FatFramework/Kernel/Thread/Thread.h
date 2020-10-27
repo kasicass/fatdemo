@@ -63,13 +63,13 @@ private:
 
 private:
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 	static unsigned __stdcall RunThis(void *thisPtr);
 #else
 	static void* RunThis(void *thisPtr);
 #endif
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 	uintptr_t         thrHandle_; 
 #else
 	pthread_t         thrHandle_;

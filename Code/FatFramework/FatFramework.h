@@ -68,7 +68,7 @@
 #include "FatFramework/Driver/Client/State/RenderTargetState.h"
 
 // FatFramework - Driver - DX9
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 #include "FatFramework/Driver/Server/D3D9/D3D9Common.h"
 #include "FatFramework/Driver/Server/D3D9/D3D9Reset.h"
 #include "FatFramework/Driver/Server/D3D9/D3D9StateShadow.h"

@@ -1,7 +1,7 @@
 #include "FatFramework/FatFramework.h"
 #include "Demo/00-UnitTest/Driver/Client/Command/FakeCommand.h"
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 
 //
 // FakeCommandData

@@ -2,7 +2,7 @@
 
 namespace Fat {
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 ConditionVariable::ConditionVariable() :
 	cond_(CONDITION_VARIABLE_INIT)

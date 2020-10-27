@@ -20,7 +20,7 @@ public:
 	virtual const wchar_t* GetTitle() const override;
 	virtual IWidget* GetMainWnd() const override;
 
-#if !defined(FAT_OS_ANDROID)
+#if !FAT_OS_ANDROID
 	virtual void Run() override;
 #endif
 

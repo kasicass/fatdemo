@@ -20,7 +20,7 @@ struct IApplication
 	virtual const wchar_t* GetTitle() const = 0;
 	virtual IWidget* GetMainWnd() const = 0;
 
-#if !defined(FAT_OS_ANDROID)
+#if !FAT_OS_ANDROID
 	virtual void Run() = 0;
 #endif
 };

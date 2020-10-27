@@ -1,6 +1,6 @@
 #pragma once
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 
 class FakeServerCommand : public Fat::IServerCommand
 {

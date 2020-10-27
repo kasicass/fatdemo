@@ -20,7 +20,7 @@ public:
 	void NotifyAll();
 
 private:
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 	CONDITION_VARIABLE cond_;
 #else
 	pthread_cond_t cond_;

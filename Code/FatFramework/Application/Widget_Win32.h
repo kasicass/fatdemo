@@ -4,7 +4,7 @@
 #include "FatFramework/Kernel/PlatformHeaders.h"
 #include "FatFramework/Application/IWidget.h"
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 namespace Fat {
 

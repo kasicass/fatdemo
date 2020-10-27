@@ -2,7 +2,7 @@
 #include "FatFramework/Kernel/Common/Memory.h"
 #include "FatFramework/Kernel/Math/Utils.h"
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 namespace Fat {
 

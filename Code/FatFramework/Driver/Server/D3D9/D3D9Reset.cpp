@@ -1,7 +1,7 @@
 #include "FatFramework/Driver/Server/D3D9/D3D9Reset.h"
 #include "FatFramework/Kernel/Common/Assertion.h"
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 namespace Fat {
 

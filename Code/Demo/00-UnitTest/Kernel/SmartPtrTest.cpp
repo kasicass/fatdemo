@@ -1,8 +1,8 @@
 #include "FatFramework/FatFramework.h"
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 // for COMPolicy test
 #include <d3d9.h>
 #endif
@@ -87,7 +87,7 @@ TEST_DECLARE(TestSmartPtrIntrusivePolicy)
 
 TEST_DECLARE(TestSmartPtrCOMPolicy)
 {
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 	typedef TSmartPtr<IUnknown, TSmartPtrCOMPolicy> IUnknownPtr;
 

@@ -48,7 +48,7 @@ void Application::Init()
 	StateCache::Init();
 	GDriverStats->Init();
 	GDriverFactorySelector->Init();
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 	GDriverD3D9Factory->Init();
 #endif
 }
@@ -56,7 +56,7 @@ void Application::Init()
 void Application::Shutdown()
 {
 	// Driver
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 	GDriverD3D9Factory->Shutdown();
 #endif
 	GDriverFactorySelector->Shutdown();
@@ -94,7 +94,7 @@ IWidget* Application::GetMainWnd() const
 	return pMainWnd_;
 }
 
-#if !defined(FAT_OS_ANDROID)
+#if !FAT_OS_ANDROID
 void Application::Run()
 {
 }
@@ -103,13 +103,13 @@ void Application::Run()
 }
 
 
-#if !defined(FAT_OS_ANDROID)
+#if !FAT_OS_ANDROID
 
 using namespace Fat;
 
 int main(int argc, char *argv[])
 {
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 	// Setting default awareness with the application manifest
 	// https://docs.microsoft.com/en-us/windows/win32/hidpi/setting-the-default-dpi-awareness-for-a-process
 	HINSTANCE hUser32 = LoadLibrary(L"user32.dll");

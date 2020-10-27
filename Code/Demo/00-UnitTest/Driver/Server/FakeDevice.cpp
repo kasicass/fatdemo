@@ -1,7 +1,7 @@
 #include "FatFramework/FatFramework.h"
 #include "Demo/00-UnitTest/Driver/Server/FakeDevice.h"
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 
 FakeDevice* theFakeDevice = NULL;
 

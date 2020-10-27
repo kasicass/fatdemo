@@ -8,13 +8,13 @@
 
 namespace Fat {
 
-#if defined(FAT_ENABLE_ASSERT)
+#if FAT_ENABLE_ASSERT
 
 namespace Assertion
 {
 	Bool FailureReport(const wchar_t* format, ...);
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 	// RAII object that enable UnitTest assertion report rather than the default report
 	class UnitTestAssertionEnabler
 	{

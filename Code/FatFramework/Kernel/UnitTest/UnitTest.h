@@ -3,7 +3,7 @@
 #include "FatFramework/Kernel/PlatformConfig.h"
 #include "FatFramework/Kernel/Common/Types.h"
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 
 #define FatTest(x_Test)\
 	do{\
@@ -13,7 +13,7 @@
 		}\
 	} while(false)
 
-#if defined(FAT_ENABLE_ASSERT)
+#if FAT_ENABLE_ASSERT
 
 #define FatTestAssert(x_Test)\
 	do{\

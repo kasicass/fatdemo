@@ -16,7 +16,7 @@ public:
 
 	virtual const wchar_t* GetTitle() const override;
 
-#if !defined(FAT_OS_ANDROID)
+#if !FAT_OS_ANDROID
 	virtual void Run() override;
 #endif
 
@@ -145,7 +145,7 @@ void HelloWndApp::SetupRenderTarget()
 	pData->SetColor(Float4(1.0f, 0, 1.0f, 0));
 }
 
-#if !defined(FAT_OS_ANDROID)
+#if !FAT_OS_ANDROID
 void HelloWndApp::Run()
 {
 	SetupRenderTarget();

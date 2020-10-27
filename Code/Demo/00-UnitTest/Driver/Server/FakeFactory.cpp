@@ -4,12 +4,12 @@
 #include "Demo/00-UnitTest/Driver/Server/Command/FakeServerCommand.h"
 #include "Demo/00-UnitTest/Driver/Server/State/FakeServerState.h"
 
-#if defined(FAT_ENABLE_UNITTEST)
+#if FAT_ENABLE_UNITTEST
 
 using namespace Fat;
 
 static FakeFactory myFakeFactory;
-IServerFactory* theFakeFactory = &myFakeFactory;
+IServerFactory* GDriverFakeFactory = &myFakeFactory;
 
 void FakeFactory::Init()
 {

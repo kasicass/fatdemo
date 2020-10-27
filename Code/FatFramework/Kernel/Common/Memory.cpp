@@ -8,7 +8,7 @@
 // new/delete override
 //
 
-#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
+#if FAT_ENABLE_MEMORY_LEAK_DETECTION
 
 // https://stackoverflow.com/questions/58694487/no-matching-operator-delete-found-memory-will-not-be-freed-if-initialization-th
 
@@ -49,7 +49,7 @@ namespace Memory {
 // Malloc/Realloc/Free Dbg - Memory Leak Detection
 //
 
-#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
+#if FAT_ENABLE_MEMORY_LEAK_DETECTION
 
 #define MAX_MALLOC_RECORDS (1000000)
 #define INVALID_POINTER    ((void*)0x0BADBEEF)
@@ -260,7 +260,7 @@ void Shutdown()
 // Malloc/Realloc/Free Internal
 //
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 void* MallocInternal(size_t size)
 {

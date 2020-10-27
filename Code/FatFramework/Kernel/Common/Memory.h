@@ -3,7 +3,7 @@
 #include "FatFramework/Kernel/PlatformConfig.h"
 #include "FatFramework/Kernel/Common/Types.h"
 
-#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
+#if FAT_ENABLE_MEMORY_LEAK_DETECTION
 
 #include "FatFramework/Kernel/Common/Macros.h"
 
@@ -45,7 +45,7 @@ namespace Memory {
 	void* ReallocInternal(void* p, size_t size);
 	void FreeInternal(void* p);
 
-#if defined(FAT_ENABLE_MEMORY_LEAK_DETECTION)
+#if FAT_ENABLE_MEMORY_LEAK_DETECTION
 	void* MallocDbg(size_t size, const wchar_t* file, int line);
 	void* ReallocDbg(void* p, size_t size, const wchar_t* file, int line);
 	void FreeDbg(void* p);
