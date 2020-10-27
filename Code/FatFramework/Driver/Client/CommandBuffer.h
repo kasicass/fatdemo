@@ -46,7 +46,7 @@ public:
 	// Clear all the packets. It releases every references and acquisitions over the server commands and data
 	void Clear();
 
-	Bool IsEmpty();
+	bool IsEmpty();
 
 private:
 	typedef std::vector<Packet> PacketVector;
@@ -68,7 +68,7 @@ public:
 	// Notify command buffer queuing is beginning. Queuing must be ended before calling this function.
 	// Return true if begin succeed, otherwise it fails and no queuing could be donw. Also End() should not
 	// be called if Begin() has failed.
-	virtual Bool Begin();
+	virtual bool Begin();
 
 	// Notify command buffer queuing is ending. Queuing must be began before calling this function.
 	virtual void End();
@@ -110,11 +110,11 @@ private:
 	Device& device_;
 	EBufferingMode::EValue mode_;
 
-	Bool insideBeginEnd_;
+	bool insideBeginEnd_;
 	ThreadPtr pServerThread_;
 	MutexFast queuingMutex_;
 	ConditionVariable queuingCondition_;
-	Bool exitServerThread_;
+	bool exitServerThread_;
 
 	Buffer* buffers_;
 	UInt32 bufferCount_;

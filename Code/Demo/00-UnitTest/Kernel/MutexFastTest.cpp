@@ -12,17 +12,17 @@ public:
 	{
 	}
 
-	Bool Increment()
+	bool Increment()
 	{
 		if (!mutex_.TryLock())
 			return false;
 
-		Bool ret = (++sharedValue_ == MaxValue);
+		bool ret = (++sharedValue_ == MaxValue);
 		mutex_.Unlock();
 		return ret;
 	}
 
-	Bool Test()
+	bool Test()
 	{
 		MutexFastLocker lock(mutex_);
 		return (sharedValue_ == MaxValue);

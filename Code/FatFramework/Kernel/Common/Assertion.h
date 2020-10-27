@@ -12,7 +12,7 @@ namespace Fat {
 
 namespace Assertion
 {
-	Bool FailureReport(const wchar_t* format, ...);
+	bool FailureReport(const wchar_t* format, ...);
 
 #if FAT_ENABLE_UNITTEST
 	// RAII object that enable UnitTest assertion report rather than the default report
@@ -29,13 +29,13 @@ namespace Assertion
 			s_isEnabled = false;
 		}
 
-		static Bool IsEnabled()
+		static bool IsEnabled()
 		{
 			return s_isEnabled;
 		}
 
 	private:
-		static FAT_THREAD_LOCAL Bool s_isEnabled;
+		static FAT_THREAD_LOCAL bool s_isEnabled;
 	};
 
 	class UnitTestAssertionException : public std::exception {};
@@ -65,7 +65,7 @@ namespace Assertion
 // Unlike assertions, condition execution is maintained for all build modes
 #define FatValidate(condition, ...) \
 	{\
-		FatIfBuildAssertion(Bool ok =)(condition);\
+		FatIfBuildAssertion(bool ok =)(condition);\
 		FatAssert(ok, __VA_ARGS__);\
 	}
 

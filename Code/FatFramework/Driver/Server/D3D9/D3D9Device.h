@@ -42,7 +42,7 @@ public:
 
 protected:
 	// IServerDevice interface override
-	virtual Bool Reset() override;
+	virtual bool Reset() override;
 
 private:
 	void ResetActiveLightCount();
@@ -63,7 +63,7 @@ private:
 	UInt32 deviceWidth_;
 	UInt32 deviceHeight_;
 
-	Bool insideBeginEndScene_;
+	bool insideBeginEndScene_;
 	UInt32 activeLightCount_;   // number of currently active lights
 	UInt32 maxActiveLights_;    // Caps: maximum light count
 	UInt32 maxPrimitiveCount_;  // Caps: maximum primitive count per draw

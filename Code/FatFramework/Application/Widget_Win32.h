@@ -15,7 +15,7 @@ public:
 	virtual ~WidgetWin32();
 
 	virtual void* GetHandle() const override;
-	virtual Bool IsActive() const override;
+	virtual bool IsActive() const override;
 
 protected:
 	bool InitWindowClass();
@@ -23,7 +23,7 @@ protected:
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 	bool InitWindow();
-	void OnActive(Bool value);
+	void OnActive(bool value);
 	void OnResize(UInt32 width, UInt32 height);
 
 private:
@@ -31,7 +31,7 @@ private:
 	UInt32 width_;
 	UInt32 height_;
 	const wchar_t* title_;
-	Bool active_;
+	bool active_;
 };
 
 }

@@ -18,7 +18,7 @@ public:
 	CacheEntry(const CacheEntry& rhs);
 	~CacheEntry();
 
-	Bool operator!=(const IState& state);
+	bool operator!=(const IState& state);
 
 	void operator=(const IState& state);
 	void operator=(const CacheEntry& rhs);
@@ -39,10 +39,10 @@ public:
 	virtual ~StateCache();
 
 	// Binds a state to the cache. Returns true if the cache entry was not out-dated yet
-	Bool Bind(IState& state);
+	bool Bind(IState& state);
 
 	// Reset a stateType entry to its default state. Returns true if the cache entry was not out-dated yet.
-	Bool Reset(EStateType::EValue stateType);
+	bool Reset(EStateType::EValue stateType);
 
 	// Reset all entries to their default state. Returns the number of states that wasn't out-dated yet.
 	UInt32 Reset();
@@ -58,13 +58,13 @@ private:
 	static void UnregisterStateConstructor(EStateType::EValue stateType);
 
 	// Modify an entry in the cache. Maintains internal structures coherency.
-	Bool SetEntry(EStateType::EValue stateType, IState& state);
+	bool SetEntry(EStateType::EValue stateType, IState& state);
 
 private:
 	static TStateDefaultConstructorFn s_defaultStateConstructor[EStateType::eValuesCount];
 
 	typedef std::vector<CacheEntry> EntryVector;
-	typedef std::vector<Bool> OutdatedEntries;
+	typedef std::vector<bool> OutdatedEntries;
 	typedef std::vector<UInt32> FlushableEntries;
 	typedef std::vector<IState*> DefaultStates;
 

@@ -87,7 +87,7 @@ StateCache::~StateCache()
 	}
 }
 
-Bool StateCache::Bind(IState& state)
+bool StateCache::Bind(IState& state)
 {
 	EStateType::EValue stateType = state.GetStateType();
 	CacheEntry& entry = entries_[stateType];
@@ -100,15 +100,15 @@ Bool StateCache::Bind(IState& state)
 	return false;
 }
 
-Bool StateCache::Reset(EStateType::EValue stateType)
+bool StateCache::Reset(EStateType::EValue stateType)
 {
 	IState& defaultState = *defaultStates_[stateType];
 	return Bind(defaultState);
 }
 
-Bool StateCache::SetEntry(EStateType::EValue stateType, IState& state)
+bool StateCache::SetEntry(EStateType::EValue stateType, IState& state)
 {
-	Bool alreadyOutdated = outdatedEntries_[stateType];
+	bool alreadyOutdated = outdatedEntries_[stateType];
 	if (!alreadyOutdated)
 	{
 		// make it out-dated
@@ -170,7 +170,7 @@ CacheEntry::~CacheEntry()
 {
 }
 
-Bool CacheEntry::operator!=(const IState& state)
+bool CacheEntry::operator!=(const IState& state)
 {
 	CacheEntry entry(&state);
 

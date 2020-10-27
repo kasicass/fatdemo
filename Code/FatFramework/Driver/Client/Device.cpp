@@ -12,13 +12,13 @@ Device::~Device()
 {
 }
 
-Bool Device::Reset()
+bool Device::Reset()
 {
 	FatAssert(IsResetNeeded() == true, L"Device reset isn't required");
 	return GetServerDevice()->Reset();
 }
 
-Bool Device::IsResetNeeded() const
+bool Device::IsResetNeeded() const
 {
 	return GetServerDevice()->IsResetNeeded();
 }

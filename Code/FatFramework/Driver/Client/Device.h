@@ -13,9 +13,9 @@ public:
 
 	// Execute device reset. This function is executed synchronously on the server side, so the device must
 	// have been properly stopped.
-	Bool Reset();
+	bool Reset();
 
-	Bool IsResetNeeded() const;
+	bool IsResetNeeded() const;
 
 private:
 	friend class Packet;

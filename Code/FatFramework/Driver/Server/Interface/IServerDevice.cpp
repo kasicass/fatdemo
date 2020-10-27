@@ -17,12 +17,12 @@ void IServerDevice::ResetNeeded()
 	resetNeeded_ = 1;
 }
 
-Bool IServerDevice::IsResetNeeded() const
+bool IServerDevice::IsResetNeeded() const
 {
 	return (resetNeeded_ == 1);
 }
 
-Bool IServerDevice::Reset()
+bool IServerDevice::Reset()
 {
 	FatAssert(IsResetNeeded(), L"Reset is not required");
 

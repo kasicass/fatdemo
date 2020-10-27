@@ -18,8 +18,8 @@ protected:
 private:
 	friend class Device;
 
-	Bool IsResetNeeded() const;
-	virtual Bool Reset();
+	bool IsResetNeeded() const;
+	virtual bool Reset();
 
 private:
 	// Stores if the reset has been asked using an atomic integer as reset flag is tested

@@ -14,8 +14,8 @@ public:
 
 	Float4& operator=(const Float4& rhs);
 
-	Bool operator==(const Float4& rhs);
-	Bool operator!=(const Float4& rhs);
+	bool operator==(const Float4& rhs);
+	bool operator!=(const Float4& rhs);
 
 public:
 	F32 x;

@@ -7,10 +7,10 @@
 namespace Fat { namespace Assertion {
 
 #if FAT_ENABLE_UNITTEST
-FAT_THREAD_LOCAL Bool UnitTestAssertionEnabler::s_isEnabled = false;
+FAT_THREAD_LOCAL bool UnitTestAssertionEnabler::s_isEnabled = false;
 #endif
 
-Bool FailureReport(const wchar_t* format, ...)
+bool FailureReport(const wchar_t* format, ...)
 {
 #if FAT_ENABLE_UNITTEST
 	if (UnitTestAssertionEnabler::IsEnabled())

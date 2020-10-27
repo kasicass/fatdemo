@@ -33,12 +33,12 @@ Float3& Float3::operator=(const Float3& rhs)
 	return *this;
 }
 
-Bool Float3::operator==(const Float3& rhs)
+bool Float3::operator==(const Float3& rhs)
 {
 	return FatAlmostEqual(x, rhs.x) && FatAlmostEqual(y, rhs.y) && FatAlmostEqual(z, rhs.z);
 }
 
-Bool Float3::operator!=(const Float3& rhs)
+bool Float3::operator!=(const Float3& rhs)
 {
 	return !FatAlmostEqual(x, rhs.x) || !FatAlmostEqual(y, rhs.y) || !FatAlmostEqual(z, rhs.z);
 }

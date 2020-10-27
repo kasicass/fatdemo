@@ -68,7 +68,7 @@ void D3D9GPUTimer::End()
 	}
 }
 
-Bool D3D9GPUTimer::IsValid() const
+bool D3D9GPUTimer::IsValid() const
 {
 	return valid_;
 }

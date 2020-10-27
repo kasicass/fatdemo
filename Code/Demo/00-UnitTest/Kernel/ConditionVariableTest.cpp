@@ -16,7 +16,7 @@ public:
 
 	UInt32 sharedValue_;
 	UInt32 execute_;
-	Bool exit_;
+	bool exit_;
 
 	MutexFast mutex_;
 	ConditionVariable cond_;
@@ -52,7 +52,7 @@ TEST_DECLARE(TestConditionVariable)
 {
 	// Test basic single threaded condition
 	{
-		Bool bCond = false;
+		bool bCond = false;
 
 		MutexFast mutex;
 		ConditionVariable cond;
@@ -60,7 +60,7 @@ TEST_DECLARE(TestConditionVariable)
 		MutexFastLocker lock(mutex);
 		while (!bCond)
 		{
-			Bool timedWaitRet = cond.TimedWait(mutex, 1);
+			bool timedWaitRet = cond.TimedWait(mutex, 1);
 			FatTest(timedWaitRet == false); // should fail has no notify occurs
 			bCond = true;
 		}

@@ -17,19 +17,19 @@ ICommandData::~ICommandData()
 	FatAssert(IsAcquired() == false, L"Deleting an acquired command data");
 }
 
-Bool ICommandData::IsAcquired() const
+bool ICommandData::IsAcquired() const
 {
 	FatAssertNoText(acquiredCounter_ >= -1);
 	return acquiredCounter_ != 0;
 }
 
-Bool ICommandData::IsReadOnlyAcquired() const
+bool ICommandData::IsReadOnlyAcquired() const
 {
 	FatAssertNoText(acquiredCounter_ >= -1);
 	return acquiredCounter_ > 0;
 }
 
-Bool ICommandData::IsReadWriteAcquired() const
+bool ICommandData::IsReadWriteAcquired() const
 {
 	FatAssertNoText(acquiredCounter_ >= -1);
 	return acquiredCounter_ == -1;
@@ -60,7 +60,7 @@ void ICommandData::ReleaseReadWriteAccess()
 	acquiredCounter_++;
 }
 
-Bool ICommandData::IsRebuildNeeded() const
+bool ICommandData::IsRebuildNeeded() const
 {
 	FatAssertNoText(IsReadOnlyAcquired());
 	return rebuildNeeded_;
@@ -104,7 +104,7 @@ const ICommandData* ICommand::GetReadOnlyData() const
 	return pData;
 }
 
-ICommandData* ICommand::GrabReadWriteData(Bool discard)
+ICommandData* ICommand::GrabReadWriteData(bool discard)
 {
 	FatAssertNoText(commandDataList_.empty() == false);
 

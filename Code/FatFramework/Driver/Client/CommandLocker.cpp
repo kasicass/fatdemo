@@ -9,7 +9,7 @@ const ICommandData* CommandLockerBase::GetReadOnlyData(const ICommand* pCommand)
 	return pCommand->GetReadOnlyData();
 }
 
-ICommandData* CommandLockerBase::GrabReadWriteData(ICommand* pCommand, Bool discard) const
+ICommandData* CommandLockerBase::GrabReadWriteData(ICommand* pCommand, bool discard) const
 {
 	return pCommand->GrabReadWriteData(discard);
 }
@@ -19,7 +19,7 @@ const ICommandData* CommandLockerBase::GetReadOnlyData(const IState* pState) con
 	return pState->GetCommand()->GetReadOnlyData();
 }
 
-ICommandData* CommandLockerBase::GrabReadWriteData(IState* pState, Bool discard) const
+ICommandData* CommandLockerBase::GrabReadWriteData(IState* pState, bool discard) const
 {
 	return pState->GetCommand()->GrabReadWriteData(discard);
 }

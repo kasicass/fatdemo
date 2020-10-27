@@ -84,7 +84,7 @@ void Buffer::Clear()
 	packets_.clear();
 }
 
-Bool Buffer::IsEmpty()
+bool Buffer::IsEmpty()
 {
 	return packets_.empty();
 }
@@ -123,7 +123,7 @@ CommandBuffer::~CommandBuffer()
 	DeallocateBuffers();
 }
 
-Bool CommandBuffer::Begin()
+bool CommandBuffer::Begin()
 {
 	FatAssert(insideBeginEnd_ == false, L"Already inside a begin/end pair");
 
@@ -131,7 +131,7 @@ Bool CommandBuffer::Begin()
 	{
 		WaitAllBuffersFlushed();
 
-		Bool reseted = device_.Reset();
+		bool reseted = device_.Reset();
 		if (!reseted)
 			return false; // reset fails
 	}

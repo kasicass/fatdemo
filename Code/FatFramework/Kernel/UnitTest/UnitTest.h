@@ -51,7 +51,7 @@ public:
 private:
 	friend class UnitTestCase;
 	virtual void RegisterTestCase(const UnitTestCase& testCase) = 0;
-	virtual void NotifyEndedTest(const UnitTestCase& testCase, Bool succeded) = 0;
+	virtual void NotifyEndedTest(const UnitTestCase& testCase, bool succeded) = 0;
 };
 extern IUnitTestManager* GUnitTestMgr;
 

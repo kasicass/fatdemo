@@ -21,7 +21,7 @@ public:
 	void Begin();
 	void End();
 
-	Bool IsValid() const;
+	bool IsValid() const;
 	F32 GetElapsedTime() const; // Can only be called if timer is valid
 
 protected:
@@ -34,9 +34,9 @@ private:
 	IDirect3DQuery9Ptr pTimeQueryFreq_;
 
 	F32 elapsedTime_;
-	Bool issued_;     // Are quries issued
-	Bool valid_;      // Is timer valid
-	FatIfBuildAssertion(Bool insideBeginEnd_);
+	bool issued_;     // Are quries issued
+	bool valid_;      // Is timer valid
+	FatIfBuildAssertion(bool insideBeginEnd_);
 };
 
 }

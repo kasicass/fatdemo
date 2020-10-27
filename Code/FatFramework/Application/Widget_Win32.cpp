@@ -33,12 +33,12 @@ void* WidgetWin32::GetHandle() const
 	return (void*)hWnd_;
 }
 
-Bool WidgetWin32::IsActive() const
+bool WidgetWin32::IsActive() const
 {
 	return active_;
 }
 
-void WidgetWin32::OnActive(Bool value)
+void WidgetWin32::OnActive(bool value)
 {
 	// FatLog(L"<App>: OnActive = %d", value);
 	active_ = value;

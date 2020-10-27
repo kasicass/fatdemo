@@ -150,10 +150,10 @@ void HelloWndApp::Run()
 {
 	SetupRenderTarget();
 
-	Bool loop = true;
+	bool loop = true;
 	while (loop)
 	{
-		Bool gotMsg;
+		bool gotMsg;
 		MSG	msg;
 
 		if (GetMainWnd()->IsActive())

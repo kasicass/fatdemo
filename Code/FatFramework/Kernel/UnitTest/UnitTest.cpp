@@ -21,7 +21,7 @@ public:
 
 private:
 	virtual void RegisterTestCase(const UnitTestCase& testCase) override;
-	virtual void NotifyEndedTest(const UnitTestCase& testCase, Bool succeded) override;
+	virtual void NotifyEndedTest(const UnitTestCase& testCase, bool succeded) override;
 
 private:
 	void Start();
@@ -96,7 +96,7 @@ void UnitTestManager::NotifyTestFail(const UnitTestFailureException& e)
 	FatLog(L" - \"%ls\" fails at (%ls:%d)", e.What(), e.File(), e.Line());
 }
 
-void UnitTestManager::NotifyEndedTest(const UnitTestCase& testCase, Bool succeded)
+void UnitTestManager::NotifyEndedTest(const UnitTestCase& testCase, bool succeded)
 {
 	FatLog(L" - test %02u (%ls) : %ls",
 		suceededTestCount_ + failedTestCount_,
@@ -139,7 +139,7 @@ void UnitTestCase::RegisterMe()
 
 void UnitTestCase::operator()()
 {
-	Bool succeed = true;
+	bool succeed = true;
 
 	try
 	{

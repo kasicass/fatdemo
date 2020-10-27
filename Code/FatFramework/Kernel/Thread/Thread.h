@@ -47,8 +47,8 @@ public:
 	void Run();
 	void Join();
 
-	Bool operator==(const Thread& rhs) const;
-	Bool operator!=(const Thread& rhs) const;
+	bool operator==(const Thread& rhs) const;
+	bool operator!=(const Thread& rhs) const;
 
 private:
 	// Constructors are private to ensure proper public function (Attach/Create) are used

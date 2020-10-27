@@ -20,10 +20,10 @@ class CommandLockerBase : private NonCopyable
 {
 protected:
 	const ICommandData* GetReadOnlyData(const ICommand* pCommand) const;
-	ICommandData* GrabReadWriteData(ICommand* pCommand, Bool discard) const;
+	ICommandData* GrabReadWriteData(ICommand* pCommand, bool discard) const;
 
 	const ICommandData* GetReadOnlyData(const IState* pState) const;
-	ICommandData* GrabReadWriteData(IState* pState, Bool discard) const;
+	ICommandData* GrabReadWriteData(IState* pState, bool discard) const;
 
 	void AcquireReadOnlyAccess(const ICommandData* pData) const;
 	void ReleaseReadOnlyAccess(const ICommandData* pData) const;
@@ -103,13 +103,13 @@ template <typename T>
 class TReadWriteLocker : public CommandLockerBase
 {
 public:
-	TReadWriteLocker(ICommand* pCommand, Bool discard = true) :
+	TReadWriteLocker(ICommand* pCommand, bool discard = true) :
 		pCommandData_(GrabReadWriteData(pCommand, discard))
 	{
 		AcquireReadWriteAccess(pCommandData_.Get());
 	}
 
-	TReadWriteLocker(IState* pState, Bool discard = true) :
+	TReadWriteLocker(IState* pState, bool discard = true) :
 		pCommandData_(GrabReadWriteData(pState, discard))
 	{
 		AcquireReadWriteAccess(pCommandData_.Get());

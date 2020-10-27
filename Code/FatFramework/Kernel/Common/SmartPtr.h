@@ -84,13 +84,13 @@ public:
 	}
 
 	template <typename U, template<typename> class OtherPolicy>
-	Bool operator==(const TSmartPtr<U, OtherPolicy>& rhs)
+	bool operator==(const TSmartPtr<U, OtherPolicy>& rhs)
 	{
 		return pObject_ == rhs.pObject_;
 	}
 
 	template <typename U, template<typename> class OtherPolicy>
-	Bool operator!=(const TSmartPtr<U, OtherPolicy>& rhs)
+	bool operator!=(const TSmartPtr<U, OtherPolicy>& rhs)
 	{
 		return pObject_ != rhs.pObject_;
 	}

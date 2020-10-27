@@ -156,12 +156,12 @@ void Thread::Join()
 	exitMutex_.Unlock();
 }
 
-Bool Thread::operator==(const Thread& rhs) const
+bool Thread::operator==(const Thread& rhs) const
 {
 	return thrId_ == rhs.thrId_;
 }
 
-Bool Thread::operator!=(const Thread& rhs) const
+bool Thread::operator!=(const Thread& rhs) const
 {
 	return thrId_ != rhs.thrId_;
 }
@@ -269,12 +269,12 @@ void Thread::Join()
 	exitMutex_.Unlock();
 }
 
-Bool Thread::operator==(const Thread& rhs) const
+bool Thread::operator==(const Thread& rhs) const
 {
 	return pthread_equal(thrId_, rhs.thrId_);
 }
 
-Bool Thread::operator!=(const Thread& rhs) const
+bool Thread::operator!=(const Thread& rhs) const
 {
 	return !pthread_equal(thrId_, rhs.thrId_);
 }

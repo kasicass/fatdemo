@@ -22,9 +22,9 @@ public:
 	virtual void Clear() = 0;
 	virtual void Copy(const ICommandData* rhs) = 0;
 
-	Bool IsAcquired() const;
-	Bool IsReadOnlyAcquired() const;
-	Bool IsReadWriteAcquired() const;
+	bool IsAcquired() const;
+	bool IsReadOnlyAcquired() const;
+	bool IsReadWriteAcquired() const;
 
 private:
 	friend class CommandLockerBase;
@@ -34,7 +34,7 @@ private:
 	void ReleaseReadWriteAccess();
 
 	friend class Packet;
-	Bool IsRebuildNeeded() const;
+	bool IsRebuildNeeded() const;
 	void Rebuilt() const;
 
 private:
@@ -42,7 +42,7 @@ private:
 	// >0 - read-lock
 	// -1 - write-lock
 	mutable AtomicInt acquiredCounter_;
-	mutable Bool rebuildNeeded_;
+	mutable bool rebuildNeeded_;
 };
 
 typedef TSmartPtr<ICommandData, TSmartPtrIntrusivePolicy> ICommandDataPtr;
@@ -66,7 +66,7 @@ private:
 
 	// If discard is true, then the data is initialized with default values, otherwise it
 	// maintains previous ones
-	ICommandData* GrabReadWriteData(Bool discard);
+	ICommandData* GrabReadWriteData(bool discard);
 
 private:
 	typedef std::list<ICommandDataPtr> CommandDataList;

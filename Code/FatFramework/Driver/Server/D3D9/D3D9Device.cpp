@@ -192,7 +192,7 @@ void D3D9Device::EndScene()
 	D3D9Call(pD3DDevice_->EndScene());
 }
 
-Bool D3D9Device::Reset()
+bool D3D9Device::Reset()
 {
 	// 1. Try to see if the device could be reseted using TestCooperativeLevel
 	HRESULT hr = pD3DDevice_->TestCooperativeLevel();
