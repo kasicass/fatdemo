@@ -13,6 +13,6 @@ typedef double             F64;
 
 // Tricky here~
 // Windows - sizeof(unsigned long) = 4 (DWORD)
-// OpenBSD - sizeof(unsigned long) = 4 or 8 (32/64bit, equals to pthread_t)
+// Linux   - sizeof(unsigned long) = 4 or 8 (32/64bit, equals to pthread_t)
 typedef unsigned long ThreadId;
 #define THREADID_NULL (0)

@@ -35,6 +35,7 @@
 #include "FatFramework/Kernel/String/TString.h"
 #include "FatFramework/Kernel/String/TStackString.h"
 #include "FatFramework/Kernel/UnitTest/UnitTest.h"
+#include "FatFramework/Kernel/Thread/Interlocked.h"
 #include "FatFramework/Kernel/Thread/AtomicInt.h"
 #include "FatFramework/Kernel/Thread/TAutoLock.h"
 #include "FatFramework/Kernel/Thread/MutexFast.h"

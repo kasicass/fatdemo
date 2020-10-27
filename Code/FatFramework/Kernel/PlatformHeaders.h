@@ -11,11 +11,13 @@
 #  include <pthread.h>
 #endif
 
-// thread local
+// thread local & force inline
 #if FAT_OS_WINDOWS
 #  define FAT_THREAD_LOCAL __declspec(thread)
+#  define FAT_FORCE_INLINE __forceinline
 #else
 #  define FAT_THREAD_LOCAL __thread
+#  define FAT_FORCE_INLINE inline __attribute__((always_inline))
 #endif
 
 // debug break

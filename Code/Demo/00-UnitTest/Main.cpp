@@ -22,6 +22,7 @@ void UnitTestApp::Init()
 	TEST_REGISTER(TestFloat4);
 	TEST_REGISTER(TestTime);
 	TEST_REGISTER(TestFpsCounter);
+	TEST_REGISTER(TestInterlocked);
 	TEST_REGISTER(TestAtomicInt);
 	TEST_REGISTER(TestSmartPtrAssertPolicy);
 	TEST_REGISTER(TestSmartPtrIntrusivePolicy);

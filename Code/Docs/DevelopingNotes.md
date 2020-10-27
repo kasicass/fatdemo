@@ -2,6 +2,7 @@
 
 ## 2020-10-27
 
+ * 将 Interlocked 模块纳入 Kernel，封装 atomic 的行为。可以去掉 std::atomic 的依赖了
  * 统一全局 singleton var 的命名
 
 Framework

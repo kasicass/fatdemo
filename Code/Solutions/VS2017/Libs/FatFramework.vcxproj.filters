@@ -226,6 +226,9 @@
     <ClInclude Include="..\..\..\FatFramework\Driver\Client\StateType.h">
       <Filter>Driver\Client</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Interlocked.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\FatFramework\Application\Application.cpp">

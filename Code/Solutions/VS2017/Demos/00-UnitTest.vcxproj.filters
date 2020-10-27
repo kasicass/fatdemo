@@ -56,6 +56,9 @@
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Driver\Server\State\FakeServerState.cpp">
       <Filter>Driver\Server\State</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\InterlockedTest.cpp">
+      <Filter>Kernel\Thread</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Driver">
@@ -78,6 +81,9 @@
     </Filter>
     <Filter Include="Driver\Server\State">
       <UniqueIdentifier>{e0649aa2-8fbd-42ad-90de-3453b710e86c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Thread">
+      <UniqueIdentifier>{b4d36d24-aa42-4981-bf77-649924050b61}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
