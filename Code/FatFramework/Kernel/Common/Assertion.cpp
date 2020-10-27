@@ -29,7 +29,7 @@ bool FailureReport(const wchar_t* format, ...)
 	FatLog(msg.c_str());
 
 #if FAT_OS_WINDOWS
-	Int32 n = MessageBox(NULL, msg.c_str(), L"FatFramework: Assertion failed", MB_ABORTRETRYIGNORE);
+	SInt32 n = MessageBox(NULL, msg.c_str(), L"FatFramework: Assertion failed", MB_ABORTRETRYIGNORE);
 	switch (n)
 	{
 	case IDABORT: exit(EXIT_FAILURE);  // Exit appliation

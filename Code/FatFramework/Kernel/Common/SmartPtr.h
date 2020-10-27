@@ -150,14 +150,14 @@ protected:
 class IntrusiveCounter
 {
 public:
-	Int32 GetRefCount()
+	SInt32 GetRefCount()
 	{
 		return refCount_;
 	}
 
 protected:
 
-	IntrusiveCounter(Int32 initCount = 0) :
+	IntrusiveCounter(SInt32 initCount = 0) :
 		refCount_(initCount)
 	{
 		FatAssert(initCount >= 0, L"Count should never be negative");
@@ -170,16 +170,16 @@ protected:
 	template <typename T>
 	friend class TSmartPtrIntrusivePolicy;
 
-	Int32 AddRef() const
+	SInt32 AddRef() const
 	{
-		Int32 ret = ++refCount_;
+		SInt32 ret = ++refCount_;
 		FatAssert(ret > 0, L"Count should never be negative");
 		return ret;
 	}
 
-	Int32 DecRef() const
+	SInt32 DecRef() const
 	{
-		Int32 ret = --refCount_;
+		SInt32 ret = --refCount_;
 		FatAssert(ret >= 0, L"Count should never be negative");
 		return ret;
 	}

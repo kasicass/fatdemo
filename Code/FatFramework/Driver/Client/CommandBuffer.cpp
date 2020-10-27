@@ -75,7 +75,7 @@ void Buffer::Dispatch(Device& device)
 		it->Dispatch(device);
 	}
 
-	GDriverStats->SetCommandBufferSize(Int32(packets_.size() * sizeof(Packet)));
+	GDriverStats->SetCommandBufferSize(SInt32(packets_.size() * sizeof(Packet)));
 	Clear();
 }
 

@@ -1,13 +1,13 @@
 #pragma once
 
 typedef unsigned char      UInt8;
-typedef char               Int8;
+typedef char               SInt8;
 typedef unsigned short     UInt16;
-typedef short              Int16;
+typedef short              SInt16;
 typedef unsigned int       UInt32;
-typedef int                Int32;
+typedef int                SInt32;
 typedef unsigned long long UInt64;
-typedef long long          Int64;
+typedef long long          SInt64;
 typedef float              F32;
 typedef double             F64;
 

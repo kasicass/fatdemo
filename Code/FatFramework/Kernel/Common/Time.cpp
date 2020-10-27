@@ -18,14 +18,14 @@ public:
 
 private:
 	F64 invFrequency_;
-	Int64 initCounter_;
+	SInt64 initCounter_;
 };
 
 void PerformanceCounter::Init()
 {
 	FatLog(L"<PerfCounter>: Init");
 
-	Int64 freq;
+	SInt64 freq;
 	FatValidateNoText(QueryPerformanceFrequency((LARGE_INTEGER*)&freq) != 0);
 	invFrequency_ = 1.0 / F64(freq);
 
@@ -39,7 +39,7 @@ void PerformanceCounter::Shutdown()
 
 F32 PerformanceCounter::ComputeAppTime() const
 {
-	Int64 currentCounter;
+	SInt64 currentCounter;
 	FatValidateNoText(QueryPerformanceCounter((LARGE_INTEGER*)&currentCounter) != 0);
 
 	const F64 deltaCounter = F64(currentCounter - initCounter_);
@@ -59,17 +59,17 @@ public:
 	virtual F32 ComputeAppTime() const override;
 
 private:
-	static Int64 GetCurrentTicks();
+	static SInt64 GetCurrentTicks();
 
 	F64 invFrequency_;
-	Int64 initCounter_;
+	SInt64 initCounter_;
 };
 
-Int64 PerformanceCounter::GetCurrentTicks()
+SInt64 PerformanceCounter::GetCurrentTicks()
 {
 	timespec tv;
 	clock_gettime(CLOCK_MONOTONIC, &tv);
-	return (Int64)tv.tv_sec*1000000 + tv.tv_nsec/1000;
+	return (SInt64)tv.tv_sec*1000000 + tv.tv_nsec/1000;
 }
 
 void PerformanceCounter::Init()
@@ -87,7 +87,7 @@ void PerformanceCounter::Shutdown()
 
 F32 PerformanceCounter::ComputeAppTime() const
 {
-	Int64 currentCounter = GetCurrentTicks();
+	SInt64 currentCounter = GetCurrentTicks();
 
 	const F64 deltaCounter = F64(currentCounter - initCounter_);
 	const F64 deltaTime = deltaCounter * invFrequency_;

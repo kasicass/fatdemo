@@ -17,23 +17,23 @@ public:
 	// Reset counter
 	virtual void Reset() override;
 
-	virtual void SetClientFps(Int32 value) override;
-	virtual void SetServerFps(Int32 value) override;
-	virtual void SetGpuFps(Int32 value) override;
+	virtual void SetClientFps(SInt32 value) override;
+	virtual void SetServerFps(SInt32 value) override;
+	virtual void SetGpuFps(SInt32 value) override;
 
-	virtual void SetCommandBufferSize(Int32 value) override;
+	virtual void SetCommandBufferSize(SInt32 value) override;
 	virtual void IncBuiltCommandsPerFrame() override;
 	virtual void IncDispatchedCommandsPerFrame() override;
 	virtual void IncD3D9CallsPerFrame() override;
 
 private:
 	AtomicInt clientFps_;
-	Int32 serverFps_;
-	Int32 gpuFps_;
-	Int32 commandBufferSize_;
-	Int32 builtCommandsPerFrame_;
-	Int32 dispatchedCommandsPerFrame_;
-	Int32 d3d9CallsPerFrames_;
+	SInt32 serverFps_;
+	SInt32 gpuFps_;
+	SInt32 commandBufferSize_;
+	SInt32 builtCommandsPerFrame_;
+	SInt32 dispatchedCommandsPerFrame_;
+	SInt32 d3d9CallsPerFrames_;
 };
 
 static DriverStatistics myDriverStats;
@@ -106,22 +106,22 @@ void DriverStatistics::Format(std::wostringstream& out)
 	d3d9CallsPerFrames_ = 0;
 }
 
-void DriverStatistics::SetClientFps(Int32 value)
+void DriverStatistics::SetClientFps(SInt32 value)
 {
 	clientFps_ = value;
 }
 
-void DriverStatistics::SetServerFps(Int32 value)
+void DriverStatistics::SetServerFps(SInt32 value)
 {
 	serverFps_ = value;
 }
 
-void DriverStatistics::SetGpuFps(Int32 value)
+void DriverStatistics::SetGpuFps(SInt32 value)
 {
 	gpuFps_ = value;
 }
 
-void DriverStatistics::SetCommandBufferSize(Int32 value)
+void DriverStatistics::SetCommandBufferSize(SInt32 value)
 {
 	commandBufferSize_ = value;
 }

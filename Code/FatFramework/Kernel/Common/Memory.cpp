@@ -311,7 +311,7 @@ void MemoryCopy(void* pDest, const void* pSource, UInt32 count)
 	memcpy(pDest, pSource, count);
 }
 
-void MemorySet(void* pDest, Int32 ch, UInt32 count)
+void MemorySet(void* pDest, SInt32 ch, UInt32 count)
 {
 	memset(pDest, ch, count);
 }

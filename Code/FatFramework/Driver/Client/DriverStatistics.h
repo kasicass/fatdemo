@@ -17,11 +17,11 @@ public:
 	// Reset counter
 	virtual void Reset() = 0;
 
-	virtual void SetClientFps(Int32 value) = 0;
-	virtual void SetServerFps(Int32 value) = 0;
-	virtual void SetGpuFps(Int32 value) = 0;
+	virtual void SetClientFps(SInt32 value) = 0;
+	virtual void SetServerFps(SInt32 value) = 0;
+	virtual void SetGpuFps(SInt32 value) = 0;
 
-	virtual void SetCommandBufferSize(Int32 value) = 0;
+	virtual void SetCommandBufferSize(SInt32 value) = 0;
 	virtual void IncBuiltCommandsPerFrame() = 0;
 	virtual void IncDispatchedCommandsPerFrame() = 0;
 	virtual void IncD3D9CallsPerFrame() = 0;

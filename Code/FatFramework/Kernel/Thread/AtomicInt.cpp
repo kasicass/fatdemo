@@ -12,7 +12,7 @@ namespace Fat { namespace Atomic {
 //
 // Chapter 12 and Appendix C in http://kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html
 
-Int32 CompareExchange(AtomicInt& atom, Int32 comperand, Int32 exchange)
+SInt32 CompareExchange(AtomicInt& atom, SInt32 comperand, SInt32 exchange)
 {
 	atom.compare_exchange_weak(comperand, exchange);
 	return comperand;
@@ -28,36 +28,36 @@ namespace Interlocked {
 
 #if FAT_OS_WINDOWS
 
-Int32 Increment(volatile Int32* pVal)
+SInt32 Increment(volatile SInt32* pVal)
 {
-	return (Int32)InterlockedIncrement((volatile long*)pVal);
+	return (SInt32)InterlockedIncrement((volatile long*)pVal);
 }
 
-Int32 Decrement(volatile Int32* pVal)
+SInt32 Decrement(volatile SInt32* pVal)
 {
-	return (Int32)InterlockedDecrement((volatile long*)pVal);
+	return (SInt32)InterlockedDecrement((volatile long*)pVal);
 }
 
-Int32 Add(volatile Int32* pVal, Int32 value)
+SInt32 Add(volatile SInt32* pVal, SInt32 value)
 {
-	return (Int32)InterlockedExchangeAdd((volatile long*)pVal, (long)value);;
+	return (SInt32)InterlockedExchangeAdd((volatile long*)pVal, (long)value);;
 }
 
-Int32 Exchange(volatile Int32* pVal, Int32 exchange)
+SInt32 Exchange(volatile SInt32* pVal, SInt32 exchange)
 {
-	return (Int32)InterlockedExchange((volatile long*)pVal, (long)exchange);
+	return (SInt32)InterlockedExchange((volatile long*)pVal, (long)exchange);
 }
 
-Int32 CompareExchange(volatile Int32* pVal, Int32 exchange, Int32 comperand)
+SInt32 CompareExchange(volatile SInt32* pVal, SInt32 exchange, SInt32 comperand)
 {
-	return (Int32)InterlockedCompareExchange((volatile long*)pVal, (long)exchange, (long)comperand);
+	return (SInt32)InterlockedCompareExchange((volatile long*)pVal, (long)exchange, (long)comperand);
 }
 
 #else
 
-Int32 Add(volatile Int32* pVal, Int32 value)
+SInt32 Add(volatile SInt32* pVal, SInt32 value)
 {
-	Int32 r;
+	SInt32 r;
 	__asm__ __volatile__ (
 		"lock ; xaddl %0, (%1) \n\t"
 		: "=r" (r)
@@ -67,22 +67,22 @@ Int32 Add(volatile Int32* pVal, Int32 value)
 	return r;
 }
 
-Int32 Increment(volatile Int32* pVal)
+SInt32 Increment(volatile SInt32* pVal)
 {
-	Int32 r = Add(pVal, 1);
+	SInt32 r = Add(pVal, 1);
 	return (r + 1); // add, since we get the original value back
 }
 
-Int32 Decrement(volatile Int32* pVal)
+SInt32 Decrement(volatile SInt32* pVal)
 {
-	Int32 r = Add(pVal, -1);
+	SInt32 r = Add(pVal, -1);
 	return (r - 1); // substract, since we get the original value back
 }
 
 
-Int32 Exchange(volatile Int32* pVal, Int32 exchange)
+SInt32 Exchange(volatile SInt32* pVal, SInt32 exchange)
 {
-	Int32 r;
+	SInt32 r;
 	__asm__ __volatile__ (
 		"lock ; xchgl %2, (%1) \n\t"
 		: "=a" (r)
@@ -92,9 +92,9 @@ Int32 Exchange(volatile Int32* pVal, Int32 exchange)
 	return r;
 }
 
-Int32 CompareExchange(volatile Int32* pVal, Int32 exchange, Int32 comperand)
+SInt32 CompareExchange(volatile SInt32* pVal, SInt32 exchange, SInt32 comperand)
 {
-	Int32 r;
+	SInt32 r;
 	__asm__ __volatile__ (
 		"lock ; cmpxchgl %2, (%1) \n\t"
 		: "=a" (r)
@@ -108,47 +108,47 @@ Int32 CompareExchange(volatile Int32* pVal, Int32 exchange, Int32 comperand)
 
 }
 
-AtomicInt::AtomicInt(Int32 value) :
+AtomicInt::AtomicInt(SInt32 value) :
 	value_(value)
 {
 }
 
-Int32 AtomicInt::operator++(Int32)
+SInt32 AtomicInt::operator++(SInt32)
 {
 	return Interlocked::Add(&value_, 1);
 }
 
-Int32 AtomicInt::operator--(Int32)
+SInt32 AtomicInt::operator--(SInt32)
 {
 	return Interlocked::Add(&value_, -1);
 }
 
-Int32 AtomicInt::operator++()
+SInt32 AtomicInt::operator++()
 {
 	return Interlocked::Increment(&value_);
 }
 
-Int32 AtomicInt::operator--()
+SInt32 AtomicInt::operator--()
 {
 	return Interlocked::Decrement(&value_);
 }
 
-void AtomicInt::operator=(Int32 exchange)
+void AtomicInt::operator=(SInt32 exchange)
 {
 	Interlocked::Exchange(&value_, exchange);
 }
 
-Int32 AtomicInt::CompareExchange(Int32 comperand, Int32 exchange)
+SInt32 AtomicInt::CompareExchange(SInt32 comperand, SInt32 exchange)
 {
 	return Interlocked::CompareExchange(&value_, exchange, comperand);
 }
 
-Int32 AtomicInt::GetValue() const
+SInt32 AtomicInt::GetValue() const
 {
 	return value_;
 }
 
-AtomicInt::operator Int32() const
+AtomicInt::operator SInt32() const
 {
 	return value_;
 }

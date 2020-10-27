@@ -53,7 +53,7 @@ namespace Memory {
 }
 
 void MemoryCopy(void* pDest, const void* pSource, UInt32 count);
-void MemorySet(void* pDest, Int32 ch, UInt32 count);
+void MemorySet(void* pDest, SInt32 ch, UInt32 count);
 
 inline void MemoryZero(void* pDest, UInt32 count)
 {
