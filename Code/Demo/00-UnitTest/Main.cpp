@@ -31,7 +31,8 @@ void UnitTestApp::Init()
 	TEST_REGISTER(TestThreadOperators);
 	TEST_REGISTER(TestThreadCreation);
 	TEST_REGISTER(TestThreadMutiJoin);
-	TEST_REGISTER(TestMutex);
+	TEST_REGISTER(Thread_MutexFast_Test);
+	TEST_REGISTER(Thread_Mutex_Test);
 	TEST_REGISTER(TestConditionVariable);
 	TEST_REGISTER(TestDeviceReset);
 	TEST_REGISTER(TestCommandLocker);

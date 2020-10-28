@@ -22,7 +22,7 @@
 #include <atomic>
 #include <sstream>
 
-// FatFramework - Kernel
+// FatFramework - Kernel/Common
 #include "FatFramework/Kernel/Common/Types.h"
 #include "FatFramework/Kernel/Common/Macros.h"
 #include "FatFramework/Kernel/Common/OS.h"
@@ -31,19 +31,28 @@
 #include "FatFramework/Kernel/Common/NonCopyable.h"
 #include "FatFramework/Kernel/Common/Memory.h"
 #include "FatFramework/Kernel/Common/Time.h"
+
+// FatFramework - Kernel/String
 #include "FatFramework/Kernel/String/TCharTraits.h"
 #include "FatFramework/Kernel/String/TString.h"
 #include "FatFramework/Kernel/String/TStackString.h"
+
+// FatFramework - Kernel/UnitTest
 #include "FatFramework/Kernel/UnitTest/UnitTest.h"
+
+// FatFramework - Kernel/Thread
 #include "FatFramework/Kernel/Thread/ThreadUtil.h"
 #include "FatFramework/Kernel/Thread/Interlocked.h"
 #include "FatFramework/Kernel/Thread/AtomicInt.h"
 #include "FatFramework/Kernel/Thread/SpinLock.h"
 #include "FatFramework/Kernel/Thread/TAutoLock.h"
+#include "FatFramework/Kernel/Thread/Mutex.h"
 #include "FatFramework/Kernel/Thread/MutexFast.h"
 #include "FatFramework/Kernel/Thread/ConditionVariable.h"
 #include "FatFramework/Kernel/Common/SmartPtr.h"
 #include "FatFramework/Kernel/Thread/Thread.h"
+
+// FatFramework - Kernel/Math
 #include "FatFramework/Kernel/Math/Utils.h"
 #include "FatFramework/Kernel/Math/Float3.h"
 #include "FatFramework/Kernel/Math/Float4.h"

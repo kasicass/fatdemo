@@ -13,6 +13,7 @@
 #include "FatFramework/Kernel/Thread/AtomicInt.cpp"
 #include "FatFramework/Kernel/Thread/ConditionVariable.cpp"
 #include "FatFramework/Kernel/Thread/MutexFast.cpp"
+#include "FatFramework/Kernel/Thread/Mutex.cpp"
 #include "FatFramework/Kernel/Thread/Thread.cpp"
 
 #include "FatFramework/Kernel/UnitTest/UnitTest.cpp"

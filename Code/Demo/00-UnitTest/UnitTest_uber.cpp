@@ -4,10 +4,11 @@
 // UnitTest for Kernel
 #include "Demo/00-UnitTest/Kernel/Thread/InterlockedTest.cpp"
 #include "Demo/00-UnitTest/Kernel/Thread/SpinLockTest.cpp"
+#include "Demo/00-UnitTest/Kernel/Thread/MutexFastTest.cpp"
+#include "Demo/00-UnitTest/Kernel/Thread/MutexTest.cpp"
 #include "Demo/00-UnitTest/Kernel/AtomicIntTest.cpp"
 #include "Demo/00-UnitTest/Kernel/ConditionVariableTest.cpp"
 #include "Demo/00-UnitTest/Kernel/MathTest.cpp"
-#include "Demo/00-UnitTest/Kernel/MutexFastTest.cpp"
 #include "Demo/00-UnitTest/Kernel/SmartPtrTest.cpp"
 #include "Demo/00-UnitTest/Kernel/ThreadTest.cpp"
 #include "Demo/00-UnitTest/Kernel/TimeTest.cpp"

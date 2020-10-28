@@ -40,10 +40,11 @@
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\AtomicIntTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\ConditionVariableTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\MathTest.cpp" />
-    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\MutexFastTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\SmartPtrTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\ThreadTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\InterlockedTest.cpp" />
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\MutexFastTest.cpp" />
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\MutexTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\SpinLockTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\TimeTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\UnitTestSelfTest.cpp" />

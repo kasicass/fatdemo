@@ -17,9 +17,6 @@
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\ConditionVariableTest.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\MutexFastTest.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\SmartPtrTest.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
@@ -60,6 +57,12 @@
       <Filter>Kernel\Thread</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\SpinLockTest.cpp">
+      <Filter>Kernel\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\MutexFastTest.cpp">
+      <Filter>Kernel\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\MutexTest.cpp">
       <Filter>Kernel\Thread</Filter>
     </ClCompile>
   </ItemGroup>

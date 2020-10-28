@@ -4,10 +4,10 @@
 
 using namespace Fat;
 
-class MutexTest
+class MutexFastTest
 {
 public:
-	MutexTest() :
+	MutexFastTest() :
 		sharedValue_(0)
 	{
 	}
@@ -35,9 +35,9 @@ private:
 	UInt32 sharedValue_;
 };
 
-static void MutexTestThreadFunc(void* args)
+static void MutexFastTestThreadFunc(void* args)
 {
-	MutexTest& testObj = *((MutexTest*)args);
+	MutexFastTest& testObj = *((MutexFastTest*)args);
 
 	while (!testObj.Increment())
 	{
@@ -47,7 +47,7 @@ static void MutexTestThreadFunc(void* args)
 	FatTest(testObj.Test());
 }
 
-TEST_DECLARE(TestMutex)
+TEST_DECLARE(Thread_MutexFast_Test)
 {
 	{
 		MutexFast mutex;
@@ -62,8 +62,8 @@ TEST_DECLARE(TestMutex)
 
 	// test threaded exclusion
 	{
-		MutexTest testObj;
-		ThreadPtr pThread = Thread::Create("MutexTest", MutexTestThreadFunc, &testObj);
+		MutexFastTest testObj;
+		ThreadPtr pThread = Thread::Create("MutexFastTest", MutexFastTestThreadFunc, &testObj);
 		while (!testObj.Test())
 		{
 			ThreadUtil::Sleep(0);
