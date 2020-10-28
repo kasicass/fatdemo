@@ -1,4 +1,6 @@
 #include "FatFramework/Kernel/Thread/ConditionVariable.h"
+#include "FatFramework/Kernel/Thread/ThreadUtil.h"
+#include "FatFramework/Kernel/Common/Assertion.h"
 
 namespace Fat {
 
@@ -13,9 +15,25 @@ ConditionVariable::~ConditionVariable()
 {
 }
 
+
+void ConditionVariable::Wait(Mutex& lock)
+{
+	TimedWait(lock, INFINITE);
+}
+
 void ConditionVariable::Wait(MutexFast& lock)
 {
 	TimedWait(lock, INFINITE);
+}
+
+bool ConditionVariable::TimedWait(Mutex& lock, UInt32 millis)
+{
+	bool ret;
+	FatAssertNoText(lock.recurseCounter_ == 0);
+	lock.exclusiveOwningThreadId_ = THREADID_NULL;
+	ret = (SleepConditionVariableSRW(&cond_, &lock.srwlock_, millis, ULONG(0)) == TRUE);
+	lock.exclusiveOwningThreadId_ = ThreadUtil::CurrentThreadId();
+	return ret;
 }
 
 bool ConditionVariable::TimedWait(MutexFast& lock, UInt32 millis)
@@ -45,16 +63,30 @@ ConditionVariable::~ConditionVariable()
 	pthread_cond_destroy(&cond_);
 }
 
+void ConditionVariable::Wait(Mutex& lock)
+{
+	pthread_cond_wait(&cond_, &lock.mutex_);
+}
+
 void ConditionVariable::Wait(MutexFast& lock)
 {
 	pthread_cond_wait(&cond_, &lock.mutex_);
 }
 
+bool ConditionVariable::TimedWait(Mutex& lock, UInt32 millis)
+{
+	struct timespec sleepTime;
+	sleepTime.tv_sec = (millis / 1000);
+	sleepTime.tv_nsec = (millis % 1000) * 1000000;
+
+	return (pthread_cond_timedwait(&cond_, &lock.mutex_, &sleepTime) == 0);
+}
+
 bool ConditionVariable::TimedWait(MutexFast& lock, UInt32 millis)
 {
 	struct timespec sleepTime;
-	sleepTime.tv_sec  = (millis / 1000);
-	sleepTime.tv_nsec = (millis % 1000)*1000000;
+	sleepTime.tv_sec = (millis / 1000);
+	sleepTime.tv_nsec = (millis % 1000) * 1000000;
 
 	return (pthread_cond_timedwait(&cond_, &lock.mutex_, &sleepTime) == 0);
 }

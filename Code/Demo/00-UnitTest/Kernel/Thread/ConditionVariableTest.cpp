@@ -48,7 +48,7 @@ void TestCondThreadFunc(void* args)
 	}
 }
 
-TEST_DECLARE(TestConditionVariable)
+TEST_DECLARE(Thread_ConditionVariable_Test)
 {
 	// Test basic single threaded condition
 	{
