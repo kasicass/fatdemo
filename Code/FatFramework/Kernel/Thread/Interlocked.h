@@ -111,7 +111,7 @@ FAT_FORCE_INLINE SInt64 Add64(volatile SInt64* pVal, SInt64 value)
 	return __sync_add_and_fetch(pVal, value);
 }
 
-FAT_FORCE_INLINE SInt64 CompareExchange(volatile SInt64* pVal, SInt64 exchange, SInt64 comperand)
+FAT_FORCE_INLINE bool CompareExchange64(volatile SInt64* pVal, SInt64 exchange, SInt64 comperand)
 {
 	return __sync_bool_compare_and_swap(pVal, comperand, exchange);
 }

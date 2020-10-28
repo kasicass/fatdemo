@@ -21,8 +21,13 @@ $ ./build.sh debug
 
 **Android**
 
-```
+```shell
 > cd Code/Solution/Android
+
+# copy & modify Android SDK directory
+> copy local.properties.template local.properties
+> copy setup_build_env.cmd.template setup_build_env.cmd
+
 > setup_build_env.cmd
 > gradlew.bat assembleDebug
 ```
@@ -40,7 +45,6 @@ $ ./build.sh debug
  * [D3D9][1]
  * [D3D11][2]
  * [Vulkan][3]
- * [OpenGLES][4]
 
 
 ## Directory Layout
@@ -71,4 +75,3 @@ $ ./build.sh debug
 [1]:https://docs.microsoft.com/en-us/windows/win32/direct3d9/dx9-graphics
 [2]:https://docs.microsoft.com/en-us/windows/win32/direct3d11/atoc-dx-graphics-direct3d-11
 [3]:https://www.khronos.org/vulkan/
-[4]:https://www.khronos.org/opengles/

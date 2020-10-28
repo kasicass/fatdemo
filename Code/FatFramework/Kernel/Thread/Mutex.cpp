@@ -4,7 +4,7 @@
 
 namespace Fat {
 
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 
 // SRW Lock (Slim Reader/Writer Lock)
 // Faster + lighter than CriticalSection, and only enters into kernel mode if contented.

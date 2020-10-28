@@ -25,7 +25,7 @@ private:
 	Mutex& operator=(const Mutex& rhs);
 
 private:
-#if defined(FAT_OS_WINDOWS)
+#if FAT_OS_WINDOWS
 	SRWLOCK srwlock_;
 	UInt32 recurseCounter_;
 	ThreadId exclusiveOwningThreadId_;
