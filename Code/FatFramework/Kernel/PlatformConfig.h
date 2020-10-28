@@ -88,7 +88,7 @@
 #  define FAT_DEBUG_BUILD   0
 #  define FAT_PROFILE_BUILD 1
 #  define FAT_RELEASE_BUILD 0
-#elif FAT_RELEASE_BUILD
+#elif defined(FAT_RELEASE_BUILD)
 #  define FAT_DEBUG_BUILD   0
 #  define FAT_PROFILE_BUILD 0
 #  define FAT_RELEASE_BUILD 1

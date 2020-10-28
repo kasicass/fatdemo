@@ -24,11 +24,11 @@ struct IApplication
 	virtual void Run() = 0;
 #endif
 };
-extern IApplication* theApp;
+extern IApplication* GApp;
 
 }
 
 #define FAT_APP_DEFINE(ClassName)\
 	static ClassName myApp;\
-	Fat::IApplication* Fat::theApp = &myApp;
+	Fat::IApplication* Fat::GApp = &myApp;
 

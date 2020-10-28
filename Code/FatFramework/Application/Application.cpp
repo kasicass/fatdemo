@@ -122,9 +122,9 @@ int main(int argc, char *argv[])
 	}
 #endif
 
-	theApp->Init();
-	theApp->Run();
-	theApp->Shutdown();
+	GApp->Init();
+	GApp->Run();
+	GApp->Shutdown();
 	return 0;
 }
 

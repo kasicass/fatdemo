@@ -22,11 +22,11 @@ static void HandleCommand(struct android_app *pApp, int32_t cmd)
 		break;
 
 	case APP_CMD_INIT_WINDOW:
-		theApp->Init();
+		GApp->Init();
 		break;
 
 	case APP_CMD_TERM_WINDOW:
-		theApp->Shutdown();
+		GApp->Shutdown();
 		break;
 
 	case APP_CMD_LOST_FOCUS:
@@ -53,7 +53,7 @@ static void HandleCommand(struct android_app *pApp, int32_t cmd)
 void android_main(struct android_app *pApp)
 {
 	pApp->onAppCmd = HandleCommand;
-	pApp->userData = theApp;
+	pApp->userData = GApp;
 
 	while (1)
 	{
@@ -75,9 +75,9 @@ void android_main(struct android_app *pApp)
 		}
 
 		// Call app update function
-		// theApp->Update();
+		// GApp->Update();
 
-		// theApp->Draw();
+		// GApp->Draw();
 	}
 }
 

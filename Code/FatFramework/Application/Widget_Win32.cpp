@@ -49,7 +49,7 @@ void WidgetWin32::OnResize(UInt32 width, UInt32 height)
 	FatLog(L"<App>: OnResize (%u,%u)", width, height);
 	width_  = width;
 	height_ = height;
-	theApp->Resize(width, height);
+	GApp->Resize(width, height);
 }
 
 bool WidgetWin32::InitWindowClass()
