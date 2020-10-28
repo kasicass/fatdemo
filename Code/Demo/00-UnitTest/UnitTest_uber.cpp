@@ -3,6 +3,7 @@
 
 // UnitTest for Kernel
 #include "Demo/00-UnitTest/Kernel/Thread/InterlockedTest.cpp"
+#include "Demo/00-UnitTest/Kernel/Thread/SpinLockTest.cpp"
 #include "Demo/00-UnitTest/Kernel/AtomicIntTest.cpp"
 #include "Demo/00-UnitTest/Kernel/ConditionVariableTest.cpp"
 #include "Demo/00-UnitTest/Kernel/MathTest.cpp"

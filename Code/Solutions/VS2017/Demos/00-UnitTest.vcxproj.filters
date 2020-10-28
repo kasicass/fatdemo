@@ -59,6 +59,9 @@
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\InterlockedTest.cpp">
       <Filter>Kernel\Thread</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\SpinLockTest.cpp">
+      <Filter>Kernel\Thread</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Driver">
