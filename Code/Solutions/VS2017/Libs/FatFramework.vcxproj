@@ -62,6 +62,9 @@
     <ClInclude Include="..\..\..\FatFramework\Driver\Server\Interface\IServerObject.h" />
     <ClInclude Include="..\..\..\FatFramework\Driver\Server\Interface\IServerState.h" />
     <ClInclude Include="..\..\..\FatFramework\FatFramework.h" />
+    <ClInclude Include="..\..\..\FatFramework\JobSystem\Job.h" />
+    <ClInclude Include="..\..\..\FatFramework\JobSystem\JobManager.h" />
+    <ClInclude Include="..\..\..\FatFramework\JobSystem\JobThread.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Common\Assertion.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Common\Log.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Common\Macros.h" />
@@ -83,6 +86,7 @@
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\AtomicInt.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\ConditionVariable.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Interlocked.h" />
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Mutex.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\MutexFast.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\SpinLock.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\TAutoLock.h" />
@@ -122,6 +126,9 @@
     <ClCompile Include="..\..\..\FatFramework\Driver\Server\D3D9\State\D3D9RenderTargetState.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Driver\Server\Interface\IServerDevice.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Driver\Server\Interface\IServerFactory.cpp" />
+    <ClCompile Include="..\..\..\FatFramework\JobSystem\Job.cpp" />
+    <ClCompile Include="..\..\..\FatFramework\JobSystem\JobManager.cpp" />
+    <ClCompile Include="..\..\..\FatFramework\JobSystem\JobThread.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Common\Assertion.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Common\Log.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Common\Memory.cpp" />
@@ -131,6 +138,7 @@
     <ClCompile Include="..\..\..\FatFramework\Kernel\Math\Float4.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\AtomicInt.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\ConditionVariable.cpp" />
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\Mutex.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\MutexFast.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\Thread.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\UnitTest\UnitTest.cpp" />

@@ -49,6 +49,9 @@
     <Filter Include="Driver\Server\D3D9\State">
       <UniqueIdentifier>{247098aa-dc41-4802-870a-9c9ca35a50ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="JobSystem">
+      <UniqueIdentifier>{0e4b09e8-6d3c-49af-83b6-17ad29c40e2d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\FatFramework\Application\IApplication.h">
@@ -235,6 +238,18 @@
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\ThreadUtil.h">
       <Filter>Kernel\Thread</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\FatFramework\JobSystem\Job.h">
+      <Filter>JobSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\FatFramework\JobSystem\JobManager.h">
+      <Filter>JobSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\FatFramework\JobSystem\JobThread.h">
+      <Filter>JobSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Mutex.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\FatFramework\Application\Application.cpp">
@@ -359,6 +374,18 @@
     </ClCompile>
     <ClCompile Include="..\..\..\FatFramework\Driver\Client\State\CameraState.cpp">
       <Filter>Driver\Client\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\FatFramework\JobSystem\Job.cpp">
+      <Filter>JobSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\FatFramework\JobSystem\JobManager.cpp">
+      <Filter>JobSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\FatFramework\JobSystem\JobThread.cpp">
+      <Filter>JobSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\Mutex.cpp">
+      <Filter>Kernel\Thread</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

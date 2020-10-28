@@ -11,6 +11,7 @@ class ThreadUtil
 public:
 	FAT_FORCE_INLINE static void Sleep(UInt32 milliSeconds);
 	FAT_FORCE_INLINE static void SwitchThread();
+	FAT_FORCE_INLINE static ThreadId CurrentThreadId();
 };
 
 #if FAT_OS_WINDOWS
@@ -23,6 +24,11 @@ FAT_FORCE_INLINE void ThreadUtil::Sleep(UInt32 milliSeconds)
 FAT_FORCE_INLINE void ThreadUtil::SwitchThread()
 {
 	::Sleep(0);
+}
+
+FAT_FORCE_INLINE ThreadId ThreadUtil::CurrentThreadId()
+{
+	return (ThreadId)::GetCurrentThreadId();
 }
 
 #else
@@ -39,6 +45,11 @@ FAT_FORCE_INLINE void ThreadUtil::Sleep(UInt32 milliSeconds)
 FAT_FORCE_INLINE void ThreadUtil::SwitchThread()
 {
 	Sleep(0);
+}
+
+FAT_FORCE_INLINE ThreadId ThreadUtil::CurrentThreadId()
+{
+	return (ThreadId)pthread_self();
 }
 
 #endif
