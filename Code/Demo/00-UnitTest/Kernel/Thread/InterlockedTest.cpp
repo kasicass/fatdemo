@@ -6,6 +6,8 @@ using namespace Fat;
 
 TEST_DECLARE(TestInterlocked)
 {
+	bool ok;
+
 	{
 		SInt32 r;
 		volatile SInt32 v = 0;
@@ -28,13 +30,13 @@ TEST_DECLARE(TestInterlocked)
 		FatTest(2 == v);
 		FatTest(4 == r);
 
-		r = Interlocked::CompareExchange32(&v, 10, 2);
+		ok = Interlocked::CompareExchange32(&v, 10, 2);
 		FatTest(10 == v);
-		FatTest(2 == r);
+		FatTest(ok);
 
-		r = Interlocked::CompareExchange32(&v, 5, 20);
+		ok = Interlocked::CompareExchange32(&v, 5, 20);
 		FatTest(10 == v);
-		FatTest(10 == r);
+		FatTest(!ok);
 	}
 
 	{
@@ -59,13 +61,13 @@ TEST_DECLARE(TestInterlocked)
 		FatTest(2 == v);
 		FatTest(4 == r);
 
-		r = Interlocked::CompareExchange64(&v, 10, 2);
+		ok = Interlocked::CompareExchange64(&v, 10, 2);
 		FatTest(10 == v);
-		FatTest(2 == r);
+		FatTest(ok);
 
-		r = Interlocked::CompareExchange64(&v, 5, 20);
+		ok = Interlocked::CompareExchange64(&v, 5, 20);
 		FatTest(10 == v);
-		FatTest(10 == r);
+		FatTest(!ok);
 	}
 }
 

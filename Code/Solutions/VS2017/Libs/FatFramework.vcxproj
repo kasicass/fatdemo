@@ -84,8 +84,10 @@
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\ConditionVariable.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Interlocked.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\MutexFast.h" />
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\SpinLock.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\TAutoLock.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Thread.h" />
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\ThreadUtil.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\UnitTest\UnitTest.h" />
   </ItemGroup>
   <ItemGroup>

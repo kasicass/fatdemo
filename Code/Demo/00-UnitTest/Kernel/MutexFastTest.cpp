@@ -41,7 +41,7 @@ static void MutexTestThreadFunc(void* args)
 
 	while (!testObj.Increment())
 	{
-		Thread::Sleep(0);
+		ThreadUtil::Sleep(0);
 	}
 
 	FatTest(testObj.Test());
@@ -66,7 +66,7 @@ TEST_DECLARE(TestMutex)
 		ThreadPtr pThread = Thread::Create("MutexTest", MutexTestThreadFunc, &testObj);
 		while (!testObj.Test())
 		{
-			Thread::Sleep(0);
+			ThreadUtil::Sleep(0);
 		}
 
 		FatTest(testObj.Test());

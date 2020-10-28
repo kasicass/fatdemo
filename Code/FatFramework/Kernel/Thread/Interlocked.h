@@ -18,12 +18,14 @@ namespace Fat { namespace Interlocked {
 FAT_FORCE_INLINE SInt32 Increment32(volatile SInt32* pVal);
 FAT_FORCE_INLINE SInt32 Decrement32(volatile SInt32* pVal);
 FAT_FORCE_INLINE SInt32 Add32(volatile SInt32* pVal, SInt32 value);
-FAT_FORCE_INLINE SInt32 CompareExchange32(volatile SInt32* pVal, SInt32 exchange, SInt32 comperand);
+FAT_FORCE_INLINE bool CompareExchange32(volatile SInt32* pVal, SInt32 exchange, SInt32 comperand);
 
 FAT_FORCE_INLINE SInt64 Increment64(volatile SInt64* pVal);
 FAT_FORCE_INLINE SInt64 Decrement64(volatile SInt64* pVal);
 FAT_FORCE_INLINE SInt64 Add64(volatile SInt64* pVal, SInt64 value);
-FAT_FORCE_INLINE SInt64 CompareExchange64(volatile SInt64* pVal, SInt64 exchange, SInt64 comperand);
+FAT_FORCE_INLINE bool CompareExchange64(volatile SInt64* pVal, SInt64 exchange, SInt64 comperand);
+
+FAT_FORCE_INLINE void MemorySync();
 
 #if FAT_OS_WINDOWS
 
@@ -42,9 +44,9 @@ SInt32 Add32(volatile SInt32* pVal, SInt32 value)
 	return (SInt32)InterlockedExchangeAdd((volatile long*)pVal, (long)value);
 }
 
-SInt32 CompareExchange32(volatile SInt32* pVal, SInt32 exchange, SInt32 comperand)
+bool CompareExchange32(volatile SInt32* pVal, SInt32 exchange, SInt32 comperand)
 {
-	return (SInt32)InterlockedCompareExchange((volatile long*)pVal, (long)exchange, (long)comperand);
+	return (SInt32)(InterlockedCompareExchange((volatile long*)pVal, (long)exchange, (long)comperand)) == comperand;
 }
 
 SInt64 Increment64(volatile SInt64* pVal)
@@ -62,9 +64,14 @@ SInt64 Add64(volatile SInt64* pVal, SInt64 value)
 	return InterlockedExchangeAdd64(pVal, value);
 }
 
-SInt64 CompareExchange64(volatile SInt64* pVal, SInt64 exchange, SInt64 comperand)
+bool CompareExchange64(volatile SInt64* pVal, SInt64 exchange, SInt64 comperand)
 {
-	return InterlockedCompareExchange64(pVal, exchange, comperand);
+	return InterlockedCompareExchange64(pVal, exchange, comperand) == comperand;
+}
+
+void MemorySync()
+{
+	MemoryBarrier();
 }
 
 #else

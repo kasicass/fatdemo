@@ -2,6 +2,7 @@
 #include "FatFramework/Kernel/Common/Log.h"
 #include "FatFramework/Kernel/Common/Memory.h"
 #include "FatFramework/Kernel/UnitTest/UnitTest.h"
+#include "FatFramework/Kernel/Thread/ThreadUtil.h"
 
 namespace Fat {
 
@@ -51,6 +52,12 @@ ThreadPtr Thread::Create(const char* name, TThreadFunc pFunc, void* args)
 	return pThread;
 }
 
+void Thread::Sleep(UInt32 milliSeconds)
+{
+	ThreadUtil::Sleep(milliSeconds);
+}
+
+
 #if FAT_OS_WINDOWS
 
 #if !FAT_RELEASE_BUILD
@@ -86,11 +93,6 @@ static void SetThreadName_SEH(DWORD threadId, const char* threadName)
 #pragma warning(pop)
 }
 #endif
-
-void Thread::Sleep(UInt32 milliSeconds)
-{
-	::Sleep(milliSeconds);
-}
 
 Thread::Thread(const char* name) :
 	IntrusiveCounter(1),
@@ -227,15 +229,6 @@ Thread::Thread(const char* name, TThreadFunc pFunc, void* args) :
 	FatAssert(ret == 0, L"Thread creation fails");
 	isRunning_ = (ret == 0);
 	pthread_attr_destroy(&attr);
-}
-
-void Thread::Sleep(UInt32 milliSeconds)
-{
-	struct timespec sleepTime;
-	sleepTime.tv_sec  = (milliSeconds / 1000);
-	sleepTime.tv_nsec = (milliSeconds % 1000)*1000000;
-
-	::nanosleep(&sleepTime, NULL);
 }
 
 Thread::~Thread()

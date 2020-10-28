@@ -229,6 +229,12 @@
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Interlocked.h">
       <Filter>Kernel\Thread</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\SpinLock.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\ThreadUtil.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\FatFramework\Application\Application.cpp">
