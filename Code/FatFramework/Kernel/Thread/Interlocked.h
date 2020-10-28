@@ -29,54 +29,97 @@ FAT_FORCE_INLINE void MemorySync();
 
 #if FAT_OS_WINDOWS
 
-SInt32 Increment32(volatile SInt32* pVal)
+FAT_FORCE_INLINE SInt32 Increment32(volatile SInt32* pVal)
 {
 	return (SInt32)InterlockedIncrement((volatile long*)pVal);
 }
 
-SInt32 Decrement32(volatile SInt32* pVal)
+FAT_FORCE_INLINE SInt32 Decrement32(volatile SInt32* pVal)
 {
 	return (SInt32)InterlockedDecrement((volatile long*)pVal);
 }
 
-SInt32 Add32(volatile SInt32* pVal, SInt32 value)
+FAT_FORCE_INLINE SInt32 Add32(volatile SInt32* pVal, SInt32 value)
 {
 	return (SInt32)InterlockedExchangeAdd((volatile long*)pVal, (long)value);
 }
 
-bool CompareExchange32(volatile SInt32* pVal, SInt32 exchange, SInt32 comperand)
+FAT_FORCE_INLINE bool CompareExchange32(volatile SInt32* pVal, SInt32 exchange, SInt32 comperand)
 {
 	return (SInt32)(InterlockedCompareExchange((volatile long*)pVal, (long)exchange, (long)comperand)) == comperand;
 }
 
-SInt64 Increment64(volatile SInt64* pVal)
+FAT_FORCE_INLINE SInt64 Increment64(volatile SInt64* pVal)
 {
 	return InterlockedIncrement64(pVal);
 }
 
-SInt64 Decrement64(volatile SInt64* pVal)
+FAT_FORCE_INLINE SInt64 Decrement64(volatile SInt64* pVal)
 {
 	return InterlockedDecrement64(pVal);
 }
 
-SInt64 Add64(volatile SInt64* pVal, SInt64 value)
+FAT_FORCE_INLINE SInt64 Add64(volatile SInt64* pVal, SInt64 value)
 {
 	return InterlockedExchangeAdd64(pVal, value);
 }
 
-bool CompareExchange64(volatile SInt64* pVal, SInt64 exchange, SInt64 comperand)
+FAT_FORCE_INLINE bool CompareExchange64(volatile SInt64* pVal, SInt64 exchange, SInt64 comperand)
 {
 	return InterlockedCompareExchange64(pVal, exchange, comperand) == comperand;
 }
 
-void MemorySync()
+FAT_FORCE_INLINE void MemorySync()
 {
 	MemoryBarrier();
 }
 
 #else
 
-// TODO
+FAT_FORCE_INLINE SInt32 Increment32(volatile SInt32* pVal)
+{
+	return __sync_add_and_fetch(pVal, 1);
+}
+
+FAT_FORCE_INLINE SInt32 Decrement32(volatile SInt32* pVal)
+{
+	return __sync_sub_and_fetch(pVal, 1);
+}
+
+FAT_FORCE_INLINE SInt32 Add32(volatile SInt32* pVal, SInt32 value)
+{
+	return __sync_add_and_fetch(pVal, value);
+}
+
+FAT_FORCE_INLINE bool CompareExchange32(volatile SInt32* pVal, SInt32 exchange, SInt32 comperand)
+{
+	return __sync_bool_compare_and_swap(pVal, comperand, exchange);
+}
+
+FAT_FORCE_INLINE SInt64 Increment64(volatile SInt64* pVal)
+{
+	return __sync_add_and_fetch(pVal, 1);
+}
+
+FAT_FORCE_INLINE SInt64 Decrement64(volatile SInt64* pVal)
+{
+	return __sync_sub_and_fetch(pVal, 1);
+}
+
+FAT_FORCE_INLINE SInt64 Add64(volatile SInt64* pVal, SInt64 value)
+{
+	return __sync_add_and_fetch(pVal, value);
+}
+
+FAT_FORCE_INLINE SInt64 CompareExchange(volatile SInt64* pVal, SInt64 exchange, SInt64 comperand)
+{
+	return __sync_bool_compare_and_swap(pVal, comperand, exchange);
+}
+
+FAT_FORCE_INLINE void MemorySync()
+{
+	__sync_synchronize();
+}
 
 #endif
 

@@ -85,6 +85,7 @@
     <ClInclude Include="..\..\..\FatFramework\Kernel\String\TString.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\AtomicInt.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\ConditionVariable.h" />
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Event.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Interlocked.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Mutex.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\MutexFast.h" />
@@ -138,6 +139,7 @@
     <ClCompile Include="..\..\..\FatFramework\Kernel\Math\Float4.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\AtomicInt.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\ConditionVariable.cpp" />
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\Event.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\Mutex.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\MutexFast.cpp" />
     <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\Thread.cpp" />

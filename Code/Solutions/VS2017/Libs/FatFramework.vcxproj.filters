@@ -250,6 +250,9 @@
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Mutex.h">
       <Filter>Kernel\Thread</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Event.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\FatFramework\Application\Application.cpp">
@@ -385,6 +388,9 @@
       <Filter>JobSystem</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\Mutex.cpp">
+      <Filter>Kernel\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\FatFramework\Kernel\Thread\Event.cpp">
       <Filter>Kernel\Thread</Filter>
     </ClCompile>
   </ItemGroup>
