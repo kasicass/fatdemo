@@ -1,5 +1,11 @@
 # 开发日志
 
+## 2020-11-10
+
+ * 完成 Event，给 JobSystem 做准备
+ * 尝试实现 Game Programming Gems 8 中的 "Efficient and Scalable Multi-Core Programming"
+
+
 ## 2020-10-27
 
  * 将 Interlocked 模块纳入 Kernel，封装 atomic 的行为。可以去掉 std::atomic 的依赖了
