@@ -253,6 +253,9 @@
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Event.h">
       <Filter>Kernel\Thread</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\LockFreeQueue.h">
+      <Filter>Kernel\Thread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\FatFramework\Application\Application.cpp">

@@ -87,6 +87,7 @@
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\ConditionVariable.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Event.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Interlocked.h" />
+    <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\LockFreeQueue.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\Mutex.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\MutexFast.h" />
     <ClInclude Include="..\..\..\FatFramework\Kernel\Thread\SpinLock.h" />

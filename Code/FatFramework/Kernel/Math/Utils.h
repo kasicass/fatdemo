@@ -27,4 +27,18 @@ inline bool FatAlmostEqual(F64 a, F64 b, F64 epsilon = 0.001)
 	return (fabs(a - b) < epsilon);
 }
 
+inline UInt32 FatGetNextPowerOfTwo(UInt32 value)
+{
+	if (value)
+	{
+		value--;
+		value = (value >> 1) | value;
+		value = (value >> 2) | value;
+		value = (value >> 4) | value;
+		value = (value >> 8) | value;
+		value = (value >> 16) | value;
+	}
+	return value + 1;
+}
+
 }
