@@ -49,6 +49,7 @@
 #include "FatFramework/Kernel/Thread/Mutex.h"
 #include "FatFramework/Kernel/Thread/MutexFast.h"
 #include "FatFramework/Kernel/Thread/ConditionVariable.h"
+#include "FatFramework/Kernel/Thread/Event.h"
 #include "FatFramework/Kernel/Common/SmartPtr.h"
 #include "FatFramework/Kernel/Thread/Thread.h"
 

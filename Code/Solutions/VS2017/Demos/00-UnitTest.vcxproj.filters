@@ -65,6 +65,9 @@
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\ConditionVariableTest.cpp">
       <Filter>Kernel\Thread</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\EventTest.cpp">
+      <Filter>Kernel\Thread</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Driver">

@@ -42,6 +42,7 @@
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\SmartPtrTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\ThreadTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\ConditionVariableTest.cpp" />
+    <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\EventTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\InterlockedTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\MutexFastTest.cpp" />
     <ClCompile Include="..\..\..\Demo\00-UnitTest\Kernel\Thread\MutexTest.cpp" />
